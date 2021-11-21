@@ -56,7 +56,7 @@ module.exports = {
             gg = "extended"
         }
         if(txt.length > 4000) {
-            txt = `Number of 60hz records: ${numarray.filter(v => v == "60hz").length}\n\nNumber of 75hz records: ${numarray.filter(v => v == "75hz").length}\n\nNumber of Mobile records: ${numarray.filter(v => v == "Mobile").length}\n\nNumber of Points Given: ${points(gay)}\n\nLink to the website: https://gdlrrlist.cf/${gg}.php`
+            txt = `Number of 61hz> records: ${numarray.filter(v => parseInt(v) < 61).length}\n\nNumber of 61-75hz records: ${numarray.filter(v => parseInt(v) > 60).length}\n\nNumber of Mobile records: ${numarray.filter(v => v == "Mobile").length}\n\nNumber of Points Given: ${points(gay)}\n\nLink to the website: https://gdlrrlist.cf/${gg}.php`
          }
             embed.setTitle(`#${Object.keys(levels).indexOf(gay)+1} - ${gay} by ${levels[gay].publisher}`)
             embed.setURL(`https://www.youtube.com/watch?v=${levels[gay].ytcode}`)
