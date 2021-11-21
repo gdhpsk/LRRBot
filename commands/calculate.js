@@ -96,7 +96,7 @@ if(progs) {
                count = 1
                break;
            } else {
-             if(checkDuplicate(txtarray)) {
+             if(checkDuplicate(txtarray) == true) {
                 interaction.reply({content: `The level **${txtarray[i]}** is already on this list!`, ephemeral: true})
                 count = 1
                 break;
