@@ -51,10 +51,11 @@ if(progs) {
 }
        var count = 0
 
-       function checkDuplicate(value) {let result = false;
+       function checkDuplicate(value) {
+           let result = true;
         const s = new Set(value);
-        if(value.length !== s.size){
-           result = true;
+        if(value.length === s.size){
+           result = false;
         }
         if(result) {
            return true
