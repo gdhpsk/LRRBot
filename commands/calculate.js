@@ -186,6 +186,7 @@ if(progs) {
     }
 }
        var playerpoints = []
+       var finalarray = []
        var OML = 0
         if(count != 1) {
             
@@ -210,11 +211,21 @@ if(progs) {
                 } else if(!lev.includes(txtarray[i]) && !jkdf.includes(txtarray[i])) {
                     playerpoints.push(level_points(txtarray[i]))
                     finalcount++
-                    finaltext += `${finalcount}. ${txtarray[i]} 100% (#${Object.keys(levels).indexOf(txtarray[i])+1}) Unweighted Score: ${Math.round(1000*level_points(txtarray[i]))/1000}\n`
+                    let object = {
+                       text: `${finalcount}. ${txtarray[i]} 100% (#${Object.keys(levels).indexOf(txtarray[i])+1}) Unweighted Score: ${Math.round(1000*level_points(txtarray[i]))/1000}\n`,
+                       pos: Object.keys(levels).indexOf(txtarray[i])+1
+                    }
+                    finalarray.push(object)
+                   // finaltext += `${finalcount}. ${txtarray[i]} 100% (#${Object.keys(levels).indexOf(txtarray[i])+1}) Unweighted Score: ${Math.round(1000*level_points(txtarray[i]))/1000}\n`
                 } else if(jkdf.includes(txtarray[i])) {
                     playerpoints.push(level_points(txtarray[i]))
                     finalcount++
-                    finaltext += `${finalcount}. ${txtarray[i]} 100% (#${Object.keys(levels).indexOf(txtarray[i])+1}) Unweighted Score: ${Math.round(1000*level_points(txtarray[i]))/1000}\n`
+                    let object = {
+                        text: `${finalcount}. ${txtarray[i]} 100% (#${Object.keys(levels).indexOf(txtarray[i])+1}) Unweighted Score: ${Math.round(1000*level_points(txtarray[i]))/1000}\n`,
+                        pos: Object.keys(levels).indexOf(txtarray[i])+1
+                     }
+                     finalarray.push(object)
+                   // finaltext += `${finalcount}. ${txtarray[i]} 100% (#${Object.keys(levels).indexOf(txtarray[i])+1}) Unweighted Score: ${Math.round(1000*level_points(txtarray[i]))/1000}\n`
                 } else {
                     continue;
                 }
@@ -234,7 +245,12 @@ if(progs) {
                    } else if(numbero == 1 && parseInt(progsperc) < 100) {
                    playerpoints.push(prog_points(progsarray[i*2], parseInt(progsperc)))
                    finalcount++
-                   finaltext += `${finalcount}. ${progsarray[i*2]} ${progsperc}% (#${Object.keys(levels).indexOf(progsarray[i*2])+1}) Unweighted Score: ${Math.round(1000*prog_points(progsarray[i*2], progsperc))/1000}\n`
+                   let object = {
+                    text: `${finalcount}. ${progsarray[i*2]} ${progsperc}% (#${Object.keys(levels).indexOf(progsarray[i*2])+1}) Unweighted Score: ${Math.round(1000*prog_points(progsarray[i*2], progsperc))/1000}\n`,
+                    pos: Object.keys(levels).indexOf(progsarray[i*2])+1
+                 }
+                 finalarray.push(object)
+                  // finaltext += `${finalcount}. ${progsarray[i*2]} ${progsperc}% (#${Object.keys(levels).indexOf(progsarray[i*2])+1}) Unweighted Score: ${Math.round(1000*prog_points(progsarray[i*2], progsperc))/1000}\n`
                     continue;
                    }
                 } else {
@@ -254,7 +270,12 @@ if(progs) {
                      if(!lev.includes(progsarray[i*2]) && !jkdf.includes(progsarray[i*2])) {
                         playerpoints.push(prog_points(progsarray[i*2], progsperc))
                         finalcount++
-                       finaltext += `${finalcount}. ${progsarray[i*2]} ${progsperc}% (#${Object.keys(levels).indexOf(progsarray[i*2])+1}) Unweighted Score: ${Math.round(1000*prog_points(progsarray[i*2], progsperc))/1000}\n`
+                        let object = {
+                            text: `${finalcount}. ${progsarray[i*2]} ${progsperc}% (#${Object.keys(levels).indexOf(progsarray[i*2])+1}) Unweighted Score: ${Math.round(1000*prog_points(progsarray[i*2], progsperc))/1000}\n`,
+                            pos: Object.keys(levels).indexOf(progsarray[i*2])+1
+                         }
+                         finalarray.push(object)
+                      // finaltext += `${finalcount}. ${progsarray[i*2]} ${progsperc}% (#${Object.keys(levels).indexOf(progsarray[i*2])+1}) Unweighted Score: ${Math.round(1000*prog_points(progsarray[i*2], progsperc))/1000}\n`
                         } else {
                              continue;
                         }
@@ -268,7 +289,12 @@ if(progs) {
                 if(!txtarray.includes(lev[i]) && !progsarray.includes(lev[i])) {
                     playerpoints.push(level_points(lev[i]))
                     finalcount++
-                    finaltext += `${finalcount}. ${lev[i]} 100% (#${Object.keys(levels).indexOf(lev[i])+1}) Unweighted Score: ${Math.round(1000*level_points(lev[i]))/1000}\n`
+                    let object = {
+                        text: `${finalcount}. ${lev[i]} 100% (#${Object.keys(levels).indexOf(lev[i])+1}) Unweighted Score: ${Math.round(1000*level_points(lev[i]))/1000}\n`,
+                        pos: Object.keys(levels).indexOf(lev[i])+1
+                     }
+                     finalarray.push(object)
+                    //finaltext += `${finalcount}. ${lev[i]} 100% (#${Object.keys(levels).indexOf(lev[i])+1}) Unweighted Score: ${Math.round(1000*level_points(lev[i]))/1000}\n`
                 }
             }
         }
@@ -277,7 +303,12 @@ if(progs) {
                 if(!txtarray.includes(prog[i].name) && !progsarray.includes(prog[i].name)) {
                     playerpoints.push(prog_points(prog[i].name, prog[i].percent))
                     finalcount++
-                    finaltext += `${finalcount}. ${prog[i].name} ${prog[i].percent}% (#${Object.keys(levels).indexOf(prog[i].name)+1}) Unweighted Score: ${Math.round(1000*prog_points(prog[i].name, prog[i].percent))/1000}\n`
+                    let object = {
+                        text: `${finalcount}. ${prog[i].name} ${prog[i].percent}% (#${Object.keys(levels).indexOf(prog[i].name)+1}) Unweighted Score: ${Math.round(1000*prog_points(prog[i].name, prog[i].percent))/1000}\n`,
+                        pos: Object.keys(levels).indexOf(prog[i].name)+1
+                     }
+                     finalarray.push(object)
+                    //finaltext += `${finalcount}. ${prog[i].name} ${prog[i].percent}% (#${Object.keys(levels).indexOf(prog[i].name)+1}) Unweighted Score: ${Math.round(1000*prog_points(prog[i].name, prog[i].percent))/1000}\n`
                 }
             }
         }
@@ -287,7 +318,12 @@ if(progs) {
         for(let i = 0; i < txtarray.length; i++) {
             playerpoints.push(level_points(txtarray[i]))
             finalcount++
-            finaltext += `${finalcount}. ${txtarray[i]} 100% (#${Object.keys(levels).indexOf(txtarray[i])+1}) Unweighted Score: ${Math.round(1000*level_points(txtarray[i]))/1000}\n`
+            let object = {
+                text: `${finalcount}. ${txtarray[i]} 100% (#${Object.keys(levels).indexOf(txtarray[i])+1}) Unweighted Score: ${Math.round(1000*level_points(txtarray[i]))/1000}\n`,
+                pos: Object.keys(levels).indexOf(txtarray[i])+1
+             }
+             finalarray.push(object)
+            //finaltext += `${finalcount}. ${txtarray[i]} 100% (#${Object.keys(levels).indexOf(txtarray[i])+1}) Unweighted Score: ${Math.round(1000*level_points(txtarray[i]))/1000}\n`
         }
     }
     if(progs) {
@@ -296,11 +332,20 @@ if(progs) {
     let progsname = progsarray[i*2]
             playerpoints.push(prog_points(progsname, parseInt(progspercent)))
             finalcount++
-            finaltext += `${finalcount}. ${progsname} ${progspercent}% (#${Object.keys(levels).indexOf(progsname)+1}) Unweighted Score: ${Math.round(1000*prog_points(progsname, parseInt(progspercent)))/1000}\n`
+            let object = {
+                text: `${finalcount}. ${progsname} ${progspercent}% (#${Object.keys(levels).indexOf(progsname)+1}) Unweighted Score: ${Math.round(1000*prog_points(progsname, parseInt(progspercent)))/1000}\n`,
+                pos: Object.keys(levels).indexOf(progsname)+1
+             }
+             finalarray.push(object)
+           // finaltext += `${finalcount}. ${progsname} ${progspercent}% (#${Object.keys(levels).indexOf(progsname)+1}) Unweighted Score: ${Math.round(1000*prog_points(progsname, parseInt(progspercent)))/1000}\n`
         }
     }
 }
         playerpoints.sort((a, b) => b - a)
+        finalarray.sort((a, b) => b.pos - a.pos)
+        for(let i = 0; i < finalarray.length; i++) {
+            finaltext += `${finalarray[i].text}`
+        } 
         var bool = interaction.options.getBoolean("weighted")
         let weightedScore = playerpoints.reduce(
             (sum, currentValue, index) => sum + Math.pow(currentValue, Math.pow(0.95, index)),0);
