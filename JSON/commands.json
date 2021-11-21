@@ -1,0 +1,96 @@
+{
+    "commandList": [
+        {
+            "name": "61plus",
+            "description": "Lets you view levels on the 61hz+ list."
+        },
+        {
+            "name": "calculate",
+            "description": "Lets you calculate how many points you can have."
+        },
+        {
+            "name": "help",
+            "description": "Command you are using right now."
+        },
+        {
+            "name": "leaderboard",
+            "description": "Lets you view a player on the LRR Demonslist leaderboard."
+        },
+        {
+            "name": "list",
+            "description": "Lets you view levels on the LRR Demonslist that aren't beaten only on 61hz+."
+        },
+        {
+            "name": "roll",
+            "description": "Lets you generate a number."
+        }
+    ],
+    "commandUsage": {
+        "61plus": {
+            "Optional Arguments": [
+                "none"
+            ],
+            "Required Arguments": [
+               {
+                   "name": "level",
+                   "description": "Input the level name you want. Remember, this is only for levels on the 61hz+ list, and it is case-sensitive. Example: /61plus level: Ragnarok"
+               }
+            ]
+        },
+        "calculate": {
+            "Optional Arguments": [
+                {
+                    "name": "addlevels",
+                    "description": "What levels do you want to add to your custom profile? You seperate the levels via \", \", and this is case-sensitive. Example: /calculate weighted:True addlevels: Aronia, Erebus, xo"
+                },
+                {
+                     "name": "addprogs",
+                     "description": "What progresses do you want to add to your custom profile? You seperate the levels/percentages via \", \", and this is case-sensitive. If you included a user profile, you can remove one of their levels by making the percentage 101. You also cannot include the % sign while writing in the percentage. Example 1: /calculate weighted:True addprogs: Aronia, 57, Erebus, 89, xo, 97\n Example 2: /calculate weighted:True profile:Luqualizer addprogs:Aronia, 57, Erebus, 101"
+                 },
+                 {
+                      "name": "profile",
+                      "description": "What profile do you want to add on to? This is case-sensitive. Example: /calculate weighted:True profile:Samamba addlevels:Sonic Wave"
+                  }
+            ],
+            "Required Arguments": [
+                {
+                    "name": "weighted",
+                    "description": "Should the score be weighted like the real leaderboard or should it just add up the unweighted points? Example: /calculate weighted:False"
+                }
+            ]
+        },
+        "leaderboard": {
+            "Optional Arguments": [
+                "none"
+            ],
+            "Required Arguments": [
+               {
+                   "name": "user",
+                   "description": "What user on the leaderboard do you want the bot to show? This is case-sensitive. Example: /leaderboard user:Luqualizer"
+               }
+            ]
+        },
+        "list": {
+            "Optional Arguments": [
+                "none"
+            ],
+            "Required Arguments": [
+               {
+                   "name": "level",
+                   "description": "What level on the LRR Demonslist do you want the bot to show? This is case-sensitive. Example: /list level:Aronia"
+               }
+            ]
+        },
+        "roll": {
+            "Optional Arguments": [
+                {
+                    "name": "number",
+                    "description": "Between 1 and what number do you want to roll from? Example: /roll number:457"
+                }
+            ],
+            "Required Arguments": [
+               "none"
+            ]
+        }
+    }
+}
