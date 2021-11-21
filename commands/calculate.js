@@ -131,7 +131,7 @@ if(progs) {
             break;
         } else {
             if(checkDuplicate(uj)) {
-                interaction.reply({content: `The level **${progsname}** has already been entered!`, ephemeral: true})
+                interaction.reply({content: `The level **${checkDuplicateText(uj)}** has already been entered!`, ephemeral: true})
                 count = 1
                 break;
             } else {
