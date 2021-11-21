@@ -187,6 +187,10 @@ if(progs) {
                     playerpoints.push(level_points(txtarray[i]))
                     finalcount++
                     finaltext += `${finalcount}. ${txtarray[i]} 100% (#${Object.keys(levels).indexOf(txtarray[i])+1}) Unweighted Score: ${Math.round(1000*level_points(txtarray[i]))/1000}\n`
+                } else if(jkdf.includes(txtarray[i])) {
+                    playerpoints.push(level_points(txtarray[i]))
+                    finalcount++
+                    finaltext += `${finalcount}. ${txtarray[i]} 100% (#${Object.keys(levels).indexOf(txtarray[i])+1}) Unweighted Score: ${Math.round(1000*level_points(txtarray[i]))/1000}\n`
                 } else {
                     continue;
                 }
