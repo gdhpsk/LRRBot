@@ -18,6 +18,7 @@ module.exports = {
         if(!leaderboard[interaction.options.getString("user")]) {
             await interaction.reply({content: "Please enter a valid profile!", ephemeral: true})
         } else {
+            var counte = 0
             var ku = 0
             var uk = 0
             var gay = interaction.options.getString("user")
@@ -57,8 +58,14 @@ module.exports = {
             } else {
                 txtProgs = "none.\n"
             }
+            for(let i = 0; i < placement.length; i++) {
+                if(placement[i].name == gay) {
+                    counte = i+1
+                    break;
+                }
+            }
             const embed = new Discord.MessageEmbed()
-            .setTitle(`#${placement(gay)} - ${gay}'s profile (${point(gay)} points):`)
+            .setTitle(`#${counte}- ${gay}'s profile (${point(gay)} points):`)
             .setDescription(`${nationality}**COMPLETIONS**\n\n${txtList}\n**COMPLETED LEGACY LEVELS**\n\n${txtExtra}\n**PROGRESSES**\n\n${txtProgs}`)
             .setFooter(`${ku} completions, ${uk} progresses`)
             await interaction.reply({embeds: [embed]})
