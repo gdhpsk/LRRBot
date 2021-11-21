@@ -7,8 +7,8 @@ module.exports = {
     name: "ready",
     once: true,
     execute(client, commands) {
-        console.log('Ready!');
-		client.user.setActivity("LRR Demonslist Server", {type: "WATCHING"})
+        console.log(`${client.user.tag} is online!`);
+		client.user.setActivity("LRR Demonlist Server", {type: "WATCHING"})
 
 	const CLIENT_ID = client.user.id
 	const rest = new REST({
@@ -21,12 +21,12 @@ module.exports = {
 				await rest.put(Routes.applicationCommands(CLIENT_ID), {
 					body: commands
 				})
-				console.log("IT WORKED (globally)");
+				console.log("Slash Commands worked (globally)");
 			} else {
 				await rest.put(Routes.applicationGuildCommands(CLIENT_ID, guildId), {
 					body: commands
 				})
-				console.log("IT WORKED (locally)");
+				console.log("Slash Commands worked (locally)");
 			}
 		} catch (err) {
 			if(err) console.log(err)
