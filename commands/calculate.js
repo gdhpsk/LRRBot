@@ -11,7 +11,7 @@ module.exports = {
     .setDescription("Calculate how many points a player will have.")
 .addBooleanOption(option => 
         option
-        .setName("weighted")
+        .setName("weighted") 
         .setDescription("Should the score be weighted like the real leaderboard?")
         .setRequired(true)
     )
