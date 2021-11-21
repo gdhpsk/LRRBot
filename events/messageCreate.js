@@ -2,7 +2,8 @@
 module.exports = {
     name: "messageCreate",
     execute(message) {
-        if(message.author.bot || !message.channel.permissionsFor(message.client.user.id).has("SEND_MESSAGES")) return;
+        // || !message.channel.permissionsFor(message.client.user.id).has("SEND_MESSAGES")
+        if(message.author.bot) return;
         if(message.content.toLowerCase() == "femboy") {
             message.reply("OwO UwU")
         } 
