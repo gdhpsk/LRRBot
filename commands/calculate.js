@@ -107,7 +107,7 @@ if(progs) {
                break;
            } else {
              if(checkDuplicate(txtarray)) {
-                interaction.reply({content: `The level **${checkDuplicateText(txtarray)}** is already on this list!`, ephemeral: true})
+                interaction.reply({content: `The level **${checkDuplicateText(txtarray)}** has already been entered!`, ephemeral: true})
                 count = 1
                 break;
              } else {
