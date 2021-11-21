@@ -63,6 +63,24 @@ if(progs) {
           return false
         }
      }
+     function checkDuplicateText(value) {
+        let result = true;
+     const s = new Set(value);
+     if(value.length === s.size){
+        result = false;
+     }
+     if(result) {
+        for(let i = 0; i < value.length; i++) {
+            for(let x = 0; x < value.length; x++) {
+                if(value[x] == value[i] && i != x) {
+                    return value[x]
+                }
+            }
+        }
+     } else {
+       return false
+     }
+  }
      if(userprofile) {
         if(!leaderboard[userprofile]){
             interaction.reply({content: "Please enter a valid player!", ephemeral: true})
@@ -89,7 +107,7 @@ if(progs) {
                break;
            } else {
              if(checkDuplicate(txtarray)) {
-                interaction.reply({content: `The level **${txtarray.indexOf(txtarray[i])}** is already on this list!`, ephemeral: true})
+                interaction.reply({content: `The level **${checkDuplicateText(txtarray)}** is already on this list!`, ephemeral: true})
                 count = 1
                 break;
              } else {
