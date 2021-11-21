@@ -3,7 +3,7 @@ module.exports = {
     name: "interactionCreate",
     async execute(interaction) {
         if(!interaction.isCommand()) return
-		if(interaction.channel.type != "dm") {
+		if(interaction.channel.type != "DM") {
 			if(!interaction.channel.permissionsFor(interaction.client.user.id).has("USE_APPLICATION_COMMANDS")) return
 		}
 	const command = interaction.client.commands.get(interaction.commandName)
