@@ -281,7 +281,7 @@ if(progs) {
         let weightedScore = playerpoints.reduce(
             (sum, currentValue, index) => sum + Math.pow(currentValue, Math.pow(0.95, index)),0);
             if(finaltext.length > 4000) {
-                finaltext = `This profile has too many entries, ${finalcount} to be exact.`
+                finaltext = `This profile has too many entries for it to be displayed, ${finalcount} to be exact.`
             }
             var embed = new Discord.MessageEmbed()
             .setTitle("CUSTOM PROFILE")
