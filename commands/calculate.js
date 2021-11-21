@@ -87,13 +87,13 @@ if(progs) {
                count = 1
                break;
            } else {
-             if((new Set(txtarray)).size !== txtarray.length) {
+             /*if(checkDuplicate(txtarray)) {
                 interaction.reply({content: `The level **${txtarray[i]}** is already on this list!`, ephemeral: true})
                 count = 1
                 break;
-             } else {
+             } else {*/
                continue;
-             }
+            // }
            }
        }
     }
