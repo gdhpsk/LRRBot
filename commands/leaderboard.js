@@ -1,6 +1,7 @@
 const { SlashCommandBuilder } = require("@discordjs/builders")
 const leaderboard = require("../JSON/leaderboard.json")
 const levels = require("../JSON/levels.json")
+const placement = require("../leaderboard_rank")
 const point = require("../leaderboard_point_calculator")
 
 module.exports = {
@@ -57,7 +58,7 @@ module.exports = {
                 txtProgs = "none.\n"
             }
             const embed = new Discord.MessageEmbed()
-            .setTitle(`${gay}'s profile (${point(gay)} points):`)
+            .setTitle(`#${placement(gay)} - ${gay}'s profile (${point(gay)} points):`)
             .setDescription(`${nationality}**COMPLETIONS**\n\n${txtList}\n**COMPLETED LEGACY LEVELS**\n\n${txtExtra}\n**PROGRESSES**\n\n${txtProgs}`)
             .setFooter(`${ku} completions, ${uk} progresses`)
             await interaction.reply({embeds: [embed]})
