@@ -17,23 +17,6 @@ module.exports = {
         if(!leaderboard[interaction.options.getString("user")]) {
             await interaction.reply({content: "Please enter a valid profile!", ephemeral: true})
         } else {
-            var counte = 0
-            var far = []
-            for(let key in leaderboard) {
-                var df = point(key)
-                var obj = {
-                    name: key,
-                    points: df
-                }
-                far.push(obj)
-            }
-            far.sort((a, b) => a.points - b.points)
-            for(let i = 0; i < far.length; i++) {
-                if(far[i].name == gay) {
-                    counte = i+1
-                    break;
-                }
-            }
             var ku = 0
             var uk = 0
             var gay = interaction.options.getString("user")

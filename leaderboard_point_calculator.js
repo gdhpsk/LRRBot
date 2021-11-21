@@ -34,9 +34,7 @@ let lol = (player) => {
         for(let i = 0; i < progs; i++) {
             var jk = 0
             var count = Object.keys(level).indexOf(leaderboard[player].progs[i].name)+1
-            if(count > 75) {
-                break;
-            } else {
+            if(count > 75) break;
         if(level[leaderboard[player].progs[i].name].minimumPercent > leaderboard[player].progs[i].percent) continue;
         if(count <= 50){
             allBasePoints[i+levels] =  50.0 / (Math.pow(Math.E, 0.001 * count)) * Math.log((1 / (0.008 * count)));
@@ -47,7 +45,6 @@ let lol = (player) => {
         allBasePoints[i+levels] =  allBasePoints[i+levels] * (Math.pow(5, ((leaderboard[player].progs[i].percent - level[leaderboard[player].progs[i].name].minimumPercent)/(100-level[leaderboard[player].progs[i].name].minimumPercent)))/10);
         }
     }
-}
     allBasePoints.sort((a, b) => b - a);
     let point =  allBasePoints.reduce(
         (sum, currentValue, index) => sum + Math.pow(currentValue, Math.pow(0.95, index)),0);
