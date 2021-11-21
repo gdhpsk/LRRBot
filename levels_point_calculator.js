@@ -8,7 +8,7 @@ let lol = (level) => {
     } else if(counter > 100 && counter < 151) {
         return Math.round(100*(50.0 / (Math.pow(Math.E, 0.01 * counter)) * Math.log((3.3 / Math.pow(counter, .1)))))/100
     } else {
-       return Math.round(100*(50.0 / (Math.pow(Math.E, 0.01 * counter)) * Math.log((3.3 / (Math.pow(counter, .1))))))/100;
+       return 0// Math.round(100*(50.0 / (Math.pow(Math.E, 0.01 * counter)) * Math.log((3.3 / (Math.pow(counter, .1))))))/100;
     }
 }
 module.exports = lol

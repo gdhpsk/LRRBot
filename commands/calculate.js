@@ -1,7 +1,7 @@
 const { SlashCommandBuilder } = require("@discordjs/builders")
 const levels = require("../JSON/levels.json")
 const leaderboard = require("../JSON/leaderboard.json")
-const level_points = require("../point_calculator_stuff/level_points")
+const level_points = require("../levels_point_calculator")
 const prog_points = require("../point_calculator_stuff/leaderboard_progs_calculator")
 const player_points = require("../leaderboard_point_calculator")
 
@@ -111,7 +111,13 @@ if(progs) {
                 count = 1
                 break;
              } else {
-               continue;
+                if(Object.keys(levels).indexOf(txtarray[i]) > Object.keys(levels).indexOf("Final Epilogue")) {
+                    interaction.reply({content: `The level **${txtarray[i]}** has been removed from the list!`, ephemeral: true})
+                    count = 1
+                    break;
+                } else {
+                    continue;
+                }
              }
            }
        }
