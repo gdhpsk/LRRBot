@@ -3,7 +3,7 @@ module.exports = {
     name: "messageCreate",
     execute(message) {
         if(message.author.bot) return;
-        if(message.channel.type != "dm") {
+        if(message.channel.type != "DM") {
             if(!message.channel.permissionsFor(message.client.user.id).has("SEND_MESSAGES")) return;
         }
         if(message.content.toLowerCase() == "femboy") {
