@@ -8,7 +8,7 @@ const player_points = require("../leaderboard_point_calculator")
 module.exports = {
     data: new SlashCommandBuilder()
     .setName("test")
-    .setDescription("testing calculate cmd limit")
+    .setDescription("testing")
 .addBooleanOption(option => 
         option
         .setName("weighted") 
@@ -33,8 +33,6 @@ option
 .setRequired(false)
 ),
     async execute(interaction, Discord, client) {
-        var levelset = new Set()
-        var progset = new Set()
         var jkl = []
         var finaltext = ""
         var finalcount = 0
@@ -47,15 +45,9 @@ let progsarray = ["none"]
 let txtarray = ["none"]
 if(txt) {
     txtarray = txt.split(", ")
-    for(let i = 0; i < txtarray.length; i++) {
-        levelset.add(txtarray[i])
-    }
 }
 if(progs) {
     progsarray = progs.split(", ")
-    for(let i = 0; i < (progsarray.length/2); i++) {
-        progset.add(progsarray[i*2])
-    }
 }
        var count = 0
 
@@ -96,13 +88,7 @@ if(progs) {
                count = 1
                break;
            } else {
-            if(levelset.size !== txtarray.length) {
-                interaction.reply({content: `The level **${txtarray[i]}** is already on this list!`, ephemeral: true})
-                count = 1
-                break;
-             } else {
                continue;
-             }
            }
        }
     }
@@ -269,10 +255,14 @@ if(progs) {
 } else {
     if(txt) {
         for(let i = 0; i < txtarray.length; i++) {
-            playerpoints.push(level_points(txtarray[i]))
+            for(let x = 0; x < txtarray.length; x++) {
+                if(txtarray[i] == txtarray[x] && i != x) {
+                    playerpoints.push(level_points(txtarray[i]))
             finalcount++
             finaltext += `${finalcount}. ${txtarray[i]} 100% (#${Object.keys(levels).indexOf(txtarray[i])+1}) Unweighted Score: ${Math.round(1000*level_points(txtarray[i]))/1000}\n`
-    }
+                }
+            }
+        }
     }
     if(progs) {
         for(let i = 0; i < (progsarray.length/2); i++) {
