@@ -8,7 +8,7 @@ module.exports = {
     once: true,
     execute(client, commands) {
         console.log(`${client.user.tag} is online!`);
-		client.user.setActivity("LRR Demonlist Server", {type: "WATCHING"})
+		client.user.setActivity("The LRR Demonlist Server", {type: "WATCHING"})
 
 	const CLIENT_ID = client.user.id
 	const rest = new REST({
