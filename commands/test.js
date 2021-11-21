@@ -260,11 +260,12 @@ if(progs) {
         }
         if((new Set(fghjk)).size !== fghjk.length) {
             interaction.reply({content: `heey`, ephemeral: true})
+            OML = 1
+            
         } else {
         for(let i = 0; i < txtarray.length; i++) {
             playerpoints.push(level_points(txtarray[i]))
             finalcount++
-            fghjk.push(txtarray[i])
             finaltext += `${finalcount}. ${txtarray[i]} 100% (#${Object.keys(levels).indexOf(txtarray[i])+1}) Unweighted Score: ${Math.round(1000*level_points(txtarray[i]))/1000}\n`
         }
     }
