@@ -18,7 +18,7 @@ module.exports = {
             await interaction.reply({content: "Please enter a valid profile!", ephemeral: true})
         } else {
             var counte = 0
-           /* var far = []
+            /*var far = []
             for(let key in leaderboard) {
                 var df = point(key)
                 var obj = {
