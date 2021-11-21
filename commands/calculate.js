@@ -74,7 +74,7 @@ if(progs) {
                     jkl.push(leaderboard[userprofile].progs[i].name)
                 }
             }
-            if(!txt && !progs && !edit) {
+            if(!txt && !progs) {
                 interaction.reply({content: "What levels/progresses do you want to add to this player?", ephemeral: true})
                 count = 1
             } 
