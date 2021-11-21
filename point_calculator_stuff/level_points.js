@@ -2,7 +2,7 @@ const levels = require("../JSON/levels.json")
 let lol = (level) => {
     var counter = Object.keys(levels).indexOf(level)+1
     let score = 0
-    if(counter-1 > 150) {
+    if(counter > 150) {
       score = 0
     } else {
     if(counter-1 < 50){
