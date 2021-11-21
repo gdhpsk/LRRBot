@@ -33,6 +33,7 @@ option
 .setRequired(false)
 ),
     async execute(interaction, Discord, client) {
+        await interaction.deferReply();
         var jkl = []
         var finaltext = ""
         var finalcount = 0
@@ -87,13 +88,13 @@ if(progs) {
                count = 1
                break;
            } else {
-             /*if(checkDuplicate(txtarray)) {
+             if(checkDuplicate(txtarray)) {
                 interaction.reply({content: `The level **${txtarray[i]}** is already on this list!`, ephemeral: true})
                 count = 1
                 break;
-             } else {*/
+             } else {
                continue;
-            // }
+             }
            }
        }
     }
