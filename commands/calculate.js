@@ -342,7 +342,7 @@ if(progs) {
     }
 }
         playerpoints.sort((a, b) => b - a)
-        finalarray.sort((a, b) => b.pos - a.pos)
+        finalarray.sort((a, b) => a.pos - b.pos)
         for(let i = 0; i < finalarray.length; i++) {
             finaltext += `${finalarray[i].text}`
         } 
