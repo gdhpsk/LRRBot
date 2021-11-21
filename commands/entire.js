@@ -8,7 +8,7 @@ module.exports = {
     async execute(interaction, Discord, client) {
         var txt = ""
         for(const key in levels) {
-            if(Object.keys(levels).indexOf(key) <= Object.keys(levels).indexOf("Final Epilogue")) {
+            if(Object.keys(levels).indexOf(key) <= 149) {
             txt += `${key}, `
             }
         }
