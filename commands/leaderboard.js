@@ -57,12 +57,6 @@ module.exports = {
             } else {
                 txtProgs = "none.\n"
             }
-            for(let i = 0; i < placement.length; i++) {
-                if(placement[i].name == gay) {
-                    counte = i+1
-                    break;
-                }
-            }
             const embed = new Discord.MessageEmbed()
             .setTitle(`${gay}'s profile (${point(gay)} points):`)
             .setDescription(`${nationality}**COMPLETIONS**\n\n${txtList}\n**COMPLETED LEGACY LEVELS**\n\n${txtExtra}\n**PROGRESSES**\n\n${txtProgs}`)
