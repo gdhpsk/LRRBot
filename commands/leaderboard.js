@@ -19,10 +19,10 @@ module.exports = {
         } else {
             var counte = 0
             var far = []
-            for(let i = 0; i < Object.keys(leaderboard).length; i++) {
+            for(let key in leaderboard) {
                 var obj = {
-                    name: Object.keys(leaderboard)[i],
-                    points: point(Object.keys(leaderboard)[i])
+                    name: key,
+                    points: point(key)
                 }
                 far.push(obj)
             }
