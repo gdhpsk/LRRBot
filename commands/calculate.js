@@ -52,7 +52,8 @@ if(progs) {
        var count = 0
 
        function checkDuplicate(value) {
-        let result = false;
+           return (new Set(value)).size !== value.length
+        /*let result = false;
         const s = new Set(value);
         if(value.length !== s.size){
            result = true;
@@ -61,7 +62,7 @@ if(progs) {
            return true
         } else {
           return false
-        }
+        }*/
      }
      if(userprofile) {
         if(!leaderboard[userprofile]){
