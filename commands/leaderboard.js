@@ -61,6 +61,13 @@ module.exports = {
                 if(txtList == "") {
                     txtList = "none.\n"
                 }
+            } else {
+                if(txtExtra == "") {
+                    txtExtra = "none.\n"
+                }
+                if(txtList == "") {
+                    txtList = "none.\n"
+                }
             }
             if(leaderboard[gay].progs[0] != "none" && leaderboard[gay].progs[0]) {
                 for(let i = 0; i < leaderboard[gay].progs.length; i++) {
