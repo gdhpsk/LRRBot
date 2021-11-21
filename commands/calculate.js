@@ -53,18 +53,10 @@ if(progs) {
 
        function checkDuplicate(value) {
         let result = false;
-        for(let i = 0; i < value.length; i++) {
-            for(let x = 0; x < value.length; x++) {
-                if(value[i] == value[x] && i != x) {
-                    result = true
-                    break;
-                }
-            }
-        }
-        /*const s = new Set(value);
+        const s = new Set(value);
         if(value.length !== s.size){
            result = true;
-        }*/
+        }
         if(result) {
            return true
         } else {
