@@ -2,7 +2,7 @@ const Discord = require("discord.js")
 module.exports = {
     name: "interactionCreate",
     async execute(interaction) {
-        if(!interaction.isCommand() || !interaction.channel.permissionsFor(interaction.client.user.id).has("SEND_MESSAGES")) return
+        if(!interaction.isCommand() || !interaction.channel.permissionsFor(interaction.client.user.id).has("USE_APPLICATION_COMMANDS")) return
 	const command = interaction.client.commands.get(interaction.commandName)
 	if(!command) return;
 	try {
