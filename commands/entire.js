@@ -9,7 +9,10 @@ module.exports = {
         var txt = ""
         for(const key in levels) {
             if(Object.keys(levels).indexOf(key) <= 149) {
-            txt += `${key}, `
+                txt += `${key}, `
+                continue;
+            } else {
+                break;
             }
         }
         console.log(txt)
