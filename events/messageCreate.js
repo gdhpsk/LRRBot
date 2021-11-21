@@ -2,6 +2,7 @@
 module.exports = {
     name: "messageCreate",
     execute(message) {
+        if(message.author.bot) return;
         if(message.content.toLowerCase() == "femboy") {
             message.reply("OwO UwU")
         } 
