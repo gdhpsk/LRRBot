@@ -1,7 +1,7 @@
 const fs = require('fs');
 const { Client, Collection } = require('discord.js');
 const Discord = require("discord.js")
-const { token, guildId } = require('./config.json');
+const { guildId } = require('./config.json');
 
 const client = new Client({ partials: ["CHANNEL", "MESSAGE", "REACTION"], intents: ["GUILDS", "GUILD_MESSAGES", "DIRECT_MESSAGES", "GUILD_MESSAGE_REACTIONS", "DIRECT_MESSAGE_REACTIONS", "GUILD_EMOJIS_AND_STICKERS"]});
 
@@ -36,4 +36,4 @@ for(const file of eventFiles) {
 })*/
 
 
-client.login(token);
+client.login(process.env.token);

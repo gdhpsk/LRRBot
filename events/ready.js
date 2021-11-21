@@ -12,7 +12,7 @@ module.exports = {
 	const CLIENT_ID = client.user.id
 	const rest = new REST({
 		version: "9"
-	}).setToken(token);
+	}).setToken(process.env.token);
 
 	(async () => {
 		try {
