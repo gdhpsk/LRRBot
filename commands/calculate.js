@@ -44,16 +44,14 @@ var numbero = 0
 let progsarray = ["none"]
 let txtarray = ["none"]
 if(txt) {
-    txtarray = txt.split(", ")
+    txtarray = new Set(txt.split(", "))
 }
 if(progs) {
     progsarray = progs.split(", ")
 }
        var count = 0
 
-       function checkDuplicate(value) {
-           return (new Set(value)).size !== value.length
-        /*let result = false;
+       function checkDuplicate(value) {let result = false;
         const s = new Set(value);
         if(value.length !== s.size){
            result = true;
@@ -62,7 +60,7 @@ if(progs) {
            return true
         } else {
           return false
-        }*/
+        }
      }
      if(userprofile) {
         if(!leaderboard[userprofile]){
@@ -89,13 +87,13 @@ if(progs) {
                count = 1
                break;
            } else {
-             if(checkDuplicate(txtarray) == true) {
+             /*if(checkDuplicate(txtarray)) {
                 interaction.reply({content: `The level **${txtarray[i]}** is already on this list!`, ephemeral: true})
                 count = 1
                 break;
-             } else {
+             } else {*/
                continue;
-             }
+            // }
            }
        }
     }
