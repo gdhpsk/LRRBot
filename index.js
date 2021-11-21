@@ -30,9 +30,7 @@ for(const file of eventFiles) {
 }
 
 /*client.on("messageCreate", message => {
-	if(message.content.toLowerCase() == "femboy") {
-		message.reply("You're such a kowareta omg")
-	}
+	message.channel.permissionsFor("").has("SEND_MESSAGES")
 })*/
 
 
