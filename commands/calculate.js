@@ -44,7 +44,7 @@ var numbero = 0
 let progsarray = ["none"]
 let txtarray = ["none"]
 if(txt) {
-    txtarray = new Set(txt.split(", "))
+    txtarray = txt.split(", ")
 }
 if(progs) {
     progsarray = progs.split(", ")
@@ -87,13 +87,13 @@ if(progs) {
                count = 1
                break;
            } else {
-             /*if(checkDuplicate(txtarray)) {
+             if((new Set(txtarray)).size !== txtarray.length) {
                 interaction.reply({content: `The level **${txtarray[i]}** is already on this list!`, ephemeral: true})
                 count = 1
                 break;
-             } else {*/
+             } else {
                continue;
-            // }
+             }
            }
        }
     }
