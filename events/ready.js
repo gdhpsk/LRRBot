@@ -8,6 +8,7 @@ module.exports = {
     once: true,
     execute(client, commands) {
         console.log('Ready!');
+		client.user.setActivity("LRR Demonslist Server", {type: "WATCHING"})
 
 	const CLIENT_ID = client.user.id
 	const rest = new REST({
