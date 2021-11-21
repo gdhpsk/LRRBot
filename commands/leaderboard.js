@@ -18,6 +18,7 @@ module.exports = {
             await interaction.reply({content: "Please enter a valid profile!", ephemeral: true})
         } else {
             var counte = 0
+            var gay = interaction.options.getString("user")
             var far = []
             for(let key in leaderboard) {
                 var df = point(key)
@@ -36,7 +37,6 @@ module.exports = {
             }
             var ku = 0
             var uk = 0
-            var gay = interaction.options.getString("user")
             var txtList = ""
             var txtExtra = ""
             var txtProgs = ""
