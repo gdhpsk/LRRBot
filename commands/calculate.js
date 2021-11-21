@@ -89,7 +89,7 @@ if(progs) {
                break;
            } else {
              if(checkDuplicate(txtarray)) {
-                interaction.reply({content: `The level **${txtarray[i]}** is already on this list!`, ephemeral: true})
+                interaction.reply({content: `The level **${txtarray.indexOf(txtarray[i])}** is already on this list!`, ephemeral: true})
                 count = 1
                 break;
              } else {
