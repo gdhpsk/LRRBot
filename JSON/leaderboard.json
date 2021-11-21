@@ -2424,6 +2424,10 @@
             {
                 "name": "Hatred",
                 "percent": 61
+            },
+            {
+                "name": "Dolos",
+                "percent": 51
             }
         ]
     },
@@ -2898,7 +2902,8 @@
             "Zettabyte",
             "Our Fountain",
             "Precipitance",
-            "Reverence"
+            "Reverence",
+            "MELTDOWN"
         ],
         "progs": [
             {
@@ -3156,7 +3161,10 @@
             "Niflheim",
             "Incipient",
             "Acu",
-            "Cosmorush 21"
+            "Cosmorush 21",
+            "Hypersonic",
+            "Retention"
+
         ],
         "progs": [
             "none"
@@ -3714,7 +3722,8 @@
             "Awakening Horus",
             "Alcatraz",
             "Artificial Ideology",
-            "Mandragora"
+            "Mandragora",
+            "The Antimatter"
         ],
         "progs": [
             "none"
@@ -5686,15 +5695,6 @@
             "none"
         ]
     },
-    "Crumche": {
-        "levels": [
-            "Retention",
-            "Hypersonic"
-        ],
-        "progs": [
-            "none"
-        ]
-    },
     "etceteraAngel": {
         "levels": [
             "Retention"
@@ -6311,7 +6311,9 @@
             "Virtual Collapse",
             "Novalis",
             "Concaved Memories",
-            "PLUS ULTRA"
+            "PLUS ULTRA",
+            "EnvY",
+            "Niflheim"
         ],
         "progs": [
             {
@@ -8675,7 +8677,8 @@
             "NecropoliX",
             "Doop",
             "The Ultimate Phase",
-            "Plasma Pulse III"
+            "Plasma Pulse III",
+            "The Hell Zone"
         ],
         "progs": []
     },
@@ -8708,7 +8711,9 @@
             "SPEEDRUN",
             "Elliptic Curve",
             "Esencia",
-            "Frightful Melody"
+            "Frightful Melody",
+            "Galactus",
+            "Heat Wave"
         ],
         "progs": [
             "none"
@@ -10559,7 +10564,7 @@
         "progs": [
             {
                 "name": "Digital Descent",
-                "percent": "66"
+                "percent": "70"
             }
         ]
     },
@@ -11369,8 +11374,9 @@
             "Killbot"
         ],
         "progs": [
-            { "name": "Black Blizzard",
-              "percent": 56
+            { 
+            "name": "Black Blizzard",
+              "percent": 63
             }
         ]    
     },
@@ -11477,7 +11483,8 @@
     },
     "electric55": {       
          "levels": [
-            "Artificial Dream"
+            "Artificial Dream",
+            "Niflheim"
         ],
         "progs": [
             "none"
@@ -11487,7 +11494,8 @@
          "levels": [
             "Awakening Horus",
             "Retention",
-            "Artificial Dream"
+            "Artificial Dream",
+            "Daydream"
         ],
         "progs": [
             "none"
@@ -11509,6 +11517,10 @@
          {
              "name": "Fusion Z",
              "percent": 70
+         },
+         {
+             "name": "Black Blizzard",
+             "percent": 56
          }   
         ]
     },
@@ -11559,6 +11571,30 @@
     "ConiZX": {
         "levels": [
             "Allegiance"
+        ],
+        "progs": [
+            "none"
+        ]
+    },
+    "geometryplays3": {
+        "levels": [
+            "Fingerdash v3"
+        ],
+        "progs": [
+            "none"
+        ]
+    },
+    "ELLVO": {
+        "levels": [
+            "Black Blizzard"
+        ],
+        "progs": [
+            "none"
+        ]
+    },
+    "Cedric22": {
+        "levels": [
+            "Aftermath"
         ],
         "progs": [
             "none"

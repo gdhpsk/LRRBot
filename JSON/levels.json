@@ -338,15 +338,15 @@
                 "hertz": "60"
             },
             {
-                "name": "hombiebearcat",
-                "percent": 66,
-                "link": "https://youtu.be/aj_8O0oB9fI",
-                "hertz": "60"
-            },
-            {
                 "name": "Samamba",
                 "percent": 86,
                 "link": "https://www.youtube.com/watch?v=zw5LFOTuMuY",
+                "hertz": "60"
+            },
+            {
+                "name": "hombiebearcat",
+                "percent": 70,
+                "link": "https://www.youtube.com/watch?v=joXN6s6-0Yo",
                 "hertz": "60"
             }
         ]
@@ -468,7 +468,7 @@
             },
             {
                 "name": "Hikudo",
-                "percent": "68",
+                "percent": 68,
                 "link": "https://www.youtube.com/watch?v=Wi4-8eAUScI",
                 "hertz": "60"
             }
@@ -1170,6 +1170,12 @@
                 "percent": 71,
                 "link": "https://www.youtube.com/watch?v=KsphcQBdTpk",
                 "hertz": "M"
+            },
+            {
+                "name": "Carla Veloso",
+                "percent": 51,
+                "link": "https://youtu.be/pOV-DvvmQYs",
+                "hertz": "60"
             }
         ]
     },
@@ -1781,7 +1787,12 @@
                 "name": "cobrablitz",
                 "link": "https://www.youtube.com/watch?v=palv2dcZ2IU&lc=Ugw6WEOVTrQCh0wpB314AaABAg",
                 "hertz": "60"
-            }   
+            },
+            {
+                "name": "ELLVO",
+                "link": "https://www.youtube.com/watch?v=ojiOQaZPjH4",
+                "hertz": "60"
+            } 
         ],
         "progresses": [
             {
@@ -1804,8 +1815,8 @@
             },
             {
                 "name": "Demonbeater17",
-                "percent": 56,
-                "link": "https://youtu.be/Q8nMhkTT8So",
+                "percent": 63,
+                "link": "https://www.youtube.com/watch?v=XD8CmiSSp8Q&ab_channel=Demonbeater17",
                 "hertz": "M"
             },
             {
@@ -1836,6 +1847,12 @@
                 "name": "InkZie",
                 "percent": 77,
                 "link": "https://youtu.be/bIqgwH75nps",
+                "hertz": "60"
+            },
+            {
+                "name": "CrispyKey",
+                "percent": 56,
+                "link": "https://www.youtube.com/watch?v=joXN6s6-0Yo",
                 "hertz": "60"
             }
         ]
@@ -2331,6 +2348,11 @@
                 "name": "Biprex",
                 "link": "https://www.youtube.com/watch?v=3z88gIKcBxw",
                 "hertz": "M"
+            },
+            {
+                "name": "Cedric22",
+                "link": "https://m.youtube.com/watch?v=-tDtqyg0twI&t",
+                "hertz": "M"
             }
         ],
         "progresses": [
@@ -2690,6 +2712,11 @@
                 "name": "Storm957",
                 "link": "https://www.youtube.com/watch?v=F7PLx_NFot0",
                 "hertz": "M"
+            },
+            {
+                "name": "ddddr",
+                "link": "https://www.youtube.com/watch?v=1M9pspQztXg",
+                "hertz": "75"
             }
         ],
             "progresses": [
@@ -4115,6 +4142,11 @@
                 "name": "JordGHubsplazz",
                 "link": "https://www.youtube.com/watch?v=4H5_WPUntQE",
                 "hertz": "M"
+            },
+            {
+                "name": "Dreamlight",
+                "link": "https://www.youtube.com/watch?v=zgKbz_9hR7Y",
+                "hertz": "75"
             }
         ],
         "progresses": [
@@ -7499,6 +7531,16 @@
                 "name": "pakahot",
                 "link": "https://www.youtube.com/watch?v=RLRVCKrvgFI",
                 "hertz": "60"
+            },
+            {
+                "name": "electric55",
+                "link": "https://youtu.be/Hm7J7pM2fn0",
+                "hertz": "60"
+            },
+            {
+                "name": "ddddr",
+                "link": "https://www.youtube.com/watch?v=IjYevam1Xbk",
+                "hertz": "75"
             }
             
         ],
@@ -7928,6 +7970,11 @@
                 "name": "AVALANCHA 121",
                 "link": "https://www.youtube.com/watch?v=9x127qTsSyw",
                 "hertz": "75"
+            },
+            {
+                "name": "JRain",
+                "link": "https://www.youtube.com/watch?v=ZA54l3_r0dU",
+                "hertz": "60"
             }
         ],
         "progresses": [
@@ -8052,6 +8099,11 @@
                 "name": "Coopersuper",
                 "link": "https://www.youtube.com/watch?v=uxc3IMf6YCs",
                 "hertz": "M"
+            },
+            {
+                "name": "WhiteEmerald",
+                "link": "https://www.youtube.com/watch?v=u2aN3Xcl5s4",
+                "hertz": "M"
             }
         ],
         "progresses": [
@@ -8167,6 +8219,11 @@
             {
                 "name": "MiniWheatDuo",
                 "link": "https://youtu.be/lxx-6A3HJe4",
+                "hertz": "M"
+            },
+            {
+                "name": "WhiteEmerald",
+                "link": "https://www.youtube.com/watch?v=jZxnyLUAAI0",
                 "hertz": "M"
             }
         ],
@@ -8537,6 +8594,11 @@
                 "name": "venfy",
                 "link": "https://www.youtube.com/watch?v=zR9jTwrNOyk",
                 "hertz": "M"
+            },
+            {
+                "name": "geometryplays3",
+                "link": "https://www.youtube.com/watch?v=QPfk6_z-yK8",
+                "hertz": "60"
             }
 
         ],
@@ -8579,6 +8641,11 @@
                 "name": "Flavyola64",
                 "link": "https://youtu.be/PgPwU9-QLhc",
                 "hertz": "M"
+            },
+            {
+                "name": "Rochipher",
+                "link": "https://www.youtube.com/watch?v=Kr6qtNCaF0E",
+                "hertz": "60"
             }
         ],
         "progresses":[
@@ -14705,9 +14772,14 @@
                     "link": "https://youtu.be/yC28lRY86QI",
                     "hertz": "M"
                 },
-                {
+                { 
                     "name": "dreamtide",
                     "link": "https://youtu.be/bs2-QivphzQ",
+                    "hertz": "M"
+                },
+                { 
+                    "name": "Thonyell",
+                    "link": "https://www.youtube.com/watch?v=RDtgMz-EA9g",
                     "hertz": "M"
                 }
             ],
