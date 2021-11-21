@@ -33,7 +33,6 @@ option
 .setRequired(false)
 ),
     async execute(interaction, Discord, client) {
-        await interaction.deferReply();
         var jkl = []
         var finaltext = ""
         var finalcount = 0
