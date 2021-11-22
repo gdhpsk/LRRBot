@@ -14,7 +14,7 @@ module.exports = {
     async execute(interaction, Discord, client) {
         var numarray = []
         const embed = new Discord.MessageEmbed()
-        if(!levels[interaction.options.getString("level")]) {
+        if(!levels[interaction.options.getString("level")] && interaction.options.getString("level") != "generate") {
             await interaction.reply({content: "Please enter a valid level!", ephemeral: true})
         } else {
             var act = interaction.options.getString("level")
