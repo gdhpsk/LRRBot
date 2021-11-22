@@ -17,7 +17,14 @@ module.exports = {
         if(!levels[interaction.options.getString("level")]) {
             await interaction.reply({content: "Please enter a valid level!", ephemeral: true})
         } else {
-            var gay = interaction.options.getString("level")
+            var act = interaction.options.getString("level")
+            var gay = ""
+            if(act = "generate") {
+                var um = Math.floor(Math.random() * Object.keys(levels).length-1)
+                gay = Object.keys(levels)[um]
+            } else {
+                gay = act
+            }
             if(levels[gay].minimumPercent) {
                 embed.setFooter(`The minimum percentage requirement for this level is ${levels[gay].minimumPercent}%.\nNumber of points given (completion): ${points(gay)}`)
             }
