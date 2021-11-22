@@ -14,11 +14,11 @@ module.exports = {
         .setRequired(true)
     ),
      async execute(interaction, Discord, client) {
-        got("https://gdlrrlistcf-4.gdhpsk.repl.co/JS/leaderboard.json").then(async (response) => {
+        got("https://gdlrrlistcf-4.gdhpsk.repl.co/JS/leaderboard.json").then(response => {
         var leaderboard = JSON.parse(response.body)
         
         if(!leaderboard[interaction.options.getString("user")]) {
-             await interaction.reply({content: "Please enter a valid profile!", ephemeral: true})
+              interaction.reply({content: "Please enter a valid profile!", ephemeral: true})
         } else {
             var counte = 0
             var gay = interaction.options.getString("user")
@@ -87,7 +87,7 @@ module.exports = {
             .setTitle(`#${counte} - ${gay}'s profile (${point(gay)} points):`)
             .setDescription(`${nationality}**COMPLETIONS**\n\n${txtList}\n**COMPLETED LEGACY LEVELS**\n\n${txtExtra}\n**PROGRESSES**\n\n${txtProgs}`)
             .setFooter(`${ku} completions, ${uk} progresses`)
-            await interaction.reply({embeds: [embed]})
+             interaction.reply({embeds: [embed]})
         }
     })
     }
