@@ -19,7 +19,7 @@ module.exports = {
         } else {
             var act = interaction.options.getString("level")
             var gay = ""
-            if(act = "generate") {
+            if(act == "generate") {
                 var um = Math.floor(Math.random() * Object.keys(levels).length-1)
                 gay = Object.keys(levels)[um]
             } else {
