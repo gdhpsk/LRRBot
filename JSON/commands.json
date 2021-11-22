@@ -77,7 +77,7 @@
             "Required Arguments": [
                {
                    "name": "level",
-                   "description": "What level on the LRR Demonslist do you want the bot to show? This is case-sensitive. Example: /list level:Aronia"
+                   "description": "What level on the LRR Demonslist do you want the bot to show? This is case-sensitive. You can also use the world \"generate\", and it'll generate a random level. Example 1: /list level:Aronia\nExample 2: /list level:generate"
                }
             ]
         },
