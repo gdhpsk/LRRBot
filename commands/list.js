@@ -22,6 +22,7 @@ module.exports = {
             if(act == "generate") {
                 var um = Math.floor(Math.random() * Object.keys(levels).length-1)
                 gay = Object.keys(levels)[um]
+                embed.setAuthor(`${interaction.user.tag} generated a level!`)
             } else {
                 gay = act
             }

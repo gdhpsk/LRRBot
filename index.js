@@ -28,8 +28,8 @@ for(const file of eventFiles) {
 	}
 }
 
-/*client.on("messageCreate", message => {
-	message.channel.type == ""
+/*client.on("interaction", async message => {
+	message.user.tag
 })*/
 
 
