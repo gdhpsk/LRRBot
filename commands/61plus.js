@@ -18,9 +18,8 @@ module.exports = {
             await interaction.reply({content: "Please enter a valid level!", ephemeral: true})
         } else {
             var gay = interaction.options.getString("level")
-            if(levels[gay].minimumPercent) {
-                embed.setFooter(`The minimum percentage requirement for this level is ${levels[gay].minimumPercent}%.\nEstimated Difficulty: ${levels[gay].ranking}`)
-            }
+                embed.setFooter(`Estimated Difficulty: ${levels[gay].ranking}`)
+            
             var txt = "**COMPLETIONS**\n\n"
             for(let i = 0; i < levels[gay].list.length; i++) {
                 var list = levels[gay].list[i]
