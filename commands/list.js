@@ -14,11 +14,15 @@ module.exports = {
     async execute(interaction, Discord, client) {
         var numarray = []
         const embed = new Discord.MessageEmbed()
-        if(!levels[interaction.options.getString("level")] && interaction.options.getString("level") != "generate") {
+        if(!levels[interaction.options.getString("level")] && interaction.options.getString("level") != "generate" && !isNaN(interaction.options.getString("level"))) {
             await interaction.reply({content: "Please enter a valid level!", ephemeral: true})
         } else {
             var act = interaction.options.getString("level")
             var gay = ""
+            if(!isNaN(act)) {
+                if(!Object.keys(levels)[parseInt(act)-1]) return interaction.reply("That level placement does not exist!")
+                gay = Object.keys(levels)[parseInt(act)-1]
+            } else {
             if(act == "generate") {
                 var um = Math.floor(Math.random() * Object.keys(levels).length-1)
                 gay = Object.keys(levels)[um]
@@ -26,6 +30,7 @@ module.exports = {
             } else {
                 gay = act
             }
+        }
             if(levels[gay].minimumPercent) {
                 embed.setFooter(`The minimum percentage requirement for this level is ${levels[gay].minimumPercent}%.\nNumber of points given (completion): ${points(gay)}`)
             }
