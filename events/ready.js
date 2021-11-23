@@ -23,10 +23,10 @@ module.exports = {
 				})
 				console.log("Slash Commands worked (globally)");
 			} else {
-				await rest.put(Routes.applicationGuildCommands(CLIENT_ID, guildId), {
-					body: commands
-				})
-				console.log("Slash Commands worked (locally)");
+				//await rest.put(Routes.applicationGuildCommands(CLIENT_ID, guildId), {
+				//	body: commands
+				//})
+				//console.log("Slash Commands worked (locally)");
 			}
 		} catch (err) {
 			if(err) console.log(err)
