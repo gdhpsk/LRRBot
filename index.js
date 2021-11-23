@@ -29,7 +29,7 @@ for(const file of eventFiles) {
 }
 
 /*client.on("interaction", async message => {
-	message.user.tag
+	message.user.bot
 })*/
 
 
