@@ -2903,7 +2903,8 @@
             "Our Fountain",
             "Precipitance",
             "Reverence",
-            "MELTDOWN"
+            "MELTDOWN",
+            "HURRICANE"
         ],
         "progs": [
             {
@@ -4803,6 +4804,7 @@
         ]
     },
     "Seany": {
+        "nationality": "United_States",
         "levels": [
             "Artificial Dream",
             "ICE Carbon Diablo X"
@@ -8304,6 +8306,7 @@
         ]
     },
     "Sledgehammer135": {
+        "nationality": "Russia",
         "levels": [
             "Excessive Compliment",
             "Artificial Dream",
@@ -9408,7 +9411,8 @@
             "Epsilon",
             "Plasma Pulse Finale",
             "kowareta",
-            "Erebus"
+            "Erebus",
+            "Sonic Wave"
         ],
         "progs": [
             {
@@ -10913,6 +10917,7 @@
         ]
     },
     "ItzFacuXY": {
+        "nationality": "Argentina",
         "levels": [
             "Retention",
             "Idols"
@@ -11006,6 +11011,7 @@
         ]
     },
     "Draconyx": {
+        "nationality": "United_States",
         "levels": [],
         "progs": [
             {
@@ -11134,6 +11140,7 @@
         ]
     },
     "Xxcrolax": {
+        "nationality": "Argentina",
         "levels": [],
         "progs": [
             {
@@ -11319,6 +11326,7 @@
         ]    
     },
         "SeaWolfMikes": {
+            "nationality": "Canada",
          "levels": [
             "Hatred"
         ],
