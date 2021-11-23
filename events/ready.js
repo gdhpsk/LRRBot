@@ -18,9 +18,9 @@ module.exports = {
 	(async () => {
 		try {
 			if(process.env.ENV === "production") {
-				await rest.put(Routes.applicationCommands(CLIENT_ID), {
-					body: commands
-				})
+				//await rest.put(Routes.applicationCommands(CLIENT_ID), {
+					//body: commands
+				//})
 				console.log("Slash Commands worked (globally)");
 			} else {
 				await rest.put(Routes.applicationGuildCommands(CLIENT_ID, guildId), {
