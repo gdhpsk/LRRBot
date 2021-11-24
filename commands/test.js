@@ -6,6 +6,6 @@ module.exports = {
     .setName("test")
     .setDescription("testing api fetch"),
     async execute(interaction, Discord, client) {
-        interaction.reply(api["Aronia"].toString())
+        interaction.reply(`api["Aronia"].toString()`)
     }
 }
