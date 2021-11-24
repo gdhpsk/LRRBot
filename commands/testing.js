@@ -5,6 +5,7 @@ module.exports = {
     .setName("testing")
     .setDescription("testing"),
     async execute(interaction, Discord, client) {
-        interaction.reply("hello")
+        const obj = require("../fetch_api")
+        interaction.reply(obj)
     }
 }
