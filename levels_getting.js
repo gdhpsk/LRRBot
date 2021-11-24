@@ -21,4 +21,4 @@ for(const key in levels) {
 }
 
 
-module.exports = obj
+module.exports = obj[0].list

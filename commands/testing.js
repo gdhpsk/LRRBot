@@ -6,6 +6,6 @@ module.exports = {
     .setDescription("testing"),
     async execute(interaction, Discord, client) {
         var obj = require("../levels_getting");
-        interaction.reply(obj[0].list)
+        interaction.reply(obj)
     }
 }
