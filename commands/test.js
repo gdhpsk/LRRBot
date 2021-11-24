@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require("@discordjs/builders")
-const lolxd = require("../levels_fetch_api")
+const lolxd = require("../levels_fetch_test")
 
 module.exports = {
     data: new SlashCommandBuilder()
