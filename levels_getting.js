@@ -19,4 +19,4 @@ for(let i = 0; i < Object.keys(levels).length; i++) {
         progresses: txt[1]
     }
 }
-module.exports = "LOL"
+module.exports = obj
