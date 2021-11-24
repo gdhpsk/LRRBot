@@ -1,5 +1,4 @@
 const { SlashCommandBuilder } = require("@discordjs/builders")
-const lolxd = require("../JSON/levels.json")
 
 module.exports = {
     data: new SlashCommandBuilder()
