@@ -32,7 +32,7 @@ for(const key in levels) {
           })  
     }
     obj.push({
-        name: objectval.name,
+        name: "Aronia",
         ytcode: objectval.ytcode,
         minimumPercent: txt[0],
         publisher: objectval.publisher,
@@ -95,4 +95,4 @@ got("https://gdlrrlistcf-4.gdhpsk.repl.co/JS/legacy.json").then(response => {
 })*/
 
 
-module.exports = obj.length
+module.exports = obj[0].name
