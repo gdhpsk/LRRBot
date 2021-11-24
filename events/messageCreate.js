@@ -21,9 +21,6 @@ module.exports = {
         if(message.content.toLowerCase().includes("fluked")) { 
             message.reply("https://cdn.discordapp.com/attachments/908882016345395241/911898128448364544/You.gif")
         }
-        if(message.content == "-test") {
-            const re = require("../levels_getting")
-            message.reply(JSON.stringify(JSON.parse(re).Aronia))
-        }
+        
     }
 }
