@@ -4,6 +4,7 @@ var levels;
 got("https://gdlrrlistcf-4.gdhpsk.repl.co/JS/mainlist.json").then(response => {
     levels = JSON.parse(response.body)
 })
+
 for(const key in levels) {
     var objectval = levels[key]
     var txt = [`${objectval.minimumPercent}`, undefined]
@@ -94,4 +95,4 @@ got("https://gdlrrlistcf-4.gdhpsk.repl.co/JS/legacy.json").then(response => {
 })*/
 
 
-module.exports = obj[0].name
+module.exports = levels["Aronia"].name
