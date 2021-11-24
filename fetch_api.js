@@ -95,4 +95,4 @@ got("https://gdlrrlistcf-4.gdhpsk.repl.co/JS/legacy.json").then(response => {
 })*/
 
 
-module.exports = levels["Aronia"].name
+module.exports = obj.length
