@@ -95,4 +95,4 @@ got("https://gdlrrlistcf-4.gdhpsk.repl.co/JS/legacy.json").then(response => {
 })*/
 
 
-module.exports = obj[0].name
+module.exports = "obj[0].name"
