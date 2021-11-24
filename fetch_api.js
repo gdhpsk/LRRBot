@@ -92,5 +92,5 @@ got("https://gdlrrlistcf-4.gdhpsk.repl.co/JS/legacy.json").then(response => {
 })*/
 
 
-
+obj[0]
 module.exports = "obj[0].name"
