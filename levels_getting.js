@@ -1,4 +1,4 @@
-const got = require("got")
+
 const levels = require("./JSON/levels.json")
 var obj = {}
 for(let i = 0; i < Object.keys(levels).length; i++) {
