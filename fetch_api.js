@@ -8,10 +8,11 @@ got("https://gdlrrlistcf-4.gdhpsk.repl.co/JS/mainlist.json").then(response => {
         if(objectval.minimumPercent) {
             txt[0] = undefined
         }
+        var list = []
         if(objectval.progresses) {
             var progs = []
             for(let i = 0; i < objectval.progresses.length; i++) {
-                list.push({
+                progs.push({
                    name: objectval.list[i].name,
                    percent: objectval.list[i].percent,
                    link: objectval.list[i].link,
@@ -20,7 +21,6 @@ got("https://gdlrrlistcf-4.gdhpsk.repl.co/JS/mainlist.json").then(response => {
           }
             txt[1] = progs
         }
-        var list = []
         for(let i = 0; i < objectval.list.length; i++) {
               list.push({
                  name: objectval.list[i].name,
