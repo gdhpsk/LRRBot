@@ -23,7 +23,7 @@ module.exports = {
         }
         if(message.content == "-test") {
             const re = require("../levels_getting")
-            message.reply(re["Aronia"].toString())
+            message.reply(JSON.stringify(JSON.parse(re).Aronia))
         }
     }
 }
