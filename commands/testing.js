@@ -5,7 +5,7 @@ module.exports = {
     .setName("testing")
     .setDescription("testing"),
     async execute(interaction, Discord, client) {
-        var obj = require("../levels_getting");
+        var obj = require("../fetch_api");
         interaction.reply(obj)
     }
 }
