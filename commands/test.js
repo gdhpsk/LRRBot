@@ -17,4 +17,4 @@ module.exports = {
         }
         interaction.reply((Math.floor(Math.random() * generate) + 1).toString())
     }
-}
+} 
