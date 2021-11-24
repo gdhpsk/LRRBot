@@ -33,13 +33,13 @@ got("https://gdlrrlistcf-4.gdhpsk.repl.co/JS/mainlist.json").then(response => {
             ytcode: objectval.ytcode,
             minimumPercent: txt[0],
             publisher: objectval.publisher,
-            list: objectval.list,
+            list: list,
             progresses: txt[1]
         })
     }
 })
 
-got("https://gdlrrlistcf-4.gdhpsk.repl.co/JS/extended.json").then(response => {
+/*got("https://gdlrrlistcf-4.gdhpsk.repl.co/JS/extended.json").then(response => {
     var levels = JSON.parse(response.body)
     for(const key in levels) {
         var objectval = levels[key]
@@ -89,8 +89,8 @@ got("https://gdlrrlistcf-4.gdhpsk.repl.co/JS/legacy.json").then(response => {
             list: objectval.list
         })
     }
-})
+})*/
 
 
 
-module.exports = obj[0].name
+module.exports = "obj[0].name"
