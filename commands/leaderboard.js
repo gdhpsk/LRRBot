@@ -22,7 +22,7 @@ module.exports = {
             var gay = interaction.options.getString("user")
             var far = []
             for(let key in leaderboard) {
-                var df = await test(key)
+                var df = point(key)
                 var obj = {
                     name: key,
                     points: df
@@ -82,7 +82,7 @@ module.exports = {
                 txtProgs = "none.\n"
             }
             const embed = new Discord.MessageEmbed()
-            .setTitle(`#${counte} - ${gay}'s profile (${point(gay)} points):`)
+            .setTitle(`#${counte} - ${gay}'s profile (${await test(gay)} points):`)
             .setDescription(`${nationality}**COMPLETIONS**\n\n${txtList}\n**COMPLETED LEGACY LEVELS**\n\n${txtExtra}\n**PROGRESSES**\n\n${txtProgs}`)
             .setFooter(`${ku} completions, ${uk} progresses`)
             await interaction.reply({embeds: [embed]})
