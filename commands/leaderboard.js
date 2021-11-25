@@ -18,25 +18,20 @@ module.exports = {
         if(!leaderboard[interaction.options.getString("user")]) {
             await interaction.reply({content: "Please enter a valid profile!", ephemeral: true})
         } else {
-            await interaction.deferReply({ephemeral: true})
             var counte = 0
             var gay = interaction.options.getString("user")
-            var far = []
+           var sorted =  Object.keys(leaderboard).sort((a, b) => point(a) - point(b))
+            /*var far = []
             for(let key in leaderboard) {
-                var df = await test(key)
+                var df = point(key)
                 var obj = {
                     name: key,
                     points: df
                 }
                 far.push(obj)
             }
-            far.sort((a, b) => b.points - a.points)
-            for(let i = 0; i < far.length; i++) {
-                if(far[i].name == gay) {
-                    counte = i+1
-                    break;
-                }
-            }
+            far.sort((a, b) => b.points - a.points)*/
+            counte = sorted.indexOf(gay)+1
             var ku = 0
             var uk = 0
             var txtList = ""
