@@ -1,13 +1,20 @@
 const got = require("got")
+const fetch = require("node-fetch")
 var obj = []
-var lol = () => {
-    got("https://gdlrrlistcf-4.gdhpsk.repl.co/JS/extended.json").then(response => {
-        for(let i = 0; i < 8; i++) {
-            obj.push({number: i})
-        }
-    })
-    return "KK"
-}   
+
+const body = {a: 1};
+
+const response = await fetch('https://gdlrrlistcf-4.gdhpsk.repl.co/JS/extended.json', {
+	method: 'post',
+	body: JSON.stringify(body),
+	headers: {'Content-Type': 'application/json'}
+});
+
+const data = await response.json()
+
+const msg = data["Aronia"].name
+
+
 
 /*for(const key in levels) {
                 var objectval = levels[key]
@@ -95,4 +102,4 @@ got("https://gdlrrlistcf-4.gdhpsk.repl.co/JS/legacy.json").then(response => {
         })
     }
 })*/
-module.exports = lol()
+module.exports = msg
