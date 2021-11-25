@@ -81,7 +81,7 @@ module.exports = {
             .setTitle(`#${counte} - ${gay}'s profile (${await test(gay)} points):`)
             .setDescription(`${nationality}**COMPLETIONS**\n\n${txtList}\n**COMPLETED LEGACY LEVELS**\n\n${txtExtra}\n**PROGRESSES**\n\n${txtProgs}`)
             .setFooter(`${ku} completions, ${uk} progresses`)
-            await interaction.editReply({embeds: [embed]})
+            await interaction.reply({embeds: [embed]})
             console.log(await test("Biprex"))
         }
     }
