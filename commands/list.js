@@ -1,5 +1,4 @@
 const { SlashCommandBuilder } = require("@discordjs/builders")
-const levels = require("../JSON/levels.json")
 const points = require("../point_calculator_stuff/levels_point_calculator")
 
 module.exports = {
@@ -12,6 +11,7 @@ module.exports = {
     .setDescription("What level do you want me to display?")
     .setRequired(true)),
     async execute(interaction, Discord, client) {
+        const levels = await require("../fetch_api")("list")
         var numarray = []
         const embed = new Discord.MessageEmbed()
         if(!levels[interaction.options.getString("level")] && interaction.options.getString("level") != "generate") {

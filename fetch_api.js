@@ -5,19 +5,19 @@ var object = new Object()
 let lol = async (type) => {
     const body = {a: 1};
     if(type == "list") {
-    const response = await fetch('https://gdlrrlistcf-4.gdhpsk.repl.co/JS/mainlist.json', {
+    const response = await fetch('https://jsonfetch.gdhpsk.repl.co/JSON/mainlist.json', {
 	    method: 'post',
 	    body: JSON.stringify(body),
 	    headers: {'Content-Type': 'application/json'}
     });
     const data = await response.json();
-    const response2 = await fetch('https://gdlrrlistcf-4.gdhpsk.repl.co/JS/extended.json', {
+    const response2 = await fetch('https://jsonfetch.gdhpsk.repl.co/JSON/extended.json', {
 	    method: 'post',
 	    body: JSON.stringify(body),
 	    headers: {'Content-Type': 'application/json'}
     });
     const data2 = await response2.json();
-    const response3 = await fetch('https://gdlrrlistcf-4.gdhpsk.repl.co/JS/legacy.json', {
+    const response3 = await fetch('https://jsonfetch.gdhpsk.repl.co/JSON/legacy.json', {
 	    method: 'post',
 	    body: JSON.stringify(body),
 	    headers: {'Content-Type': 'application/json'}
@@ -60,7 +60,7 @@ let lol = async (type) => {
     return object
 
 } else if(type == "61plus") {
-    const response = await fetch('https://gdlrrlistcf-4.gdhpsk.repl.co/JS/61plus.json', {
+    const response = await fetch('https://jsonfetch.gdhpsk.repl.co/JSON/61plus.json', {
 	    method: 'post',
 	    body: JSON.stringify(body),
 	    headers: {'Content-Type': 'application/json'}
@@ -68,7 +68,7 @@ let lol = async (type) => {
     const data = await response.json();
     return data
 } else if(type == "leaderboard") {
-    const response = await fetch('https://gdlrrlistcf-4.gdhpsk.repl.co/JS/leaderboard.json', {
+    const response = await fetch('https://jsonfetch.gdhpsk.repl.co/JSON/leaderboard.json', {
 	    method: 'post',
 	    body: JSON.stringify(body),
 	    headers: {'Content-Type': 'application/json'}
