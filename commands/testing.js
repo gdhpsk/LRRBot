@@ -6,10 +6,16 @@ module.exports = {
     .setName("testing")
     .setDescription("testing"),
     async execute(interaction, Discord, client) {
-        const response = await fetch('https://gdlrrlistcf-4.gdhpsk.repl.co/JS/extended.json');
-        const data = await response.json();
-        var object = new Object(data)
-        console.log(object[0].name)
+        const body = {a: 1};
+
+const response = await fetch('https://gdlrrlistcf-4.gdhpsk.repl.co/JS/extended.json', {
+	method: 'post',
+	body: JSON.stringify(body),
+	headers: {'Content-Type': 'application/json'}
+});
+const data = await response.json();
+
+console.log(data);
         
        await interaction.reply("KK")
     }
