@@ -1,10 +1,15 @@
 const got = require("got")
 var obj = []
-got("https://gdlrrlistcf-4.gdhpsk.repl.co/JS/mainlist.json").then(response => {
-    got("https://gdlrrlistcf-4.gdhpsk.repl.co/JS/extended.json").then(response2 => {
-        got("https://gdlrrlistcf-4.gdhpsk.repl.co/JS/legacy.json").then(response3 => {
-            var levels = JSON.parse(response.body)
-            for(const key in levels) {
+var lol = () => {
+    got("https://gdlrrlistcf-4.gdhpsk.repl.co/JS/extended.json").then(response => {
+        for(let i = 0; i < 8; i++) {
+            obj.push({number: i})
+        }
+    })
+    return obj[0].number
+}   
+
+/*for(const key in levels) {
                 var objectval = levels[key]
                 var txt = [`${objectval.minimumPercent}`, undefined]
                 if(objectval.minimumPercent) {
@@ -38,12 +43,7 @@ got("https://gdlrrlistcf-4.gdhpsk.repl.co/JS/mainlist.json").then(response => {
                     list: list,
                     progresses: txt[1]
                 })
-            }
-            module.exports = obj[0].name
-        })
-    })
-})
-
+            }*/
 /*got("https://gdlrrlistcf-4.gdhpsk.repl.co/JS/extended.json").then(response => {
     var levels = JSON.parse(response.body)
     for(const key in levels) {
@@ -95,3 +95,4 @@ got("https://gdlrrlistcf-4.gdhpsk.repl.co/JS/legacy.json").then(response => {
         })
     }
 })*/
+module.exports = lol()
