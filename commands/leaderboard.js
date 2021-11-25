@@ -17,12 +17,13 @@ module.exports = {
     async execute(interaction, Discord, client) {
         if(!leaderboard[interaction.options.getString("user")]) {
             await interaction.reply({content: "Please enter a valid profile!", ephemeral: true})
-        } else {   
+        } else {
+            
             var counte = 0
             var gay = interaction.options.getString("user")
             var far = []
             for(let key in leaderboard) {
-                var df = point(key)
+                var df = test(key)
                 var obj = {
                     name: key,
                     points: df
