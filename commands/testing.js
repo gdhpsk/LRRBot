@@ -7,6 +7,7 @@ module.exports = {
     .setDescription("testing"),
     async execute(interaction, Discord, client) {
         var api = await require("../fetch_api")("leaderboard")
-       await interaction.reply(`${Object.keys(api).toString()}`)
+        console.log(Object.keys(api).toString())
+       await interaction.reply(`it worked`)
     }
 }
