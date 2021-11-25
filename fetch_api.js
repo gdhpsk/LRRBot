@@ -3,8 +3,8 @@ var obj = []
 var object = new Object()
 
 let lol = async (type) => {
-    if(type == "list") {
     const body = {a: 1};
+    if(type == "list") {
     const response = await fetch('https://gdlrrlistcf-4.gdhpsk.repl.co/JS/mainlist.json', {
 	    method: 'post',
 	    body: JSON.stringify(body),
