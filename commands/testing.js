@@ -6,17 +6,8 @@ module.exports = {
     .setName("testing")
     .setDescription("testing"),
     async execute(interaction, Discord, client) {
-        const body = {a: 1};
-
-const response = await fetch('https://gdlrrlistcf-4.gdhpsk.repl.co/JS/extended.json', {
-	method: 'post',
-	body: JSON.stringify(body),
-	headers: {'Content-Type': 'application/json'}
-});
-const data = await response.json();
-
-console.log(JSON.stringify(data["Caution"].list))
+        var api = require("../fetch_api")
         
-       await interaction.reply("KK")
+       await interaction.reply(api)
     }
 }
