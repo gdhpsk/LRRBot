@@ -18,7 +18,7 @@ let lol = async () => {
             ytcode: objectval.ytcode,
             minimumPercent: objectval.minimumPercent,
             publisher: objectval.publisher,
-            list: list,
+            list: objectval.list,
             progresses: objectval.progresses
         })
     }
