@@ -102,4 +102,4 @@ got("https://gdlrrlistcf-4.gdhpsk.repl.co/JS/legacy.json").then(response => {
         })
     }
 })*/
-module.exports = msg
+module.exports = start()
