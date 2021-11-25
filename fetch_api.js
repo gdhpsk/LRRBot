@@ -14,7 +14,7 @@ let lol = async () => {
         var objectval = data2[key]
         var txt = [`${objectval.minimumPercent}`, undefined]
         obj.push({
-            name: "Aronia",
+            name: objectval.name,
             ytcode: objectval.ytcode,
             minimumPercent: objectval.minimumPercent,
             publisher: objectval.publisher,
