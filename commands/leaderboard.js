@@ -14,7 +14,9 @@ module.exports = {
         .setRequired(true)
     ),
     async execute(interaction, Discord, client) {
-        const test = require("../point_calculator_stuff/testing_point_calc")
+        function alr(play) {
+            return await require("../point_calculator_stuff/testing_point_calc")(play)
+        }
         if(!leaderboard[interaction.options.getString("user")]) {
             await interaction.reply({content: "Please enter a valid profile!", ephemeral: true})
         } else {
@@ -22,7 +24,7 @@ module.exports = {
             var gay = interaction.options.getString("user")
             var far = []
             for(let key in leaderboard) {
-                var df = await test(key)
+                var df = point(key)
                 var obj = {
                     name: key,
                     points: df
@@ -82,7 +84,7 @@ module.exports = {
                 txtProgs = "none.\n"
             }
             const embed = new Discord.MessageEmbed()
-            .setTitle(`#${counte} - ${gay}'s profile (${await test(gay)} points):`)
+            .setTitle(`#${counte} - ${gay}'s profile (${alr(gay)} points):`)
             .setDescription(`${nationality}**COMPLETIONS**\n\n${txtList}\n**COMPLETED LEGACY LEVELS**\n\n${txtExtra}\n**PROGRESSES**\n\n${txtProgs}`)
             .setFooter(`${ku} completions, ${uk} progresses`)
             await interaction.reply({embeds: [embed]})
