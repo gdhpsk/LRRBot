@@ -84,6 +84,7 @@ module.exports = {
             .setTitle(`#${counte} - ${gay}'s profile (${point(gay)} points):`)
             .setDescription(`${nationality}**COMPLETIONS**\n\n${txtList}\n**COMPLETED LEGACY LEVELS**\n\n${txtExtra}\n**PROGRESSES**\n\n${txtProgs}`)
             .setFooter(`${ku} completions, ${uk} progresses`)
+            interaction.deferReply()
             await interaction.reply({embeds: [embed]})
         }
     }
