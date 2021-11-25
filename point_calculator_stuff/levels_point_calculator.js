@@ -1,4 +1,4 @@
-const levels = require("./JSON/levels.json")
+const levels = require("../JSON/levels.json")
 let lol = (level) => {
     var counter = Object.keys(levels).indexOf(level)+1
     if(counter < 76) {

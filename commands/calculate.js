@@ -3,7 +3,6 @@ const levels = require("../JSON/levels.json")
 const leaderboard = require("../JSON/leaderboard.json")
 const level_points = require("../point_calculator_stuff/level_points")
 const prog_points = require("../point_calculator_stuff/leaderboard_progs_calculator")
-const player_points = require("../leaderboard_point_calculator")
 
 module.exports = {
     data: new SlashCommandBuilder()

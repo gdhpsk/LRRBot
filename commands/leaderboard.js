@@ -1,7 +1,7 @@
 const { SlashCommandBuilder } = require("@discordjs/builders")
 const leaderboard = require("../JSON/leaderboard.json")
 const levels = require("../JSON/levels.json")
-const point = require("../leaderboard_point_calculator")
+const point = require("../point_calculator_stuff/leaderboard_point_calculator")
 
 module.exports = {
     data: new SlashCommandBuilder()

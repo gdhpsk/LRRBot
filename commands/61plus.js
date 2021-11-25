@@ -1,6 +1,6 @@
 const { SlashCommandBuilder } = require("@discordjs/builders")
 const levels = require("../JSON/61hertz+.json")
-const points = require("../levels_point_calculator")
+const points = require("../point_calculator_stuff/levels_point_calculator")
 
 module.exports = {
     data: new SlashCommandBuilder()
