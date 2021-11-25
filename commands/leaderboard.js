@@ -18,12 +18,12 @@ module.exports = {
         if(!leaderboard[interaction.options.getString("user")]) {
             await interaction.reply({content: "Please enter a valid profile!", ephemeral: true})
         } else {
-            
+            await interaction.deferReply({ephemeral: true})
             var counte = 0
             var gay = interaction.options.getString("user")
             var far = []
             for(let key in leaderboard) {
-                var df = test(key)
+                var df = await test(key)
                 var obj = {
                     name: key,
                     points: df
