@@ -1,8 +1,7 @@
+const leaderboard = require("../JSON/leaderboard.json")
+const level = require("../JSON/levels.json")
 
-
-let lol = async (player) => {
-    const leaderboard = await require("../fetch_api")("leaderboard")
-    const level = await require("../fetch_api")("list")
+let lol = (player) => {
     var numberOfRecords = 0
     var levels = 0
     var progs = 0
