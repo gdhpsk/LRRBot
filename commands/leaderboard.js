@@ -1,7 +1,4 @@
 const { SlashCommandBuilder } = require("@discordjs/builders")
-const leaderboard = require("../JSON/leaderboard.json")
-const levels = require("../JSON/levels.json")
-const point = require("../point_calculator_stuff/leaderboard_point_calculator")
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -14,6 +11,9 @@ module.exports = {
         .setRequired(true)
     ),
     async execute(interaction, Discord, client) {
+        const point = await require("../point_calculator_stuff/leaderboard_point_calculator")
+        const levels = await require("../fetch_api")("list")
+        const leaderboard = await require("../fetch_api")("leaderboard")
         if(!leaderboard[interaction.options.getString("user")]) {
             await interaction.reply({content: "Please enter a valid profile!", ephemeral: true})
         } else {
