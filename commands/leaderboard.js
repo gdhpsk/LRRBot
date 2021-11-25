@@ -21,7 +21,7 @@ module.exports = {
             var gay = interaction.options.getString("user")
             var far = []
             for(let key in leaderboard) {
-                var df = point(key)
+                var df = await require("../point_calculator_stuff/testing_point_calc")(key)
                 var obj = {
                     name: key,
                     points: df
