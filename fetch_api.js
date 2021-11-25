@@ -4,13 +4,10 @@ var obj = []
 
 const body = {a: 1};
 
-const response = await fetch('https://gdlrrlistcf-4.gdhpsk.repl.co/JS/extended.json', {
-	method: 'post',
-	body: JSON.stringify(body),
-	headers: {'Content-Type': 'application/json'}
-});
+
 async function start() {
-    const data = await response.json()
+    const response = await fetch('https://gdlrrlistcf-4.gdhpsk.repl.co/JS/extended.json');
+    const data = await response.json();
     return data["Aronia"].name
 }
 
