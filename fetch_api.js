@@ -14,5 +14,4 @@ let lol = async () => {
     return JSON.stringify(data["Caution"].list)
 }
 
-var txt = `${lol()}`
-module.exports = txt
+module.exports = lol()
