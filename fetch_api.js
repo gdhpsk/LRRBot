@@ -5,8 +5,8 @@ var lol = () => {
         for(let i = 0; i < 8; i++) {
             obj.push({number: i})
         }
+        return obj[0].number
     })
-    return obj[0].number
 }   
 
 /*for(const key in levels) {
