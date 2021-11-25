@@ -68,7 +68,7 @@ let lol = async (type) => {
     const data = await response.json();
     return data
 } else if(type == "leaderboard") {
-    const response = await fetch('https://gdlrrlistcf-4.gdhpsk.repl.co/JS/leaderboard.json', {
+    const response = await fetch('https://gdlrrlist.cf/JS/leaderboard.json', {
 	    method: 'post',
 	    body: JSON.stringify(body),
 	    headers: {'Content-Type': 'application/json'}
