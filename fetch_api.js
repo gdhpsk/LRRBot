@@ -1,5 +1,6 @@
 const fetch = require("node-fetch")
 var obj = []
+var object = new Object()
 
 let lol = async () => {
     const body = {a: 1};
@@ -22,7 +23,7 @@ let lol = async () => {
     });
     const data3 = await response3.json();
     
-    for(const key in data) {
+   /* for(const key in data) {
         var objectval = data[key]
         var txt = [`${objectval.minimumPercent}`, undefined]
         obj.push({
@@ -55,8 +56,21 @@ let lol = async () => {
             publisher: objectval.publisher,
             list: objectval.list
         })
+    }*/
+    for(const key in data) {
+        var objectval = data[key]
+        var txt = [`${objectval.minimumPercent}`, undefined]
+        object[key] = {
+            name: objectval.name,
+            ytcode: objectval.ytcode,
+            minimumPercent: objectval.minimumPercent,
+            publisher: objectval.publisher,
+            list: objectval.list,
+            progresses: objectval.progresses
+        }
+        continue;
     }
-    return obj
+    return object
 
 }
 

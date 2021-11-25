@@ -7,6 +7,6 @@ module.exports = {
     .setDescription("testing"),
     async execute(interaction, Discord, client) {
         var api = await require("../fetch_api") 
-       await interaction.reply(`${api.length.toString()}, ${api[api.length-1].name}`)
+       await interaction.reply(`${api["Aronia"].name}`)
     }
 }
