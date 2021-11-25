@@ -14,9 +14,6 @@ module.exports = {
         .setRequired(true)
     ),
     async execute(interaction, Discord, client) {
-        function alr(play) {
-            return await require("../point_calculator_stuff/testing_point_calc")(play)
-        }
         if(!leaderboard[interaction.options.getString("user")]) {
             await interaction.reply({content: "Please enter a valid profile!", ephemeral: true})
         } else {
