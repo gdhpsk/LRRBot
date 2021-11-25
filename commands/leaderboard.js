@@ -16,7 +16,8 @@ module.exports = {
     async execute(interaction, Discord, client) {
         if(!leaderboard[interaction.options.getString("user")]) {
             await interaction.reply({content: "Please enter a valid profile!", ephemeral: true})
-        } else {
+        } else {   
+            await interaction.deferReply()
             var counte = 0
             var gay = interaction.options.getString("user")
             var far = []
@@ -84,7 +85,6 @@ module.exports = {
             .setTitle(`#${counte} - ${gay}'s profile (${point(gay)} points):`)
             .setDescription(`${nationality}**COMPLETIONS**\n\n${txtList}\n**COMPLETED LEGACY LEVELS**\n\n${txtExtra}\n**PROGRESSES**\n\n${txtProgs}`)
             .setFooter(`${ku} completions, ${uk} progresses`)
-            await interaction.deferReply()
             await interaction.reply({embeds: [embed]})
         }
     }
