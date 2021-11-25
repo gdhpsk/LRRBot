@@ -15,7 +15,7 @@ const response = await fetch('https://gdlrrlistcf-4.gdhpsk.repl.co/JS/extended.j
 });
 const data = await response.json();
 
-console.log(data);
+console.log(JSON.parse(data["Caution"].list))
         
        await interaction.reply("KK")
     }
