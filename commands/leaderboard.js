@@ -22,7 +22,7 @@ module.exports = {
             var gay = interaction.options.getString("user")
             var far = []
             for(let key in leaderboard) {
-                var df = point(key)
+                var df = await test(key)
                 var obj = {
                     name: key,
                     points: df
