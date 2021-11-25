@@ -8,7 +8,7 @@ module.exports = {
     async execute(interaction, Discord, client) {
         const response = await fetch('https://gdlrrlistcf-4.gdhpsk.repl.co/JS/extended.json');
         const data = await response.json();
-        console.log(JSON.parse(data))
+        console.log(new Object(data))
         
        await interaction.reply("KK")
     }
