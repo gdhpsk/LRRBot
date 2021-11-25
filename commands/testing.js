@@ -5,8 +5,10 @@ module.exports = {
     .setName("testing")
     .setDescription("testing"),
     async execute(interaction, Discord, client) {
-        const obj = require("../fetch_api");
+        const response = await fetch('https://gdlrrlistcf-4.gdhpsk.repl.co/JS/extended.json');
+        const data = await response.json();
+        console.log(data)
         
-       await interaction.reply({content: obj})
+       await interaction.reply("KK")
     }
 }
