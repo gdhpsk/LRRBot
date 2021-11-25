@@ -43,7 +43,7 @@ module.exports = {
                        numarray.push(ar[0])
                 }
             }
-            if(levels[gay].progresses) {
+            if(levels[gay].progresses && Object.keys(levels).indexOf(gay) < 75) {
                 if(levels[gay].progresses[0] != "none") {
                     txt += "**PROGRESSES**\n\n"
             for(let i = 0; i < levels[gay].progresses.length; i++) {
