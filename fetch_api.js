@@ -9,10 +9,10 @@ const response = await fetch('https://gdlrrlistcf-4.gdhpsk.repl.co/JS/extended.j
 	body: JSON.stringify(body),
 	headers: {'Content-Type': 'application/json'}
 });
-
-const data = await response.json()
-
-const msg = data["Aronia"].name
+async function start() {
+    const data = await response.json()
+    return data["Aronia"].name
+}
 
 
 
