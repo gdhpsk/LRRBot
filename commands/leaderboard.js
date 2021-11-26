@@ -29,7 +29,7 @@ module.exports = {
             Object.values(far).sort((a, b) => a.points - b.points)
             for(const key in far) {
                 if(key == gay) {
-                    counte = i+1
+                    counte = Object.keys(levels).indexOf(key)+1
                     break;
                 }
             }
