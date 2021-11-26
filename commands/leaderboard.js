@@ -64,7 +64,7 @@ module.exports = {
                 if(txtExtra == "") {
                     txtExtra = "none.\n"
                 }
-                if(txtList == "") {
+                if(txtList == "") { 
                     txtList = "none.\n"
                 }
             }
