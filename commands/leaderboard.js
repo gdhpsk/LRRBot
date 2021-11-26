@@ -20,27 +20,22 @@ module.exports = {
             var counte = ""
             var gay = interaction.options.getString("user")
             var far = []
-            var far2 = {}
             for(let key in leaderboard) {
                 var df = point(key)
                 if(df != 0) {
-                    far2[key] = {
-                        points: df
-                    }
-                /*far.push({
+                far.push({
                     name: key,
                     points: df
-                })*/
+                })
             }
             }
-            Object.values(far2).sort((a, b) => a.points - b.points)
-            //far.sort((a, b) => b.points - a.points)
-           // for(let i = 0; i < far.length; i++) {
-                //if(far[i].name == gay) {
-                    counte = `#${Object.keys(far2).indexOf(gay)+1} - `
-                   // break;
-               // }
-           // }
+            far.sort((a, b) => b.points - a.points)
+           for(let i = 0; i < far.length; i++) {
+                if(far[i].name == gay) {
+                    counte = `#${i+1} - `
+                    break;
+                }
+            }
             var ku = 0
             var uk = 0
             var txtList = ""
