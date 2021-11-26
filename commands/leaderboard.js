@@ -33,10 +33,11 @@ module.exports = {
                 })*/
             }
             }
+            Object.values(far2).sort((a, b) => a.points - b.points)
             //far.sort((a, b) => b.points - a.points)
            // for(let i = 0; i < far.length; i++) {
                 //if(far[i].name == gay) {
-                    counte = `#${far2[gay].points} - `
+                    counte = `#${Object.keys(far2).indexOf(gay)+1} - `
                    // break;
                // }
            // }
