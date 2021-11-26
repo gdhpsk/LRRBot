@@ -19,18 +19,16 @@ module.exports = {
         } else {
             var counte = 0
             var gay = interaction.options.getString("user")
-            var far = []
+            var far = { }
             for(let key in leaderboard) {
                 var df = point(key)
-                var obj = {
-                    name: key,
+                far[key] = {
                     points: df
                 }
-                far.push(obj)
             }
-            far.sort((a, b) => b.points - a.points)
-            for(let i = 0; i < far.length; i++) {
-                if(far[i].name == gay) {
+            Object.values(far).sort((a, b) => a.points - b.points)
+            for(const key in far) {
+                if(key == gay) {
                     counte = i+1
                     break;
                 }
