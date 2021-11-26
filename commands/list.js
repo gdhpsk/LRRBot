@@ -11,7 +11,7 @@ module.exports = {
     .setDescription("What level do you want me to display?")
     .setRequired(true)),
     async execute(interaction, Discord, client) {
-        const levels = await require("../fetch_api")("list")
+        const levels = require("../JSON/levels.json")
         var numarray = []
         const embed = new Discord.MessageEmbed()
         if(!levels[interaction.options.getString("level")] && interaction.options.getString("level") != "generate") {
