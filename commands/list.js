@@ -9,11 +9,40 @@ module.exports = {
     option
     .setName("level")
     .setDescription("What level do you want me to display?")
-    .setRequired(true)),
+    .setRequired(false)),
     async execute(interaction, Discord, client) {
         const levels = require("../JSON/levels.json")
         var numarray = []
         const embed = new Discord.MessageEmbed()
+        if(!interaction.options.getString("level")) {
+            var array = []
+            var page = 25
+            var fr = ""
+            for(let i = 0; i < Math.floor(Object.keys(levels).length/page); i++) {
+                var addition = 0
+                if(!Number.isInteger(Object.keys(levels).length/page)) {
+                    addition = 1
+                }
+                var txt = ""
+                var number = page * i
+                for(let j = number; j < (number + page); j++) {
+                    let smt = [`${j+1}. `]
+                    if(j > 149) {
+                        smt[0] = ""
+                    }
+                    txt += `[${smt[0]}${Object.values(levels)[j].name} by ${Object.values(levels)[j].publisher}](https://www.youtube.com/watch?v=${Object.values(levels)[j].ytcode})\n`
+                }
+                array[i].setDescription(txt).setTitle("Low Refresh Rate List Levels").setFooter(`Page ${i+1} / ${Math.floor(Object.keys(levels).length / page) + addition}`)
+            }
+            if(array.length*page != Object.keys(levels).length) {
+                for(let j = (array.length * page); j < Object.keys(levels).length; j++) {
+                    fr += `[${Object.values(levels)[j].name} by ${Object.values(levels)[j].publisher}](https://www.youtube.com/watch?v=${Object.values(levels)[j].ytcode})\n`
+                }
+                array.push(new Discord.MessageEmbed().setDescription(fr).setTitle("Low Refresh Rate List Levels").setFooter(`Page ${i+1} / ${Math.floor(Object.keys(levels).length / page)}`))
+            }
+            interaction.reply({embeds: [array], ephemeral: true})
+
+        } else {
         if(!levels[interaction.options.getString("level")] && interaction.options.getString("level") != "generate") {
             await interaction.reply({content: "Please enter a valid level!", ephemeral: true})
         } else {
@@ -73,4 +102,5 @@ module.exports = {
             await interaction.reply({embeds: [embed]})
     }
         }
+    }
     }
