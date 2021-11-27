@@ -51,8 +51,8 @@ module.exports = {
         var whyudo = 0
 
         client.on('messageReactionAdd', async (reaction, user) => {
-            if (reaction.message.partial) await reaction.message.fetchReply();
-            if (reaction.partial) await reaction.fetch();
+           // if (reaction.message.partial) await reaction.message.fetchReply();
+           // if (reaction.partial) await reaction.fetchReply();
             if (user.bot) return;
             if (!reaction.message.guild) return;
  

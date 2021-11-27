@@ -29,7 +29,7 @@ for(const file of eventFiles) {
 }
 
 /*client.on("messageReactionAdd", async (reaction, user) => {
-	reaction.
+	reaction.message
 })*/
 
 
