@@ -41,37 +41,9 @@ module.exports = {
                 array.push(new Discord.MessageEmbed().setDescription(fr).setTitle("Low Refresh Rate List Levels"))
             }
             await interaction.reply({embeds: [array[0]]})
-
-            let embedMessage = await interaction.fetchReply()
-
-            const emoji = ["⏪", "⏩"]
-        for(let i = 0; i < emoji.length; i++) {
-            embedMessage.react(emoji[i])
-        }
-        var whyudo = 0
-
-        client.on('messageReactionAdd', async (reaction, user) => {
-           // if (reaction.message.partial) await reaction.message.fetchReply();
-           // if (reaction.partial) await reaction.fetchReply();
-            if (user.bot) return;
-            if (!reaction.message.guild) return;
- 
-            if (reaction.message.channel.id == interaction.channel.id) {
-                if (reaction.emoji.name === emoji[0]) {
-                    whyudo = whyudo > 0 ? --whyudo : array.length - 1;
-                    reaction.users.remove(user)
-                   await embedMessage.editReply(array[whyudo]) 
-                }
-                if (reaction.emoji.name === emoji[1]) {
-                    whyudo = whyudo + 1 < array.length ? ++whyudo : 0;
-                    reaction.users.remove(user)
-                   await smt.editReply(array[whyudo])
-                }
-            } else {
-                return;
+            for(let i = 0; i < array.length-1; i++) {
+                await interaction.followUp({embeds: [array[i+1]]})
             }
- 
-        });
         } else {
         if(!levels[interaction.options.getString("level")] && interaction.options.getString("level") != "generate") {
             await interaction.reply({content: "Please enter a valid level!", ephemeral: true})
