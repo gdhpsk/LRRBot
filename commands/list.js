@@ -9,11 +9,6 @@ module.exports = {
     option
     .setName("level")
     .setDescription("What level do you want me to display?")
-    .setRequired(false))
-    .addIntegerOption((option) => 
-    option
-    .setName("placement")
-    .setDescription("What level do you want me to display?")
     .setRequired(false)),
     async execute(interaction, Discord, client) {
         const levels = require("../JSON/levels.json")
@@ -102,9 +97,6 @@ module.exports = {
         }
         if(txt.length > 4000) {
             txt = `Number of 61hz> records: ${numarray.filter(v => parseInt(v) < 61).length}\n\nNumber of 61-75hz records: ${numarray.filter(v => parseInt(v) > 60).length}\n\nNumber of Mobile records: ${numarray.filter(v => v == "Mobile").length}\n\nNumber of Points Given: ${points(gay)}\n\nLink to the website: https://gdlrrlist.cf/${gg}.php`
-         }
-         if(!interaction.options.getString("level") && interaction.options.getString("placement")) {
-             gay = Object.keys(levels)[interaction.options.getString("placement")]
          }
             embed.setTitle(`#${Object.keys(levels).indexOf(gay)+1} - ${gay} by ${levels[gay].publisher}`)
             embed.setURL(`https://www.youtube.com/watch?v=${levels[gay].ytcode}`)
