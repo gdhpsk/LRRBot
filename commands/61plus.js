@@ -10,10 +10,18 @@ module.exports = {
     option
     .setName("level")
     .setDescription("What level do you want me to display?")
-    .setRequired(true)),
+    .setRequired(false)),
     async execute(interaction, Discord, client) {
         var numarray = []
         const embed = new Discord.MessageEmbed()
+        if(!interaction.options.getString("level")) {
+            var txt = ""
+            for(const key in levels) {
+                txt = `[${key} by ${levels[key].publisher} (Placement: ${levels[key].ranking})](https://www.youtube.com/watch?v=${levels[key].ytcode})`
+            }
+            embed.setTitle("61hertz+ LRR List Levels").setDescription(txt)
+            interaction.reply({embeds: [embed]})
+        }
         if(!levels[interaction.options.getString("level")]) {
             await interaction.reply({content: "Please enter a valid level!", ephemeral: true})
         } else {

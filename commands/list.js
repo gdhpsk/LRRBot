@@ -65,7 +65,7 @@ module.exports = {
                 var list = levels[gay].list[i]
                 var ar = [`${list.hertz}hz`]
                 if(list.name == "Removed") {
-                    txt = `Removed${list.link}`
+                    txt = `Removed ${list.link}`
                 } else {
                     if(list.hertz == "M") {
                         ar[0] = "Mobile"
