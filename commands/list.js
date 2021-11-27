@@ -41,7 +41,7 @@ module.exports = {
                 }
                 array.push(new Discord.MessageEmbed().setDescription(fr).setTitle("Low Refresh Rate List Levels").setFooter(`Page ${Math.floor(Object.keys(levels).length / page)+1} / ${Math.floor(Object.keys(levels).length / page)+1}`))
             }
-            interaction.reply({embeds: [array], ephemeral: true})
+            interaction.reply({embeds: [array[0]], ephemeral: true})
 
         } else {
         if(!levels[interaction.options.getString("level")] && interaction.options.getString("level") != "generate") {
