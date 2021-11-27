@@ -39,7 +39,7 @@ module.exports = {
                 for(let j = (array.length * page); j < Object.keys(levels).length; j++) {
                     fr += `[${Object.values(levels)[j].name} by ${Object.values(levels)[j].publisher}](https://www.youtube.com/watch?v=${Object.values(levels)[j].ytcode})\n`
                 }
-                array.push(new Discord.MessageEmbed().setDescription(fr).setTitle("Low Refresh Rate List Levels").setFooter(`Page ${i+1} / ${Math.floor(Object.keys(levels).length / page)}`))
+                array.push(new Discord.MessageEmbed().setDescription(fr).setTitle("Low Refresh Rate List Levels").setFooter(`Page ${j+1} / ${Math.floor(Object.keys(levels).length / page)}`))
             }
             interaction.reply({embeds: [array], ephemeral: true})
 
