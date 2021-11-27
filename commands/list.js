@@ -32,15 +32,15 @@ module.exports = {
                     }
                     txt += `[${smt[0]}${Object.values(levels)[j].name} by ${Object.values(levels)[j].publisher}](https://www.youtube.com/watch?v=${Object.values(levels)[j].ytcode})\n`
                 }
-                array.push(new Discord.MessageEmbed().setDescription(txt).setTitle("Low Refresh Rate List Levels").setFooter(`Page ${i+1} / ${Math.floor(Object.keys(levels).length / page) + addition}`))
+                array.push(new Discord.MessageEmbed().setDescription(txt).setTitle("Low Refresh Rate List Levels"))
             }
             if(array.length*page != Object.keys(levels).length) {
                 for(let j = (array.length * page); j < Object.keys(levels).length; j++) {
                     fr += `[${Object.values(levels)[j].name} by ${Object.values(levels)[j].publisher}](https://www.youtube.com/watch?v=${Object.values(levels)[j].ytcode})\n`
                 }
-                array.push(new Discord.MessageEmbed().setDescription(fr).setTitle("Low Refresh Rate List Levels").setFooter(`Page ${Math.floor(Object.keys(levels).length / page)+1} / ${Math.floor(Object.keys(levels).length / page)+1}`))
+                array.push(new Discord.MessageEmbed().setDescription(fr).setTitle("Low Refresh Rate List Levels"))
             }
-            interaction.reply({embeds: [array[0]], ephemeral: true})
+            interaction.reply({embeds: [array], ephemeral: true})
 
         } else {
         if(!levels[interaction.options.getString("level")] && interaction.options.getString("level") != "generate") {
