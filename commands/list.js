@@ -23,7 +23,6 @@ module.exports = {
                 if(!Number.isInteger(Object.keys(levels).length/page)) {
                     addition = 1
                 }
-                array.push(new Discord.MessageEmbed())
                 var txt = ""
                 var number = page * i
                 for(let j = number; j < (number + page); j++) {
