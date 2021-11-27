@@ -28,8 +28,8 @@ for(const file of eventFiles) {
 	}
 }
 
-/*client.on("interaction", async message => {
-	message.isApplicationCommand()
+/*client.on("messageReactionAdd", async (reaction, user) => {
+	reaction.
 })*/
 
 
