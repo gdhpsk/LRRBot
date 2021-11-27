@@ -356,9 +356,9 @@ var bool = interaction.options.getBoolean("weighted")
         finalarray.sort((a, b) => a.pos - b.pos)
         for(let i = 0; i < finalarray.length; i++) {
             if(finalarray[i].level == false) {
-                finaltext += `${i+1}. ${finalarray[i].text}|Truescore: ${Math.round(1000*(Math.pow(level_points(Object.keys(levels)[finalarray[i].pos-1]), Math.pow(0.95, i))))/1000}), Math.pow(0.95, i))))/1000}\n`
+                finaltext += `${i+1}. ${finalarray[i].text}|Truescore: ${Math.round(1000*(Math.pow(level_points(Object.keys(levels)[finalarray[i].pos-1]), Math.pow(0.95, i))))/1000}\n`
             } else {
-                finaltext += `${i+1}. ${finalarray[i].text}|Truescore: ${Math.round(1000*(Math.pow(prog_points(Object.keys(levels)[finalarray[i].pos-1], finalarray[i].prog), Math.pow(0.95, i))))/1000}), Math.pow(0.95, i))))/1000}\n`
+                finaltext += `${i+1}. ${finalarray[i].text}|Truescore: ${Math.round(1000*(Math.pow(prog_points(Object.keys(levels)[finalarray[i].pos-1], finalarray[i].prog), Math.pow(0.95, i))))/1000}\n`
             }
         } 
         let weightedScore = playerpoints.reduce(
