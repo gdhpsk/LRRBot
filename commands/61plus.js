@@ -17,7 +17,7 @@ module.exports = {
         if(!interaction.options.getString("level")) {
             var txt = ""
             for(const key in levels) {
-                txt = `[${key} by ${levels[key].publisher} (Placement: ${levels[key].ranking})](https://www.youtube.com/watch?v=${levels[key].ytcode})`
+                txt += `[${key} by ${levels[key].publisher} (Placement: ${levels[key].ranking})](https://www.youtube.com/watch?v=${levels[key].ytcode})\n`
             }
             embed.setTitle("61hertz+ LRR List Levels").setDescription(txt)
             interaction.reply({embeds: [embed]})
