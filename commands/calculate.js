@@ -340,12 +340,14 @@ if(progs) {
         }
     }
 }
+var bool = interaction.options.getBoolean("weighted")
         playerpoints.sort((a, b) => b - a)
         finalarray.sort((a, b) => a.pos - b.pos)
         for(let i = 0; i < finalarray.length; i++) {
-            finaltext += `${i+1}. ${finalarray[i].text}|Truescore: ${Math.round(1000*(Math.pow(playerpoints[i], Math.pow(0.95, i))))/1000}\n`
+            for(let j = 0; j < playerpoints.length; j++) {
+                finaltext += `${i+1}. ${finalarray[i].text}|Truescore: ${Math.round(1000*(Math.pow(playerpoints[j], Math.pow(0.95, i))))/1000}\n`
+            }
         } 
-        var bool = interaction.options.getBoolean("weighted")
         let weightedScore = playerpoints.reduce(
             (sum, currentValue, index) => sum + Math.pow(currentValue, Math.pow(0.95, index)),0);
             if(finaltext.length > 4000) {
