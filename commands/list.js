@@ -40,9 +40,9 @@ module.exports = {
                 }
                 array.push(new Discord.MessageEmbed().setDescription(fr).setTitle("Low Refresh Rate List Levels"))
             }
-            await interaction.reply({embeds: [array[0]]})
+            await interaction.reply({embeds: [array[0]], ephemeral: true})
             for(let i = 0; i < array.length-1; i++) {
-                await interaction.followUp({embeds: [array[i+1]]})
+                await interaction.followUp({embeds: [array[i+1]], ephemeral: true})
             }
         } else {
         if(!levels[interaction.options.getString("level")] && interaction.options.getString("level") != "generate") {
