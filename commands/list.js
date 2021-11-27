@@ -60,7 +60,7 @@ module.exports = {
                 if (reaction.emoji.name === emoji[0]) {
                     whyudo = whyudo > 0 ? --whyudo : array.length - 1;
                     reaction.users.remove(user)
-                   await embedMessage.editReply(array[whyudo])
+                   await embedMessage.editReply(array[whyudo]) 
                 }
                 if (reaction.emoji.name === emoji[1]) {
                     whyudo = whyudo + 1 < array.length ? ++whyudo : 0;
