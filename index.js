@@ -8,7 +8,7 @@ const commandFiles = fs.readdirSync("./commands").filter(file => file.endsWith("
 
 const commands = [];
 
-client.commands = new Collection()
+client.commands = new Collection() 
 
 for(const file of commandFiles) {
 	const command = require(`./commands/${file}`);
