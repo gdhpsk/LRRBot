@@ -21,7 +21,7 @@ module.exports = {
             }
             embed.setTitle("61hertz+ LRR List Levels").setDescription(txt)
             interaction.reply({embeds: [embed]})
-        }
+        } else {
         if(!levels[interaction.options.getString("level")]) {
             await interaction.reply({content: "Please enter a valid level!", ephemeral: true})
         } else {
@@ -66,4 +66,5 @@ module.exports = {
             await interaction.reply({embeds: [embed]})
     }
         }
+    }
     }
