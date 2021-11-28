@@ -28,13 +28,13 @@
     "commandUsage": {
         "61plus": {
             "Optional Arguments": [
-                "none"
+                {
+                    "name": "level",
+                    "description": "Input the level name you want. Remember, this is only for levels on the 61hz+ list, and it is case-sensitive. Example: /61plus level: Ragnarok"
+                }
             ],
             "Required Arguments": [
-               {
-                   "name": "level",
-                   "description": "Input the level name you want. Remember, this is only for levels on the 61hz+ list, and it is case-sensitive. Example: /61plus level: Ragnarok"
-               }
+               "none"
             ]
         },
         "calculate": {
@@ -72,13 +72,13 @@
         },
         "list": {
             "Optional Arguments": [
-                "none"
+                {
+                    "name": "level",
+                    "description": "What level on the LRR Demonslist do you want the bot to show? This is case-sensitive. You can also use the world \"generate\", and it'll generate a random level. Example 1: /list level:Aronia\nExample 2: /list level:generate"
+                }
             ],
             "Required Arguments": [
-               {
-                   "name": "level",
-                   "description": "What level on the LRR Demonslist do you want the bot to show? This is case-sensitive. You can also use the world \"generate\", and it'll generate a random level. Example 1: /list level:Aronia\nExample 2: /list level:generate"
-               }
+               "none"
             ]
         },
         "roll": {

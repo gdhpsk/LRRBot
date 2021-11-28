@@ -441,12 +441,12 @@
         ],
         "progs": [
             {
-                "name": "Athanatos",
-                "percent": 72
-            },
-            {
                 "name":"Sonic Wave",
                 "percent": 75
+            },
+            {
+                "name":"Athanatos",
+                "percent": 72
             }
         ]
     },
@@ -553,16 +553,16 @@
                 "percent": 95
             },
             {
-                "name": "Athanatos",
-                "percent": 65
-            },
-            {
                 "name": "EnvY",
                 "percent": 72
             },
             {
                 "name": "Dolos",
                 "percent": 71
+            },
+            {
+                "name": "Athanatos",
+                "percent": 65
             }
         ]
     },
@@ -889,7 +889,8 @@
             "The Hell Inferno",
             "Concaved Memories",
             "Brimtanic Paradise",
-            "The Hell Bird"
+            "The Hell Bird",
+            "Artificial Ideology"
         ],
         "progs": [
             {
@@ -1185,7 +1186,7 @@
         ]
     },
     "Lavaclaw": {
-        "nationality": "United_States",
+        
         "levels": [
             "Phobos",
             "Glide",
@@ -1250,8 +1251,8 @@
             "Aftermath",
             "Cataclysm",
             "Awakening Horus",
-            "Athanatos",
-            "Hypersonic"
+            "Hypersonic",
+            "Athanatos"
         ],
         "progs": [
             "none"
@@ -3724,7 +3725,8 @@
             "Alcatraz",
             "Artificial Ideology",
             "Mandragora",
-            "The Antimatter"
+            "The Antimatter",
+            "Cadrega Mode"
         ],
         "progs": [
             "none"
@@ -6797,7 +6799,8 @@
             "Novalis",
             "Azure Fiesta",
             "Aurora",
-            "SHATTER"
+            "SHATTER",
+            "The Antimatter"
         ],
         "progs": [
             {
@@ -7327,7 +7330,8 @@
             "Hypersonic",
             "Acu",
             "Retention",
-            "PLUS ULTRA"
+            "PLUS ULTRA",
+            "Glide"
         ],
         "progs": [
             "none"
@@ -8514,7 +8518,8 @@
             "Cromulent",
             "EnvY",
             "Hateful Reflection",
-            "Phobos"
+            "Phobos",
+            "Athanatos"
         ],
         "progs": [
             "none"
@@ -8681,7 +8686,8 @@
             "Doop",
             "The Ultimate Phase",
             "Plasma Pulse III",
-            "The Hell Zone"
+            "The Hell Zone",
+            "Frightful Melody"
         ],
         "progs": []
     },
@@ -8854,8 +8860,7 @@
             "The Antimatter",
             "CYCLONE",
             "Panasonic",
-            "ICE Carbon Diablo X",
-            "Athanatos"
+            "ICE Carbon Diablo X"
         ],
         "progs": [
             {
@@ -9498,13 +9503,11 @@
             "SUBVERSIVE",
             "Hypersonic",
             "Void Wave",
-            "Cadrega Mode"
+            "Cadrega Mode",
+            "Omicron"
         ],
         "progs": [
-            {
-                "name": "Omicron",
-                "percent": 82
-            }
+            "none"
         ]
     },
     "Welon": {
@@ -10952,7 +10955,8 @@
             "The Hell Zone",
             "The Hell Inferno",
             "Allegiance",
-            "OOPZ"
+            "OOPZ",
+            "The Hell Dignity"
         ],
         "progs": [
             {
@@ -11528,7 +11532,7 @@
          },
          {
              "name": "Black Blizzard",
-             "percent": 56
+             "percent": 80
          }   
         ]
     },
@@ -11578,7 +11582,8 @@
     },
     "ConiZX": {
         "levels": [
-            "Allegiance"
+            "Allegiance",
+            "Deception Dive"
         ],
         "progs": [
             "none"
@@ -11602,7 +11607,20 @@
     },
     "Cedric22": {
         "levels": [
-            "Aftermath"
+            "Aftermath",
+            "Cataclysm",
+            "Allegiance"
+        ],
+        "progs": [
+        {
+             "name": "Bloodbath",
+             "percent": 90
+        }
+        ]
+    },
+    "Bonezizdum": {
+        "levels": [
+            "Just Dance"
         ],
         "progs": [
             "none"
