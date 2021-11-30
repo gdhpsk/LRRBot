@@ -26,7 +26,7 @@ module.exports = {
             var leaderboard = require("../JSON/leaderboard.json")
             var array = []
             var array2 = []
-            var array3 = []
+            var array3 = ""
             for(let i = 0; i < Object.keys(levels).length; i++) {
                 for(let j = 0; j < Object.values(levels)[i].list.length; j++) {
                     array.push(`${Object.values(levels)[i].list[j].name}, ${Object.values(levels)[i].name}`)
@@ -39,7 +39,7 @@ module.exports = {
             }
             for(let i = 0; i < array.length; i++) {
                 if(!array2.includes(array[i])) {
-                    array3.push(array[i])
+                    array3 += `${array[i]}\n`
                 }
             }
             console.log(array3)
