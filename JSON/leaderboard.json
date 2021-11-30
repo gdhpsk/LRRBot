@@ -784,7 +784,8 @@
             "Ziroikapi",
             "Omicron",
             "Super Probably Level",
-            "Dolos"
+            "Dolos",
+            "ErebuS"
         ],
         "progs": [
             {
@@ -7326,6 +7327,7 @@
         ]
     },
     "iIExtremeDashIi": {
+        "nationality": "Spain",
         "levels": [
             "Hypersonic",
             "Acu",
@@ -8488,6 +8490,7 @@
         ]
     },
     "Storm957": {
+        "nationality": "United_States",
         "levels": [
             "Plasma Pulse III",
             "SUBVERSIVE",
@@ -8518,8 +8521,7 @@
             "Cromulent",
             "EnvY",
             "Hateful Reflection",
-            "Phobos",
-            "Athanatos"
+            "Phobos"
         ],
         "progs": [
             "none"
@@ -8796,7 +8798,7 @@
         "progs": [
             {
                 "name": "kowareta",
-                "percent": 68
+                "percent": 76
             }
         ]
     },
@@ -8860,7 +8862,8 @@
             "The Antimatter",
             "CYCLONE",
             "Panasonic",
-            "ICE Carbon Diablo X"
+            "ICE Carbon Diablo X",
+            "Athanatos"
         ],
         "progs": [
             {
@@ -9753,7 +9756,8 @@
     "hpsk": {
         "nationality": "United_States",
         "levels": [
-            "Super Probably Level"
+            "Super Probably Level",
+            "SHATTER"
         ],
         "progs": [
             {
@@ -11110,7 +11114,8 @@
     "Not Applicable 11": {
         "levels": [
             "Awakening Horus",
-            "UltraSans"
+            "UltraSans",
+            "Arctic Arena"
         ],
         "progs": [
             "none"
@@ -11454,7 +11459,8 @@
     },
     "Meowmasterer": {
         "levels": [
-            "SHATTER"
+            "SHATTER",
+            "Triple Six"
         ],
         "progs": [
             "none"
@@ -11532,7 +11538,7 @@
          },
          {
              "name": "Black Blizzard",
-             "percent": 80
+             "percent": 96
          }   
         ]
     },
@@ -11619,6 +11625,7 @@
         ]
     },
     "Bonezizdum": {
+        "nationality": "United_States",
         "levels": [
             "Just Dance"
         ],
