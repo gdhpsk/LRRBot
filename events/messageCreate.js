@@ -21,6 +21,18 @@ module.exports = {
         if(message.content.toLowerCase().includes("fluked")) { 
             message.reply("https://cdn.discordapp.com/attachments/908882016345395241/911898128448364544/You.gif")
         }
+        if(message.content == "..check") {
+            var levels = require("../JSON/levels.json")
+            var leaderboard = require("../JSON/leaderboard.json")
+            var array = []
+            for(let i = 0; i < Object.keys(levels).length; i++) {
+                for(let j = 0; j < Object.values(levels)[i].list.length; j++) {
+                    array.push(`${Object.values(levels)[i].list[j].name}, ${Object.values(levels)[i].name}`)
+                }
+            }
+            console.log(array)
+            message.channel.send("Worked Successfully")
+        }
         
     }
 }
