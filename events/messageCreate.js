@@ -25,12 +25,24 @@ module.exports = {
             var levels = require("../JSON/levels.json")
             var leaderboard = require("../JSON/leaderboard.json")
             var array = []
+            var array2 = []
+            var array3 = []
             for(let i = 0; i < Object.keys(levels).length; i++) {
                 for(let j = 0; j < Object.values(levels)[i].list.length; j++) {
                     array.push(`${Object.values(levels)[i].list[j].name}, ${Object.values(levels)[i].name}`)
                 }
             }
-            console.log(array)
+            for(let i = 0; i < Object.keys(leaderboard).length; i++) {
+                for(let j = 0; j < Object.values(leaderboard)[i].levels.length; j++) {
+                    array2.push(`${Object.keys(leaderboard)[i]}, ${Object.values(leaderboard)[i].levels[j]}`)
+                }
+            }
+            for(let i = 0; i < array.length; i++) {
+                if(!array2.includes(array[i])) {
+                    array3.push(array[i])
+                }
+            }
+            console.log(array3)
             message.channel.send("Worked Successfully")
         }
         
