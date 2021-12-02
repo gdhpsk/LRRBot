@@ -49,9 +49,9 @@ module.exports = {
             }
             const fs = require("fs")
             fs.appendFile("../fix.txt", f, (err) => {
-                if(err) console.log("This did not work!")
+                if(err) console.log(err)
             })
-            console.log(f)
+           // console.log(f)
             message.channel.send("Worked Successfully")
         }
         
