@@ -43,7 +43,11 @@ module.exports = {
                 }
             }
             array3.sort((a, b) => a.charCodeAt(0) - b.charCodeAt(0))
-            console.log(array3.toString())
+            var f = ""
+            for(let i = 0; i < array3.length; i++) {
+                f += `${array3[i]}\n`
+            }
+            console.log(f)
             message.channel.send("Worked Successfully")
         }
         
