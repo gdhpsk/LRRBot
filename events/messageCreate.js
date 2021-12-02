@@ -47,11 +47,11 @@ module.exports = {
             for(let i = 0; i < array3.length; i++) {
                 f += `${array3[i]}\n`
             }
-            const fs = require("fs")
-            fs.appendFile("../fix.txt", f, (err) => {
+            //const fs = require("fs")
+            /*fs.appendFile("../fix.txt", f, function (err) {
                 if(err) console.log(err)
-            })
-           // console.log(f)
+            })*/
+            console.log(f)
             message.channel.send("Worked Successfully")
         }
         
