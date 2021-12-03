@@ -456,6 +456,11 @@
                 "name": "AGSEcho",
                 "link": "https://youtu.be/PtKFctPnR44",
                 "hertz": "60"
+            },
+            {
+                "name": "Bread",
+                "link": "https://youtu.be/u1hc6BsIK5E",
+                "hertz": "60"
             }
         ],
         "progresses": [
@@ -1521,7 +1526,7 @@
     "ErebuS": {
         "name": "ErebuS",
         "ytcode": "p877rT5gxNA",
-        "minimumPercent": 53,
+        "minimumPercent": 62,
         "publisher": "Platnuu",
         "list": [
             {
@@ -1871,8 +1876,8 @@
             },
             {
                 "name": "InkZie",
-                "percent": 77,
-                "link": "https://youtu.be/bIqgwH75nps",
+                "percent": 83,
+                "link": "https://www.youtube.com/watch?v=aWJWQFuhiIA",
                 "hertz": "60"
             },
             {
@@ -3736,6 +3741,12 @@
                 "name": "Hydrus73",
                 "percent": 73,
                 "link": "https://www.youtube.com/watch?v=fbKgIGfosDQ&ab_channel=Hydrus73",
+                "hertz": "M"
+            },
+            {
+                "name": "Mammyth",
+                "percent": 70,
+                "link": "https://youtu.be/F17QqmhQKjU",
                 "hertz": "M"
             }
         ]
@@ -7612,8 +7623,12 @@
                 "name": "ddddr",
                 "link": "https://www.youtube.com/watch?v=IjYevam1Xbk",
                 "hertz": "75"
-            }
-            
+            },
+            {
+                "name":"Cedric22",
+                "link":"https://m.youtube.com/watch?v=wxg1qre0RB8",
+                "hertz":"M"
+            }            
         ],
         "progresses": [
             {
@@ -8431,6 +8446,11 @@
             {
                 "name":"iIExtremeDashIi",
                 "link": "https://www.youtube.com/watch?v=S-8PPdrbwqQ",
+                "hertz": "M"
+            },
+            {
+                "name":"Thonyell",
+                "link": "https://www.youtube.com/watch?v=-XJhmqn_7U0&t=116s",
                 "hertz": "M"
             }
         ],
@@ -10761,6 +10781,11 @@
                 "name":"Cedric22",
                 "link":"https://www.youtube.com/watch?app=desktop&v=Za4cBNq3-gk",
                 "hertz":"M"
+            },
+            {
+                "name":"Sebas9176",
+                "link":"https://www.youtube.com/watch?v=3I2sr4XIGh4",
+                "hertz":"60"
             }
         ],
         "progresses": [

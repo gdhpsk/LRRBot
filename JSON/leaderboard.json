@@ -330,7 +330,8 @@
             "Digital Disarray",
             "Black Blizzard",
             "Killbot",
-            "Artificial Dream"
+            "Artificial Dream",
+            "Artificial Ascent"
         ],
         "progs": [
             {
@@ -2880,6 +2881,7 @@
         ]
     },
     "Thonyell": {
+        "nationality": "Brazil",
         "levels": [
             "Twisted Tranquility",
             "Audio Extraction",
@@ -2906,7 +2908,8 @@
             "Precipitance",
             "Reverence",
             "MELTDOWN",
-            "HURRICANE"
+            "HURRICANE",
+            "Glide"
         ],
         "progs": [
             {
@@ -10377,7 +10380,7 @@
             },
             {
                 "name": "Black Blizzard",
-                "percent": 77
+                "percent": 83
             }
         ]
     },
@@ -11378,13 +11381,15 @@
                 "none"
             ] 
         },
-            "Sebas9176": {
+                "Sebas9176": {
             "levels": [
-                "Retention"
+                "Retention",
+                "Allegiance"
             ],
             "progs": [
                 "none"
-            ] 
+            ]
+          
         },
         "Demonbeater17": {       
          "levels": [
@@ -11479,7 +11484,9 @@
             "Glide"
         ],
         "progs": [
-            "none"
+            { "name": "Prismatic Haze",
+              "percent": 70
+            }
         ]
     },
         "iIIRStuffsIIi": {       
@@ -11615,7 +11622,8 @@
         "levels": [
             "Aftermath",
             "Cataclysm",
-            "Allegiance"
+            "Allegiance",
+            "Niflheim"
         ],
         "progs": [
         {
