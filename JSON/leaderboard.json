@@ -5650,7 +5650,7 @@
             "none"
         ]
     },
-    "Avenger1488": {
+    "Avenger1488 [ES/UL]": {
         "levels": [
             "Retention",
             "The Hell World",
@@ -9479,7 +9479,7 @@
             "none"
         ]
     },
-    "AGSEcho": {
+    "AGSEcho [GD]": {
         "levels": [
             "Artificial Ascent",
             "Bloodbath",
@@ -11350,7 +11350,9 @@
             ]
     },
         "BadoZ": {       
-         "levels": [],
+         "levels": [
+             "Idols"
+         ],
         "progs": [
             "none"
         ]    
