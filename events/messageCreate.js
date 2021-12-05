@@ -100,6 +100,7 @@ module.exports = {
                 }
             }
             if(object[message.author.id]) {
+                karthik = object[message.author.id]
             for(let i = 0; i < Object.keys(levels).length; i++) {
             if(!karthik.includes(Object.keys(levels)[random])) {
                 const embed = new Discord.MessageEmbed()
