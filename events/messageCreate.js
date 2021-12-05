@@ -3,6 +3,7 @@ module.exports = {
     name: "messageCreate",
     execute(message) {
         const Discord = require("discord.js")
+        var j = ""
         var object = require("../JSON/commands.json").array.levels 
         var obj = require("../JSON/commands.json").array.percent
         const prefix = ".."
@@ -84,7 +85,7 @@ module.exports = {
        } else if(args[0] == "score" && object[message.author.id]) {
            karthik = object[message.author.id]
            g = obj[message.author.id]
-           var j = ""
+           
         for(let i = 0; i < karthik.length; i++) {
             var tt = [""]
             if(i == karthik.length-1) {
