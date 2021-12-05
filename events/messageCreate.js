@@ -3,7 +3,7 @@ module.exports = {
     name: "messageCreate",
     execute(message) {
         const Discord = require("discord.js")
-        var karthik = require("../JSON/commands.json").array
+        var object = require("../JSON/commands.json").array
         const prefix = ".."
         let args = message.content.slice(prefix.length).split(/ +/);
         const cmd = args.shift().toLowerCase();
@@ -60,6 +60,10 @@ module.exports = {
             message.channel.send("Worked Successfully")
         }
         if(cmd == "roulette") {
+            var karthik = object[message.user.id]
+            karthik = [
+
+            ]
             var levels = require("../JSON/levels.json")
             var number = parseInt(args[0])+1
             var random = Math.floor(Math.random() * Object.keys(levels).length-1)
