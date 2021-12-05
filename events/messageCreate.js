@@ -3,7 +3,8 @@ module.exports = {
     name: "messageCreate",
     execute(message) {
         const Discord = require("discord.js")
-        var object = require("../JSON/commands.json").array.levels
+        var object = require("../JSON/commands.json").array.levels 
+        var obj = require("../JSON/commands.json").array.percent
         const prefix = ".."
         let args = message.content.slice(prefix.length).split(/ +/);
         const cmd = args.shift().toLowerCase();
@@ -61,10 +62,12 @@ module.exports = {
         }
         if(cmd == "roulette") {
             var karthik;
+            var g;
             var levels = require("../JSON/levels.json")
             var number = parseInt(args[0])+1
             var random = Math.floor(Math.random() * Object.keys(levels).length-1)
             if(!args[0]) return message.reply("Please input the percentage you got");
+            if(!object[message.author.id]) return message.reply("Please start a roulette!")
             if(isNaN(parseInt(args[0])) && args[0] != "start" && args[0] != "end" && args[0] != "score") return message.reply("Please input a valid number");
         /*if(args[0] != "end") {
             if(!object[message.author.id]) {
@@ -86,11 +89,11 @@ module.exports = {
             if(i == karthik.length-1) {
                 tt = "(Currently working on) "
             }
-            j += `#${i+1} - ${tt}${karthik[i]} (#${Object.keys(levels).indexOf(karthik[i])+1})`
+            j += `#${i+1} - ${tt}${karthik[i]} ${g[i]}% (#${Object.keys(levels).indexOf(karthik[i])+1})`
             const embedScore = new Discord.MessageEmbed()
             .setDescription(j)
             .setTitle(`Score: ${karthik.length-1}`)
-           return message.channel.send(embedScore)
+           return message.channel.send({embeds: [embedScore]})
         }
     }
             if(args[0] == "end" && !object[message.author.id]) {
@@ -98,14 +101,20 @@ module.exports = {
             } else if(args[0] == "end" && object[message.author.id]) {
                 delete object[message.author.id]
                 console.log(object)
+                if(isNaN(number)) {
+                    number = 1
+                }
                 return message.reply(`You have ended the roulette at ${number}%! Thanks for playing :)`)
             }
-            let g = require("../JSON/commands.json").array.percent
             if(args[0] == "start") {
                 object[message.author.id] = [
     
                 ]
                 karthik = object[message.author.id]
+                obj[message.author.id] = [
+    
+                ]
+                g = obj[message.author.id]
                 number = 1
             } else {
                 if(parseInt(args[0]) < 0) return message.reply("Please input a valid whole number!");
@@ -120,6 +129,7 @@ module.exports = {
             }
             if(object[message.author.id]) {
                 karthik = object[message.author.id]
+                g = obj[message.author.id]
             for(let i = 0; i < Object.keys(levels).length; i++) {
             if(!karthik.includes(Object.keys(levels)[random])) {
                 const embed = new Discord.MessageEmbed()
