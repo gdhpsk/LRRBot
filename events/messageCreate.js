@@ -98,11 +98,11 @@ module.exports = {
                     console.log(object)
                     return message.reply("Congratulations, you've completed the lrr roulette! Now quit gd smh")
                 }
+                if(parseInt(args[0]) < g[g.length-1]) return message.reply(`Please input a percentage above ${number}%!`)
                
             }
             if(object[message.author.id]) {
                 karthik = object[message.author.id]
-                //if(parseInt(args[0]) < k) return message.reply(`Please input a percentage above ${number}%!`)
             for(let i = 0; i < Object.keys(levels).length; i++) {
             if(!karthik.includes(Object.keys(levels)[random])) {
                 const embed = new Discord.MessageEmbed()
@@ -112,9 +112,8 @@ module.exports = {
                 .setURL(`https://www.youtube.com/watch?v=${Object.values(levels)[random].ytcode}`)
                 message.reply({embeds: [embed]})
                 karthik.push(Object.keys(levels)[random])
-                g.push(parseInt(args[0]))
+                g.push(number)
                 console.log(JSON.stringify(object))
-                console.log(g)
                 break;
             } else {
                 random = Math.floor(Math.random() * Object.keys(levels).length-1)
