@@ -84,13 +84,13 @@ module.exports = {
        } else if(args[0] == "score" && object[message.author.id]) {
            karthik = object[message.author.id]
            g = obj[message.author.id]
-           var j = require("../JSON/commands.json").array.score
+           var j = ""
         for(let i = 0; i < karthik.length; i++) {
             var tt = [""]
             if(i == karthik.length-1) {
                 tt = "(Currently working on) "
             }
-            j += `#${i+1} - ${tt}${karthik[i]} ${g[i]}% (#${Object.keys(levels).indexOf(karthik[i])+1})`
+            j += `#${i+1} - ${tt}${karthik[i]} ${g[i]}% (#${Object.keys(levels).indexOf(karthik[i])+1})\n`
         }
         var embedScore = new Discord.MessageEmbed()
             .setDescription(j)
