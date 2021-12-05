@@ -87,10 +87,9 @@ module.exports = {
                 tt = "(Currently working on) "
             }
             j += `#${i+1} - ${tt}${karthik[i]} (#${Object.keys(levels).indexOf(karthik[i])+1})`
-            message.channel.send(j)
+           return message.channel.send(j)
         }
-           return message.reply(`You have ended the roulette at ${number}%! Thanks for playing :)`)
-       }
+    }
             if(args[0] == "end" && !object[message.author.id]) {
                  return message.reply("Please start a roulette before you want to end it!")
             } else if(args[0] == "end" && object[message.author.id]) {
