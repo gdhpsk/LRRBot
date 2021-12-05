@@ -2,6 +2,7 @@
 module.exports = {
     name: "messageCreate",
     execute(message) {
+        const Discord = require("discord.js")
         var karthik = require("../JSON/commands.json").array
         const prefix = ".."
         let args = message.content.slice(prefix.length).split(/ +/);
@@ -72,6 +73,9 @@ module.exports = {
                 if(parseInt(args[0]) == 100) return message.reply("Congratulations, you've completed the lrr roulette! Now quit gd smh")
             }
             if(!karthik.includes(Object.keys(levels)[random])) {
+                const embed = new Discord.MessageEmbed()
+                .setDescription(`#${random+1}. ${Object.keys(levels)[random]}, you have to get ${number}%`)
+                .setImage(`https://i.ytimg.com/vi/${Object.values(levels)[random].ytcode}/mqdefault.jpg`)
                 message.reply(`#${random+1}. ${Object.keys(levels)[random]}, you have to get ${number}%`)
                 karthik.push(Object.keys(levels)[random])
             }
