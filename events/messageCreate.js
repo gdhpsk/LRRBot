@@ -76,7 +76,7 @@ module.exports = {
                 const embed = new Discord.MessageEmbed()
                 .setDescription(`#${random+1}. ${Object.keys(levels)[random]}, you have to get ${number}%`)
                 .setImage(`https://i.ytimg.com/vi/${Object.values(levels)[random].ytcode}/mqdefault.jpg`)
-                message.reply(`#${random+1}. ${Object.keys(levels)[random]}, you have to get ${number}%`)
+                message.reply({embeds: [embed]})
                 karthik.push(Object.keys(levels)[random])
                 console.log(karthik)
             }
