@@ -106,12 +106,25 @@ module.exports = {
             } else if(args[0] == "end" && object[message.author.id]) {
                 g = obj[message.author.id]
                 karthik = object[message.author.id]
+                var j = ""
+        for(let i = 0; i < karthik.length-1; i++) {
+            j += `#${i+1} - ${karthik[i]} ${g[i]}% (#${Object.keys(levels).indexOf(karthik[i])+1}${tt[1]})\n`
+        }
+        if(j.length == 0) {
+            j = "No levels were done in this roulette."
+        }
+        if(j.length > 4000) {
+            j = `Levels: ${karthik.length}`
+        }
+        const embed = new Discord.MessageEmbed()
+        .setTitle(`Score: ${karthik.length-1}`)
+        .setDescription(j)
                 number = g[g.length-1]
                 delete obj[message.author.id]
                 delete object[message.author.id]
                 console.log(object)
                 console.log(obj)
-                return message.reply(`You have ended the roulette at ${number}% on ${karthik[karthik.length-1]}! Thanks for playing :)`)
+                return message.reply({content: `You have ended the roulette at ${number}% on ${karthik[karthik.length-1]}! Thanks for playing :)`, embeds: [embed]})
             }
             if(args[0] == "start" && !object[message.author.id]) {
                 object[message.author.id] = [
