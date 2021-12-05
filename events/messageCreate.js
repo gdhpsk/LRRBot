@@ -108,7 +108,7 @@ module.exports = {
                 karthik = object[message.author.id]
                 var j = ""
         for(let i = 0; i < karthik.length-1; i++) {
-            j += `#${i+1} - ${karthik[i]} ${g[i]}% (#${Object.keys(levels).indexOf(karthik[i])+1}, you got ${g[i+1]-1})\n`
+            j += `#${i+1} - ${karthik[i]} ${g[i]}% (#${Object.keys(levels).indexOf(karthik[i])+1}, you got ${g[i+1]-1}%)\n`
         }
         if(j.length == 0) {
             j = "No levels were done in this roulette."
