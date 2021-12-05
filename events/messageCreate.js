@@ -67,7 +67,7 @@ module.exports = {
             var number = parseInt(args[0])+1
             var random = Math.floor(Math.random() * Object.keys(levels).length-1)
             if(!args[0]) return message.reply("Please input the percentage you got");
-            if(!object[message.author.id]) return message.reply("Please start a roulette!")
+            if(!object[message.author.id] && args[0] != "start") return message.reply("Please start a roulette!")
             if(isNaN(parseInt(args[0])) && args[0] != "start" && args[0] != "end" && args[0] != "score") return message.reply("Please input a valid number");
         /*if(args[0] != "end") {
             if(!object[message.author.id]) {
