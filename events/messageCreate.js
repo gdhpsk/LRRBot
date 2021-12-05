@@ -66,6 +66,10 @@ module.exports = {
             if(isNaN(parseInt(args[0])) && args[0] != "start") return message.reply("Please input a valid number")
             if(args[0] == "start") {
                 number = 1
+            } else {
+                if(parseInt(args[0]) < 0) return message.reply("Please input a valid whole number!")
+                if(parseInt(args[0]) > 100) return message.reply("Please input a percentage below 100%")
+                if(parseInt(args[0] == 100)) return message.reply("Congratulations, you've completed the lrr roulette! Now quit gd smh")
             }
             if(!karthik.includes(Object.keys(levels)[random])) {
                 message.reply(`#${random+1}. ${Object.keys(levels)[random]}, you have to get ${number}%`)
