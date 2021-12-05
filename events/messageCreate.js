@@ -61,9 +61,11 @@ module.exports = {
         }
         if(cmd == "roulette") {
             var karthik = object[message.author.id]
+            if(!object[message.author.id]) {
             karthik = [
 
             ]
+        }
             var levels = require("../JSON/levels.json")
             var number = parseInt(args[0])+1
             var random = Math.floor(Math.random() * Object.keys(levels).length-1)
