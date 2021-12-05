@@ -83,7 +83,7 @@ module.exports = {
                 console.log(object)
                 return message.reply(`You have ended the roulette at ${number}%! Thanks for playing :)`)
             }
-            let g = []
+            let g = require("../JSON/commands.json").percent
             if(args[0] == "start") {
                 object[message.author.id] = [
     
@@ -111,8 +111,8 @@ module.exports = {
                 .setImage(`https://i.ytimg.com/vi/${Object.values(levels)[random].ytcode}/mqdefault.jpg`)
                 .setURL(`https://www.youtube.com/watch?v=${Object.values(levels)[random].ytcode}`)
                 message.reply({embeds: [embed]})
+                g.push(number)
                 karthik.push(Object.keys(levels)[random])
-                g[0] = number
                 console.log(JSON.stringify(object))
                 console.log(g)
                 break;
