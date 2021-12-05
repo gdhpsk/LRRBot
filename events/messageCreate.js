@@ -81,12 +81,12 @@ module.exports = {
        } else if(args[0] == "score" && object[message.author.id]) {
            karthik = object[message.author.id]
            var j = ""
-        for(let i = 0; i < Object.keys(karthik).length; i++) {
+        for(let i = 0; i < karthik.length; i++) {
             var tt = [""]
-            if(i == Object.keys(karthik).length-1) {
+            if(i == karthik.length-1) {
                 tt = "(Currently working on) "
             }
-            j += `#${i+1} - ${tt}${Object.values(karthik)[i]} (#${Object.keys(levels).indexOf(Object.values(karthik)[i])+1})`
+            j += `#${i+1} - ${tt}${karthik[i]} (#${Object.keys(levels).indexOf(karthik[i])+1})`
             message.channel.send(j)
         }
            return message.reply(`You have ended the roulette at ${number}%! Thanks for playing :)`)
