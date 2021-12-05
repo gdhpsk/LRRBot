@@ -2,6 +2,7 @@
 module.exports = {
     name: "messageCreate",
     execute(message) {
+        var karthik = []
         var allowedChannels = [
             "671454973346840616"
         ]
@@ -56,11 +57,10 @@ module.exports = {
         }
         if(message.content == "..roulette") {
             var levels = require("../JSON/levels.json")
-            var array = []
             var random = Math.floor(Math.random() * Object.keys(levels).length-1)
-            if(!array.includes(Object.keys(levels)[random])) {
-                message.reply(`#${random+1}. ${Object.keys(levels)[random]}, you have to get ${array.length+1}%`)
-                array.push(Object.keys(levels)[random])
+            if(!karthik.includes(Object.keys(levels)[random])) {
+                message.reply(`#${random+1}. ${Object.keys(levels)[random]}, you have to get ${karthik.length+1}%`)
+                karthik.push(Object.keys(levels)[random])
             }
         }
     }
