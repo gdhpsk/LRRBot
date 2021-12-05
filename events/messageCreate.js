@@ -60,7 +60,6 @@ module.exports = {
             message.channel.send("Worked Successfully")
         }
         if(cmd == "roulette") {
-            var k = 0
             var karthik;
             var levels = require("../JSON/levels.json")
             var number = parseInt(args[0])+1
@@ -84,7 +83,7 @@ module.exports = {
                 console.log(object)
                 return message.reply(`You have ended the roulette at ${number}%! Thanks for playing :)`)
             }
-
+            let g = []
             if(args[0] == "start") {
                 object[message.author.id] = [
     
@@ -103,7 +102,7 @@ module.exports = {
             }
             if(object[message.author.id]) {
                 karthik = object[message.author.id]
-                if(parseInt(args[0]) < k) return message.reply(`Please input a percentage above ${number}%!`)
+                //if(parseInt(args[0]) < k) return message.reply(`Please input a percentage above ${number}%!`)
             for(let i = 0; i < Object.keys(levels).length; i++) {
             if(!karthik.includes(Object.keys(levels)[random])) {
                 const embed = new Discord.MessageEmbed()
@@ -113,8 +112,9 @@ module.exports = {
                 .setURL(`https://www.youtube.com/watch?v=${Object.values(levels)[random].ytcode}`)
                 message.reply({embeds: [embed]})
                 karthik.push(Object.keys(levels)[random])
-                k = parseInt(args[0])
+                g.push(parseInt(args[0]))
                 console.log(JSON.stringify(object))
+                console.log(g)
                 break;
             } else {
                 random = Math.floor(Math.random() * Object.keys(levels).length-1)
