@@ -3,7 +3,7 @@ module.exports = {
     name: "messageCreate",
     execute(message) {
         const Discord = require("discord.js")
-        var object = require("../JSON/commands.json").array
+        var object = require("../JSON/commands.json").array.levels
         const prefix = ".."
         let args = message.content.slice(prefix.length).split(/ +/);
         const cmd = args.shift().toLowerCase();
@@ -83,7 +83,7 @@ module.exports = {
                 console.log(object)
                 return message.reply(`You have ended the roulette at ${number}%! Thanks for playing :)`)
             }
-            let g = require("../JSON/commands.json").percent
+            let g = require("../JSON/commands.json").array.percent
             if(args[0] == "start") {
                 object[message.author.id] = [
     
@@ -93,7 +93,7 @@ module.exports = {
             } else {
                 if(parseInt(args[0]) < 0) return message.reply("Please input a valid whole number!");
                 if(parseInt(args[0]) >= 101) return message.reply("Please input a percentage below 101%");
-                if(parseInt(args[0]) == 100) {
+                if(parseInt(args[0]) == 100 && object[message.author.id]) {
                     delete object[message.author.id]
                     console.log(object)
                     return message.reply("Congratulations, you've completed the lrr roulette! Now quit gd smh")

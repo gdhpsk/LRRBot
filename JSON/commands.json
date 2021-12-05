@@ -94,9 +94,11 @@
         }
     },
     "array": {
+        "levels": {
 
-    },
-    "percent": [
-        
-    ]
+        },
+        "percent": [
+            
+        ]
+    }
 }
