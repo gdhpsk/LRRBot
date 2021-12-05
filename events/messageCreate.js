@@ -60,11 +60,15 @@ module.exports = {
         }
         if(cmd == "roulette") {
             var levels = require("../JSON/levels.json")
+            var number = parseInt(args[0])+1
             var random = Math.floor(Math.random() * Object.keys(levels).length-1)
             if(!args[0]) return message.reply("Please input the percentage you got")
-            if(isNaN(parseInt(args[0]))) return message.reply("Please input a valid number")
+            if(isNaN(parseInt(args[0])) && args[0] != "start") return message.reply("Please input a valid number")
+            if(args[0] == "start") {
+                number = 1
+            }
             if(!karthik.includes(Object.keys(levels)[random])) {
-                message.reply(`#${random+1}. ${Object.keys(levels)[random]}, you have to get ${args[0]}%`)
+                message.reply(`#${random+1}. ${Object.keys(levels)[random]}, you have to get ${number}%`)
                 karthik.push(Object.keys(levels)[random])
             }
         }
