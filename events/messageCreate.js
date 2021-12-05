@@ -113,7 +113,7 @@ module.exports = {
                 console.log(obj)
                 return message.reply(`You have ended the roulette at ${number}% on ${karthik[karthik.length-1]}! Thanks for playing :)`)
             }
-            if(args[0] == "start") {
+            if(args[0] == "start" && !object[message.author.id]) {
                 object[message.author.id] = [
     
                 ]
@@ -125,6 +125,7 @@ module.exports = {
                 number = 1
             } else {
                 g = obj[message.author.id]
+                if(args[0] == "start" && object[message.author.id]) return message.reply("You already have an instance of a roulette! Use ..roulette end to end your current session.")
                 if(parseInt(args[0]) < 0) return message.reply("Please input a valid whole number!");
                 if(parseInt(args[0]) >= 101) return message.reply("Please input a percentage below 101%");
                 if(parseInt(args[0]) == 100 && object[message.author.id]) {
