@@ -79,12 +79,12 @@ module.exports = {
             } else {
                 if(parseInt(args[0]) < 0) return message.reply("Please input a valid whole number!");
                 if(parseInt(args[0]) >= 101) return message.reply("Please input a percentage below 101%");
+                if(parseInt(args[0]) == 100) return message.reply("Congratulations, you've completed the lrr roulette! Now quit gd smh")
                 if(parseInt(args[0]) == 100) {
-                    message.reply("Congratulations, you've completed the lrr roulette! Now quit gd smh")
                     delete object[message.author.id]
                     console.log(object)
                 }
-            }
+                }
             for(let i = 0; i < Object.keys(levels).length; i++) {
             if(!karthik.includes(Object.keys(levels)[random])) {
                 const embed = new Discord.MessageEmbed()
