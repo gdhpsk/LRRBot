@@ -60,10 +60,10 @@ module.exports = {
             message.channel.send("Worked Successfully")
         }
         if(cmd == "roulette") {
+            var k = 0
             var karthik;
             var levels = require("../JSON/levels.json")
             var number = parseInt(args[0])+1
-            var numarray = []
             var random = Math.floor(Math.random() * Object.keys(levels).length-1)
             if(!args[0]) return message.reply("Please input the percentage you got");
             if(isNaN(parseInt(args[0])) && args[0] != "start" && args[0] != "end") return message.reply("Please input a valid number");
@@ -99,7 +99,8 @@ module.exports = {
                     console.log(object)
                     return message.reply("Congratulations, you've completed the lrr roulette! Now quit gd smh")
                 }
-                if(parseInt(args[0]) < numarray[numarray.length-1]) return message.reply(`Please input a percentage above ${number}%!`)
+                if(parseInt(args[0]) < k) return message.reply(`Please input a percentage above ${number}%!`)
+               
             }
             if(object[message.author.id]) {
                 karthik = object[message.author.id]
@@ -112,8 +113,8 @@ module.exports = {
                 .setImage(`https://i.ytimg.com/vi/${Object.values(levels)[random].ytcode}/mqdefault.jpg`)
                 .setURL(`https://www.youtube.com/watch?v=${Object.values(levels)[random].ytcode}`)
                 message.reply({embeds: [embed]})
-                numarray.push(number)
                 karthik.push(Object.keys(levels)[random])
+                k = parseInt(args[0])
                 console.log(JSON.stringify(object))
                 break;
             } else {
