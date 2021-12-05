@@ -85,7 +85,7 @@ module.exports = {
                 .setImage(`https://i.ytimg.com/vi/${Object.values(levels)[random].ytcode}/mqdefault.jpg`)
                 message.reply({embeds: [embed]})
                 karthik.push(Object.keys(levels)[random])
-                console.log(karthik)
+                console.log(JSON.stringify(object))
                 break;
             } else {
                 random = Math.floor(Math.random() * Object.keys(levels).length-1)
