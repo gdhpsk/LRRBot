@@ -101,12 +101,11 @@ module.exports = {
                  return message.reply("Please start a roulette before you want to end it!")
             } else if(args[0] == "end" && object[message.author.id]) {
                 delete object[message.author.id]
+                g = obj[message.author.id]
+                number = g[g.length-1]
                 delete obj[message.author.id]
                 console.log(object)
                 console.log(obj)
-                if(isNaN(number)) {
-                    number = 1
-                }
                 return message.reply(`You have ended the roulette at ${number}%! Thanks for playing :)`)
             }
             if(args[0] == "start") {
