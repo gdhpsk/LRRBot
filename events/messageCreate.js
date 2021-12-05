@@ -112,7 +112,7 @@ module.exports = {
                 .setURL(`https://www.youtube.com/watch?v=${Object.values(levels)[random].ytcode}`)
                 message.reply({embeds: [embed]})
                 karthik.push(Object.keys(levels)[random])
-                g.push(number)
+                g[0] = number
                 console.log(JSON.stringify(object))
                 console.log(g)
                 break;
