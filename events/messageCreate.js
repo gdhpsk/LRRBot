@@ -87,7 +87,10 @@ module.exports = {
                 tt = "(Currently working on) "
             }
             j += `#${i+1} - ${tt}${karthik[i]} (#${Object.keys(levels).indexOf(karthik[i])+1})`
-           return message.channel.send(j)
+            const embedScore = new Discord.MessageEmbed()
+            .setDescription(j)
+            .setTitle(`Score: ${karthik.length-1}`)
+           return message.channel.send(embedScore)
         }
     }
             if(args[0] == "end" && !object[message.author.id]) {
