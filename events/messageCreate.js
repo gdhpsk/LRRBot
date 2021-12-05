@@ -81,7 +81,7 @@ module.exports = {
             } else if(args[0] == "end" && object[message.author.id]) {
                 delete object[message.author.id]
                 console.log(object)
-                return message.reply("You have ended the roulette! Thanks for playing :)")
+                return message.reply(`You have ended the roulette at ${number}%! Thanks for playing :)`)
             }
 
             if(args[0] == "start") {
@@ -98,6 +98,7 @@ module.exports = {
                     console.log(object)
                     return message.reply("Congratulations, you've completed the lrr roulette! Now quit gd smh")
                 }
+                if(parseInt(args[0]) < number) return message.reply(`Please input a percentage above ${number}%!`)
             }
             if(object[message.author.id]) {
                 karthik = object[message.author.id]
