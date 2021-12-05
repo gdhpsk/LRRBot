@@ -68,7 +68,7 @@ module.exports = {
                 number = 1
             } else {
                 if(parseInt(args[0]) < 0) return message.reply("Please input a valid whole number!")
-                if(parseInt(args[0]) > 100) return message.reply("Please input a percentage below 100%")
+                if(parseInt(args[0]) > 101) return message.reply("Please input a percentage below 101%")
                 if(parseInt(args[0] == 100)) return message.reply("Congratulations, you've completed the lrr roulette! Now quit gd smh")
             }
             if(!karthik.includes(Object.keys(levels)[random])) {
