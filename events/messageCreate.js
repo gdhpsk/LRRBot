@@ -99,12 +99,11 @@ module.exports = {
                     console.log(object)
                     return message.reply("Congratulations, you've completed the lrr roulette! Now quit gd smh")
                 }
-                if(parseInt(args[0]) < k) return message.reply(`Please input a percentage above ${number}%!`)
                
             }
             if(object[message.author.id]) {
                 karthik = object[message.author.id]
-            
+                if(parseInt(args[0]) < k) return message.reply(`Please input a percentage above ${number}%!`)
             for(let i = 0; i < Object.keys(levels).length; i++) {
             if(!karthik.includes(Object.keys(levels)[random])) {
                 const embed = new Discord.MessageEmbed()
