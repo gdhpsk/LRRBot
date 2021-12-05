@@ -95,7 +95,7 @@ module.exports = {
         var embedScore = new Discord.MessageEmbed()
             .setDescription(j)
             .setTitle(`Score: ${karthik.length-1}`)
-           return message.channel.send({embeds: [embedScore]})
+           return message.reply({embeds: [embedScore]})
     }
             if(args[0] == "end" && !object[message.author.id]) {
                  return message.reply("Please start a roulette before you want to end it!")
