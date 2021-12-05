@@ -101,7 +101,9 @@ module.exports = {
                  return message.reply("Please start a roulette before you want to end it!")
             } else if(args[0] == "end" && object[message.author.id]) {
                 delete object[message.author.id]
+                delete obj[message.author.id]
                 console.log(object)
+                console.log(obj)
                 if(isNaN(number)) {
                     number = 1
                 }
@@ -123,7 +125,9 @@ module.exports = {
                 if(parseInt(args[0]) >= 101) return message.reply("Please input a percentage below 101%");
                 if(parseInt(args[0]) == 100 && object[message.author.id]) {
                     delete object[message.author.id]
+                    delete obj[message.author.id]
                     console.log(object)
+                    console.log(obj)
                     return message.reply("Congratulations, you've completed the lrr roulette! Now quit gd smh")
                 }
                 if(parseInt(args[0]) < g[g.length-1]) return message.reply(`Please input a percentage above ${number-1}%!`)
