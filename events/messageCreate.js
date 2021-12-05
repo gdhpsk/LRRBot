@@ -83,6 +83,7 @@ module.exports = {
             return message.reply("Please start a roulette before you want to view your score!")
        } else if(args[0] == "score" && object[message.author.id]) {
            karthik = object[message.author.id]
+           g = obj[message.author.id]
            var j = ""
         for(let i = 0; i < karthik.length; i++) {
             var tt = [""]
@@ -117,6 +118,7 @@ module.exports = {
                 g = obj[message.author.id]
                 number = 1
             } else {
+                g = obj[message.author.id]
                 if(parseInt(args[0]) < 0) return message.reply("Please input a valid whole number!");
                 if(parseInt(args[0]) >= 101) return message.reply("Please input a percentage below 101%");
                 if(parseInt(args[0]) == 100 && object[message.author.id]) {

@@ -89,7 +89,7 @@
                 }
             ],
             "Required Arguments": [
-               "none"
+               "none" 
             ]
         }
     },
@@ -98,7 +98,7 @@
 
         },
         "percent": {
-            
+
         }
     }
 }
