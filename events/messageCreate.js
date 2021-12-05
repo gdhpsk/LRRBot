@@ -77,7 +77,6 @@ module.exports = {
             if(args[0] == "end" && !object[message.author.id]) {
                  return message.reply("Please start a roulette before you want to end it!")
             } else if(args[0] == "end" && object[message.author.id]) {
-                delete object[message.author.id]
                 console.log(object)
                 return message.reply("You have ended the roulette! Thanks for playing :)")
             }
