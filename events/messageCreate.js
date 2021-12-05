@@ -91,11 +91,11 @@ module.exports = {
                 tt = "(Currently working on) "
             }
             j += `#${i+1} - ${tt}${karthik[i]} ${g[i]}% (#${Object.keys(levels).indexOf(karthik[i])+1})`
-            var embedScore = new Discord.MessageEmbed()
+        }
+        var embedScore = new Discord.MessageEmbed()
             .setDescription(j)
             .setTitle(`Score: ${karthik.length-1}`)
            return message.channel.send({embeds: [embedScore]})
-        }
     }
             if(args[0] == "end" && !object[message.author.id]) {
                  return message.reply("Please start a roulette before you want to end it!")
