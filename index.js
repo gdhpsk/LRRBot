@@ -28,8 +28,8 @@ for(const file of eventFiles) {
 	}
 }
 
-/*client.on("messageReactionAdd", async (reaction, user) => {
-	reaction.interaction.fetchReply()
+/*client.on("messageCreate", message => {
+	message.author.id
 })*/
 
 

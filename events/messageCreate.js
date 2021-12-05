@@ -60,7 +60,7 @@ module.exports = {
             message.channel.send("Worked Successfully")
         }
         if(cmd == "roulette") {
-            var karthik = object[message.user.id]
+            var karthik = object[message.author.id]
             karthik = [
 
             ]
