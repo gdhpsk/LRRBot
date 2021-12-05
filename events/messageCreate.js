@@ -79,6 +79,7 @@ module.exports = {
         if(args[0] == "score" && !object[message.author.id]) {
             return message.reply("Please start a roulette before you want to view your score!")
        } else if(args[0] == "score" && object[message.author.id]) {
+           karthik = object[message.author.id]
            var j = ""
         for(let i = 0; i < Object.keys(karthik).length; i++) {
             var tt = [""]
