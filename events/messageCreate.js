@@ -3,6 +3,9 @@ module.exports = {
     name: "messageCreate",
     execute(message) {
         var karthik = require("../JSON/commands.json").array
+        const prefix = ".."
+        let args = message.content.slice(prefix.length).split(/ +/);
+        const cmd = args.shift().toLowerCase();
         var allowedChannels = [
             "671454973346840616"
         ]
@@ -55,7 +58,7 @@ module.exports = {
             console.log(f)
             message.channel.send("Worked Successfully")
         }
-        if(message.content == "..roulette") {
+        if(cmd == "roulette") {
             var levels = require("../JSON/levels.json")
             var random = Math.floor(Math.random() * Object.keys(levels).length-1)
             if(!karthik.includes(Object.keys(levels)[random])) {
