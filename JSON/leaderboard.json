@@ -1122,7 +1122,8 @@
             "Killbot",
             "ICE Carbon Diablo X",
             "Super Probably Level",
-            "Omicron"
+            "Omicron",
+            "Sunset Sandstorm"
         ],
         "progs": [
             {
@@ -1132,10 +1133,6 @@
             {
                 "name": "Artifice",
                 "percent": 56
-            },
-            {
-                "name": "Sunset Sandstorm",
-                "percent": 67
             }
         ]
     },
@@ -1400,7 +1397,8 @@
             "Heartbeat",
             "Concaved Memories",
             "Brimtanic Paradise",
-            "Phobos"
+            "Phobos",
+            "SHATTER"
         ],
         "progs": [
             {
@@ -1431,8 +1429,7 @@
             "Novalis",
             "Sunset Sandstorm",
             "Cybernetic Crescent",
-            "Black Blizzard",
-            "Fingerdash v3"
+            "Black Blizzard"
         ],
         "progs": [
             "none"
@@ -1992,7 +1989,8 @@
             "Excessive Compliment",
             "Night Life",
             "Thanatophobia",
-            "Reverence"
+            "Reverence",
+            "Instant Execution"
         ],
         "progs": [
             "none"
@@ -2910,7 +2908,8 @@
             "Reverence",
             "MELTDOWN",
             "HURRICANE",
-            "Glide"
+            "Glide",
+            "Novalis"
         ],
         "progs": [
             {
@@ -5651,7 +5650,7 @@
             "none"
         ]
     },
-    "Avenger1488 [ES/UL]": {
+    "Avenger1488": {
         "levels": [
             "Retention",
             "The Hell World",
@@ -6742,7 +6741,8 @@
             "Acu",
             "Quest for Perfection",
             "Niflheim",
-            "Allegiance"
+            "Allegiance",
+            "Cataclysm"
         ],
         "progs": [
             "none"
@@ -8575,6 +8575,7 @@
         ]
     },
     "JudeRB": {
+        "nationality": "Australia",
         "levels": [
             "Hypersonic",
             "Killbot",
@@ -9480,7 +9481,7 @@
             "none"
         ]
     },
-    "AGSEcho [GD]": {
+    "AGSEcho": {
         "levels": [
             "Artificial Ascent",
             "Bloodbath",
@@ -10331,7 +10332,10 @@
             "Acu"
         ],
         "progs": [
-            "none"
+            {
+                "name": "Black Blizzard",
+                "percent": 53
+            }
         ]
     },
     "Cyro": {
@@ -10381,7 +10385,7 @@
             },
             {
                 "name": "Black Blizzard",
-                "percent": 83
+                "percent": 98
             }
         ]
     },
@@ -11351,9 +11355,7 @@
             ]
     },
         "BadoZ": {       
-         "levels": [
-             "Idols"
-         ],
+         "levels": [],
         "progs": [
             "none"
         ]    
