@@ -101,13 +101,13 @@ module.exports = {
                  return message.reply("Please start a roulette before you want to end it!")
             } else if(args[0] == "end" && object[message.author.id]) {
                 g = obj[message.author.id]
-                karthik = object[message.author.id][karthik.length-1]
+                karthik = object[message.author.id]
                 number = g[g.length-1]
                 delete obj[message.author.id]
                 delete object[message.author.id]
                 console.log(object)
                 console.log(obj)
-                return message.reply(`You have ended the roulette at ${number}% on ${karthik}! Thanks for playing :)`)
+                return message.reply(`You have ended the roulette at ${number}% on ${karthik[karthik.length-1]}! Thanks for playing :)`)
             }
             if(args[0] == "start") {
                 object[message.author.id] = [
