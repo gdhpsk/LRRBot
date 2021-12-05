@@ -86,11 +86,12 @@ module.exports = {
            g = obj[message.author.id]
            var j = ""
         for(let i = 0; i < karthik.length; i++) {
-            var tt = [""]
+            var tt = ["", `, you got ${g[i+1]-1}%`]
             if(i == karthik.length-1) {
-                tt = "(Currently working on) "
+                tt[0] = "(Currently working on) "
+                tt[1] = ""
             }
-            j += `#${i+1} - ${tt}${karthik[i]} ${g[i]}% (#${Object.keys(levels).indexOf(karthik[i])+1})\n`
+            j += `#${i+1} - ${tt[0]}${karthik[i]} ${g[i]}% (#${Object.keys(levels).indexOf(karthik[i])+1}${tt[1]})\n`
         }
         if(j.length > 4000) {
             j = `Levels: ${karthik.length}\nWorkng on: ${karthik[karthik.length-1]} ${g[g.length-1].toString()}%`
