@@ -98,7 +98,7 @@ module.exports = {
                     console.log(object)
                     return message.reply("Congratulations, you've completed the lrr roulette! Now quit gd smh")
                 }
-                if(parseInt(args[0]) < g[g.length-1]) return message.reply(`Please input a percentage above ${number}%!`)
+                if(parseInt(args[0]) < g[g.length-1]) return message.reply(`Please input a percentage above ${number-1}%!`)
                
             }
             if(object[message.author.id]) {
