@@ -78,6 +78,7 @@ module.exports = {
                 .setImage(`https://i.ytimg.com/vi/${Object.values(levels)[random].ytcode}/mqdefault.jpg`)
                 message.reply(`#${random+1}. ${Object.keys(levels)[random]}, you have to get ${number}%`)
                 karthik.push(Object.keys(levels)[random])
+                console.log(karthik.entries())
             }
         }
     }
