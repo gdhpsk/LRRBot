@@ -54,6 +54,14 @@ module.exports = {
             console.log(f)
             message.channel.send("Worked Successfully")
         }
-        
+        if(message.content == "..roulette") {
+            var levels = require("../JSON/levels.json")
+            var array = []
+            var random = Math.random(Math.random() * Object.keys(levels).length-1)
+            if(!array.includes(Object.keys(levels)[random])) {
+                message.reply(`#${random+1}. ${Object.keys(levels)[random]}, you have to get ${array.length+1}%`)
+                array.push(Object.keys(levels)[random])
+            }
+        }
     }
 }
