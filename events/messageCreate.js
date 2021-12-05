@@ -72,6 +72,7 @@ module.exports = {
                 if(parseInt(args[0]) >= 101) return message.reply("Please input a percentage below 101%");
                 if(parseInt(args[0]) == 100) return message.reply("Congratulations, you've completed the lrr roulette! Now quit gd smh")
             }
+            for(let i = 0; i < Object.keys(levels).length; i++) {
             if(!karthik.includes(Object.keys(levels)[random])) {
                 const embed = new Discord.MessageEmbed()
                 .setDescription(`#${random+1}. ${Object.keys(levels)[random]} by ${Object.values(levels)[random].publisher}, you have to get ${number}%`)
@@ -79,7 +80,12 @@ module.exports = {
                 message.reply({embeds: [embed]})
                 karthik.push(Object.keys(levels)[random])
                 console.log(karthik)
+                break;
+            } else {
+                random = Math.floor(Math.random() * Object.keys(levels).length-1)
+                continue;
             }
+        }
         }
     }
 }
