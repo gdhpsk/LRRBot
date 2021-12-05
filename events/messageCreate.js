@@ -2,7 +2,7 @@
 module.exports = {
     name: "messageCreate",
     execute(message) {
-        var karthik = []
+        var karthik = require("../JSON/commands.json").array
         var allowedChannels = [
             "671454973346840616"
         ]
