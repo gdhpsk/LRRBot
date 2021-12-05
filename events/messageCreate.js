@@ -143,7 +143,7 @@ module.exports = {
                 g.push(number)
                 karthik.push(Object.keys(levels)[random])
                 console.log(JSON.stringify(object))
-                console.log(g)
+                console.log(JSON.stringify(obj))
                 break;
             } else {
                 random = Math.floor(Math.random() * Object.keys(levels).length-1)
