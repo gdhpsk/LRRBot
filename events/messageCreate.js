@@ -60,11 +60,14 @@ module.exports = {
             message.channel.send("Worked Successfully")
         }
         if(cmd == "roulette") {
-            var karthik = object[message.author.id]
+            var karthik;
             if(!object[message.author.id]) {
-            karthik = [
+            object[message.author.id] = [
 
             ]
+            karthik = object[message.author.id]
+        } else {
+            karthik = object[message.author.id]
         }
             var levels = require("../JSON/levels.json")
             var number = parseInt(args[0])+1
