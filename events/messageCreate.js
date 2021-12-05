@@ -65,7 +65,7 @@ module.exports = {
             var number = parseInt(args[0])+1
             var random = Math.floor(Math.random() * Object.keys(levels).length-1)
             if(!args[0]) return message.reply("Please input the percentage you got");
-            if(isNaN(parseInt(args[0])) && args[0] != "start" && args[0] != "end") return message.reply("Please input a valid number");
+            if(isNaN(parseInt(args[0])) && args[0] != "start" && args[0] != "end" && args[0] != "score") return message.reply("Please input a valid number");
         /*if(args[0] != "end") {
             if(!object[message.author.id]) {
                 object[message.author.id] = [
@@ -76,6 +76,20 @@ module.exports = {
                 karthik = object[message.author.id]
             }
         }*/
+        if(args[0] == "score" && !object[message.author.id]) {
+            return message.reply("Please start a roulette before you want to view your score!")
+       } else if(args[0] == "score" && object[message.author.id]) {
+           var j = ""
+        for(let i = 0; i < Object.keys(karthik).length; i++) {
+            var tt = [""]
+            if(i == Object.keys(karthik).length-1) {
+                tt = "(Currently working on) "
+            }
+            j += `#${i+1} - ${tt}${Object.values(karthik)[i]} (#${Object.keys(levels).indexOf(Object.values(karthik)[i])+1})`
+            message.channel.send(j)
+        }
+           return message.reply(`You have ended the roulette at ${number}%! Thanks for playing :)`)
+       }
             if(args[0] == "end" && !object[message.author.id]) {
                  return message.reply("Please start a roulette before you want to end it!")
             } else if(args[0] == "end" && object[message.author.id]) {
