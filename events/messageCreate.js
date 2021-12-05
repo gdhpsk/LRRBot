@@ -66,7 +66,7 @@ module.exports = {
             var random = Math.floor(Math.random() * Object.keys(levels).length-1)
             if(!args[0]) return message.reply("Please input the percentage you got");
             if(isNaN(parseInt(args[0])) && args[0] != "start" && args[0] != "end") return message.reply("Please input a valid number");
-        if(args[0] != "end") {
+        /*if(args[0] != "end") {
             if(!object[message.author.id]) {
                 object[message.author.id] = [
     
@@ -75,7 +75,7 @@ module.exports = {
             } else {
                 karthik = object[message.author.id]
             }
-        }
+        }*/
             if(args[0] == "end" && !object[message.author.id]) {
                  return message.reply("Please start a roulette before you want to end it!")
             } else if(args[0] == "end" && object[message.author.id]) {
@@ -85,6 +85,10 @@ module.exports = {
             }
 
             if(args[0] == "start") {
+                object[message.author.id] = [
+    
+                ]
+                karthik = object[message.author.id]
                 number = 1
             } else {
                 if(parseInt(args[0]) < 0) return message.reply("Please input a valid whole number!");
@@ -95,6 +99,7 @@ module.exports = {
                     return message.reply("Congratulations, you've completed the lrr roulette! Now quit gd smh")
                 }
             }
+            if(object[message.author.id]) {
             for(let i = 0; i < Object.keys(levels).length; i++) {
             if(!karthik.includes(Object.keys(levels)[random])) {
                 const embed = new Discord.MessageEmbed()
@@ -109,6 +114,9 @@ module.exports = {
                 continue;
             }
         }
+    } else {
+        message.reply("Please start the roulette!")
+    }
         }
     }
 }
