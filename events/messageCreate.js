@@ -74,7 +74,7 @@ module.exports = {
             }
             if(!karthik.includes(Object.keys(levels)[random])) {
                 const embed = new Discord.MessageEmbed()
-                .setDescription(`#${random+1}. ${Object.keys(levels)[random]}, you have to get ${number}%`)
+                .setDescription(`#${random+1}. ${Object.keys(levels)[random]} by ${Object.values(levels)[random].publisher}, you have to get ${number}%`)
                 .setImage(`https://i.ytimg.com/vi/${Object.values(levels)[random].ytcode}/mqdefault.jpg`)
                 message.reply({embeds: [embed]})
                 karthik.push(Object.keys(levels)[random])
