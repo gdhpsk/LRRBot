@@ -15,7 +15,7 @@ module.exports = {
         if(message.channel.type != "DM") {
             if(!allowedChannels.includes(message.channel.id)) return;
         }
-        if(message.content == "..msg") {
+        if(message.content == "..msg") { 
             message.client.guilds.fetch("671450116133224456").then(guild => {
                 guild.channels.fetch("671450116942462978").then(msg => {
                     console.log(msg.lastMessage.content)
