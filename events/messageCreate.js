@@ -122,8 +122,11 @@ module.exports = {
                 number = g[g.length-1]
                 delete obj[message.author.id]
                 delete object[message.author.id]
-                console.log(object)
-                console.log(obj)
+                client.guilds.fetch("904222136661577758").then(guild => {
+                    guild.channels.fetch("904222137278169099").then(msg => {
+                        msg.send(JSON.stringify(require("../JSON/commands.json").array))
+                    })
+                })
                 return message.reply({content: `You have ended the roulette at ${number}% on ${karthik[karthik.length-1]}! Thanks for playing :)`, embeds: [embed]})
             }
             if(args[0] == "start" && !object[message.author.id]) {
@@ -144,8 +147,11 @@ module.exports = {
                 if(parseInt(args[0]) == 100 && object[message.author.id]) {
                     delete object[message.author.id]
                     delete obj[message.author.id]
-                    console.log(object)
-                    console.log(obj)
+                    client.guilds.fetch("904222136661577758").then(guild => {
+                        guild.channels.fetch("904222137278169099").then(msg => {
+                            msg.send(JSON.stringify(require("../JSON/commands.json").array))
+                        })
+                    })
                     return message.reply("Congratulations, you've completed the lrr roulette! Now quit gd smh")
                 }
                 if(parseInt(args[0]) < g[g.length-1]) return message.reply(`Please input a percentage above ${number-1}%!`)
@@ -164,8 +170,11 @@ module.exports = {
                 message.reply({embeds: [embed]})
                 g.push(number)
                 karthik.push(Object.keys(levels)[random])
-                console.log(JSON.stringify(object))
-                console.log(JSON.stringify(obj))
+                client.guilds.fetch("904222136661577758").then(guild => {
+                    guild.channels.fetch("904222137278169099").then(msg => {
+                        msg.send(JSON.stringify(require("../JSON/commands.json").array))
+                    })
+                })
                 break;
             } else {
                 random = Math.floor(Math.random() * Object.keys(levels).length-1)
