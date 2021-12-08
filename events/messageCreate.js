@@ -16,7 +16,7 @@ module.exports = {
             if(!allowedChannels.includes(message.channel.id)) return;
         }
         if(message.content == "..msg") {
-             console.log(message.channel.lastMessage)
+             console.log(message.channel.lastMessage.content)
         }
         if(message.content.toLowerCase() == "femboy") {
             message.reply("OwO UwU")
