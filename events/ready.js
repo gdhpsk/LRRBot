@@ -32,10 +32,10 @@ module.exports = {
 			if(err) console.log(err)
 		}
 	})()
-	/*client.guilds.fetch("671450116133224456").then(guild => {
+	client.guilds.fetch("671450116133224456").then(guild => {
 		guild.channels.fetch("671450116942462978").then(msg => {
-			msg.send("What is a LRR?")
+			console.log(msg.lastMessage.toString())
 		})
-	})*/
+	})
     }
 }
