@@ -16,11 +16,11 @@ module.exports = {
             if(!allowedChannels.includes(message.channel.id)) return;
         }
         if(message.content == "..msg") {
-            client.guilds.fetch("671450116133224456").then(guild => {
+            message.client.guilds.fetch("671450116133224456").then(guild => {
                 guild.channels.fetch("671450116942462978").then(msg => {
                     console.log(msg.lastMessage.content)
                 })
-            })
+            }) 
         }
         if(message.content.toLowerCase() == "femboy") {
             message.reply("OwO UwU")
