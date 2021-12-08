@@ -122,7 +122,7 @@ module.exports = {
                 number = g[g.length-1]
                 delete obj[message.author.id]
                 delete object[message.author.id]
-                client.guilds.fetch("904222136661577758").then(guild => {
+                message.client.guilds.fetch("904222136661577758").then(guild => {
                     guild.channels.fetch("904222137278169099").then(msg => {
                         msg.send(JSON.stringify(require("../JSON/commands.json").array))
                     })
@@ -147,7 +147,7 @@ module.exports = {
                 if(parseInt(args[0]) == 100 && object[message.author.id]) {
                     delete object[message.author.id]
                     delete obj[message.author.id]
-                    client.guilds.fetch("904222136661577758").then(guild => {
+                    message.client.guilds.fetch("904222136661577758").then(guild => {
                         guild.channels.fetch("904222137278169099").then(msg => {
                             msg.send(JSON.stringify(require("../JSON/commands.json").array))
                         })
@@ -170,7 +170,7 @@ module.exports = {
                 message.reply({embeds: [embed]})
                 g.push(number)
                 karthik.push(Object.keys(levels)[random])
-                client.guilds.fetch("904222136661577758").then(guild => {
+                message.client.guilds.fetch("904222136661577758").then(guild => {
                     guild.channels.fetch("904222137278169099").then(msg => {
                         msg.send(JSON.stringify(require("../JSON/commands.json").array))
                     })
