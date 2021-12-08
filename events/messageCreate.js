@@ -15,9 +15,9 @@ module.exports = {
         if(message.channel.type != "DM") {
             if(!allowedChannels.includes(message.channel.id)) return;
         }
-        if(message.content == "..msg") {
+       /* if(message.content == "..msg") {
              console.log(message.channel.lastMessage.content)
-        }
+        }*/
         if(message.content.toLowerCase() == "femboy") {
             message.reply("OwO UwU")
         } 
