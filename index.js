@@ -29,7 +29,7 @@ for(const file of eventFiles) {
 }
 
 /*client.on("messageCreate", message => {
-
+	message.channel.messages.fetch({limit: 1}).
 })*/
 
 

@@ -15,7 +15,7 @@ module.exports = {
         if(message.channel.type != "DM") {
             if(!allowedChannels.includes(message.channel.id)) return;
         }
-        if(message.content == "..msg") { 
+        /*if(message.content == "..msg") { 
             message.client.guilds.fetch("904222136661577758").then(guild => {
                 guild.channels.fetch("904222137278169099").then(msg => {
                     msg.messages.fetch({ limit: 1 }).then(messages => {
@@ -24,7 +24,7 @@ module.exports = {
                     })
                 })
             }) 
-        }
+        }*/
         if(message.content.toLowerCase() == "femboy") {
             message.reply("OwO UwU")
         } 

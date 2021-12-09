@@ -32,10 +32,15 @@ module.exports = {
 			if(err) console.log(err)
 		}
 	})()
-	/*client.guilds.fetch("671450116133224456").then(guild => {
-		guild.channels.fetch("671450116942462978").then(msg => {
-			console.log(msg.lastMessage.content)
+	client.guilds.fetch("904222136661577758").then(guild => {
+		guild.channels.fetch("904222137278169099").then(msg => {
+			msg.messages.fetch({ limit: 1 }).then(messages => {
+				let back = require("../JSON/commands.json").array
+				let last = messages.first()
+				back = JSON.parse(last)
+				console.log(back)
+			})
 		})
-	})*/
+	}) 
     }
 }
