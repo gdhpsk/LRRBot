@@ -18,7 +18,10 @@ module.exports = {
         if(message.content == "..msg") { 
             message.client.guilds.fetch("671450116133224456").then(guild => {
                 guild.channels.fetch("671450116942462978").then(msg => {
-                    console.log(msg.lastMessage.content)
+                    msg.messages.fetch({ limit: 1 }).then(messages => {
+                        let last = messages.first()
+                        console.log(last)
+                    })
                 })
             }) 
         }
