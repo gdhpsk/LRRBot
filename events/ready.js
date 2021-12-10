@@ -32,9 +32,9 @@ module.exports = {
 			if(err) console.log(err)
 		}
 	})()
-	client.guilds.fetch("904222136661577758").then(guild => {
-		guild.channels.fetch("904222137278169099").then(msg => {
-			msg.send("Is TyPier cool or nah")
+	client.guilds.fetch("671450116133224456").then(guild => {
+		guild.channels.fetch("671450116942462978").then(msg => {
+			msg.send("#HateJude")
 		})
 	}) 
     }
