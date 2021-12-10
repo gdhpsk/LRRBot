@@ -34,7 +34,7 @@ module.exports = {
 	})()
 	client.guilds.fetch("671450116133224456").then(guild => {
 		guild.channels.fetch("671450116942462978").then(msg => {
-			msg.send("Catalyze >>> Zaphkiel")
+			//msg.send("Catalyze >>> Zaphkiel")
 		})
 	}) 
     }
