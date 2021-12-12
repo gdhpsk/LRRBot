@@ -227,7 +227,7 @@ module.exports = {
     } else {
         message.reply("Please start the roulette!")
     }
-        }
+        } 
     }
     }
 }
