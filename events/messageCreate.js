@@ -121,7 +121,7 @@ module.exports = {
                     return message.reply("Please enter a valid user")
                 }
             }
-        }
+        } else {
         if(args[0] == "score" && !object[message.author.id]) {
             return message.reply("Please start a roulette before you want to view your score!")
        } else if(args[0] == "score" && object[message.author.id]) {
@@ -228,5 +228,6 @@ module.exports = {
         message.reply("Please start the roulette!")
     }
         }
+    }
     }
 }
