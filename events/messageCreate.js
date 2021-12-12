@@ -95,7 +95,7 @@ module.exports = {
                 return message.reply("Who's roulette do you want to join? Type the User ID/ping the user")
             }
             if(!message.mentions.users.first()) {
-                if(message.guild.members.cache.find(user => user.id == args[1])) {
+                if(message.guild.members.cache.get(args[1])) {
                     const id = message.author.id
                     message.channel.send(`<@${message.guild.members.cache.find(user => user.id === args[1]).id}>, do you want to join a roulette?`)
                     const filter = m => m.author.id === message.guild.members.cache.find(user => user.id == args[1]).id;
