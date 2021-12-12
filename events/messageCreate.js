@@ -102,10 +102,10 @@ module.exports = {
                     const collector = message.channel.createMessageCollector({filter});
                     collector.on("collect", msg => {
                         if(!msg.author.bot) {
-                        if(msg.content == "yes") {
+                        if(msg.content.toLowerCase() == "yes") {
                              msg.channel.send(`<@${id}>, This person has approved your request`)
                             collector.stop()
-                        } else if(msg.content == "no") {
+                        } else if(msg.content.toLowerCase() == "no") {
                             msg.channel.send(`<@${id}>, This person has declined your request`) 
                             collector.stop()
                         } else {
