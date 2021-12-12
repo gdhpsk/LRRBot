@@ -97,8 +97,8 @@ module.exports = {
             if(!message.mentions.users.first()) {
                 if(message.client.users.cache.find(user => user.id == args[1])) {
                     const id = message.author.id
-                    message.channel.send(`<@${message.client.users.cache.find(user => user.id == "").id}>, do you want to join a roulette?`)
-                    const filter = m => message.client.users.cache.find(user => user.id == "").id === message.author.id;
+                    message.channel.send(`<@${message.client.users.cache.find(user => user.id == args[0]).id}>, do you want to join a roulette?`)
+                    const filter = m => message.client.users.cache.find(user => user.id == args[0]).id === message.author.id;
                     const collector = message.channel.createMessageCollector(filter, {time: 10000});
                     collector.on("collect", msg => {
                         if(msg.content == "yes") {
