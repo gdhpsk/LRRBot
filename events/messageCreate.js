@@ -78,7 +78,7 @@ module.exports = {
             var random = Math.floor(Math.random() * Object.keys(levels).length-4)
             if(!args[0]) return message.reply("Please input the percentage you got. If you haven't started a roulette, start one by doing the command \"..roulette start\"");
             if(!object[message.author.id] && args[0] != "start") return message.reply("Please start a roulette!")
-            if(isNaN(parseInt(args[0])) && args[0] != "start" && args[0] != "end" && args[0] != "score") return message.reply("Please input a valid number");
+            if(isNaN(parseInt(args[0])) && args[0] != "start" && args[0] != "end" && args[0] != "score" && args[0] != "join") return message.reply("Please input a valid number");
         /*if(args[0] != "end") {
             if(!object[message.author.id]) {
                 object[message.author.id] = [
@@ -89,6 +89,24 @@ module.exports = {
                 karthik = object[message.author.id]
             }
         }*/
+        if(args[0] == "join") {
+            if(!args[1]) {
+                return message.reply("Who's roulette do you want to join? Type the User ID/ping the user")
+            }
+            if(!message.mentions.users.first()) {
+                if(client.users.cache.find(user => user.id == args[1])) {
+                    return message.reply("You have joined this roulette")
+                } else {
+                    return message.reply("Please enter a valid user ID")
+                }
+            } else {
+                if(client.users.cache.find(user => user.id == message.mentions.users.first().id)) {
+                    return message.reply("You have joined this roulette")
+                } else {
+                    return message.reply("Please enter a valid user")
+                }
+            }
+        }
         if(args[0] == "score" && !object[message.author.id]) {
             return message.reply("Please start a roulette before you want to view your score!")
        } else if(args[0] == "score" && object[message.author.id]) {
