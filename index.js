@@ -29,7 +29,7 @@ for(const file of eventFiles) {
 }
 
 /*client.on("messageCreate", message => {
-	client.users
+	message.client.users.cache.get().id
 })*/
 
  
