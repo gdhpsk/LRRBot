@@ -94,13 +94,13 @@ module.exports = {
                 return message.reply("Who's roulette do you want to join? Type the User ID/ping the user")
             }
             if(!message.mentions.users.first()) {
-                if(client.users.cache.find(user => user.id == args[1])) {
+                if(message.client.users.cache.find(user => user.id == args[1])) {
                     return message.reply("You have joined this roulette")
                 } else {
                     return message.reply("Please enter a valid user ID")
                 }
             } else {
-                if(client.users.cache.find(user => user.id == message.mentions.users.first().id)) {
+                if(message.client.users.cache.find(user => user.id == message.mentions.users.first().id)) {
                     return message.reply("You have joined this roulette")
                 } else {
                     return message.reply("Please enter a valid user")
