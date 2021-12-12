@@ -114,7 +114,7 @@ module.exports = {
                     }
                     })
                 } else {
-                    console.log(message.client.users.cache.find(user => user.id === args[1]))
+                    console.log(args[1])
                     return message.reply("Please enter a valid user ID")
                 }
             } else {
