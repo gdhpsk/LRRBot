@@ -9,7 +9,8 @@ module.exports = {
         let args = message.content.slice(prefix.length).split(/ +/);
         const cmd = args.shift().toLowerCase();
         var allowedChannels = [
-            "671454973346840616"
+            "671454973346840616",
+            "919475035750670360"
         ]
         if(message.author.bot) return;
         if(message.channel.type != "DM") {
