@@ -102,13 +102,13 @@ module.exports = {
                     const collector = message.channel.createMessageCollector(filter, {time: 10000});
                     collector.on("collect", msg => {
                         if(msg.content == "yes") {
-                            msg.channel.send(`<@${id}>, This person has approved your request`)
+                             msg.channel.send(`<@${id}>, This person has approved your request`)
                             collector.stop()
                         } else if(msg.content == "no") {
                             msg.channel.send(`<@${id}>, This person has declined your request`)
                             collector.stop()
                         } else {
-                            msg.channel.send("Send a valid response! (either yes or no)")
+                            return msg.channel.send("Send a valid response! (either yes or no)")
                         }
                     })
                 } else {
