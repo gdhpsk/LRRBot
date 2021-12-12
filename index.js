@@ -2,7 +2,7 @@ const fs = require('fs');
 const { Client, Collection } = require('discord.js');
 const Discord = require("discord.js")
 
-const client = new Client({ partials: ["CHANNEL", "MESSAGE", "REACTION"], intents: ["GUILDS", "GUILD_MESSAGES", "DIRECT_MESSAGES", "GUILD_MESSAGE_REACTIONS", "DIRECT_MESSAGE_REACTIONS", "GUILD_EMOJIS_AND_STICKERS", "GUILD_MEMBERS"]});
+const client = new Client({ partials: ["CHANNEL", "MESSAGE", "REACTION"], intents: ["GUILDS", "GUILD_MESSAGES", "DIRECT_MESSAGES", "GUILD_MEMBERS", "GUILD_PRESENCES"]});
 
 const commandFiles = fs.readdirSync("./commands").filter(file => file.endsWith(".js"))
 
