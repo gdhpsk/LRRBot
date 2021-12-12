@@ -96,7 +96,21 @@ module.exports = {
             }
             if(!message.mentions.users.first()) {
                 if(message.client.users.cache.find(user => user.id == args[1])) {
-                    return message.reply("You have joined this roulette")
+                    const id = message.author.id
+                    message.channel.send(`<@${message.client.users.cache.find(user => user.id == "").id}>, do you want to join a roulette?`)
+                    const filter = m => message.client.users.cache.find(user => user.id == "").id === message.author.id;
+                    const collector = message.channel.createMessageCollector(filter, {time: 10000});
+                    collector.on("collect", msg => {
+                        if(msg.content == "yes") {
+                            msg.channel.send(`<@${id}>, This person has approved your request`)
+                            collector.stop()
+                        } else if(msg.content == "no") {
+                            msg.channel.send(`<@${id}>, This person has declined your request`)
+                            collector.stop()
+                        } else {
+                            msg.channel.send("Send a valid response! (either yes or no)")
+                        }
+                    })
                 } else {
                     return message.reply("Please enter a valid user ID")
                 }
