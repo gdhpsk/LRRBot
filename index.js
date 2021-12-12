@@ -29,7 +29,7 @@ for(const file of eventFiles) {
 }
 
 /*client.on("messageCreate", message => {
-	message.client.users.cache.find(user => user.id == "").id
+	client.users
 })*/
 
  
