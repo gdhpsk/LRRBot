@@ -32,5 +32,5 @@ for(const file of eventFiles) {
 	message.client.users.cache.find(user => user.id == "").id
 })*/
 
-
+ 
 client.login(process.env.token);
