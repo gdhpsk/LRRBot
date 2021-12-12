@@ -83,7 +83,7 @@ module.exports = {
         /*if(args[0] != "end") {
             if(!object[message.author.id]) {
                 object[message.author.id] = [
-    
+     
                 ]
                 karthik = object[message.author.id]
             } else {
