@@ -105,7 +105,7 @@ module.exports = {
                              msg.channel.send(`<@${id}>, This person has approved your request`)
                             collector.stop()
                         } else if(msg.content == "no") {
-                            msg.channel.send(`<@${id}>, This person has declined your request`)
+                            msg.channel.send(`<@${id}>, This person has declined your request`) 
                             collector.stop()
                         } else {
                             return msg.channel.send("Send a valid response! (either yes or no)")
