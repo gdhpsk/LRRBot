@@ -331,7 +331,9 @@
             "Black Blizzard",
             "Killbot",
             "Artificial Dream",
-            "Artificial Ascent"
+            "Artificial Ascent",
+            "Artificial Ideology",
+            "A Bizarre Phantasm"
         ],
         "progs": [
             {
@@ -786,7 +788,9 @@
             "Omicron",
             "Super Probably Level",
             "Dolos",
-            "ErebuS"
+            "ErebuS",
+            "Allegiance",
+            "Cybernetic Crescent"
         ],
         "progs": [
             {
@@ -1404,6 +1408,14 @@
             {
                 "name": "Bloodbath",
                 "percent": 81
+            },
+            {
+                "name": "Epsilon",
+                "percent": 70
+            },
+            {
+                "name": "Tempest Tornado",
+                "percent": 85
             }
         ]
     },
@@ -1432,6 +1444,16 @@
             "Black Blizzard"
         ],
         "progs": [
+            "none"
+        ]
+    },
+    "cob":{
+        "nationality" :"France",
+        "levels":[
+            "CYCLONE",
+            "Acu"
+        ],
+        "progs":[
             "none"
         ]
     },
@@ -1812,7 +1834,8 @@
             "Cosmorush 21",
             "Niflheim",
             "Extinction",
-            "Artificial Dream"
+            "Artificial Dream",
+            "SHATTER"
         ],
         "progs": [
             {
@@ -2909,16 +2932,15 @@
             "MELTDOWN",
             "HURRICANE",
             "Glide",
-            "Novalis"
+            "Novalis",
+            "Epsilon",
+            "Lights Out",
+            "ATMarbl"
         ],
         "progs": [
             {
-                "name": "Black Blizzard",
-                "percent": 46
-            },
-            {
-                "name": "Epsilon",
-                "percent": 87
+                "name": "Cadrega Mode",
+                "percent": 88
             }
         ]
     },
@@ -3730,7 +3752,8 @@
             "Artificial Ideology",
             "Mandragora",
             "The Antimatter",
-            "Cadrega Mode"
+            "Cadrega Mode",
+            "Fabricated Thoughts"
         ],
         "progs": [
             "none"
@@ -3754,7 +3777,8 @@
             "CYCLONE",
             "Cataclysm",
             "Retention",
-            "FinKor"
+            "FinKor",
+            "Triple Six"
         ],
         "progs": [
             {
@@ -3787,6 +3811,10 @@
             {
                 "name": "Red World Rebirth",
                 "percent": 73
+            },
+            {
+                "name": "Infernal Abyss",
+                "percent": 90
             }
         ]
     },
@@ -6614,7 +6642,9 @@
             "Novalis",
             "RASH",
             "Alcatraz",
-            "Disentombed"
+            "Disentombed",
+            "Glacial Torrent",
+            "SHATTER"
         ],
         "progs": [
             "none"
@@ -6742,7 +6772,8 @@
             "Quest for Perfection",
             "Niflheim",
             "Allegiance",
-            "Cataclysm"
+            "Cataclysm",
+            "SHATTER"
         ],
         "progs": [
             "none"
@@ -6805,7 +6836,8 @@
             "Azure Fiesta",
             "Aurora",
             "SHATTER",
-            "The Antimatter"
+            "The Antimatter",
+            "Epsilon"
         ],
         "progs": [
             {
@@ -8525,7 +8557,8 @@
             "Cromulent",
             "EnvY",
             "Hateful Reflection",
-            "Phobos"
+            "Phobos",
+            "Uprise"
         ],
         "progs": [
             "none"
@@ -8694,9 +8727,19 @@
             "The Ultimate Phase",
             "Plasma Pulse III",
             "The Hell Zone",
-            "Frightful Melody"
+            "Frightful Melody",
+            "Malware II",
+            "Grill Kill",
+            "Evangelion",
+            "Ziroikabi",
+            "Twisted Tranquility"
         ],
-        "progs": []
+        "progs": [
+            {
+                "name": "Furious Flames",
+                "percent": 85
+            }
+        ]
     },
     "Tuggy": {
         "levels": [
@@ -8729,7 +8772,8 @@
             "Esencia",
             "Frightful Melody",
             "Galactus",
-            "Heat Wave"
+            "Heat Wave",
+            "Malware II"
         ],
         "progs": [
             "none"
@@ -8783,7 +8827,7 @@
         ],
         "progs": []
     },
-    "Bunny666": {
+    "Lobster": {
         "levels": [
             "Marathon"
         ],
@@ -8791,6 +8835,10 @@
             {
                 "name": "Athanatos",
                 "percent": 79
+            },
+            {
+             "name": "Disentombed",
+             "percent": 64
             }
         ]
     },
@@ -9232,7 +9280,10 @@
             "Black Blizzard"
         ],
         "progs": [
-            "none"
+            {
+                "name": "distraught",
+                "percent": 78
+            }
         ]
     },
     "AstatineGMD": {
@@ -9261,7 +9312,7 @@
         "progs": [
             {
                 "name": "Artifice",
-                "percent": 57
+                "percent": 70
             },
             {
                 "name": "Cadrega Mode",
@@ -9313,7 +9364,10 @@
             "Plasma Pulse III",
             "NecropoliX",
             "Retention",
-            "Breakout"
+            "Breakout",
+            "SHATTER",
+            "Niflheim",
+            "The Antimatter"
         ],
         "progs": [
             "none"
@@ -9736,13 +9790,11 @@
     },
     "Coheton": {
         "levels": [
-            "Diligence"
+            "Diligence",
+            "Idols",
+            "Reverence"
         ],
         "progs": [
-            {
-                "name": "Idols",
-                "percent": 74
-            },
             {
                 "name": "Celestial Force",
                 "percent": 90
@@ -9816,7 +9868,8 @@
     },
     "Doraemon": {
         "levels": [
-            "Acu"
+            "Acu",
+            "Lights Out"
         ],
         "progs": [
             "none"
@@ -9921,7 +9974,10 @@
             "Thanatophobia"
         ],
         "progs": [
-            "none"
+            {
+                "name": "Fabricated Thoughts",
+                "percent": 66
+            }
         ]
     },
     "Joshua83 GD": {
@@ -10376,16 +10432,13 @@
         "nationality": "Dominican_Republic",
         "levels": [
             "Acu",
-            "Concaved Memories"
+            "Concaved Memories",
+            "Black Blizzard"
         ],
         "progs": [
             {
                 "name": "Phobos",
                 "percent": 59
-            },
-            {
-                "name": "Black Blizzard",
-                "percent": 98
             }
         ]
     },
@@ -10583,7 +10636,7 @@
         "progs": [
             {
                 "name": "Digital Descent",
-                "percent": "70"
+                "percent": "76"
             }
         ]
     },
@@ -10978,6 +11031,10 @@
             {
                 "name": "Carnage Mode",
                 "percent": 59
+            },
+            {
+                "name": "kowareta",
+                "percent": 60
             }
         ]
     },
@@ -11166,7 +11223,7 @@
             },
             {
                 "name": "INNARDS",
-                "percent": 69
+                "percent": 83
             }
         ]
     },
@@ -11216,7 +11273,8 @@
     "Axelerrixx": {
         "nationality": "China",
         "levels": [
-            "Killbot"
+            "Killbot",
+            "Plasma Pulse III"
         ],
         "progs": [
             
@@ -11525,7 +11583,9 @@
             "Awakening Horus",
             "Retention",
             "Artificial Dream",
-            "Daydream"
+            "Daydream",
+            "Unearthed",
+            "NecropoliX"
         ],
         "progs": [
             "none"
@@ -11541,17 +11601,14 @@
     },
     "CrispyKey": {
         "levels": [
-            "Glide"
+            "Glide",
+            "Black Blizzard"
         ],
         "progs": [
          {
              "name": "Fusion Z",
              "percent": 70
-         },
-         {
-             "name": "Black Blizzard",
-             "percent": 96
-         }   
+         }  
         ]
     },
     "Rachel": {
@@ -11604,7 +11661,10 @@
             "Deception Dive"
         ],
         "progs": [
-            "none"
+        {
+             "name": "Infernal Abyss",
+             "percent": 89
+        }
         ]
     },
     "geometryplays3": {
@@ -11628,7 +11688,9 @@
             "Aftermath",
             "Cataclysm",
             "Allegiance",
-            "Niflheim"
+            "Niflheim",
+            "SHATTER",
+            "Armageddon"
         ],
         "progs": [
         {
@@ -11645,5 +11707,53 @@
         "progs": [
             "none"
         ]
+    },
+    "kaiden phoenix": {
+        "levels": [
+            "Infernal Abyss"
+        ],
+        "progs": [
+            "none"
+        ]
+    },
+    "Bizer": {
+        "levels": [
+            "Infernal Abyss"
+        ],
+        "progs": [
+            "none"
+        ]
+    },
+    "Dashiell10": {
+        "levels": [
+            "Lights Out"
+        ],
+        "progs": [
+            "none"
+        ]
+    },
+     "Amnesticat": {       
+         "levels": [],
+        "progs": [
+            { "name": "Killbot",
+              "percent": 74
+            }
+        ]    
+    },
+     "Zophirux": {       
+         "levels": [],
+        "progs": [
+            { "name": "Just DANCE",
+              "percent": 81
+            }
+        ]    
+    },
+    "Juan Anonimo": {       
+         "levels": [],
+        "progs": [
+            { "name": "Black Blizzard",
+              "percent": 61
+            }
+        ]    
     }
 }

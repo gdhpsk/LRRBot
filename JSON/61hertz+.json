@@ -237,5 +237,22 @@
     "progresses": [
         "none"
     ]
+},
+    "Lonely Lights": {
+    "name": "Lonely Lights",
+    "ytcode": "0voiQses3W4",
+    "minimumPercent": 72,
+    "ranking": "Around Maybe Possibly Thing",
+    "publisher": "Elvii",
+    "list": [
+        {
+            "name": "Dreamlight",
+            "link": "https://www.youtube.com/watch?v=1fuuMfbeErM",
+            "hertz": "75"
+        }
+    ],
+    "progresses": [
+        "none"
+    ]
 }
 }
