@@ -75,9 +75,8 @@ module.exports = {
             message.client.guilds.fetch("904222136661577758").then(guild => {
             guild.channels.fetch("904222137278169099").then(msg => {
                 msg.messages.fetch({ limit: 1 }).then(messages => {
-                    let back = require("../JSON/commands.json").array
                     let last = messages.first()
-                    back = JSON.parse(last)
+                    require("../JSON/commands.json").array = JSON.parse(last)
                 })
             })
         }) 
