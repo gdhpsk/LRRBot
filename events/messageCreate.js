@@ -80,7 +80,7 @@ module.exports = {
                     back = JSON.parse(last)
                 })
             })
-        })
+        }) 
             var karthik;
             var g;
             var levels = require("../JSON/levels.json")
