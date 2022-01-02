@@ -29,7 +29,11 @@ for(const file of eventFiles) {
 }
 
 /*client.on("messageCreate", message => {
-	message.channel.lastMessage.content
+	message.client.guilds.fetch("904222136661577758").then(guild => {
+		guild.channels.fetch("904222137278169099").then(msg => {
+			msg.lastMessage
+		})
+	})
 })*/
 
  
