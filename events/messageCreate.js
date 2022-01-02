@@ -77,11 +77,11 @@ module.exports = {
             guild.channels.fetch("904222137278169099").then(msg => {
                 msg.messages.fetch({ limit: 1 }).then(messages => {
                     last = messages.first().content
-                    console.log(last)
-                    require("../JSON/commands.json").array = JSON.parse(last)
+                    //require("../JSON/commands.json").array = JSON.parse(last)
                 })
             })
         })
+            console.log(last)
             var karthik;
             var g;
             var levels = require("../JSON/levels.json")
