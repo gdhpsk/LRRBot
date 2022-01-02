@@ -72,16 +72,17 @@ module.exports = {
             message.channel.send("Worked Successfully")
         }
         if(cmd == "roulette") {
-            var last;
+            function elam() {
             message.client.guilds.fetch("904222136661577758").then(guild => {
             guild.channels.fetch("904222137278169099").then(msg => {
                 msg.messages.fetch({ limit: 1 }).then(messages => {
-                    last = messages.first().content
-                    //require("../JSON/commands.json").array = JSON.parse(last)
+                    var last = messages.first().content
+                    return last
                 })
             })
         })
-            console.log(last)
+    }
+    console.log(elam())
             var karthik;
             var g;
             var levels = require("../JSON/levels.json")
