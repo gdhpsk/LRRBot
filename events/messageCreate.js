@@ -72,12 +72,14 @@ module.exports = {
             message.channel.send("Worked Successfully")
         }
         if(cmd == "roulette") {
-            message.client.guilds.fetch("904222136661577758").then(guild => {
+           /* message.client.guilds.fetch("904222136661577758").then(guild => {
             guild.channels.fetch("904222137278169099").then(msg => {
                 msg.messages.fetch({ limit: 1 }).then(messages => {
                     var last = messages.first().content
                     require("../JSON/commands.json").array = JSON.parse(last)
-                
+                })
+            })
+            })*/
             var karthik;
             var g;
             var levels = require("../JSON/levels.json")
@@ -237,9 +239,6 @@ module.exports = {
         message.reply("Please start the roulette!")
     }
         } 
-    })
-})
-})
     }
     }
 }
