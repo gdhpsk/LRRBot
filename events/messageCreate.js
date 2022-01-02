@@ -74,8 +74,11 @@ module.exports = {
         if(cmd == "roulette") {
             message.client.guilds.fetch("904222136661577758").then(guild => {
             guild.channels.fetch("904222137278169099").then(msg => {
-                console.log(msg.lastMessage)
-                //require("../JSON/commands.json").array = JSON.parse(msg.lastMessage.content)
+                msg.messages.fetch({ limit: 1 }).then(messages => {
+                    let back = require("../JSON/commands.json").array
+                    let last = messages.first()
+                    back = JSON.parse(last)
+                })
             })
         })
             var karthik;
