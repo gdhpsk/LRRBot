@@ -35,7 +35,7 @@ let lol = (player) => {
             var jk = 0
             var count = Object.keys(level).indexOf(leaderboard[player].progs[i].name)+1
             if(count > 75) break;
-            if(level[leaderboard[player].progs[i].name].minimumPercent) {
+            if(level[leaderboard[player].progs[i].name].minimumPercent != undefined) {
         if(level[leaderboard[player].progs[i].name].minimumPercent > leaderboard[player].progs[i].percent) continue;
             }
         if(count <= 50){
