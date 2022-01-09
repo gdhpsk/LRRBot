@@ -11759,7 +11759,8 @@
      "Amnesticat": {       
          "levels": [],
         "progs": [
-            { "name": "Killbot",
+            { 
+              "name": "Killbot",
               "percent": 74
             }
         ]    
@@ -11767,7 +11768,7 @@
      "Zophirux": {       
          "levels": [],
         "progs": [
-            { "name": "Just DANCE",
+            { "name": "Just Dance",
               "percent": 81
             }
         ]    
