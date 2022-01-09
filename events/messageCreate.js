@@ -208,7 +208,7 @@ module.exports = {
                     })
                     return message.reply("Congratulations, you've completed the lrr roulette! Now quit gd smh")
                 }
-                if(parseInt(args[0]) < g[g.length-1]) return message.reply(`Please input a percentage above ${g.length == 1 ? 1 : g[g.length-1]}%!`)
+                if(parseInt(args[0]) < g[g.length-1]) return message.reply(`Please input a percentage above ${g.length == 1 ? 0 : g[g.length-1]-1}%!`)
                
             }
             if(object[message.author.id]) {
