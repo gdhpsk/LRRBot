@@ -333,7 +333,8 @@
             "Artificial Dream",
             "Artificial Ascent",
             "Artificial Ideology",
-            "A Bizarre Phantasm"
+            "A Bizarre Phantasm",
+            "The Hell Factory"
         ],
         "progs": [
             {
@@ -790,7 +791,8 @@
             "Dolos",
             "ErebuS",
             "Allegiance",
-            "Cybernetic Crescent"
+            "Cybernetic Crescent",
+            "Artificial Ascent"
         ],
         "progs": [
             {
@@ -1262,6 +1264,7 @@
         ]
     },
     "Flavyola64": {
+        "nationality": "Belgium",
         "levels": [
             "Super Probably Level",
             "Aftermath",
@@ -1310,7 +1313,8 @@
             "Daydream",
             "Prismatic Haze",
             "SHATTER",
-            "Cadrega Mode"
+            "Cadrega Mode",
+            "Caution"
         ],
         "progs": [
             {
@@ -1402,16 +1406,13 @@
             "Concaved Memories",
             "Brimtanic Paradise",
             "Phobos",
-            "SHATTER"
+            "SHATTER",
+            "Epsilon"
         ],
         "progs": [
             {
                 "name": "Bloodbath",
                 "percent": 81
-            },
-            {
-                "name": "Epsilon",
-                "percent": 70
             },
             {
                 "name": "Tempest Tornado",
@@ -2055,6 +2056,7 @@
         ]
     },
     "Zest": {
+        "nationality": "United_Kingdom",
         "levels": [
             "ATMarbl",
             "Niflheim",
@@ -2069,7 +2071,8 @@
             "Master Duel",
             "Fexty",
             "ICE Carbon Diablo X",
-            "Conical Depression"
+            "Conical Depression",
+            "Blade of Justice"
         ],
         "progs": [
             {
@@ -2935,12 +2938,13 @@
             "Novalis",
             "Epsilon",
             "Lights Out",
-            "ATMarbl"
+            "ATMarbl",
+            "Cadrega Mode"
         ],
         "progs": [
             {
-                "name": "Cadrega Mode",
-                "percent": 88
+                "name": "Void Wave",
+                "percent": 64
             }
         ]
     },
@@ -3296,7 +3300,10 @@
             "Heat Wave",
             "Niflheim",
             "Triple Six",
-            "Allegiance"
+            "Allegiance",
+            "Cadrega Mode",
+            "Daydream",
+            "Karma"
         ],
         "progs": [
             {
@@ -3913,7 +3920,8 @@
             "Plasma Pulse III",
             "Cataclysm",
             "Uprise",
-            "Phobos"
+            "Phobos",
+            "Epsilon"
         ],
         "progs": [
             {
@@ -6477,7 +6485,8 @@
             "Incipient",
             "Artificial Ideology",
             "SPEEDRUN",
-            "Unearthed"
+            "Unearthed",
+            "Carcano"
         ],
         "progs": [
             "none"
@@ -6644,7 +6653,8 @@
             "Alcatraz",
             "Disentombed",
             "Glacial Torrent",
-            "SHATTER"
+            "SHATTER",
+            "Cadrega Mode"
         ],
         "progs": [
             "none"
@@ -6847,12 +6857,16 @@
         ]
     },
     "The Derp Shark": {
+        "nationality": "Canada",
         "levels": [
             "Acu",
             "Esencia"
         ],
         "progs": [
-            "none"
+            {
+                "name": "kowareta",
+                "percent": 59
+            }
         ]
     },
     "Deb Mays": {
@@ -8933,7 +8947,8 @@
             "Blade of Justice",
             "Red World Rebirth",
             "Thanatophobia",
-            "Plasma Pulse III"
+            "Plasma Pulse III",
+            "NecropoliX"
         ],
         "progs": [
             "none"
@@ -9282,7 +9297,7 @@
         "progs": [
             {
                 "name": "distraught",
-                "percent": 78
+                "percent": 93
             }
         ]
     },
@@ -9367,7 +9382,9 @@
             "Breakout",
             "SHATTER",
             "Niflheim",
-            "The Antimatter"
+            "The Antimatter",
+            "Just Dance",
+            "Glide"
         ],
         "progs": [
             "none"
@@ -9789,6 +9806,7 @@
         ]
     },
     "Coheton": {
+        "nationality": "Mexico",
         "levels": [
             "Diligence",
             "Idols",
@@ -10486,7 +10504,8 @@
             "Furious Flames",
             "Phobos",
             "Hateful Reflection",
-            "Carnage Mode"
+            "Carnage Mode",
+            "Freedom08"
         ],
         "progs": [
             "none"
@@ -11292,6 +11311,7 @@
         ]
     },
     "TrueJumpy": {
+        "nationality": "Portugal",
         "levels": [
             "Allegiance",
             "Cataclysm"
@@ -11484,7 +11504,8 @@
     },
         "Electro1009": {       
          "levels": [
-            "CYCLONE"
+            "CYCLONE",
+            "Niflheim"
         ],
         "progs": [
             "none"
@@ -11531,7 +11552,9 @@
             "Triple Six"
         ],
         "progs": [
-            "none"
+            { "name": "Conical Depression",
+              "percent": 61
+            }
         ]
     },
     "GeometryManGD": {
@@ -11684,6 +11707,7 @@
         ]
     },
     "Cedric22": {
+        "nationality": "Australia",
         "levels": [
             "Aftermath",
             "Cataclysm",
@@ -11755,5 +11779,23 @@
               "percent": 61
             }
         ]    
+    },
+        "ElectricExcalibur": {
+        "levels": [
+            "Reverence",
+            "Inflective",
+            "Prismatic Haze"
+        ],
+        "progs": [
+            "none"
+        ]
+    },
+    "sunix": {
+        "levels": [
+            "Heartbeat"
+        ],
+        "progs": [
+            "none"
+        ]
     }
 }
