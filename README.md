@@ -50,7 +50,7 @@ if(interaction.channel.type != "DM") {
 	}
 ```
 
-You also have to remove the allowedChannels variable. Basically, you have to remove these because TyPier decided to not set perms up for the bot in the LRR Server, so it'll only work in the LRR server if you don't remove this.
+You also have to remove the allowedChannels variable. Basically, you have to remove these because TyPier decided to not set perms up for the bot in the LRR Server, so it'll only work in the LRR server if you don't remove this.<br/>
 Of course, if you do have a better understanding of how all this works, then you may be able to reconfigure it for specifically your server, but if youre a noob at JS, please remove this.
 
 Back to the main part, basically, you get the command name with this piece of code:
@@ -116,19 +116,19 @@ How Text Commands work is that you get the content of a message, and based on th
 
 ## More info about commands used in LRRBot
 
-All of your code runs in the [index.js](https://github.com/gdhpsk/LRRBot/blob/main/index.js) file, which is basically the core. Partials can be changed depending on what commands you make, but you can research more about those on your own.
-All of the point calculating for the leaderboard/levels is done in the [point_calculator_stuff](https://github.com/gdhpsk/LRRBot/tree/main/point_calculator_stuff) folder (just don't ask why theres 2 level point calculators :trol:).
+All of your code runs in the [index.js](https://github.com/gdhpsk/LRRBot/blob/main/index.js) file, which is basically the core. Partials can be changed depending on what commands you make, but you can research more about those on your own.<br/>
+All of the point calculating for the leaderboard/levels is done in the [point_calculator_stuff](https://github.com/gdhpsk/LRRBot/tree/main/point_calculator_stuff) folder (just don't ask why theres 2 level point calculators :trol:).<br/>
 Lastly, all the JSON data needed for the bot such as getting all the levels, the leaderboard, etc., is put in the [JSON](https://github.com/gdhpsk/LRRBot/tree/main/JSON) folder.
 
 ## Creating your own LRRBot
 
 This part will be going by number order, so I will list all the steps in order.
 
-#1. Download [Visual Studio Code](https://code.visualstudio.com/) and [Node.js](https://nodejs.org/en/)(download the one recommended for most users).
-#2. Download all the code on this repository, put it in a folder if it already isnt in one, and then open it up in Visual Studio Code
-#3. Review the parts earlier in this file, and make those changes on yours
-#4. In the .env file, make a new entry called token. this is where your bot token will go. Ex: token=yourtoken
-#5. In your Visual Studio Code terminal, run node . or node index.js, and there you go!
-#6. if you want to host the bot on heroku like I did, watch this [video](https://www.youtube.com/watch?v=zKfjR_xwLm4)
+#1. Download [Visual Studio Code](https://code.visualstudio.com/) and [Node.js](https://nodejs.org/en/) (download the one recommended for most users).<br />
+#2. Download all the code on this repository, put it in a folder if it already isnt in one, and then open it up in Visual Studio Code. <br/>
+#3. Review the parts earlier in this file, and make those changes on yours.<br/>
+#4. In the .env file, make a new entry called token. this is where your bot token will go. Ex: token=yourtoken.<br/>
+#5. In your Visual Studio Code terminal, run node . or node index.js, and there you go!<br/>
+#6. if you want to host the bot on heroku like I did, watch this [video](https://www.youtube.com/watch?v=zKfjR_xwLm4).
 
 # Have fun experimenting! Ask any questions on discord (gdhpsk#0001)
