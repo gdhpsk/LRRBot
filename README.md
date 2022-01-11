@@ -124,9 +124,9 @@ Lastly, all the JSON data needed for the bot such as getting all the levels, the
 
 This part will be going by number order, so I will list all the steps in order.
 
-#1. (Skip to step 4 if you already made a bot) In Discord Developer Portal, Press on New Application (name it whatever you'd like).
-#2. Go to the bot tab, and make it a bot.
-#3. Make sure you keep your token secret and with you, you will need it later in this tutorial.
+#1. (Skip to step 4 if you already made a bot) In Discord Developer Portal, Press on New Application (name it whatever you'd like).<br/>
+#2. Go to the bot tab, and make it a bot.<br/>
+#3. Make sure you keep your token secret and with you, you will need it later in this tutorial.<br/>
 #4. Download [Visual Studio Code](https://code.visualstudio.com/) and [Node.js](https://nodejs.org/en/) (download the one recommended for most users).<br />
 #5. Download all the code on this repository, put it in a folder if it already isnt in one, and then open it up in Visual Studio Code. <br/>
 #6. Review the parts earlier in this file, and make those changes on yours.<br/>
