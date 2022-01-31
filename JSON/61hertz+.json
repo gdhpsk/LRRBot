@@ -50,6 +50,23 @@
         "none"
     ]
 },
+    "Yatagarasu": {
+    "name": "Yatagarasu",
+    "ytcode": "KgGKx0pk_wo",
+    "minimumPercent": 51,
+    "ranking": "around Plasma Pulse Finale",
+    "publisher": "TrusTa",
+    "list": [
+        {
+            "name": "AGSEcho",
+            "link": "https://www.youtube.com/watch?v=8C5iOZcDcKk",
+            "hertz": "75"
+        }
+    ],
+    "progresses": [
+        "none"
+    ]
+},
     "Dark Flare": {
     "name": "Dark Flare",
     "ytcode": "Pb8GVDjiiQQ",
@@ -179,6 +196,23 @@
         {
             "name": "Sonic80",
             "link": "https://youtu.be/3OwKOI4yXLQ",
+            "hertz": "75"
+        }
+    ],
+    "progresses": [
+        "none"
+    ]
+},
+    "Boogie": {
+    "name": "Boogie",
+    "ytcode": "bluhf__Mdqo",
+    "minimumPercent": 60,
+    "ranking": "Around Phobos",
+    "publisher": "DigitalZero",
+    "list": [
+        {
+            "name": "wwdonut",
+            "link": "https://www.youtube.com/watch?v=yMcPgw8MX24&ab_channel=wwdonut",
             "hertz": "75"
         }
     ],

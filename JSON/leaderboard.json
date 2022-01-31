@@ -334,7 +334,8 @@
             "Artificial Ascent",
             "Artificial Ideology",
             "A Bizarre Phantasm",
-            "The Hell Factory"
+            "The Hell Factory",
+            "The Hell Zone"
         ],
         "progs": [
             {
@@ -792,7 +793,8 @@
             "ErebuS",
             "Allegiance",
             "Cybernetic Crescent",
-            "Artificial Ascent"
+            "Artificial Ascent",
+            "Heartbeat"
         ],
         "progs": [
             {
@@ -1129,7 +1131,8 @@
             "ICE Carbon Diablo X",
             "Super Probably Level",
             "Omicron",
-            "Sunset Sandstorm"
+            "Sunset Sandstorm",
+            "Carcano"
         ],
         "progs": [
             {
@@ -1139,6 +1142,10 @@
             {
                 "name": "Artifice",
                 "percent": 56
+            },
+            {
+                "name": "Artificial Ascent",
+                "percent": 60
             }
         ]
     },
@@ -1211,7 +1218,8 @@
             "Epsilon",
             "Our Fountain",
             "Aurora",
-            "Shape of the Sun"
+            "Shape of the Sun",
+            "Blade of Justice"
         ],
         "progs": [
             {
@@ -1314,7 +1322,10 @@
             "Prismatic Haze",
             "SHATTER",
             "Cadrega Mode",
-            "Caution"
+            "Caution",
+            "Explicit",
+            "Belloq",
+            "Audio Expulsion"
         ],
         "progs": [
             {
@@ -1332,6 +1343,10 @@
             {
                 "name": "SHATTER",
                 "percent": 81
+            },
+            {
+                "name":"SubSonic",
+                "percent":58
             }
         ]
     },
@@ -2125,7 +2140,9 @@
             "Napalm",
             "Incipient",
             "Grimoire Heart",
-            "Daydream"
+            "Daydream",
+            "Carcano",
+            "Cataclysm"
         ],
         "progs": [
             {
@@ -3760,7 +3777,8 @@
             "Mandragora",
             "The Antimatter",
             "Cadrega Mode",
-            "Fabricated Thoughts"
+            "Fabricated Thoughts",
+            "Ziroikabi"
         ],
         "progs": [
             "none"
@@ -3785,12 +3803,13 @@
             "Cataclysm",
             "Retention",
             "FinKor",
-            "Triple Six"
+            "Triple Six",
+            "Killbot"
         ],
         "progs": [
             {
-                "name": "Killbot",
-                "percent": 71
+                "name": "Epsilon",
+                "percent": 58
             }
         ]
     },
@@ -6606,7 +6625,7 @@
             "none"
         ]
     },
-    "DreamTide": {
+    "dreamtide": {
         "levels": [
             "Acu",
             "Excessive Compliment",
@@ -6654,7 +6673,9 @@
             "Disentombed",
             "Glacial Torrent",
             "SHATTER",
-            "Cadrega Mode"
+            "Cadrega Mode",
+            "Idols",
+            "Esencia"
         ],
         "progs": [
             "none"
@@ -6715,6 +6736,10 @@
             {
                 "name": "SHATTER",
                 "percent": 74
+            },
+            {
+                "name": "EnvY",
+                "percent": 65
             }
         ]
     },
@@ -8787,7 +8812,10 @@
             "Frightful Melody",
             "Galactus",
             "Heat Wave",
-            "Malware II"
+            "Malware II",
+            "Tempest Tornado",
+            "Cadrega Mode",
+            "Freedom19"
         ],
         "progs": [
             "none"
@@ -9131,7 +9159,7 @@
         ],
         "progs": []
     },
-    "Frenchkebab": {
+    "Toshino": {
         "levels": [
             "Artificial Dream",
             "Novalis"
@@ -9292,7 +9320,8 @@
         "levels": [
             "Glide",
             "Fusion Z",
-            "Black Blizzard"
+            "Black Blizzard",
+            "Cataclysm"
         ],
         "progs": [
             {
@@ -9384,7 +9413,8 @@
             "Niflheim",
             "The Antimatter",
             "Just Dance",
-            "Glide"
+            "Glide",
+            "WaveBreaker"
         ],
         "progs": [
             "none"
@@ -9496,7 +9526,8 @@
             "Plasma Pulse Finale",
             "kowareta",
             "Erebus",
-            "Sonic Wave"
+            "Sonic Wave",
+            "Black Blizzard"
         ],
         "progs": [
             {
@@ -9583,7 +9614,8 @@
             "Hypersonic",
             "Void Wave",
             "Cadrega Mode",
-            "Omicron"
+            "Omicron",
+            "Just Dance"
         ],
         "progs": [
             "none"
@@ -9765,7 +9797,9 @@
     "PojangMacha": {
         "levels": [
             "Esencia",
-            "Zettabyte"
+            "Zettabyte",
+            "Cadrega Mode",
+            "Reverence"
         ],
         "progs": [
             "none"
@@ -9816,6 +9850,10 @@
             {
                 "name": "Celestial Force",
                 "percent": 90
+            },
+            {
+                "name": "kowareta",
+                "percent": 58
             }
         ]
     },
@@ -10408,7 +10446,7 @@
         "progs": [
             {
                 "name": "Black Blizzard",
-                "percent": 53
+                "percent": 72
             }
         ]
     },
@@ -11073,7 +11111,8 @@
             "Niflheim",
             "PLUS ULTRA",
             "Caution",
-            "Inflective"
+            "Inflective",
+            "Deflective"
         ],
         "progs": [
             {
@@ -11128,7 +11167,10 @@
             "Shape of the Sun"
         ],
         "progs": [
-            "none"
+            {
+                "name":"Deflective",
+                "percent":71
+            }
         ]
     },
     "KhanLs": {
@@ -11470,7 +11512,9 @@
                 "Allegiance"
             ],
             "progs": [
-                "none"
+                { "name": "Just Dance",
+              "percent": 73
+            }
             ]
           
         },
@@ -11611,7 +11655,9 @@
             "NecropoliX"
         ],
         "progs": [
-            "none"
+            { "name": "Artifice",
+              "percent": 86
+            }
         ]   
     },
     "Iowa": {
@@ -11681,7 +11727,8 @@
     "ConiZX": {
         "levels": [
             "Allegiance",
-            "Deception Dive"
+            "Deception Dive",
+            "Cataclysm"
         ],
         "progs": [
         {
@@ -11726,7 +11773,8 @@
     "Bonezizdum": {
         "nationality": "United_States",
         "levels": [
-            "Just Dance"
+            "Just Dance",
+            "Glide"
         ],
         "progs": [
             "none"
@@ -11759,8 +11807,7 @@
      "Amnesticat": {       
          "levels": [],
         "progs": [
-            { 
-              "name": "Killbot",
+            { "name": "Killbot",
               "percent": 74
             }
         ]    
@@ -11769,7 +11816,7 @@
          "levels": [],
         "progs": [
             { "name": "Just Dance",
-              "percent": 81
+              "percent": 98
             }
         ]    
     },
@@ -11797,6 +11844,88 @@
         ],
         "progs": [
             "none"
+        ]
+    },
+    "Jenniferlol": {
+        "levels": [
+            "Reverence",
+            "Esencia"
+        ],
+        "progs": [
+            { "name": "Killbot",
+              "percent": 62
+            }
+        ]
+    },
+     "GeoMiX": {       
+         "levels": [],
+        "progs": [
+            { "name": "Epsilon",
+              "percent": 69
+            }
+        ]    
+    },
+    "Terracopter": {
+        "levels": [
+            "SHATTER"
+        ],
+        "progs": [
+            "none"
+        ]
+    },
+    "Baprag": {
+        "levels": [
+            "Niflheim"
+        ],
+        "progs": [
+            "none"
+        ]
+    },
+    "Natsume": {
+        "levels": [
+            "Mandragora"
+        ],
+        "progs": [
+            "none"
+        ]
+    },
+    "SuperDog": {
+        "levels": [
+            "Novalis",
+            "Esencia"
+        ],
+        "progs": [
+            "none"
+        ]
+    },
+    "Riptide": {
+        "levels": [
+            "Esencia"
+        ],
+        "progs": [
+            "none"
+        ]
+    },
+    "jobalho": {
+        "levels": [],
+        "progs": [
+            {
+            "name": "Sigma Interface",
+            "percent": 78
+            }
+        ]
+    },
+    "Wallet": {
+        "levels": [],
+        "progs": [
+            {
+                "name": "Prismatic Haze",
+                "percent": 77
+            },
+            {
+                "name":"Audio Expulsion",
+                "percent":82
+            }
         ]
     }
 }
