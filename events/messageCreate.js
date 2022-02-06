@@ -73,7 +73,7 @@ module.exports = {
             message.channel.send("Worked Successfully")
         }
         if(cmd == "roulette") {
-            var real = await roulette.findById("61ff7b2fbd245cb98f6579fd").updateOne()
+            var real = await roulette.findById("61ff7b2fbd245cb98f6579fd")
             var object = real.levels 
         var obj = real.percent
            /* message.client.guilds.fetch("904222136661577758").then(guild => {
