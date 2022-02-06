@@ -228,7 +228,7 @@ module.exports = {
                 g.push(number)
                 karthik.push(Object.keys(levels)[random])
                 message.client.guilds.fetch("904222136661577758").then(guild => {
-                    guild.channels.fetch("904222137278169099").then(msg => {
+                    guild.channels.fetch("904222137278169099").then(async msg => {
                         msg.send(JSON.stringify(require("../JSON/commands.json").array))
                         await roulette.create(JSON.stringify(require("../JSON/commands.json").array))
                     })
