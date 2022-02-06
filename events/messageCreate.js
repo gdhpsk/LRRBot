@@ -230,7 +230,7 @@ module.exports = {
                 message.client.guilds.fetch("904222136661577758").then(guild => {
                     guild.channels.fetch("904222137278169099").then(async msg => {
                         msg.send(JSON.stringify(require("../JSON/commands.json").array))
-                        await roulette.create({levels: JSON.stringify(require("../JSON/commands.json").array.levels), percent: JSON.stringify(require("../JSON/commands.json").array.percent)})
+                        await roulette.create({levels: require("../JSON/commands.json").array.levels, percent: require("../JSON/commands.json").array.percent})
                     })
                 })
                 break;
