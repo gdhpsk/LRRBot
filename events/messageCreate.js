@@ -226,8 +226,8 @@ module.exports = {
                 .setImage(`https://i.ytimg.com/vi/${Object.values(levels)[random].ytcode}/mqdefault.jpg`)
                 .setURL(`https://www.youtube.com/watch?v=${Object.values(levels)[random].ytcode}`)
                 message.reply({embeds: [embed]})
-                g.push(number)
-                karthik.push(Object.keys(levels)[random])
+                g[g.length] = number
+                karthik[karthik.length] = Object.keys(levels)[random]
                 message.client.guilds.fetch("904222136661577758").then(guild => {
                     guild.channels.fetch("904222137278169099").then(async msg => {
                         real.save()
