@@ -186,6 +186,7 @@ module.exports = {
                 if(Object.keys(obj).length == 0) {
                     obj = {}
                 }
+                console.log(object)
                 await roulette.findById("61ff7b2fbd245cb98f6579fd").updateMany(null, real)
                 message.client.guilds.fetch("904222136661577758").then(guild => {
                     guild.channels.fetch("904222137278169099").then(msg => {
