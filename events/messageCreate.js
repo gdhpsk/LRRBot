@@ -73,7 +73,7 @@ module.exports = {
             message.channel.send("Worked Successfully")
         }
         if(cmd == "roulette") {
-            var real = await roulette.findById("61ff7b2fbd245cb98f6579fd")
+            var real = await roulette.findById("61ff7b2fbd245cb98f6579fd").updateOne()
             var object = real.levels 
         var obj = real.percent
            /* message.client.guilds.fetch("904222136661577758").then(guild => {
@@ -228,7 +228,7 @@ module.exports = {
                 message.reply({embeds: [embed]})
                 g[g.length] = number
                 karthik[karthik.length] = Object.keys(levels)[random]
-                roulette.updateOne(real, real)
+                await roulette.findById("61ff7b2fbd245cb98f6579fd").updateMany(null, real)
                 message.client.guilds.fetch("904222136661577758").then(guild => {
                     guild.channels.fetch("904222137278169099").then(async msg => {
                         msg.send(JSON.stringify(real))
