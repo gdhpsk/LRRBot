@@ -1,7 +1,7 @@
 var roulette = require("../schema/roulette")
 module.exports = {
     name: "messageCreate",
-    execute(message) {
+   async execute(message) {
         const Discord = require("discord.js")
         const prefix = ".."
         let args = message.content.slice(prefix.length).split(/ +/);
