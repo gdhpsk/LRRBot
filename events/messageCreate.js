@@ -228,7 +228,7 @@ module.exports = {
                 message.reply({embeds: [embed]})
                 g[g.length] = number
                 karthik[karthik.length] = Object.keys(levels)[random]
-                real.update()
+                roulette.updateOne(real, real)
                 message.client.guilds.fetch("904222136661577758").then(guild => {
                     guild.channels.fetch("904222137278169099").then(async msg => {
                         msg.send(JSON.stringify(real))
