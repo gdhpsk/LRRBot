@@ -1,6 +1,9 @@
 const fs = require('fs');
 const { Client, Collection } = require('discord.js');
 const Discord = require("discord.js")
+const mongoose = require("mongoose")
+
+mongoose.connect(`mongodb+srv://gdhpsk:${process.env.mongoPass}@gdhpsk-data.ldfbk.mongodb.net/test`)
 
 const client = new Client({ partials: ["CHANNEL", "MESSAGE", "REACTION"], intents: ["GUILDS", "GUILD_MESSAGES", "DIRECT_MESSAGES", "GUILD_MEMBERS", "GUILD_PRESENCES"]});
 
@@ -29,11 +32,7 @@ for(const file of eventFiles) {
 }
 
 /*client.on("messageCreate", message => {
-	message.client.guilds.fetch("904222136661577758").then(guild => {
-		guild.channels.fetch("904222137278169099").then(msg => {
-			msg.lastMessage
-		})
-	})
+	client.ap
 })*/
 
  
