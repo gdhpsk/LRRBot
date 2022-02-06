@@ -8,7 +8,8 @@ module.exports = {
         const cmd = args.shift().toLowerCase();
         var allowedChannels = [
             "671454973346840616",
-            "919475035750670360"
+            "919475035750670360",
+            "844088388092428298"
         ]
         if(message.author.bot) return;
         if(message.channel.id == "671451714607644706" && message.author.id == "729422389057683567") {
