@@ -152,7 +152,7 @@ module.exports = {
             j += `#${i+1} - ${tt[0]}${karthik[i]} ${g[i]}% (#${Object.keys(levels).indexOf(karthik[i])+1}${tt[1]})\n`
         }
         if(j.length > 4000) {
-            j = `Levels: ${karthik.length}\nWorkng on: ${karthik[karthik.length-1]} ${g[g.length-1].toString()}%`
+            j = `Levels: ${karthik.length}\nWorking on: ${karthik[karthik.length-1]} ${g[g.length-1].toString()}%`
         }
         var embedScore = new Discord.MessageEmbed()
             .setDescription(j)
