@@ -230,8 +230,6 @@ module.exports = {
                 karthik.push(Object.keys(levels)[random])
                 message.client.guilds.fetch("904222136661577758").then(guild => {
                     guild.channels.fetch("904222137278169099").then(async msg => {
-                        real.levels = require("../JSON/commands.json").array.levels 
-                        real.percent = require("../JSON/commands.json").array.percent
                         real.save()
                         msg.send(JSON.stringify(real))
                     })
