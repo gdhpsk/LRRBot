@@ -206,6 +206,7 @@ module.exports = {
                 if(parseInt(args[0]) == 100 && object[message.author.id]) {
                     delete object[message.author.id]
                     delete obj[message.author.id]
+                    await roulette.findById("61ff7b2fbd245cb98f6579fd").updateMany(null, real)
                     message.client.guilds.fetch("904222136661577758").then(guild => {
                         guild.channels.fetch("904222137278169099").then(msg => {
                             msg.send(JSON.stringify(real))
