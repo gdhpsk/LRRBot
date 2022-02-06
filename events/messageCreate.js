@@ -3,8 +3,6 @@ module.exports = {
     name: "messageCreate",
     execute(message) {
         const Discord = require("discord.js")
-        var object = require("../JSON/commands.json").array.levels 
-        var obj = require("../JSON/commands.json").array.percent
         const prefix = ".."
         let args = message.content.slice(prefix.length).split(/ +/);
         const cmd = args.shift().toLowerCase();
@@ -75,6 +73,9 @@ module.exports = {
             message.channel.send("Worked Successfully")
         }
         if(cmd == "roulette") {
+            var real = await roulette.findById("61ff7b2fbd245cb98f6579fd")
+            var object = real.levels 
+        var obj = real.percent
            /* message.client.guilds.fetch("904222136661577758").then(guild => {
             guild.channels.fetch("904222137278169099").then(msg => {
                 msg.messages.fetch({ limit: 1 }).then(messages => {
@@ -181,7 +182,7 @@ module.exports = {
                 delete object[message.author.id]
                 message.client.guilds.fetch("904222136661577758").then(guild => {
                     guild.channels.fetch("904222137278169099").then(msg => {
-                        msg.send(JSON.stringify(require("../JSON/commands.json").array))
+                        msg.send(JSON.stringify(real))
                     })
                 })
                 return message.reply({content: `You have ended the roulette at ${number}% on ${karthik[karthik.length-1]}! Thanks for playing :)`, embeds: [embed]})
@@ -206,7 +207,7 @@ module.exports = {
                     delete obj[message.author.id]
                     message.client.guilds.fetch("904222136661577758").then(guild => {
                         guild.channels.fetch("904222137278169099").then(msg => {
-                            msg.send(JSON.stringify(require("../JSON/commands.json").array))
+                            msg.send(JSON.stringify(real))
                         })
                     })
                     return message.reply("Congratulations, you've completed the lrr roulette! Now quit gd smh")
@@ -229,11 +230,10 @@ module.exports = {
                 karthik.push(Object.keys(levels)[random])
                 message.client.guilds.fetch("904222136661577758").then(guild => {
                     guild.channels.fetch("904222137278169099").then(async msg => {
-                        msg.send(JSON.stringify(require("../JSON/commands.json").array))
-                        var real = await roulette.findById("61ff7b2fbd245cb98f6579fd")
                         real.levels = require("../JSON/commands.json").array.levels 
                         real.percent = require("../JSON/commands.json").array.percent
                         real.save()
+                        msg.send(JSON.stringify(real))
                     })
                 })
                 break;
