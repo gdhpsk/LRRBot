@@ -1,5 +1,7 @@
 const mongoose = require("mongoose")
 
+mongoose.connect(`mongodb+srv://gdhpsk:${process.env.mongoPass}@gdhpsk-data.ldfbk.mongodb.net/test`)
+
 let lol = async (type) => {
     const body = {a: 1};
 if(type == "list") {
