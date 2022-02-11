@@ -50,6 +50,23 @@
         "none"
     ]
 },
+    "Edge of the Blade": {
+    "name": "Edge of the Blade",
+    "ytcode": "YhT4_FgeAbk",
+    "minimumPercent": 57,
+    "ranking": "around kowareta",
+    "publisher": "eiruni",
+    "list": [
+        {
+            "name": "wwdonut",
+            "link": "https://www.youtube.com/watch?v=51yUPVx5y_A",
+            "hertz": "75"
+        }
+    ],
+    "progresses": [
+        "none"
+    ]
+},
     "Yatagarasu": {
     "name": "Yatagarasu",
     "ytcode": "KgGKx0pk_wo",

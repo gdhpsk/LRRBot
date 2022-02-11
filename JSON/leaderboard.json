@@ -1,5 +1,6 @@
 {
     "Exyl": {
+        "nationality": "France",
         "levels": [
             "Erebus",
             "Artificial Ascent",
@@ -353,6 +354,7 @@
         ]
     },
     "Galaxy": {
+        "nationality": "United_States",
         "levels": [
             "Killbot",
             "Bloodbath",
@@ -572,6 +574,7 @@
         ]
     },
     "ItoPopcorn": {
+        "nationality": "Brazil",
         "levels": [
             "Bloodbath",
             "SubSonic",
@@ -649,6 +652,7 @@
         ]
     },
     "Donut": {
+        "nationality": "France",
         "levels": [
             "SubSonic",
             "The Hell Field",
@@ -794,7 +798,8 @@
             "Allegiance",
             "Cybernetic Crescent",
             "Artificial Ascent",
-            "Heartbeat"
+            "Heartbeat",
+            "Deflective"
         ],
         "progs": [
             {
@@ -1219,7 +1224,8 @@
             "Our Fountain",
             "Aurora",
             "Shape of the Sun",
-            "Blade of Justice"
+            "Blade of Justice",
+            "Audio Expulsion"
         ],
         "progs": [
             {
@@ -1447,6 +1453,7 @@
         ]
     },
     "cobrablitz": {
+        "nationality": "United_States",
         "levels": [
             "Epsilon",
             "Incipient",
@@ -2029,7 +2036,8 @@
             "Night Life",
             "Thanatophobia",
             "Reverence",
-            "Instant Execution"
+            "Instant Execution",
+            "Caution"
         ],
         "progs": [
             "none"
@@ -2142,7 +2150,8 @@
             "Grimoire Heart",
             "Daydream",
             "Carcano",
-            "Cataclysm"
+            "Cataclysm",
+            "Untitled"
         ],
         "progs": [
             {
@@ -4384,13 +4393,16 @@
             "none"
         ]
     },
-    "Ezvie": {
+    "ezvie": {
         "levels": [
             "Cataclysm",
             "Incipient"
         ],
         "progs": [
-            "none"
+            {
+                "name": "Bloodbath",
+                "percent": 77
+            }
         ]
     },
     "Chatter": {
@@ -6376,7 +6388,8 @@
             "Concaved Memories",
             "PLUS ULTRA",
             "EnvY",
-            "Niflheim"
+            "Niflheim",
+            "Plasma Pulse III"
         ],
         "progs": [
             {
@@ -6808,7 +6821,8 @@
             "Niflheim",
             "Allegiance",
             "Cataclysm",
-            "SHATTER"
+            "SHATTER",
+            "INNARDS"
         ],
         "progs": [
             "none"
@@ -8733,6 +8747,7 @@
         ]
     },
     "Dreamlight": {
+        "nationality": "United_States",
         "levels": [
             "Quest for Perfection",
             "Cataclysm",
@@ -8943,6 +8958,7 @@
         "progs": []
     },
     "AVALANCHA 121": {
+        "nationality": "Venezuela",
         "levels": [
             "Conical Depression",
             "Concaved Memories",
@@ -9041,6 +9057,10 @@
             {
                 "name": "Black Blizzard",
                 "percent": 45
+            },
+            {
+                "name": "EXPLICIT",
+                "percent": 65
             }
         ]
     },
@@ -9321,7 +9341,8 @@
             "Glide",
             "Fusion Z",
             "Black Blizzard",
-            "Cataclysm"
+            "Cataclysm",
+            "Maybe Possibly Thing"
         ],
         "progs": [
             {
@@ -9414,7 +9435,8 @@
             "The Antimatter",
             "Just Dance",
             "Glide",
-            "WaveBreaker"
+            "WaveBreaker",
+            "Phobos"
         ],
         "progs": [
             "none"
@@ -9854,6 +9876,10 @@
             {
                 "name": "kowareta",
                 "percent": 58
+            },
+            {
+                "name": "Prismatic Haze",
+                "percent": 72
             }
         ]
     },
@@ -10446,7 +10472,7 @@
         "progs": [
             {
                 "name": "Black Blizzard",
-                "percent": 72
+                "percent": 88
             }
         ]
     },
@@ -10693,7 +10719,7 @@
         "progs": [
             {
                 "name": "Digital Descent",
-                "percent": "76"
+                "percent": "80"
             }
         ]
     },
@@ -11284,7 +11310,7 @@
             },
             {
                 "name": "INNARDS",
-                "percent": 83
+                "percent": 91
             }
         ]
     },
@@ -11547,7 +11573,8 @@
         ]
     },
         "Electro1009": {       
-         "levels": [
+        "nationality": "United_States",
+        "levels": [
             "CYCLONE",
             "Niflheim"
         ],
@@ -11593,11 +11620,15 @@
     "Meowmasterer": {
         "levels": [
             "SHATTER",
-            "Triple Six"
+            "Triple Six",
+            "Esencia"
         ],
         "progs": [
             { "name": "Conical Depression",
               "percent": 61
+            },
+            { "name": "Carcano",
+              "percent": 89
             }
         ]
     },
@@ -11646,18 +11677,18 @@
         ]   
     },
     "Rocipher": {       
-         "levels": [
+        "nationality": "United_States",
+        "levels": [
             "Awakening Horus",
             "Retention",
             "Artificial Dream",
             "Daydream",
             "Unearthed",
-            "NecropoliX"
+            "NecropoliX",
+            "Artifice"
         ],
         "progs": [
-            { "name": "Artifice",
-              "percent": 86
-            }
+            "none"
         ]   
     },
     "Iowa": {
@@ -11761,12 +11792,17 @@
             "Allegiance",
             "Niflheim",
             "SHATTER",
-            "Armageddon"
+            "Armageddon",
+            "Black Blizzard"
         ],
         "progs": [
         {
              "name": "Bloodbath",
              "percent": 90
+        },
+        {
+             "name": "INNARDS",
+             "percent": 80
         }
         ]
     },
@@ -11777,7 +11813,10 @@
             "Glide"
         ],
         "progs": [
-            "none"
+        {
+             "name": "Black Blizzard",
+             "percent": 55
+        }
         ]
     },
     "kaiden phoenix": {
@@ -11813,7 +11852,10 @@
         ]    
     },
      "Zophirux": {       
-         "levels": [],
+        "nationality": "Vietnam",
+        "levels": [
+             "Springtime"
+         ],
         "progs": [
             { "name": "Just Dance",
               "percent": 98
@@ -11890,6 +11932,7 @@
         ]
     },
     "SuperDog": {
+        "nationality": "Russia",
         "levels": [
             "Novalis",
             "Esencia"
@@ -11926,6 +11969,22 @@
                 "name":"Audio Expulsion",
                 "percent":82
             }
+        ]
+    },
+    "HangyKing": {
+        "levels": [
+            "Pumped Up Kicks"
+        ],
+        "progs": [
+            "none"
+        ]
+    },
+    "Zurity": {
+        "levels": [
+            "Carcano"
+        ],
+        "progs": [
+            "none"
         ]
     }
 }
