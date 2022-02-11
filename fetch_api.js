@@ -1,11 +1,10 @@
 const mongoose = require("mongoose")
-
-mongoose.connect(`mongodb+srv://gdhpsk:${process.env.mongoPass}@gdhpsk-data.ldfbk.mongodb.net/test`)
+const levels = require("./schema/list")
 
 let lol = async (type) => {
     const body = {a: 1};
 if(type == "list") {
-    var alldata = await mongoose.model("lrrlevels").find()
+    var alldata = await levels.find()
     var obj = alldata.reduce(function(acc, cur, i) {
         acc[alldata[i].name] = cur;
         return acc;
