@@ -12,9 +12,6 @@ module.exports = {
             "844088388092428298"
         ]
         if(message.author.bot) return;
-        if(message.channel.id == "671451714607644706" && message.author.id == "729422389057683567") {
-            message.reply("https://cdn.discordapp.com/attachments/812077405115646002/938649580990517299/unknown.png")
-        }
         if(message.channel.type != "DM") {
             if(!allowedChannels.includes(message.channel.id)) return;
         }
