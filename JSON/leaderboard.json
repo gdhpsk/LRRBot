@@ -1331,7 +1331,8 @@
             "Caution",
             "Explicit",
             "Belloq",
-            "Audio Expulsion"
+            "Audio Expulsion",
+            "SubSonic"
         ],
         "progs": [
             {
@@ -1349,10 +1350,6 @@
             {
                 "name": "SHATTER",
                 "percent": 81
-            },
-            {
-                "name":"SubSonic",
-                "percent":58
             }
         ]
     },
@@ -2040,7 +2037,10 @@
             "Caution"
         ],
         "progs": [
-            "none"
+           {
+                "name": "Ziroikabi",
+                "percent": 75
+            }
         ]
     },
     "FrostBurn": {
@@ -3329,7 +3329,8 @@
             "Allegiance",
             "Cadrega Mode",
             "Daydream",
-            "Karma"
+            "Karma",
+            "Lonely Lights"
         ],
         "progs": [
             {
@@ -3787,7 +3788,8 @@
             "The Antimatter",
             "Cadrega Mode",
             "Fabricated Thoughts",
-            "Ziroikabi"
+            "Ziroikabi",
+            "Grill Kill"
         ],
         "progs": [
             "none"
@@ -6624,7 +6626,8 @@
             "Cataclysm",
             "ICE Carbon Diablo X",
             "Quest for Perfection",
-            "SHATTER"
+            "SHATTER",
+            "moment"
         ],
         "progs": [
             "none"
@@ -6899,7 +6902,8 @@
         "nationality": "Canada",
         "levels": [
             "Acu",
-            "Esencia"
+            "Esencia",
+            "Niflheim"
         ],
         "progs": [
             {
@@ -8611,7 +8615,8 @@
             "EnvY",
             "Hateful Reflection",
             "Phobos",
-            "Uprise"
+            "Uprise",
+            "Volume"
         ],
         "progs": [
             "none"
@@ -8667,20 +8672,13 @@
             "Killbot",
             "Factory Realm X",
             "Novalis",
-            "Retention"
+            "Retention",
+            "Artificial Ascent"
         ],
         "progs": [
             {
-                "name": "Black Blizzard",
-                "percent": 46
-            },
-            {
                 "name": "Plasma Pulse Finale",
                 "percent": 52
-            },
-            {
-                "name": "Artificial Ascent",
-                "percent": 85
             }
         ]
     },
@@ -8703,6 +8701,10 @@
             {
                 "name": "Artificial Ideology",
                 "percent": 77
+            },
+            {
+                "name": "Volume",
+                "percent": 83
             }
         ]
     },
@@ -8786,7 +8788,8 @@
             "Grill Kill",
             "Evangelion",
             "Ziroikabi",
-            "Twisted Tranquility"
+            "Twisted Tranquility",
+            "Lonely Lights"
         ],
         "progs": [
             {
@@ -8830,7 +8833,8 @@
             "Malware II",
             "Tempest Tornado",
             "Cadrega Mode",
-            "Freedom19"
+            "Freedom19",
+            "Shape of the Sun"
         ],
         "progs": [
             "none"
@@ -9436,7 +9440,8 @@
             "Just Dance",
             "Glide",
             "WaveBreaker",
-            "Phobos"
+            "Phobos",
+            "Unearthed"
         ],
         "progs": [
             "none"
@@ -9610,10 +9615,15 @@
             "Artificial Ascent",
             "Bloodbath",
             "Pumped Up Kicks",
-            "Cataclysm"
+            "Cataclysm",
+            "Phobos",
+            "Belloq"
         ],
         "progs": [
-            "none"
+            {
+                "name": "Sonic Wave",
+                "percent": 80
+            }
         ]
     },
     "Hyper Nickel": {
@@ -9730,7 +9740,8 @@
             "Esencia",
             "Deception Dive",
             "Black Blizzard",
-            "Triple Six"
+            "Triple Six",
+            "moment"
         ],
         "progs": [
             {
@@ -9866,7 +9877,8 @@
         "levels": [
             "Diligence",
             "Idols",
-            "Reverence"
+            "Reverence",
+            "Prismatic Haze"
         ],
         "progs": [
             {
@@ -9876,10 +9888,6 @@
             {
                 "name": "kowareta",
                 "percent": 58
-            },
-            {
-                "name": "Prismatic Haze",
-                "percent": 72
             }
         ]
     },
@@ -10472,7 +10480,7 @@
         "progs": [
             {
                 "name": "Black Blizzard",
-                "percent": 88
+                "percent": 91
             }
         ]
     },
@@ -11039,6 +11047,15 @@
         ],
         "progs": [
             "none"
+        ]
+    },
+    "Plutz": {
+        "levels": [],
+        "progs": [
+            {
+                "name": "Bloodbath",
+                "percent": 74
+            }
         ]
     },
     "Fennoxi": {
@@ -11621,14 +11638,13 @@
         "levels": [
             "SHATTER",
             "Triple Six",
-            "Esencia"
+            "Esencia",
+            "Carcano",
+            "moment"
         ],
         "progs": [
             { "name": "Conical Depression",
               "percent": 61
-            },
-            { "name": "Carcano",
-              "percent": 89
             }
         ]
     },
@@ -11894,8 +11910,13 @@
             "Esencia"
         ],
         "progs": [
-            { "name": "Killbot",
-              "percent": 62
+            { 
+                "name": "Killbot",
+                "percent": 62
+            },
+            {
+                "name":"kowareta",
+                "percent":60
             }
         ]
     },
@@ -11917,7 +11938,8 @@
     },
     "Baprag": {
         "levels": [
-            "Niflheim"
+            "Niflheim",
+            "Maybe Possibly Thing"
         ],
         "progs": [
             "none"
@@ -11982,6 +12004,14 @@
     "Zurity": {
         "levels": [
             "Carcano"
+        ],
+        "progs": [
+            "none"
+        ]
+    },
+    "Itsdz": {
+        "levels": [
+            "Esencia"
         ],
         "progs": [
             "none"
