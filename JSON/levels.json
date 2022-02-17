@@ -783,7 +783,7 @@
                 "hertz": "75"
             },
             {
-                "name": "AGSEcho [GD]",
+                "name": "AGSEcho",
                 "link": "https://www.youtube.com/watch?v=DLDG6OxpFfY&t=1674",
                 "hertz": "60"
             },
@@ -1951,7 +1951,7 @@
                 "hertz":"60"
             },
             {
-                "name":"Galaxy GD",
+                "name":"Galaxy",
                 "link":"https://youtu.be/fOW_1RTyZH4",
                 "hertz":"60"
             },
@@ -2423,7 +2423,7 @@
                 "hertz": "M"
             },
             {
-                "name": "DreamTide",
+                "name": "dreamtide",
                 "link": "https://www.youtube.com/watch?v=LC1NOFWhY8s",
                 "hertz": "M"
             }
@@ -3020,7 +3020,7 @@
                 "hertz": "60"
             },
             {
-                "name": "Subperfect",
+                "name": "SubPerfect",
                 "link": "https://youtu.be/6DRAST3A3Gs",
                 "hertz": "M"
             },
@@ -3412,7 +3412,7 @@
                 "hertz": "M"
             },
             {
-                "name": "Subperfect",
+                "name": "SubPerfect",
                 "link": "https://www.youtube.com/watch?v=gXuLxiR9NPg",
                 "hertz": "M"
             },
@@ -3637,7 +3637,7 @@
                 "hertz": "60"
             },
             {
-                "name": "DreamTide",
+                "name": "dreamtide",
                 "link": "https://youtu.be/CAEcTqW2a8U",
                 "hertz": "M"
             },
@@ -3647,7 +3647,7 @@
                 "hertz": "M"
             },
             {
-                "name": "Miniwheatduo",
+                "name": "MiniWheatDuo",
                 "link": "https://youtu.be/NJEto1Ga3nU",
                 "hertz": "M"
             },
@@ -3728,7 +3728,7 @@
         "publisher": "Loltad",
         "list": [
             {
-                "name": "DreamTide",
+                "name": "dreamtide",
                 "link": "https://www.youtube.com/watch?v=nuXirfL2QSk",
                 "hertz": "M"
             }
@@ -4648,7 +4648,7 @@
         "name": "Endless Dream",
         "ytcode": "byjnOPX6s2k",
         "minimumPercent": 58,
-        "publisher": "DreamTide",
+        "publisher": "dreamtide",
         "list": [
             {
                 "name": "dreamtide",
@@ -4982,7 +4982,7 @@
                 "hertz": "M"
             },
             {
-              "name": "MeowMasterer",
+              "name": "Meowmasterer",
                 "percent": 61,
                 "link": "https://www.youtube.com/watch?v=uS2XYynmsuU&ab_channel=MeowMasterer",
                 "hertz": "75"
@@ -5067,7 +5067,7 @@
                 "hertz": "60"
             },
             {
-                "name": "Subperfect",
+                "name": "SubPerfect",
                 "link": "https://www.youtube.com/watch?v=qs2Baborddc",
                 "hertz": "M"
             },
@@ -5359,7 +5359,7 @@
                 "hertz":"M"
             },
             {
-                "name":"DreamTide",
+                "name":"dreamtide",
                 "link":"https://www.youtube.com/watch?v=yn7SYu_fyoQ",
                 "hertz":"M"
             }
@@ -5516,7 +5516,7 @@
                 "hertz": "M"
             },
             {
-                "name": "Dreamtide",
+                "name": "dreamtide",
                 "link": "https://youtu.be/rXwnA_8hYdM",
                 "hertz": "M"
             }
@@ -5665,7 +5665,7 @@
                 "hertz": "M"
             },
             {
-                "name": "DreamTide",
+                "name": "dreamtide",
                 "link": "https://youtu.be/c1FHU1Vhg9Y",
                 "hertz": "M"
             },
@@ -6088,7 +6088,7 @@
                 "hertz": "M"
             },
             {
-                "name": "Avenger1488 [ES/UL]",
+                "name": "Avenger1488",
                 "link": "https://www.youtube.com/watch?v=sUgzxGcX15c ",
                 "hertz": "60"
             },
@@ -6482,7 +6482,7 @@
                 "hertz": "60"
             },
             {
-                "name": "Dreamtide",
+                "name": "dreamtide",
                 "link": "https://www.youtube.com/watch?v=v3HgM-Qt8L4",
                 "hertz": "M"
             },
@@ -6897,7 +6897,7 @@
         "publisher": "TheShadowRealm",
         "list": [
             {
-                "name": "YoshiAitch",
+                "name": "Kurumi",
                 "link": "https://www.youtube.com/watch?v=009kBPpiWSc ",
                 "hertz": "60"
             },
@@ -7278,7 +7278,7 @@
                 "hertz": "M"
             },
             {
-                "name": "DreamTide",
+                "name": "dreamtide",
                 "link": "https://www.youtube.com/watch?v=Nc8UuCZgdPw",
                 "hertz": "M"
             },
@@ -7334,7 +7334,7 @@
                 "hertz": "60"
             },
             {
-                "name": "YoshiAitch",
+                "name": "Kurumi",
                 "link": "https://www.youtube.com/watch?v=g_h264gWq44 ",
                 "hertz": "60"
             },
@@ -7476,7 +7476,7 @@
                 "hertz": "60"
             },
             {
-                "name": "YoshiAitch",
+                "name": "Kurumi",
                 "link": "https://www.youtube.com/watch?v=2vfkhhmC0HQ ",
                 "hertz": "60"
             },
@@ -7725,7 +7725,7 @@
                 "hertz": "M"          
             },
             {
-                "name": "Clock0822",
+                "name": "clock0822",
                 "link": "https://www.youtube.com/watch?v=OagkwlEqa2s",
                 "hertz": "60"
             },
@@ -7735,7 +7735,7 @@
                 "hertz": "M"
             },
             {
-                "name": "MeowMasterer",
+                "name": "Meowmasterer",
                 "link": "https://youtu.be/x15NR_L6Tjo",
                 "hertz": "75"
             },
@@ -7984,7 +7984,7 @@
                 "hertz": "60"
             },
             {
-                "name": "YoshiAitch",
+                "name": "Kurumi",
                 "link": "https://www.youtube.com/watch?v=c21u56Jv0vs ",
                 "hertz": "60"
             },
@@ -8284,7 +8284,7 @@
                 "hertz": "M"
             },
             {
-                "name": "DreamTide",
+                "name": "dreamtide",
                 "link": "https://youtu.be/L_K3Oqtyx-A",
                 "hertz": "M"
             },
@@ -8385,12 +8385,12 @@
                 "hertz":"M"
             },
             {
-                "name":"Dreamtide",
+                "name":"dreamtide",
                 "link":"https://www.youtube.com/watch?v=p278ahhM1iY",
                 "hertz":"M"
             },
             {
-                "name":"Rellis",
+                "name":"rellis",
                 "link":"https://www.youtube.com/watch?v=1Tq-jL9oQzc&ab_channel=rellis",
                 "hertz":"M"
             },
@@ -8703,7 +8703,7 @@
                 "hertz": "60"
             },
             {
-                "name": "YoshiAitch",
+                "name": "Kurumi",
                 "link": "https://www.youtube.com/watch?v=fYciZVW6nz4 ",
                 "hertz": "60"
             },
@@ -9008,7 +9008,7 @@
                 "hertz": "M"
             },
             {
-                "name": "YoshiAitch",
+                "name": "Kurumi",
                 "link": "https://www.youtube.com/watch?v=T-rSAthwCAQ ",
                 "hertz": "60"
             },
@@ -9098,7 +9098,7 @@
                 "hertz": "M"
             },
             {
-                "name": "FlyLars",
+                "name": "Flylars",
                 "link": "https://www.youtube.com/watch?v=uLrSp6EzFY0",
                 "hertz": "60"
             },
@@ -9446,7 +9446,7 @@
                 "hertz": "60"
             },
             {
-                "name": "AGSEcho [GD]",
+                "name": "AGSEcho",
                 "link": "https://www.youtube.com/watch?v=Bj9qtz2v35w",
                 "hertz": "60"
             },
@@ -9518,7 +9518,7 @@
                 "hertz": "M"
             },
             {
-                "name": "Cobrablitz",
+                "name": "cobrablitz",
                 "link": "https://www.youtube.com/watch?v=4dSDBZFSIhI&t",
                 "hertz": "M"
             },
@@ -9560,7 +9560,7 @@
                 "hertz": "75"
             },
             {
-                "name": "DreamTide",
+                "name": "dreamtide",
                 "link": "https://www.youtube.com/watch?v=bA_LhJ5ei3M",
                 "hertz": "M"
             },
@@ -9863,7 +9863,7 @@
                 "hertz": "60"
             },
             {
-                "name": "MeowMasterer",
+                "name": "Meowmasterer",
                 "link": "https://www.youtube.com/watch?v=0an2eLzZtJ4",
                 "hertz": "75"
             },
@@ -10273,7 +10273,7 @@
                     "hertz": "M"
                 },
                 {
-                    "name": "YoshiAitch",
+                    "name": "Kurumi",
                     "link": "https://www.youtube.com/watch?v=PrL-sIbw3A8 ",
                     "hertz": "60"
                 },
@@ -10348,12 +10348,12 @@
                     "hertz": "M"
                 },
                 {
-                    "name": "ItsPexx07",
+                    "name": "Itspexx07",
                     "link": "https://youtu.be/4jIfHktWLpU",
                     "hertz": "M"
                 },
                 {
-                    "name": "DreamTide",
+                    "name": "dreamtide",
                     "link": "https://www.youtube.com/watch?v=Hm_hXY6apg0",
                     "hertz": "M"
                 },
@@ -10727,7 +10727,7 @@
                     "hertz": "M"
                 },
                 {
-                    "name": "YoshiAitch",
+                    "name": "Kurumi",
                     "link": "https://www.youtube.com/watch?v=KYXMG7rKF-s ",
                     "hertz": "60"
                 },
@@ -10747,7 +10747,7 @@
                     "hertz": "M"
                 },
                 {
-                    "name": "Ezvie",
+                    "name": "ezvie",
                     "link": "https://www.youtube.com/watch?v=sAK4KpAORYo ",
                     "hertz": "60"
                 },
@@ -10942,7 +10942,7 @@
                     "hertz": "60"  
                 },
                 {
-                    "name": "DreamTide",
+                    "name": "dreamtide",
                     "link": "https://youtu.be/87AAlt-rXmQ",
                     "hertz": "M"
                 },
@@ -10952,7 +10952,7 @@
                     "hertz":"60"
                 },
                 {
-                    "name": "AGSEcho [GD]",
+                    "name": "AGSEcho",
                     "link": "https://www.youtube.com/watch?v=fNXBQcqQNos",
                     "hertz": "60"
                 },
@@ -11048,7 +11048,7 @@
                     "hertz": "M"
                 },
                 {
-                    "name": "DreamTide",
+                    "name": "dreamtide",
                     "link": "https://www.youtube.com/watch?v=9MVKPmCYD5Q",
                     "hertz": "M"
                 },
@@ -11187,7 +11187,7 @@
                     "hertz": "60"
                 },
                 {
-                    "name": "YoshiAitch",
+                    "name": "Kurumi",
                     "link": "https://www.youtube.com/watch?v=4LhGxhDzSeI ",
                     "hertz": "60"
                 },
@@ -11377,7 +11377,7 @@
                     "hertz":"M"
                 },
                 {
-                    "name":"DreamTide",
+                    "name":"dreamtide",
                     "link":"https://www.youtube.com/watch?v=Mg07Y-BwPqM",
                     "hertz":"M"
                 },
@@ -11558,7 +11558,7 @@
                     "hertz": "60"
                 },
                 {
-                    "name": "YoshiAitch",
+                    "name": "Kurumi",
                     "link": "https://www.youtube.com/watch?v=fYJXuqHV1kk ",
                     "hertz": "60"
                 },
@@ -11648,7 +11648,7 @@
                     "hertz":"M"
                 },
                 {
-                    "name":"DreamTide",
+                    "name":"dreamtide",
                     "link":"https://www.youtube.com/watch?v=UtfnphPTFm4",
                     "hertz":"M"
                 },
@@ -11658,7 +11658,7 @@
                     "hertz":"60"
                 },
                 {
-                    "name":"BiPolarBearr",
+                    "name":"BiPolarBearr GD",
                     "link":"https://www.youtube.com/watch?v=c7LTZ7z6ubk",
                     "hertz":"M"
                 },
@@ -11729,7 +11729,7 @@
             "publisher": "Bianox",
             "list": [
                 {
-                    "name": "Floppy",
+                    "name": "Floppy_",
                     "link": "https://www.youtube.com/watch?v=WQcGIY8_28c ",
                     "hertz": "V/75"
                 },
@@ -11872,7 +11872,7 @@
                     "hertz": "60"
                 },
                 {
-                    "name": "DreamTide",
+                    "name": "dreamtide",
                     "link": "https://youtu.be/2aS9v8MmGwA",
                     "hertz": "M"
                 }
@@ -11923,7 +11923,7 @@
                     "hertz": "M"
                 },
                 {
-                    "name": "DreamTide",
+                    "name": "dreamtide",
                     "link": "https://www.youtube.com/watch?v=iMwaT2pfnfk",
                     "hertz": "M"
                 }
@@ -12111,7 +12111,7 @@
                     "hertz": "M"
                 },
                 {
-                    "name": "YoshiAitch",
+                    "name": "Kurumi",
                     "link": "https://www.youtube.com/watch?v=tsnR_mUFeVU",
                     "hertz": "60"
                 },
@@ -12281,7 +12281,7 @@
                     "hertz": "60"
                 },
                 {
-                    "name": "Revoltzy",
+                    "name": "RevoltZy",
                     "link": "https://www.youtube.com/watch?v=Fhzv08KFwqw  ",
                     "hertz": "75"
                 },
@@ -12371,7 +12371,7 @@
                     "hertz":"M"
                 },
                 {
-                    "name":"DreamTide",
+                    "name":"dreamtide",
                     "link":"https://www.youtube.com/watch?v=5-fNKIHGwxs",
                     "hertz":"M"
                 },
@@ -12635,7 +12635,7 @@
                     "hertz": "M"
                 },
                 {
-                    "name": "YoshiAitch",
+                    "name": "Kurumi",
                     "link": "https://www.youtube.com/watch?v=wPeSmMcCzOY ",
                     "hertz": "60"
                 },
@@ -13783,7 +13783,7 @@
                     "hertz": "60"
                 },
                 {
-                    "name": "Gamecube124",
+                    "name": "gamecubeguy214",
                     "link": "https://www.youtube.com/watch?v=TS0q_Nptld8 ",
                     "hertz": "60"
                 },
@@ -14068,7 +14068,7 @@
                     "hertz":"M"
                 },
                 {
-                    "name":"Galaxy GD",
+                    "name":"Galaxy",
                     "link":"https://www.youtube.com/watch?v=MpQZqfyhO5s",
                     "hertz":"60"
                 },
@@ -14203,7 +14203,7 @@
                     "hertz": "60"
                 },
                 {
-                    "name": "DreamTide",
+                    "name": "dreamtide",
                     "link": "https://www.youtube.com/watch?v=eERP81uGfgo",
                     "hertz": "M"
                 },
@@ -14364,7 +14364,7 @@
                     "hertz": "M"
                 },
                 {
-                    "name": "YoshiAitch",
+                    "name": "Kurumi",
                     "link": "https://www.youtube.com/watch?v=avU4-9JP0CE",
                     "hertz": "60"
                 },
@@ -14519,7 +14519,7 @@
                     "hertz": "M"
                 },
                 {
-                    "name": "DreamTide",
+                    "name": "dreamtide",
                     "link": "https://www.youtube.com/watch?v=TrPGV0rVHx4",
                     "hertz": "M"
                 },
@@ -14930,7 +14930,7 @@
                     "hertz": "60"
                 },
                 {
-                    "name": "YoshiAitch",
+                    "name": "Kurumi",
                     "link": "https://www.youtube.com/watch?v=lk0PAXGGJ5A",
                     "hertz": "60"
                 },
@@ -15050,7 +15050,7 @@
                     "hertz":"60"
                 },
                 {
-                    "name": "DreamTide",
+                    "name": "dreamtide",
                     "link":"https://www.youtube.com/watch?v=a0yG0nupjgc",
                     "hertz":"M"
                 },
@@ -15180,7 +15180,7 @@
                     "hertz": "60"
                 },
                 {
-                    "name": "Cutter",
+                    "name": "CuTTeR",
                     "link": "https://www.youtube.com/watch?v=q6I27XMpkYc&ab_channel=CuTTeR",
                     "hertz": "60"
                 },
@@ -15250,7 +15250,7 @@
                     "hertz": "M"
                 },
                 {
-                    "name": "BiPolarBearr",
+                    "name": "BiPolarBearr GD",
                     "link": "https://youtu.be/VYpWjhUb14A",
                     "hertz": "M"
                 },
@@ -15360,7 +15360,7 @@
                     "hertz": "60"
                 },
                 {
-                    "name": "RCrystal",
+                    "name": "RedCrystal",
                     "link": "https://www.youtube.com/watch?v=vMlacaPJzyE&ab_channel=RedCrystal",
                     "hertz": "60"
                 },
@@ -15410,7 +15410,7 @@
                     "hertz": "60"
                 },
                 {
-                    "name": "MasterMaxify",
+                    "name": "Mastermaxify",
                     "link": "https://www.youtube.com/watch?v=_MBPuicuciQ&ab_channel=Mastermaxify",
                     "hertz": "60"
                 },
@@ -15420,7 +15420,7 @@
                     "hertz": "60"
                 },
                 {
-                    "name": "Rusturd",
+                    "name": "RusTurd",
                     "link": "https://www.youtube.com/watch?v=lzPOzDjVVW8&ab_channel=RusTurd",
                     "hertz": "60"
                 },
@@ -15476,7 +15476,7 @@
                     "hertz": "60"
                 },
                 {
-                    "name": "DreamTide",
+                    "name": "dreamtide",
                     "link": "https://youtu.be/MZdD9pOYFZg",
                     "hertz": "M"
                 }
@@ -15701,11 +15701,6 @@
                     "hertz": "60"
                 },
                 {
-                    "name": "Freaklin",
-                    "link": "https://www.youtube.com/watch?v=cpixyoVcYQg ",
-                    "hertz": "60"
-                },
-                {
                     "name": "Technical",
                     "link": "https://www.youtube.com/watch?v=4ZBeU2QS3Yw ",
                     "hertz": "60"
@@ -15925,7 +15920,7 @@
                                          "hertz": "60" 
                                          }, 
                                          { 
-                                             "name": "YoshiAitch",
+                                             "name": "Kurumi",
                                               "link": "https://www.youtube.com/watch?v=fT02HzHXavA ", 
                                               "hertz": "60" 
                                               },
@@ -16040,7 +16035,7 @@
                     "hertz": "M"
                 },
                 {
-                    "name": "Gochujang",
+                    "name": "GochuJang [GD]",
                     "link": "https://youtu.be/mvNkRRSh8rk",
                     "hertz": "M"
                 },
@@ -16340,7 +16335,7 @@
                     "hertz": "M"
                 },
                 {
-                    "name": "YoshiAitch",
+                    "name": "Kurumi",
                     "link": "https://www.youtube.com/watch?v=nE4xZP2v_-Q ",
                     "hertz": "60"
                 },
@@ -16470,7 +16465,7 @@
                     "hertz": "60"
                 },
                 {
-                    "name": "DreamTide",
+                    "name": "dreamtide",
                     "link": "https://www.youtube.com/watch?v=GNgsCs8Pc00",
                     "hertz": "M"
                 },
@@ -16936,7 +16931,7 @@
                     "hertz": "75"
                 },
                 {
-                    "name": "Revoltzy",
+                    "name": "RevoltZy",
                     "link": "https://youtu.be/-Mr6YGmmcfo",
                     "hertz": 75
                 },
@@ -17121,7 +17116,7 @@
                     "hertz": "M" 
                 },
                 {
-                    "name": "PudgyGd",
+                    "name": "Pudgygd",
                     "link": "https://youtu.be/STi_DSXO7eE",
                     "hertz": "M" 
                 }
@@ -17448,7 +17443,7 @@
                     "hertz": "60"
                 },
                 {
-                    "name": "GD Spatdoepa",
+                    "name": "Spatdoepa",
                     "link": "https://www.youtube.com/watch?v=FIVWCvuduXA ",
                     "hertz": "60"
                 },
@@ -17493,7 +17488,7 @@
                     "hertz": "M"
                 },
                 {
-                    "name": "YoshiAitch",
+                    "name": "Kurumi",
                     "link": "https://www.youtube.com/watch?v=0EcTT6PElys ",
                     "hertz": "60"
                 },
@@ -17563,7 +17558,7 @@
                     "hertz": "60"
                 },
                 {
-                    "name": "Revoltzy",
+                    "name": "RevoltZy",
                     "link": "https://www.youtube.com/watch?v=SAUKpGyG9Jw ",
                     "hertz": "75"
                 },
@@ -17588,7 +17583,7 @@
                     "hertz": "75"
                 },
                 {
-                    "name": "Ezvie",
+                    "name": "ezvie",
                     "link": "https://www.youtube.com/watch?v=tLyIt_4t3xc&feature=youtu.be ",
                     "hertz": "60"
                 },
@@ -18057,7 +18052,7 @@
                     "hertz": "75"
                 },
                 {
-                    "name": "YoshiAitch",
+                    "name": "Kurumi",
                     "link": "https://www.youtube.com/watch?v=v9KRTFaW08g ",
                     "hertz": "60"
                 },
@@ -18690,7 +18685,7 @@
                     "hertz": "60"
                 },
                 {
-                    "name": "Revoltzy",
+                    "name": "RevoltZy",
                     "link": "https://www.youtube.com/watch?v=JJBKUYQ5l40 ",
                     "hertz": "75"
                 },
@@ -19836,7 +19831,7 @@
                     "hertz": "60"
                 },
                 {
-                    "name": "YoshiAitch",
+                    "name": "Kurumi",
                     "link": "https://www.youtube.com/watch?v=-gtkwwpHFHk",
                     "hertz": "60"
                 },
@@ -20041,7 +20036,7 @@
                     "hertz": "60"
                 },
                 {
-                    "name": "Crumche",
+                    "name": "crumche",
                     "link": "https://www.youtube.com/watch?v=m6APLWXy5iQ ",
                     "hertz": "60"
                 },
@@ -20386,7 +20381,7 @@
                     "hertz": "M"
                 },
                 {
-                    "name": "M4rchbot",
+                    "name": "m4rchbot",
                     "link": "https://youtu.be/r1CrJQK8xII",
                     "hertz": "60"
                 },
@@ -20500,7 +20495,7 @@
                     "hertz": "60"
                 },
                 {
-                    "name": "YoshiAitch",
+                    "name": "Kurumi",
                     "link": "https://www.youtube.com/watch?v=ZTjoTjzrH5U",
                     "hertz": "60"
                 },
@@ -20589,7 +20584,7 @@
             "publisher": "RoiMousti",
             "list": [
                 {
-                    "name": "YoshiAitch",
+                    "name": "Kurumi",
                     "link": "https://www.youtube.com/watch?v=GXPRbIWSsv0 ",
                     "hertz": "60"
                 },
@@ -20808,7 +20803,7 @@
             "publisher": "RedUniverse",
             "list": [
                 {
-                    "name": "RedUniverse",
+                    "name": "Reduniverse",
                     "link": "https://www.youtube.com/watch?v=3-bYZqsyZAI&feature=emb_logo&ab_channel=RedUniverse",
                     "hertz": "V/60"
                 },
@@ -20888,7 +20883,7 @@
                     "hertz": "60"
                 },            
                 {
-                    "name": "Ecl1psed",
+                    "name": "Ecl1psed276",
                     "link": "https://www.youtube.com/watch?v=A1ShDpjXoIs&ab_channel=Ecl1psed276",
                     "hertz": "60"
                 },
@@ -20922,7 +20917,7 @@
                     "hertz": "60"
                 },
                 {
-                    "name": "Marker",
+                    "name": "Marker [GD]",
                     "link": "https://www.youtube.com/watch?v=YZTZVTNVrJk&ab_channel=Marker%5BGD%5D",
                     "hertz": "60"
                 },
@@ -20937,7 +20932,7 @@
                     "hertz": "60"
                 },
                 {
-                    "name": "Allium",
+                    "name": "Allium_GD",
                     "link": "https://www.youtube.com/watch?v=bKA5lbI23pE&ab_channel=Allium_GD",
                     "hertz": "60"
                 },
@@ -21012,7 +21007,7 @@
                     "hertz": "60"
                 },
                 {
-                    "name": "HotBall1",
+                    "name": "hotball1",
                     "link": "https://www.youtube.com/watch?v=tRGMg7GKwz8&ab_channel=hotball1",
                     "hertz": "60"
                 },
@@ -21057,7 +21052,7 @@
                     "hertz": "M"
                 },
                 {
-                    "name": "Kandyman",
+                    "name": "KandyMan",
                     "link": "https://www.youtube.com/watch?v=3rnQ2mHiUus&ab_channel=KandyMan",
                     "hertz": "60"
                 },
@@ -21343,7 +21338,7 @@
                     "hertz": "60"
                 },
                 {
-                    "name": "YoshiAitch",
+                    "name": "Kurumi",
                     "link": "https://www.youtube.com/watch?v=vx9OoAQsuFw",
                     "hertz": "60"
                 },

@@ -11518,7 +11518,9 @@
             ]
     },
         "BadoZ": {       
-         "levels": [],
+         "levels": [
+             "Idols"
+         ],
         "progs": [
             "none"
         ]    
@@ -11612,7 +11614,8 @@
          "levels": [
             "Atmosphere",
             "Panasonic",
-            "Deception Dive"
+            "Deception Dive",
+            "Shape of the Sun"
         ],
         "progs": [
             "none"
@@ -12012,6 +12015,38 @@
     "Itsdz": {
         "levels": [
             "Esencia"
+        ],
+        "progs": [
+            "none"
+        ]
+    },
+    "Dibiizi Biscoito": {
+        "levels": [
+            "Execessive Complement"
+        ],
+        "progs": [
+            "none"
+        ]
+    },
+    "Frenchkebab": {
+        "levels": [
+            "Artificial Dream"
+        ],
+        "progs": [
+            "none"
+        ]
+    },
+    "Ghandi": {
+        "levels": [
+            "The Ultimate Phase"
+        ],
+        "progs": [
+            "none"
+        ]
+    },
+    "Hawkyre": {
+        "levels": [
+            "The Ultimate Phase"
         ],
         "progs": [
             "none"
