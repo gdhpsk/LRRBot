@@ -44,17 +44,19 @@ module.exports = {
             var array2 = []
             var array3 = []
             for(let i = 0; i < Object.keys(levels).length; i++) {
-                for(let j = 0; j < Object.values(levels)[i].list.length; j++) {
-                    array.push(`${Object.values(levels)[i].list[j].name}, ${Object.values(levels)[i].name}`)
+                if(Object.values(levels)[i].progresses[0] != "none" && Object.values(levels)[i].progresses) {
+                    for(let j = 0; j < Object.values(levels)[i].progresses.length; j++) {
+                        array.push(`${Object.values(levels)[i].list[j].name}, ${Object.values(levels)[i].name}`)
+                    }
                 }
             }
             for(let i = 0; i < Object.keys(leaderboard).length; i++) {
-                for(let j = 0; j < Object.values(leaderboard)[i].levels.length; j++) {
-                    array2.push(`${Object.keys(leaderboard)[i]}, ${Object.values(leaderboard)[i].levels[j]}`)
+                for(let j = 0; j < Object.values(leaderboard)[i].progs.length; j++) {
+                    array2.push(`${Object.keys(leaderboard)[i]}, ${Object.values(leaderboard)[i].progs[j]}`)
                 }
             }
-            for(let i = 0; i < array2.length; i++) {
-                if(!array.includes(array2[i])) {
+            for(let i = 0; i < array.length; i++) {
+                if(!array2.includes(array[i])) {
                     array3.push(`${array[i]}`)
                 }
             }
