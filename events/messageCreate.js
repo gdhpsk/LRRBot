@@ -43,9 +43,9 @@ module.exports = {
             var array = []
             var array2 = []
             var array3 = []
-            for(let i = 0; i < Object.keys(levels).length; i++) {
+            for(let i = 0; i < 75; i++) {
                 if(Object.values(levels)[i].progresses) {
-                    if(Object.values(levels)[i].progresses[0]) {
+                    if(Object.values(levels)[i].progresses[0] != "none") {
                     for(let j = 0; j < Object.values(levels)[i].progresses.length; j++) {
                         array.push(`${Object.values(levels)[i].progresses[j].name}, ${Object.values(levels)[i].name}, ${Object.values(levels)[i].progresses[j].percent}`)
                     }
