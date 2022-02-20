@@ -835,7 +835,8 @@
             "Niflheim",
             "Hypersonic",
             "Black Blizzard",
-            "Shock Therapy"
+            "Shock Therapy",
+            "SubSonic"
         ],
         "progs": [
             "none"
@@ -1463,7 +1464,8 @@
             "Novalis",
             "Sunset Sandstorm",
             "Cybernetic Crescent",
-            "Black Blizzard"
+            "Black Blizzard",
+            "Fingerdash v3"
         ],
         "progs": [
             "none"
@@ -2373,7 +2375,8 @@
     },
     "gdsandstorm": {
         "levels": [
-            "The Hell Factory"
+            "The Hell Factory",
+            "The Ultimate Phase"
         ],
         "progs": [
             "none"
@@ -5926,6 +5929,7 @@
             "Awakening Horus",
             "Cosmorush 21",
             "Idols",
+            "Twisted Tranquility",
             "ElectroLux",
             "Our Fountain",
             "Niflheim",
@@ -6656,6 +6660,7 @@
             "MELTDOWN",
             "Precipitance",
             "Caution",
+            "Karma",
             "Galactus",
             "Void Wave",
             "Maybe Possibly Thing",
@@ -12095,6 +12100,40 @@
                 "name": "Black Blizzard",
                 "percent": "56"
             }
+        ]
+    },
+    "SwoopNetis": {
+        "levels": [
+            "SUBVERSIVE",
+            "Incipient"
+        ],
+        "progs": [
+            "none"
+        ]
+    },
+    "johnnyvision": {
+        "levels": [
+            "Esencia"
+        ],
+        "progs": [
+            "none"
+        ]
+    },
+    "wshedd": {
+        "levels": [
+            "Plasma Pulse III"
+        ],
+        "progs": [
+            "none"
+        ]
+    },
+    "진흙": {
+        "levels": [
+            "Excessive Compliment",
+            "Incipient"
+        ],
+        "progs": [
+            "none"
         ]
     }
 }
