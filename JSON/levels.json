@@ -168,7 +168,7 @@
                 "hertz": "60"
             },
             {
-                "name": "qwarty",
+                "name": "Qwarty",
                 "percent": 59,
                 "link": "https://www.youtube.com/watch?v=C5v-NNB7_OA",
                 "hertz": "60"
@@ -222,7 +222,7 @@
                 "hertz": "M"
             },
             {
-                "name":"jenniferlol",
+                "name":"Jenniferlol",
                 "percent":60,
                 "link":"https://www.youtube.com/watch?v=BZ-xsNtHyLg",
                 "hertz":"M"
@@ -865,7 +865,7 @@
                 "hertz":"60"
             },
             {
-                "name":"Sid125",
+                "name":"sid125",
                 "percent":"95",
                 "link":"https://www.youtube.com/watch?v=ViJDxyoJ4y4&feature=youtu.be",
                 "hertz":"60"
@@ -2845,7 +2845,7 @@
         ],
         "progresses": [
             {
-                "name": "M4nst4r",
+                "name": "M4nst3r",
                 "percent": 61,
                 "link": "https://youtu.be/hoo1mcxibOs",
                 "hertz": "60"
@@ -4118,15 +4118,10 @@
                 "link": "https://youtu.be/F17QqmhQKjU",
                 "hertz": "M"
             },
-            {   "name": "wallet",
+            {   "name": "Wallet",
                 "percent": 77,
                 "link": "https://www.youtube.com/watch?v=UsmQB8YsReM&ab_channel=Wallet",
                 "hertz": 60
-            },
-            {   "name": "coheton",
-                "percent": 72,
-                "link": "https://www.youtube.com/watch?v=e2MEuDaW2ps",
-                "hertz": "M"
             },
             {   "name": "SeazeIsCool",
                 "percent": 64,

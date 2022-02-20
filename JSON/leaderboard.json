@@ -9089,7 +9089,7 @@
                 "percent": 45
             },
             {
-                "name": "EXPLICIT",
+                "name": "Explicit",
                 "percent": 65
             }
         ]
@@ -10976,7 +10976,7 @@
             },
             {
                 "name": "The Hell World",
-                "percent": 69
+                "percent": 74
             }
         ]
     },
@@ -12135,6 +12135,28 @@
         ],
         "progs": [
             "none"
+        ]
+    },
+    "Phunky Psycho": {
+        "levels": [
+            "none"
+        ],
+        "progs": [
+            {
+                "name": "Cadrega Mode",
+                "percent": 96
+            }
+        ]
+    },
+    "anrekkk": {
+        "levels": [
+            "none"
+        ],
+        "progs": [
+            {
+                "name": "Phobos",
+                "percent": 58
+            }
         ]
     }
 }
