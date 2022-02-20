@@ -275,7 +275,8 @@
             "SHATTER",
             "Kinetic Bypass",
             "Fingerdash v3",
-            "OOPZ"
+            "OOPZ",
+            "Myocardia"
         ],
         "progs": [
             "none"
@@ -833,7 +834,8 @@
             "Aurora",
             "Niflheim",
             "Hypersonic",
-            "Black Blizzard"
+            "Black Blizzard",
+            "Shock Therapy"
         ],
         "progs": [
             "none"
@@ -5766,7 +5768,8 @@
         "levels": [
             "Retention",
             "Zettabyte",
-            "Duelo Maestro"
+            "Duelo Maestro",
+            "moment"
         ],
         "progs": [
             "none"
@@ -6756,6 +6759,10 @@
             {
                 "name": "EnvY",
                 "percent": 65
+            },
+            {
+                "name": "moment",
+                "percent": 66
             }
         ]
     },
@@ -7426,7 +7433,8 @@
             "Acu",
             "Retention",
             "PLUS ULTRA",
-            "Glide"
+            "Glide",
+            "Mandragora"
         ],
         "progs": [
             "none"
@@ -8834,7 +8842,9 @@
             "Tempest Tornado",
             "Cadrega Mode",
             "Freedom19",
-            "Shape of the Sun"
+            "Shape of the Sun",
+            "Myocardia",
+            "GewErbiX"
         ],
         "progs": [
             "none"
@@ -8846,6 +8856,17 @@
         ],
         "progs": [
             "none"
+        ]
+    },
+    "Deconix": {
+        "levels": [
+            "GewErbiX"
+        ],
+        "progs": [
+            {
+                "name":"Blade of Justice",
+                "percent":73
+            }
         ]
     },
     "RayTheBoss": {
@@ -10480,7 +10501,7 @@
         "progs": [
             {
                 "name": "Black Blizzard",
-                "percent": 91
+                "percent": 97
             }
         ]
     },
@@ -11311,7 +11332,8 @@
             "Artificial Dream",
             "Awakening Horus",
             "Aurora",
-            "WaveBreaker"
+            "WaveBreaker",
+            "Myocardia"
         ],
         "progs": [
             "none"
@@ -11580,8 +11602,11 @@
             "CYCLONE"
         ],
         "progs": [
-            "none"
-        ]   
+            { 
+            "name": "Prismatic Haze",
+              "percent": 64
+            }
+        ]    
     },
     "Yuuchouze": {
         "levels": [
@@ -11760,7 +11785,8 @@
         "levels": [
             "Artificial Dream",
             "Fabricated Thoughts",
-            "Niflheim"
+            "Niflheim",
+            "Novalis"
         ],
         "progs": [
             "none"
@@ -12006,7 +12032,8 @@
     },
     "Zurity": {
         "levels": [
-            "Carcano"
+            "Carcano",
+            "Freedom08"
         ],
         "progs": [
             "none"
@@ -12015,14 +12042,6 @@
     "Itsdz": {
         "levels": [
             "Esencia"
-        ],
-        "progs": [
-            "none"
-        ]
-    },
-    "Dibiizi Biscoito": {
-        "levels": [
-            "Execessive Complement"
         ],
         "progs": [
             "none"
@@ -12050,6 +12069,32 @@
         ],
         "progs": [
             "none"
+        ]
+    },
+    "LinedriveGD": {
+        "levels": [
+            "Esencia"
+        ],
+        "progs": [
+            "none"
+        ]
+    },
+    "Spaace": {
+        "levels": [],
+        "progs": [
+            {
+                "name": "Carcano",
+                "percent": "60"
+            }
+        ]
+    },
+    "Reciproc_AL": {
+        "levels": [],
+        "progs": [
+            {
+                "name": "Black Blizzard",
+                "percent": "56"
+            }
         ]
     }
 }
