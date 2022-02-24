@@ -223,8 +223,14 @@
             },
             {
                 "name":"Jenniferlol",
-                "percent":60,
-                "link":"https://www.youtube.com/watch?v=BZ-xsNtHyLg",
+                "percent":63,
+                "link":"https://www.youtube.com/watch?v=HWuAusr50ec",
+                "hertz":"M"
+            },
+            {
+                "name":"Terracopter",
+                "percent":59,
+                "link":"https://youtu.be/Qpx_PyYuTSw",
                 "hertz":"M"
             }
         ]
@@ -309,6 +315,12 @@
                 "name":"a n t",
                 "percent":"54",
                 "link":"https://www.youtube.com/watch?v=XH5xC849_u8",
+                "hertz":"60"
+            },
+            {
+                "name":"hotball1",
+                "percent":"72",
+                "link":"https://www.youtube.com/watch?v=efl4b9pWBQg",
                 "hertz":"60"
             }
         ]
@@ -521,10 +533,10 @@
                 "hertz": "60"
             },
             {
-                "name": "ViperVenom95",
-                "percent": 60,
-                "link": "https://www.youtube.com/watch?v=IOtp4WAokNs&ab_channel=ViperVenom95",
-                "hertz": "60"
+                "name": "Flavyola64",
+                "percent": 63,
+                "link": "https://youtu.be/f9C1KfjwMIQ",
+                "hertz": "M"
             }
         ]
     },
@@ -648,8 +660,12 @@
                 "name": "ExoLiter",
                 "link": "https://www.youtube.com/watch?v=f0K5_0Za_Go",
                 "hertz": "M"
+            },
+            {
+                "name":"Coheton",
+                "link":"https://youtu.be/8h86_CiSrec",
+                "hertz":"M"
             }
-            
         ],
         "progresses": [            
             {
@@ -681,12 +697,6 @@
                 "percent": 67,
                 "link": "https://www.youtube.com/watch?v=tepD0wQPXm0",
                 "hertz": "60"
-            },
-            {
-                "name": "Coheton",
-                "percent": 90,
-                "link": "https://youtu.be/ep0fD342Oeo",
-                "hertz": "M"
             }
         ]
     },
@@ -926,6 +936,79 @@
             }
         ]
     },
+    "Freedom08": {
+        "name": "Freedom08",
+        "ytcode": "b1DE6OTFS4U",
+        "minimumPercent": 49,
+        "publisher": "Pennutoh",
+        "list": [
+            {
+                "name": "Luqualizer",
+                "link": "https://www.youtube.com/watch?v=L_qI9l6A0_A",
+                "hertz": "60"
+            },
+            {
+                "name": "WOO HWANG",
+                "link": "https://www.youtube.com/watch?v=MRZF_u7N6sQ",
+                "hertz": "60"
+            },
+            {
+                "name": "Bread",
+                "link": "https://youtu.be/HwvM2ViFgrU",
+                "hertz": "60"
+            },
+            {
+                "name": "Samamba",
+                "link": "https://youtu.be/0NNrC6-NjN8",
+                "hertz": "60"
+            },
+            {
+                "name": "Rykryk2552",
+                "link": "https://www.youtube.com/watch?v=_PdzNPR9VYY&t=364s",
+                "hertz": "75"
+            },
+            {
+                "name": "Chosbar GD",
+                "link": "https://youtu.be/Ny4hevQdpBg",
+                "hertz": "M"
+            },
+            {
+                "name": "Funny Boy",
+                "link": "https://www.youtube.com/watch?v=jHpOIUtzL3I",
+                "hertz": "60"
+            },
+            {
+                "name": "wwdonut",
+                "link": "https://www.youtube.com/watch?v=VMrhSRRUssI&ab_channel=wwdonut",
+                "hertz": "75"
+            },
+            {
+                "name": "Zurity",
+                "link": "https://youtu.be/quCoZLKlfyY",
+                "hertz": "75"
+            }
+        ],
+        "progresses": [
+            {
+                "name": "ThunderBT",
+                "percent": 74,
+                "link": "https://www.youtube.com/watch?v=ptdO-D0wCB0&t&ab_channel=ThunderBT",
+                "hertz": "M"
+            },
+            {
+				"name":"TheJaco9",
+				"percent":62,
+				"link":"https://www.youtube.com/watch?v=TXaVGHLGsaQ&ab_channel=TheJaco9",
+				"hertz":"60"
+			},
+            {
+				"name":"ViperVenom95",
+				"percent":51,
+				"link":"https://www.youtube.com/watch?v=2iiCzUaEIA8",
+				"hertz":"60"
+			}
+        ]
+    },
     "SubSonic": {
         "name": "SubSonic",
         "ytcode": "F-AfSPnjIcM",
@@ -1002,79 +1085,6 @@
                 "link":"https://youtu.be/6mp2bBBs6rY",
                 "hertz":"60"
             }
-        ]
-    },
-    "Freedom08": {
-        "name": "Freedom08",
-        "ytcode": "b1DE6OTFS4U",
-        "minimumPercent": 49,
-        "publisher": "Pennutoh",
-        "list": [
-            {
-                "name": "Luqualizer",
-                "link": "https://www.youtube.com/watch?v=L_qI9l6A0_A",
-                "hertz": "60"
-            },
-            {
-                "name": "WOO HWANG",
-                "link": "https://www.youtube.com/watch?v=MRZF_u7N6sQ",
-                "hertz": "60"
-            },
-            {
-                "name": "Bread",
-                "link": "https://youtu.be/HwvM2ViFgrU",
-                "hertz": "60"
-            },
-            {
-                "name": "Samamba",
-                "link": "https://youtu.be/0NNrC6-NjN8",
-                "hertz": "60"
-            },
-            {
-                "name": "Rykryk2552",
-                "link": "https://www.youtube.com/watch?v=_PdzNPR9VYY&t=364s",
-                "hertz": "75"
-            },
-            {
-                "name": "Chosbar GD",
-                "link": "https://youtu.be/Ny4hevQdpBg",
-                "hertz": "M"
-            },
-            {
-                "name": "Funny Boy",
-                "link": "https://www.youtube.com/watch?v=jHpOIUtzL3I",
-                "hertz": "60"
-            },
-            {
-                "name": "wwdonut",
-                "link": "https://www.youtube.com/watch?v=VMrhSRRUssI&ab_channel=wwdonut",
-                "hertz": "75"
-            },
-            {
-                "name": "Zurity",
-                "link": "https://youtu.be/quCoZLKlfyY",
-                "hertz": "75"
-            }
-        ],
-        "progresses": [
-            {
-                "name": "ThunderBT",
-                "percent": 74,
-                "link": "https://www.youtube.com/watch?v=ptdO-D0wCB0&t&ab_channel=ThunderBT",
-                "hertz": "M"
-            },
-            {
-				"name":"TheJaco9",
-				"percent":62,
-				"link":"https://www.youtube.com/watch?v=TXaVGHLGsaQ&ab_channel=TheJaco9",
-				"hertz":"60"
-			},
-            {
-				"name":"ViperVenom95",
-				"percent":51,
-				"link":"https://www.youtube.com/watch?v=2iiCzUaEIA8",
-				"hertz":"60"
-			}
         ]
     },
     "Factory Realm X": {
@@ -1253,15 +1263,15 @@
                 "name":"JRain",
                 "link":"https://www.youtube.com/watch?v=TL8FYrpGDD0",
                 "hertz":"60"
+            },
+            {
+                "name":"RevoltZy",
+                "link":"https://youtu.be/juohqHW1_kA",
+                "hertz":"60"
             }
         ],
         "progresses": [
-            {
-                "name": "RevoltZy",
-                "percent": 75,
-                "link": "https://www.youtube.com/watch?v=gwgelJaebDc",
-                "hertz": "60"
-            }
+            "none"
         ]
     },
         "Dolos": {
@@ -1373,6 +1383,27 @@
                 "link":"https://www.youtube.com/watch?v=XPEldQsgKYE",
                 "hertz":"60"
             }
+        ]
+    },
+        "Asmodeus": {
+        "name": "Asmodeus",
+        "ytcode": "3OwKOI4yXLQ",
+        "minimumPercent": 57,
+        "publisher": "Vexiion",
+        "list": [
+            {
+                "name": "Sonic80",
+                "link": "https://www.youtube.com/watch?v=3OwKOI4yXLQ",
+                "hertz": "V/75"
+            },
+            {
+                "name": "Lavaclaw",
+                "link": "https://www.youtube.com/watch?v=yqwhE2yoGso",
+                "hertz": "60"
+            }
+        ],
+        "progresses": [
+            "none"
         ]
     },
     "Blade of Justice": {
@@ -1519,6 +1550,11 @@
                 "name":"Lavaclaw",
                 "link":"https://youtu.be/pzBfYHwdSo4",
                 "hertz":"60"
+            },
+            {
+                "name":"Bribo",
+                "link":"https://youtu.be/GuK_NzQ8CnM",
+                "hertz":"M"
             }
         ],
         "progresses": [
@@ -1868,6 +1904,12 @@
                 "percent": 62,
                 "link": "https://youtu.be/TbBgnbtjoYI",
                 "hertz": "M"
+            },
+            {
+                "name":"unek",
+                "percent":86,
+                "link":"https://youtu.be/N-J30BFn9P0",
+                "hertz":"75"
             }
         ]
     },
@@ -2339,7 +2381,12 @@
             }
         ],
         "progresses": [
-            "none"
+            {
+                "name":"Zeronium",
+                "percent":68,
+                "link":"https://youtu.be/ws1o1BQvJRk",
+                "hertz":"60"
+            }
         ]
     },
         "SPEEDRUN": {
@@ -2769,6 +2816,11 @@
                 "name": "SubZeroV",
                 "link": "https://youtu.be/IT2iQChc56Q",
                 "hertz": "M"
+            },
+            {
+                "name":"Silverdynamix",
+                "link":"https://youtu.be/xGeu-3C89DY",
+                "hertz":"60"
             }
         ],
         "progresses": [
@@ -2777,13 +2829,7 @@
                 "percent": 69,
                 "link": "https://youtu.be/WSeAyD_x43E",
                 "hertz": "M"
-            },
-            {
-                "name": "Silverdynamix",
-                "percent": 58,
-                "link": "https://www.youtube.com/watch?v=bfYx4RrsqSs ",
-                "hertz": "60"
-            }
+           }
         ]
     },
     "The Hell World": {
@@ -2970,7 +3016,12 @@
             }
         ],
             "progresses": [
-                "none"
+                {
+                    "name":"question",
+                    "percent":52,
+                    "link":"https://www.youtube.com/watch?v=XrirrMLaQmc",
+                    "hertz":"60"
+                }
         ]
     },
     "EnvY": {
@@ -3787,6 +3838,12 @@
                 "percent": 66,
                 "link": "https://youtu.be/ypSckNC4858",
                 "hertz": "59"
+            },
+            {
+                "name":"CrokyWi",
+                "percent":53,
+                "link":"https://youtu.be/G7z1yKsGQdY",
+                "hertz":"75"
             }
         ]
     },
@@ -5227,6 +5284,11 @@
                 "name": "Flavyola64",
                 "link": "https://youtu.be/8rqE8jegpD0",
                 "hertz": "M"
+            },
+            {
+                "name":"dreamtide",
+                "link":"https://www.youtube.com/watch?v=vQ4pRqRbHy4",
+                "hertz":"M"
             }
         ],
         "progresses": [
@@ -5862,6 +5924,11 @@
                 "name": "Flavyola64",
                 "link": "https://www.youtube.com/watch?v=L1Q_wpAeHAI",
                 "hertz": "M"
+            },
+            {
+                "name":"Biprex",
+                "link":"https://youtu.be/G_qjOJ3B6Ds",
+                "hertz":"M"
             }
         ],
         "progresses": [
@@ -7849,7 +7916,7 @@
             "none"
         ]
     },
-           "Insaction": {
+        "Insaction": {
         "name": "Insaction",
         "ytcode": "l-iqvbOB_Ks",
         "minimumPercent": 100,
@@ -7859,6 +7926,11 @@
                 "name": "P8geons",
                 "link": "hhttps://youtu.be/I4zdQESaVZk",
                 "hertz": "M"
+            },
+            {
+                "name":"Storm957",
+                "link":"https://youtu.be/N-J30BFn9P0",
+                "hertz":"M"
             }
         ]
     },
@@ -8447,7 +8519,12 @@
                 "name": "The Derp Shark",
                 "link": "https://youtu.be/r2jyMBNL-oU",
                 "hertz": "60"
-            }                                
+            },
+            {
+                "name":"Rocipher",
+                "link":"https://youtu.be/lNRrjqJC4_I",
+                "hertz":"60"
+            }                            
         ],
         "progresses": [
             {
@@ -8599,6 +8676,27 @@
                 "name":"Qog",
                 "link":"https://www.youtube.com/watch?v=vn09Z2A7YXE&",
                 "hertz":"60"
+            }
+        ],
+        "progresses": [
+            "none"
+        ]
+    },
+  "Aether": {
+        "name": "Aether",
+        "ytcode": "wnsRuA_fGAs",
+        "minimumPercent": 100,
+        "publisher": "Zeptoz",
+        "list": [
+            {
+                "name":"SwordBx",
+                "link":"https://www.youtube.com/watch?v=3hiY9FLM3tA",
+                "hertz":"M"
+            },
+            {
+                "name":"dreamtide",
+                "link":"https://youtu.be/lDhi2rdKwbU",
+                "hertz":"M"
             }
         ],
         "progresses": [
@@ -10066,7 +10164,7 @@
             }
         ]
     },
-            "Cromulent": {
+        "Cromulent": {
         "name": "Cromulent",
         "ytcode": "ZNor5K6b4K4",
         "minimumPercent": 100,

@@ -445,7 +445,8 @@
             "Cataclysm",
             "Frizzantino Vibes",
             "Electrosonic",
-            "The Ultimate Phase"
+            "The Ultimate Phase",
+            "Asmodeus"
         ],
         "progs": [
             {
@@ -475,7 +476,10 @@
             "Crimson Clutter"
         ],
         "progs": [
-            "none"
+            {
+                "name":"Plasma Pulse Finale",
+                "percent": 72
+            }
         ]
     },
     "ThunderBT": {
@@ -1228,7 +1232,8 @@
             "Aurora",
             "Shape of the Sun",
             "Blade of Justice",
-            "Audio Expulsion"
+            "Audio Expulsion",
+            "Asmodeus"
         ],
         "progs": [
             {
@@ -1353,6 +1358,10 @@
             {
                 "name": "SHATTER",
                 "percent": 81
+            },
+            {
+                "name": "Artificial Ascent",
+                "percent": 63
             }
         ]
     },
@@ -2038,13 +2047,11 @@
             "Thanatophobia",
             "Reverence",
             "Instant Execution",
-            "Caution"
+            "Caution",
+            "Ziroikabi"
         ],
         "progs": [
-           {
-                "name": "Ziroikabi",
-                "percent": 75
-            }
+            "none"
         ]
     },
     "FrostBurn": {
@@ -3820,13 +3827,11 @@
             "Retention",
             "FinKor",
             "Triple Six",
-            "Killbot"
+            "Killbot",
+            "Epsilon"
         ],
         "progs": [
-            {
-                "name": "Epsilon",
-                "percent": 58
-            }
+            "none"
         ]
     },
     "BoiloveGD": {
@@ -4945,14 +4950,6 @@
             "none"
         ]
     },
-    "Silverdynamix ": {
-        "levels": [
-            "CYCLONE"
-        ],
-        "progs": [
-            "none"
-        ]
-    },
     "Disaster 500 GD": {
         "levels": [
             "CYCLONE"
@@ -5775,7 +5772,10 @@
             "moment"
         ],
         "progs": [
-            "none"
+            {
+                "name":"Falcon16",
+                "percent":68
+            }
         ]
     },
     "etceteraAngel": {
@@ -6699,7 +6699,9 @@
             "SHATTER",
             "Cadrega Mode",
             "Idols",
-            "Esencia"
+            "Esencia",
+            "ElectroLux",
+            "Aether"
         ],
         "progs": [
             "none"
@@ -8629,7 +8631,8 @@
             "Hateful Reflection",
             "Phobos",
             "Uprise",
-            "Volume"
+            "Volume",
+            "Insaction"
         ],
         "progs": [
             "none"
@@ -9124,7 +9127,8 @@
             "Spectral Decadence",
             "Sigma Interface",
             "Void Wave",
-            "Allegiance"
+            "Allegiance",
+            "Aether"
         ],
         "progs": [
             "none"
@@ -9250,12 +9254,15 @@
             "none"
         ]
     },
-    "gmd_question": {
+    "question": {
         "levels": [
             "Acu"
         ],
         "progs": [
-            "none"
+            {
+                "name":"Untitled",
+                "percent":52
+            }
         ]
     },
     "errør": {
@@ -9580,7 +9587,8 @@
             "kowareta",
             "Erebus",
             "Sonic Wave",
-            "Black Blizzard"
+            "Black Blizzard",
+            "Breakout"
         ],
         "progs": [
             {
@@ -9904,13 +9912,10 @@
             "Diligence",
             "Idols",
             "Reverence",
-            "Prismatic Haze"
+            "Prismatic Haze",
+            "Celestial Force"
         ],
         "progs": [
-            {
-                "name": "Celestial Force",
-                "percent": 90
-            },
             {
                 "name": "kowareta",
                 "percent": 58
@@ -11338,7 +11343,8 @@
             "Awakening Horus",
             "Aurora",
             "WaveBreaker",
-            "Myocardia"
+            "Myocardia",
+            "Audio Expulsion"
         ],
         "progs": [
             "none"
@@ -11734,7 +11740,8 @@
             "Daydream",
             "Unearthed",
             "NecropoliX",
-            "Artifice"
+            "Artifice",
+            "Niflheim"
         ],
         "progs": [
             "none"
@@ -11805,17 +11812,24 @@
             "none"
         ]
     },
-    "ConiZX": {
-        "levels": [
-            "Allegiance",
-            "Deception Dive",
-            "Cataclysm"
-        ],
+    "CrokyWi": {
+        "nationality": "France",
+        "levels": [],
         "progs": [
-        {
-             "name": "Infernal Abyss",
-             "percent": 89
-        }
+            {
+                "name":"moment",
+                "percent":53
+            }
+        ]
+    },
+    "unek": {
+        "nationality": "Greece",
+        "levels": [],
+        "progs": [
+            {
+                "name":"Killbot",
+                "percent":86
+            }
         ]
     },
     "geometryplays3": {
@@ -11950,7 +11964,7 @@
             },
             {
                 "name":"kowareta",
-                "percent":60
+                "percent":63
             }
         ]
     },
@@ -11967,7 +11981,9 @@
             "SHATTER"
         ],
         "progs": [
-            "none"
+            { "name": "Kowareta",
+              "percent": 59
+            }
         ]
     },
     "Baprag": {
@@ -12139,7 +12155,6 @@
     },
     "Phunky Psycho": {
         "levels": [
-            "none"
         ],
         "progs": [
             {
@@ -12150,7 +12165,6 @@
     },
     "anrekkk": {
         "levels": [
-            "none"
         ],
         "progs": [
             {
