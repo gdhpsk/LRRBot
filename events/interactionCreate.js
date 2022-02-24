@@ -3,7 +3,8 @@ module.exports = {
     name: "interactionCreate",
     async execute(interaction) {
 		var allowedChannels = [
-            "671454973346840616"
+            "671454973346840616",
+			"866382044699426886"
         ]
         if(!interaction.isCommand() || interaction.user.bot) return
 		if(interaction.channel.type != "DM") {

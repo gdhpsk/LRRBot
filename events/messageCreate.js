@@ -9,7 +9,8 @@ module.exports = {
         var allowedChannels = [
             "671454973346840616",
             "919475035750670360",
-            "844088388092428298"
+            "844088388092428298",
+            "866382044699426886"
         ]
         if(message.author.bot) return;
         if(message.channel.type != "DM") {
