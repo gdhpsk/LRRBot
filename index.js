@@ -3,7 +3,7 @@ const { Client, Collection } = require('discord.js');
 const Discord = require("discord.js")
 const mongoose = require("mongoose")
 
-mongoose.connect(`mongodb+srv://gdhpsk:${process.env.mongoPass}@gdhpsk-data.ldfbk.mongodb.net/test`)
+mongoose.connect(`mongodb+srv://gdlrrapi:${process.env.mongoPass}@gdlrrapi.2rdel.mongodb.net/gdlrrdemonlist`)
 
 const client = new Client({ partials: ["CHANNEL", "MESSAGE", "REACTION"], intents: ["GUILDS", "GUILD_MESSAGES", "DIRECT_MESSAGES", "GUILD_MEMBERS", "GUILD_PRESENCES"]});
 
