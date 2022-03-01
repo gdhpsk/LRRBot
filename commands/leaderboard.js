@@ -13,7 +13,7 @@ module.exports = {
         .setRequired(true)
     ),
     async execute(interaction, Discord, client) {
-        await interaction.deferReply({ephemeral: false})
+        await interaction.deferReply()
         let lev = await levelsSchema.find()
         let lead = await leaderboardSchema.find()
         const leaderboard = lead.reduce(function(acc, cur, i) {
