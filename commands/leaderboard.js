@@ -37,6 +37,7 @@ module.exports = {
                     name: key,
                     points: df
                 })
+                console.log(key)
             }
             }
             far.sort((a, b) => b.points - a.points)
