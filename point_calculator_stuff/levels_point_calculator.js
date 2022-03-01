@@ -1,5 +1,5 @@
-const levels = require("../JSON/levels.json")
-let lol = (level) => {
+
+let lol = (level, levels) => {
     var counter = Object.keys(levels).indexOf(level)+1
     if(counter < 76) {
         return Math.round(100*(50.0 / (Math.pow(Math.E, 0.001 * counter)) * Math.log((1 / (0.008 * counter)))))/100

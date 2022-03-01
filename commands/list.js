@@ -1,4 +1,5 @@
 const { SlashCommandBuilder } = require("@discordjs/builders")
+const levelsSchema = require("../schema/levels")
 const points = require("../point_calculator_stuff/levels_point_calculator")
 
 module.exports = {
@@ -11,7 +12,11 @@ module.exports = {
     .setDescription("What level do you want me to display?")
     .setRequired(false)),
     async execute(interaction, Discord, client) {
-        const levels = require("../JSON/levels.json")
+        var everything = await levelsSchema.find()
+        const levels = everything.reduce(function(acc, cur, i) {
+            acc[everything[i].name] = cur;
+            return acc;
+          }, {});
         var numarray = []
         const embed = new Discord.MessageEmbed()
 
@@ -59,7 +64,7 @@ module.exports = {
                 gay = act
             }
             if(levels[gay].minimumPercent) {
-                embed.setFooter(`The minimum percentage requirement for this level is ${levels[gay].minimumPercent}%.\nNumber of points given (completion): ${points(gay)}`)
+                embed.setFooter(`The minimum percentage requirement for this level is ${levels[gay].minimumPercent}%.\nNumber of points given (completion): ${points(gay, levels)}`)
             }
             var txt = "**COMPLETIONS**\n\n"
             for(let i = 0; i < levels[gay].list.length; i++) {
@@ -96,7 +101,7 @@ module.exports = {
             gg = "extended"
         }
         if(txt.length > 4000) {
-            txt = `Number of 61hz> records: ${numarray.filter(v => parseInt(v) < 61).length}\n\nNumber of 61-75hz records: ${numarray.filter(v => parseInt(v) > 60).length}\n\nNumber of Mobile records: ${numarray.filter(v => v == "Mobile").length}\n\nNumber of Points Given: ${points(gay)}\n\nLink to the website: https://gdlrrlist.cf/${gg}.php`
+            txt = `Number of 61hz> records: ${numarray.filter(v => parseInt(v) < 61).length}\n\nNumber of 61-75hz records: ${numarray.filter(v => parseInt(v) > 60).length}\n\nNumber of Mobile records: ${numarray.filter(v => v == "Mobile").length}\n\nNumber of Points Given: ${points(gay, levels)}\n\nLink to the website: https://gdlrrlist.cf/${gg}.php`
          }
             embed.setTitle(`#${Object.keys(levels).indexOf(gay)+1} - ${gay} by ${levels[gay].publisher}`)
             embed.setURL(`https://www.youtube.com/watch?v=${levels[gay].ytcode}`)
