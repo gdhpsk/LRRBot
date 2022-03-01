@@ -1,7 +1,6 @@
-const leaderboard = require("../JSON/leaderboard.json")
-const level = require("../JSON/levels.json")
 
-let lol = (lev, percent) => {
+
+let lol = (lev, percent, level) => {
     var count = Object.keys(level).indexOf(lev)
     var point = 0
     if(count > 74) {

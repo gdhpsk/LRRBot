@@ -1,5 +1,5 @@
-const levels = require("../JSON/levels.json")
-let lol = (level) => {
+
+let lol = (level, levels) => {
     var counter = Object.keys(levels).indexOf(level)+1
     let score = 0
     if(counter > 150) {
