@@ -13,7 +13,6 @@ module.exports = {
         .setRequired(true)
     ),
     async execute(interaction, Discord, client) {
-        await interaction.deferReply()
         let lev = await levelsSchema.find()
         let lead = await leaderboardSchema.find()
         const leaderboard = lead.reduce(function(acc, cur, i) {
@@ -26,7 +25,7 @@ module.exports = {
           }, {});
         const point = require("../point_calculator_stuff/leaderboard_point_calculator")
         if(!leaderboard[interaction.options.getString("user")]) {
-            await interaction.editReply({content: "Please enter a valid profile!", ephemeral: true})
+            await interaction.reply({content: "Please enter a valid profile!", ephemeral: true})
         } else {
             var counte = ""
             var gay = interaction.options.getString("user")
@@ -96,7 +95,7 @@ module.exports = {
             .setTitle(`${counte}${gay}'s profile (${point(gay, levels, leaderboard)} points):`)
             .setDescription(`${nationality}**COMPLETIONS**\n\n${txtList}\n**COMPLETED LEGACY LEVELS**\n\n${txtExtra}\n**PROGRESSES**\n\n${txtProgs}`)
             .setFooter(`${ku} completions, ${uk} progresses`)
-            await interaction.editReply({embeds: [embed]})
+            await interaction.reply({embeds: [embed]})
         }
     }
 }
