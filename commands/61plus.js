@@ -1,6 +1,4 @@
 const { SlashCommandBuilder } = require("@discordjs/builders")
-const levels = require("../JSON/61hertz+.json")
-const points = require("../point_calculator_stuff/levels_point_calculator")
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -12,6 +10,11 @@ module.exports = {
     .setDescription("What level do you want me to display?")
     .setRequired(false)),
     async execute(interaction, Discord, client) {
+        var everything = await require("../schema/61hertz").find()
+        const levels = everything.reduce(function(acc, cur, i) {
+            acc[everything[i].name] = cur;
+            return acc;
+          }, {});
         var numarray = []
         const embed = new Discord.MessageEmbed()
         if(!interaction.options.getString("level")) {
