@@ -3,6 +3,8 @@ module.exports = {
     name: "messageCreate",
    async execute(message) {
         const Discord = require("discord.js")
+        const levelsSchema = require("../schema/levels") 
+        const leaderboardSchema = require("../schema/leaderboard") 
         const prefix = ".."
         let args = message.content.slice(prefix.length).split(/ +/);
         const cmd = args.shift().toLowerCase();
@@ -42,8 +44,16 @@ module.exports = {
             message.reply("https://cdn.discordapp.com/attachments/908882016345395241/911898128448364544/You.gif")
         }
         if(message.content == "..check") {
-            var levels = require("../JSON/levels.json")
-            var leaderboard = require("../JSON/leaderboard.json")
+            let lev = await levelsSchema.find()
+        let lead = await leaderboardSchema.find()
+        const leaderboard = lead.reduce(function(acc, cur, i) {
+            acc[lead[i].name] = cur;
+            return acc;
+          }, {});
+        const levels = lev.reduce(function(acc, cur, i) {
+            acc[lev[i].name] = cur;
+            return acc;
+          }, {});
             var array = []
             var array2 = []
             var array3 = []
@@ -92,7 +102,11 @@ module.exports = {
             })*/
             var karthik;
             var g;
-            var levels = require("../JSON/levels.json")
+            let lev = await levelsSchema.find()
+            const levels = lev.reduce(function(acc, cur, i) {
+                acc[lev[i].name] = cur;
+                return acc;
+              }, {});
             var number = parseInt(args[0])+1
             var random = Math.floor(Math.random() * Object.keys(levels).length-4)
             if(!args[0]) return message.reply("Please input the percentage you got. If you haven't started a roulette, start one by doing the command \"..roulette start\"");
