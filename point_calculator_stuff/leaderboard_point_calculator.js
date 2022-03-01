@@ -1,7 +1,5 @@
-const leaderboard = require("../JSON/leaderboard.json")
-const level = require("../JSON/levels.json")
 
-let lol = (player) => {
+let lol = (player, level, leaderboard) => {
     var numberOfRecords = 0
     var levels = 0
     var progs = 0

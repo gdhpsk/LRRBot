@@ -1,7 +1,6 @@
 const { SlashCommandBuilder } = require("@discordjs/builders")
-const leaderboard = require("../JSON/leaderboard.json")
-const levels = require("../JSON/levels.json")
-const point = require("../point_calculator_stuff/leaderboard_point_calculator")
+const levelsSchema = require("../schema/levels")
+const leaderboardSchema = require("../schema/leaderboard")
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -14,6 +13,17 @@ module.exports = {
         .setRequired(true)
     ),
     async execute(interaction, Discord, client) {
+        let lev = await levelsSchema.find()
+        let lead = await leaderboardSchema.find()
+        const leaderboard = lead.reduce(function(acc, cur, i) {
+            acc[lead[i].name] = cur;
+            return acc;
+          }, {});
+        const levels = lev.reduce(function(acc, cur, i) {
+            acc[lev[i].name] = cur;
+            return acc;
+          }, {});
+        const point = require("../point_calculator_stuff/leaderboard_point_calculator")
         if(!leaderboard[interaction.options.getString("user")]) {
             await interaction.reply({content: "Please enter a valid profile!", ephemeral: true})
         } else {
@@ -21,7 +31,7 @@ module.exports = {
             var gay = interaction.options.getString("user")
             var far = []
             for(let key in leaderboard) {
-                var df = point(key)
+                var df = point(key, levels, leaderboard)
                 if(df != 0) {
                 far.push({
                     name: key,
@@ -82,7 +92,7 @@ module.exports = {
                 txtProgs = "none.\n"
             }
             const embed = new Discord.MessageEmbed()
-            .setTitle(`${counte}${gay}'s profile (${point(gay)} points):`)
+            .setTitle(`${counte}${gay}'s profile (${point(gay, levels, leaderboard)} points):`)
             .setDescription(`${nationality}**COMPLETIONS**\n\n${txtList}\n**COMPLETED LEGACY LEVELS**\n\n${txtExtra}\n**PROGRESSES**\n\n${txtProgs}`)
             .setFooter(`${ku} completions, ${uk} progresses`)
             await interaction.reply({embeds: [embed]})
