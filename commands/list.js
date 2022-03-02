@@ -53,17 +53,16 @@ module.exports = {
         } else {
             let ghj = false
             var act = interaction.options.getString("level")
-            const varact = interaction.options.getString("level")
             if(!isNaN(interaction.options.getString("level")) && !levels[interaction.options.getString("level")]) {
-                if(!Object.keys(levels)[varact-1]) {
+                if(!Object.keys(levels)[act-1]) {
                     await interaction.reply({content: "Please enter a valid placement number!", ephemeral: true})
                     return
                 }
-                if(Object.keys(levels).indexOf(Object.keys(levels)[varact-1]) > Object.keys(levels).indexOf("Final Epilogue")) {
+                if(Object.keys(levels).indexOf(Object.keys(levels)[act-1]) > Object.keys(levels).indexOf("Final Epilogue")) {
                     await interaction.reply({content: "Please enter a valid placement number!", ephemeral: true})
                     return
                 }
-                act = Object.keys(levels)[varact-1]
+                act = Object.keys(levels)[act-1]
                 ghj = true
             }
         if(!levels[interaction.options.getString("level")] && interaction.options.getString("level") != "generate" && !ghj) {
