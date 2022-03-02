@@ -51,7 +51,7 @@ module.exports = {
                 await interaction.followUp({embeds: [array[i+1]], ephemeral: true})
             }
         } else {
-            const ghj = false
+            let ghj = false
             var act = interaction.options.getString("level")
             if(!isNaN(interaction.options.getString("level")) && !levels[interaction.options.getString("level")]) {
                 if(!Object.keys(levels)[act]) {
