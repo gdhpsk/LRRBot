@@ -51,13 +51,26 @@ module.exports = {
                 await interaction.followUp({embeds: [array[i+1]], ephemeral: true})
             }
         } else {
-        if(!levels[interaction.options.getString("level")] && interaction.options.getString("level") != "generate") {
+            const ghj = false
+            var act = interaction.options.getString("level")
+            if(isNaN(interaction.options.getString("level")) && !levels[interaction.options.getString("level")]) {
+                if(!Object.keys(levels)[act]) {
+                    await interaction.reply({content: "Please enter a valid placement number!", ephemeral: true})
+                    return
+                }
+                if(Object.keys(levels).indexOf(Object.keys(levels)[act]) > Object.keys(levels).indexOf("Final Epilogue")) {
+                    await interaction.reply({content: "Please enter a valid placement number!", ephemeral: true})
+                    return
+                }
+                act = Object.keys(levels)[act]
+                ghj = true
+            }
+        if(!levels[interaction.options.getString("level")] && interaction.options.getString("level") != "generate" && !ghj) {
             await interaction.reply({content: "Please enter a valid level!", ephemeral: true})
         } else {
-            var act = interaction.options.getString("level")
             var gay = ""
             if(act == "generate") {
-                var um = Math.floor(Math.random() * Object.keys(levels).length-1)
+                var um = Math.floor(Math.random() * Object.keys(levels).indexOf("Final Epilogue"))
                 gay = Object.keys(levels)[um]
                 embed.setAuthor(`${interaction.user.tag} generated a level!`)
             } else {
@@ -101,7 +114,7 @@ module.exports = {
             gg = "extended"
         }
         if(txt.length > 4000) {
-            txt = `Number of 61hz> records: ${numarray.filter(v => parseInt(v) < 61).length}\n\nNumber of 61-75hz records: ${numarray.filter(v => parseInt(v) > 60).length}\n\nNumber of Mobile records: ${numarray.filter(v => v == "Mobile").length}\n\nNumber of Points Given: ${points(gay, levels)}\n\nLink to the website: https://gdlrrlist.cf/${gg}.php`
+            txt = `Number of 61hz> records: ${numarray.filter(v => parseInt(v) < 61).length}\n\nNumber of 61-75hz records: ${numarray.filter(v => parseInt(v) > 60).length}\n\nNumber of Mobile records: ${numarray.filter(v => v == "Mobile").length}\n\nNumber of Points Given: ${points(gay, levels)}\n\nLink to the website: https://gdlrrlist.cf/${gg}.html`
          }
             embed.setTitle(`#${Object.keys(levels).indexOf(gay)+1} - ${gay} by ${levels[gay].publisher}`)
             embed.setURL(`https://www.youtube.com/watch?v=${levels[gay].ytcode}`)
