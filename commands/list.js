@@ -53,7 +53,7 @@ module.exports = {
         } else {
             const ghj = false
             var act = interaction.options.getString("level")
-            if(isNaN(interaction.options.getString("level")) && !levels[interaction.options.getString("level")]) {
+            if(!isNaN(interaction.options.getString("level")) && !levels[interaction.options.getString("level")]) {
                 if(!Object.keys(levels)[act]) {
                     await interaction.reply({content: "Please enter a valid placement number!", ephemeral: true})
                     return
