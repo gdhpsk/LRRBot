@@ -216,15 +216,15 @@ module.exports = {
                     new Discord.MessageButton().setLabel("Legacy List").setCustomId("legacy").setStyle("PRIMARY")]
                 })
                 message.reply({content: "What levels do you want your roulette to contain?", components: [options]})
-                object[message.author.id] = [
+                // object[message.author.id] = [
     
-                ]
-                karthik = object[message.author.id]
-                obj[message.author.id] = [
+                // ]
+                // karthik = object[message.author.id]
+                // obj[message.author.id] = [
     
-                ]
-                g = obj[message.author.id]
-                number = 1
+                // ]
+                // g = obj[message.author.id]
+                // number = 1
             } else {
                 g = obj[message.author.id]
                 if(args[0] == "start" && object[message.author.id]) return message.reply("You already have an instance of a roulette! Use ..roulette end to end your current session.")
