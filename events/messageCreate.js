@@ -112,6 +112,9 @@ module.exports = {
               }, {});
             var number = parseInt(args[0])+1
             var random = Math.floor(Math.random() * Object.keys(levels).length-4)
+            if(config[message.author.id]) {
+                random = config[message.author.id]
+            }
             if(!args[0]) return message.reply("Please input the percentage you got. If you haven't started a roulette, start one by doing the command \"..roulette start\"");
             if(!object[message.author.id] && args[0] != "start" && args[0] != "join") return message.reply("Please start a roulette!")
             if(isNaN(parseInt(args[0])) && args[0] != "start" && args[0] != "end" && args[0] != "score" && args[0] != "join") return message.reply("Please input a valid number");
@@ -271,6 +274,7 @@ module.exports = {
                                     objoflevels[Object.values(levels)[i].name] = Object.values(levels)[i]
                                 }
                             }
+                            random = Object.keys(objoflevels).length
                             config[message.author.id] = objoflevels
                             object[message.author.id] = [
                                 
