@@ -222,7 +222,6 @@ module.exports = {
                 let arr = []
                 message.client.on("interactionCreate", async(buttonclick) => {
                     if(!buttonclick.isButton()) return;
-                    if(buttonclick.member.id != smt.author.id) return;
                     if(smt.id != buttonclick.message.id) return
                     switch (buttonclick.customId) {
                         case "main":
@@ -235,10 +234,10 @@ module.exports = {
                             arr.push("legacy")
                             break;
                          case "done":
+                            await buttonclick.message.delete()
                              if(arr.length == 0) {
                                  arr = ["main", "extended", "legacy"]
                              }
-                            buttonclick.message.delete()
                             real.config[message.author.id] = arr
                             object[message.author.id] = [
                                 
