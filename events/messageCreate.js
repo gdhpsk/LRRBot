@@ -209,13 +209,16 @@ module.exports = {
                 })
                 return message.reply({content: `You have ended the roulette at ${number}% on ${karthik[karthik.length-1]}! Thanks for playing :)`, embeds: [embed]})
             }
+            var ikl = false
             if(args[0] == "start" && !object[message.author.id]) {
+                ikl = true
                 let options = new Discord.MessageActionRow({components: [
                     new Discord.MessageButton().setLabel("Main List").setCustomId("main").setStyle("PRIMARY"),
                     new Discord.MessageButton().setLabel("Extended List").setCustomId("extended").setStyle("PRIMARY"),
                     new Discord.MessageButton().setLabel("Legacy List").setCustomId("legacy").setStyle("PRIMARY")]
                 })
                 message.reply({content: "What levels do you want your roulette to contain?", components: [options]})
+
                 // object[message.author.id] = [
     
                 // ]
@@ -244,7 +247,7 @@ module.exports = {
                 if(parseInt(args[0]) < g[g.length-1]) return message.reply(`Please input a percentage above ${g.length == 1 ? 0 : g[g.length-1]-1}%!`)
                
             }
-            if(object[message.author.id]) {
+            if(object[message.author.id] && !ikl) {
                 karthik = object[message.author.id]
                 g = obj[message.author.id]
             for(let i = 0; i < Object.keys(levels).length; i++) {
