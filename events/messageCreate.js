@@ -112,7 +112,7 @@ module.exports = {
               }, {});
             var number = parseInt(args[0])+1
             var random = Math.floor(Math.random() * Object.keys(levels).length-4)
-            if(config[message.author.id]) {
+            if(config[message.author.id]) { 
                 random = config[message.author.id]
             }
             if(!args[0]) return message.reply("Please input the percentage you got. If you haven't started a roulette, start one by doing the command \"..roulette start\"");
