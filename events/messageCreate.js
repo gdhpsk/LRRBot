@@ -51,7 +51,7 @@ module.exports = {
             acc[lead[i].name] = cur;
             return acc;
           }, {});
-        const levels = lev.reduce(function(acc, cur, i) {
+        let levels = lev.reduce(function(acc, cur, i) {
             acc[lev[i].name] = cur;
             return acc;
           }, {});
@@ -106,7 +106,7 @@ module.exports = {
             var g;
             var deez;
             let lev = await levelsSchema.find()
-            const levels = lev.reduce(function(acc, cur, i) {
+            let levels = lev.reduce(function(acc, cur, i) {
                 acc[lev[i].name] = cur;
                 return acc;
               }, {});
