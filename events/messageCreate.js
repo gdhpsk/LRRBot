@@ -210,6 +210,12 @@ module.exports = {
                 return message.reply({content: `You have ended the roulette at ${number}% on ${karthik[karthik.length-1]}! Thanks for playing :)`, embeds: [embed]})
             }
             if(args[0] == "start" && !object[message.author.id]) {
+                let options = new Discord.MessageActionRow(
+                    new Discord.MessageButton().setLabel("Main List").setCustomId("main").setStyle("PRIMARY"),
+                    new Discord.MessageButton().setLabel("Extended List").setCustomId("extended").setStyle("PRIMARY"),
+                    new Discord.MessageButton().setLabel("Legacy List").setCustomId("legacy").setStyle("PRIMARY")
+                )
+                message.reply({content: "What levels do you want your roulette to contain?", components: [options]})
                 object[message.author.id] = [
     
                 ]
