@@ -246,7 +246,7 @@ module.exports = {
                                     Object.values(levels)[i].progresses = undefined
                                   Object.values(levels)[i]._id = undefined
                                   Object.values(levels)[i].minimumPercent = undefined
-                                     objoflevels[Object.values(levels)[i].name] = Object.values(levels)[i].ytcode
+                                     objoflevels[Object.values(levels)[i].name] = Object.values(levels)[i]
                                  }
                              }
                              if(arr.includes("extended")) {
