@@ -216,7 +216,7 @@ module.exports = {
                     new Discord.MessageButton().setLabel("Main List").setCustomId("main").setStyle("PRIMARY"),
                     new Discord.MessageButton().setLabel("Extended List").setCustomId("extended").setStyle("PRIMARY"),
                     new Discord.MessageButton().setLabel("Legacy List").setCustomId("legacy").setStyle("PRIMARY"),
-                    new Discord.MessageButton().setEmoji("✓").setCustomId("done").setStyle("PRIMARY")]
+                    new Discord.MessageButton().setEmoji("✅").setCustomId("done").setStyle("PRIMARY")]
                 })
                 var smt = await message.reply({content: "What levels do you want your roulette to contain?", components: [options]})
                 let arr = []
