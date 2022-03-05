@@ -5,7 +5,7 @@ const points = require("../point_calculator_stuff/levels_point_calculator")
 module.exports = {
     data: new SlashCommandBuilder()
     .setName("list")
-    .setDescription("Shows info of any level on the LRR Demonslist. This will be updated every week")
+    .setDescription("Shows info of any level on the LRR Demonslist.")
     .addStringOption((option) => 
     option
     .setName("level")

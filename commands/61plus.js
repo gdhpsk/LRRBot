@@ -3,7 +3,7 @@ const { SlashCommandBuilder } = require("@discordjs/builders")
 module.exports = {
     data: new SlashCommandBuilder()
     .setName("61plus")
-    .setDescription("Shows info of any 61hz+ level on the LRR Demonslist. This will be updated every week")
+    .setDescription("Shows info of any 61hz+ level on the LRR Demonslist.")
     .addStringOption((option) => 
     option
     .setName("level")

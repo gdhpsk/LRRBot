@@ -5,7 +5,7 @@ const leaderboardSchema = require("../schema/leaderboard")
 module.exports = {
     data: new SlashCommandBuilder()
     .setName("leaderboard")
-    .setDescription("Shows a user on LRR leaderboard. WIll be updated every week.")
+    .setDescription("Shows a user on LRR leaderboard.")
     .addStringOption((option) =>
         option
         .setName("user")
