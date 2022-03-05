@@ -224,7 +224,7 @@ module.exports = {
                     if(!buttonclick.isButton()) return;
                     if(smt.id != buttonclick.message.id) return
                     switch (buttonclick.customId) {
-                        case "main":
+                        case "main": 
                             arr.push("main")
                             break;
                         case "extended":
