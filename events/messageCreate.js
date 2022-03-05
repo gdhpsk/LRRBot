@@ -181,6 +181,7 @@ module.exports = {
             .setTitle(`Score: ${karthik.length-1}`)
            return message.reply({embeds: [embedScore]})
     }
+    var objoflevels = {}
             if(args[0] == "end" && !object[message.author.id]) {
                  return message.reply("Please start a roulette before you want to end it!")
             } else if(args[0] == "end" && object[message.author.id]) {
@@ -239,7 +240,34 @@ module.exports = {
                              if(arr.length == 0) {
                                  arr = ["main", "extended", "legacy"]
                              }
-                            config[message.author.id] = arr
+                             if(arr.includes("main")) {
+                                 for(let i = 0; i < 75; i++) {
+                                    Object.values(levels)[i].list = undefined
+                                    Object.values(levels)[i].progresses = undefined
+                                  Object.values(levels)[i]._id = undefined
+                                  Object.values(levels)[i].minimumPercent = undefined
+                                     objoflevels[Object.values(levels)[i].name] = Object.values(levels)[i].ytcode
+                                 }
+                             }
+                             if(arr.includes("extended")) {
+                                for(let i = 75; i < 150; i++) {
+                                    Object.values(levels)[i].list = undefined
+                                      Object.values(levels)[i].progresses = undefined
+                                    Object.values(levels)[i]._id = undefined
+                                    Object.values(levels)[i].minimumPercent = undefined
+                                    objoflevels[Object.values(levels)[i].name] = Object.values(levels)[i]
+                                }
+                            }
+                            if(arr.includes("legacy")) {
+                                for(let i = 150; i < Object.keys(levels)[i]; i++) {
+                                    Object.values(levels)[i].list = undefined
+                                      Object.values(levels)[i].progresses = undefined
+                                    Object.values(levels)[i]._id = undefined
+                                    Object.values(levels)[i].minimumPercent = undefined
+                                    objoflevels[Object.values(levels)[i].name] = Object.values(levels)[i]
+                                }
+                            }
+                            config[message.author.id] = objoflevels
                             object[message.author.id] = [
                                 
                             ]
@@ -259,6 +287,7 @@ module.exports = {
                                     message.reply({embeds: [embed]})
                                     g[g.length] = number
                                     karthik[karthik.length] = Object.keys(levels)[random]
+                                    delete config[message.author.id][Object.keys(levels)[random]]
                                     await roulette.findById("61ff7b2fbd245cb98f6579fd").updateMany(null, real)
                                     message.client.guilds.fetch("904222136661577758").then(guild => {
                                         guild.channels.fetch("904222137278169099").then(async msg => {
