@@ -215,18 +215,44 @@ module.exports = {
                 let options = new Discord.MessageActionRow({components: [
                     new Discord.MessageButton().setLabel("Main List").setCustomId("main").setStyle("PRIMARY"),
                     new Discord.MessageButton().setLabel("Extended List").setCustomId("extended").setStyle("PRIMARY"),
-                    new Discord.MessageButton().setLabel("Legacy List").setCustomId("legacy").setStyle("PRIMARY")]
+                    new Discord.MessageButton().setLabel("Legacy List").setCustomId("legacy").setStyle("PRIMARY"),
+                    new Discord.MessageButton().setEmoji("✓").setCustomId("done").setStyle("PRIMARY")]
                 })
-                message.reply({content: "What levels do you want your roulette to contain?", components: [options]})
-
-                // object[message.author.id] = [
-    
-                // ]
-                // karthik = object[message.author.id]
-                // obj[message.author.id] = [
-    
-                // ]
-                // g = obj[message.author.id]
+                var smt = await message.reply({content: "What levels do you want your roulette to contain?", components: [options]})
+                let arr = []
+                client.on("interactionCreate", async(buttonclick) => {
+                    if(!buttonclick.isButton()) return;
+                    if(buttonclick.member.id != smt.author.id) return;
+                    if(smt.id != buttonclick.message.id) return
+                    switch (buttonclick.customId) {
+                        case "main":
+                            arr.push("main")
+                            break;
+                        case "extended":
+                            arr.push("extended")
+                            break;
+                        case "legacy":
+                            arr.push("legacy")
+                            break;
+                         case "done":
+                             if(arr.length == 0) {
+                                 arr = ["main", "extended", "legacy"]
+                             }
+                            buttonclick.message.delete()
+                            real.config[message.author.id] = arr
+                            object[message.author.id] = [
+                                
+                            ]
+                            karthik = object[message.author.id]
+                            obj[message.author.id] = [
+                
+                            ]
+                            g = obj[message.author.id]
+                            number = 1
+                           ikl = true
+                            break;
+                    }
+                })
                 // number = 1
             } else {
                 g = obj[message.author.id]

@@ -31,8 +31,8 @@ for(const file of eventFiles) {
 	}
 }
 
-/*client.on("messageCreate", message => {
-	client.ap
+/*client.on("interactionCreate", message => {
+	message.member.id
 })*/
 
  
