@@ -220,7 +220,7 @@ module.exports = {
                 })
                 var smt = await message.reply({content: "What levels do you want your roulette to contain?", components: [options]})
                 let arr = []
-                client.on("interactionCreate", async(buttonclick) => {
+                message.client.on("interactionCreate", async(buttonclick) => {
                     if(!buttonclick.isButton()) return;
                     if(buttonclick.member.id != smt.author.id) return;
                     if(smt.id != buttonclick.message.id) return
