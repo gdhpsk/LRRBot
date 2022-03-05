@@ -296,7 +296,7 @@ module.exports = {
                                     message.reply({embeds: [embed]})
                                     g[g.length] = number
                                     karthik[karthik.length] = Object.keys(objoflevels)[random]
-                                    delete config[message.author.id][Object.keys(levels)[random]]
+                                    delete config[message.author.id][Object.keys(levels)[random]] 
                                     await roulette.findById("61ff7b2fbd245cb98f6579fd").updateMany(null, real)
                                     // message.client.guilds.fetch("904222136661577758").then(guild => {
                                     //     guild.channels.fetch("904222137278169099").then(async msg => {
