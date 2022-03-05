@@ -204,11 +204,11 @@ module.exports = {
                 delete obj[message.author.id]
                 delete object[message.author.id]
                 await roulette.findById("61ff7b2fbd245cb98f6579fd").updateMany(null, real)
-                message.client.guilds.fetch("904222136661577758").then(guild => {
-                    guild.channels.fetch("904222137278169099").then(msg => {
-                        msg.send(JSON.stringify(real))
-                    })
-                })
+                // message.client.guilds.fetch("904222136661577758").then(guild => {
+                //     guild.channels.fetch("904222137278169099").then(msg => {
+                //         msg.send(JSON.stringify(real))
+                //     })
+                // })
                 return message.reply({content: `You have ended the roulette at ${number}% on ${karthik[karthik.length-1]}! Thanks for playing :)`, embeds: [embed]})
             }
             var ikl = false
@@ -289,11 +289,11 @@ module.exports = {
                                     karthik[karthik.length] = Object.keys(levels)[random]
                                     delete config[message.author.id][Object.keys(levels)[random]]
                                     await roulette.findById("61ff7b2fbd245cb98f6579fd").updateMany(null, real)
-                                    message.client.guilds.fetch("904222136661577758").then(guild => {
-                                        guild.channels.fetch("904222137278169099").then(async msg => {
-                                            msg.send(JSON.stringify(real))
-                                        })
-                                    })
+                                    // message.client.guilds.fetch("904222136661577758").then(guild => {
+                                    //     guild.channels.fetch("904222137278169099").then(async msg => {
+                                    //         msg.send(JSON.stringify(real))
+                                    //     })
+                                    // })
                                     break;
                                 } else {
                                     random = Math.floor(Math.random() * Object.keys(levels).length-1)
@@ -313,11 +313,11 @@ module.exports = {
                     delete object[message.author.id]
                     delete obj[message.author.id]
                     await roulette.findById("61ff7b2fbd245cb98f6579fd").updateMany(null, real)
-                    message.client.guilds.fetch("904222136661577758").then(guild => {
-                        guild.channels.fetch("904222137278169099").then(msg => {
-                            msg.send(JSON.stringify(real))
-                        })
-                    })
+                    // message.client.guilds.fetch("904222136661577758").then(guild => {
+                    //     guild.channels.fetch("904222137278169099").then(msg => {
+                    //         msg.send(JSON.stringify(real))
+                    //     })
+                    // })
                     return message.reply("Congratulations, you've completed the lrr roulette! Now quit gd smh")
                 }
                 if(parseInt(args[0]) < g[g.length-1]) return message.reply(`Please input a percentage above ${g.length == 1 ? 0 : g[g.length-1]-1}%!`)
@@ -337,11 +337,11 @@ module.exports = {
                 g[g.length] = number
                 karthik[karthik.length] = Object.keys(levels)[random]
                 await roulette.findById("61ff7b2fbd245cb98f6579fd").updateMany(null, real)
-                message.client.guilds.fetch("904222136661577758").then(guild => {
-                    guild.channels.fetch("904222137278169099").then(async msg => {
-                        msg.send(JSON.stringify(real))
-                    })
-                })
+                // message.client.guilds.fetch("904222136661577758").then(guild => {
+                //     guild.channels.fetch("904222137278169099").then(async msg => {
+                //         msg.send(JSON.stringify(real))
+                //     })
+                // })
                 break;
             } else {
                 random = Math.floor(Math.random() * Object.keys(levels).length-1)
