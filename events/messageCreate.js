@@ -272,7 +272,7 @@ module.exports = {
                 continue;
             }
         }
-    } else {
+    } else if(!object[message.author.id] && !ikl) {
         message.reply("Please start the roulette!")
     }
         } 
