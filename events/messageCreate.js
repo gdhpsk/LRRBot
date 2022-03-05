@@ -104,6 +104,7 @@ module.exports = {
             })*/
             var karthik;
             var g;
+            var deez;
             let lev = await levelsSchema.find()
             const levels = lev.reduce(function(acc, cur, i) {
                 acc[lev[i].name] = cur;
@@ -164,6 +165,7 @@ module.exports = {
        } else if(args[0] == "score" && object[message.author.id]) {
            karthik = object[message.author.id]
            g = obj[message.author.id]
+           levels = config[message.author.id]
            var j = ""
         for(let i = 0; i < karthik.length; i++) {
             var tt = ["", `, you got ${g[i+1]-1}%`]
@@ -187,6 +189,7 @@ module.exports = {
             } else if(args[0] == "end" && object[message.author.id]) {
                 g = obj[message.author.id]
                 karthik = object[message.author.id]
+                levels = config[message.author.id]
                 var j = ""
         for(let i = 0; i < karthik.length-1; i++) {
             j += `#${i+1} - ${karthik[i]} ${g[i]}% (#${Object.keys(levels).indexOf(karthik[i])+1}, you got ${g[i+1]-1}%)\n`
@@ -203,6 +206,7 @@ module.exports = {
                 number = g[g.length-1]
                 delete obj[message.author.id]
                 delete object[message.author.id]
+                delete config[message.author.id]
                 await roulette.findById("61ff7b2fbd245cb98f6579fd").updateMany(null, real)
                 // message.client.guilds.fetch("904222136661577758").then(guild => {
                 //     guild.channels.fetch("904222137278169099").then(msg => {
@@ -271,6 +275,7 @@ module.exports = {
                             object[message.author.id] = [
                                 
                             ]
+                            levels = config[message.author.id]
                             karthik = object[message.author.id]
                             obj[message.author.id] = [
                 
@@ -312,6 +317,7 @@ module.exports = {
                 if(parseInt(args[0]) == 100 && object[message.author.id]) {
                     delete object[message.author.id]
                     delete obj[message.author.id]
+                    delete config[message.author.id]
                     await roulette.findById("61ff7b2fbd245cb98f6579fd").updateMany(null, real)
                     // message.client.guilds.fetch("904222136661577758").then(guild => {
                     //     guild.channels.fetch("904222137278169099").then(msg => {
@@ -326,6 +332,7 @@ module.exports = {
             if(object[message.author.id] && !ikl) {
                 karthik = object[message.author.id]
                 g = obj[message.author.id]
+                levels = config[message.author.id]
             for(let i = 0; i < Object.keys(levels).length; i++) {
             if(!karthik.includes(Object.keys(levels)[random])) {
                 const embed = new Discord.MessageEmbed()
