@@ -90,6 +90,7 @@ module.exports = {
             message.channel.send("Worked Successfully")
         }
         if(cmd == "roulette") {
+            if(message.author.id != "703364595321929730") return message.reply("Currently undergoing changes.")
             var real = await roulette.findById("61ff7b2fbd245cb98f6579fd")
             var object = real.levels 
         var obj = real.percent
