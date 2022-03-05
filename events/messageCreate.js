@@ -289,13 +289,13 @@ module.exports = {
                             for(let i = 0; i < Object.keys(levels).length; i++) {
                                 if(!karthik.includes(Object.keys(levels)[random])) {
                                     const embed = new Discord.MessageEmbed() 
-                                    .setTitle(`#${random+1} - ${Object.keys(levels)[random]} by ${Object.values(levels)[random].publisher}`)
+                                    .setTitle(`#${random+1} - ${Object.keys(objoflevels)[random]} by ${Object.values(objoflevels)[random].publisher}`)
                                     .setDescription(`You have to get ${number}%`)
-                                    .setImage(`https://i.ytimg.com/vi/${Object.values(levels)[random].ytcode}/mqdefault.jpg`)
-                                    .setURL(`https://www.youtube.com/watch?v=${Object.values(levels)[random].ytcode}`)
+                                    .setImage(`https://i.ytimg.com/vi/${Object.values(objoflevels)[random].ytcode}/mqdefault.jpg`)
+                                    .setURL(`https://www.youtube.com/watch?v=${Object.values(objoflevels)[random].ytcode}`)
                                     message.reply({embeds: [embed]})
                                     g[g.length] = number
-                                    karthik[karthik.length] = Object.keys(levels)[random]
+                                    karthik[karthik.length] = Object.keys(objoflevels)[random]
                                     delete config[message.author.id][Object.keys(levels)[random]]
                                     await roulette.findById("61ff7b2fbd245cb98f6579fd").updateMany(null, real)
                                     // message.client.guilds.fetch("904222136661577758").then(guild => {
