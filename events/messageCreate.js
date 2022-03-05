@@ -93,6 +93,7 @@ module.exports = {
             var real = await roulette.findById("61ff7b2fbd245cb98f6579fd")
             var object = real.levels 
         var obj = real.percent
+        var config = real.config
            /* message.client.guilds.fetch("904222136661577758").then(guild => {
             guild.channels.fetch("904222137278169099").then(msg => {
                 msg.messages.fetch({ limit: 1 }).then(messages => {
@@ -238,7 +239,7 @@ module.exports = {
                              if(arr.length == 0) {
                                  arr = ["main", "extended", "legacy"]
                              }
-                            real.config[message.author.id] = arr
+                            config[message.author.id] = arr
                             object[message.author.id] = [
                                 
                             ]
