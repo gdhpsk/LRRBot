@@ -409,7 +409,7 @@ module.exports = {
                 random = Math.floor(Math.random() * Object.keys(config[message.author.id]).length-1)
                 continue;
             }
-        }
+        } 
     } else if(!object[message.author.id] && !ikl) {
         message.reply("Please start the roulette!")
     }
