@@ -236,6 +236,7 @@ module.exports = {
                 })
                 var smt = await message.reply({content: "What levels do you want your roulette to contain?", components: [options]})
                 let arr = []
+                var newmsg;
                 message.client.on("interactionCreate", async(buttonclick) => {
                     if(!buttonclick.isButton()) return;
                     if(smt.id != buttonclick.message.id) return
@@ -246,7 +247,11 @@ module.exports = {
                             } else {
                             arr.push("main")
                             }
-                            buttonclick.message.reply({content: `Levels included have been updated: ${arr}`, ephemeral: true})
+                            if(!newmsg) {
+                                newmsg = await buttonclick.message.reply({content: `Levels included have been updated: ${arr}`, ephemeral: true})
+                            } else {
+                                    newmsg.edit(`Levels included have been updated: ${arr}`)
+                            }
                             break;
                         case "extended":
                             if(arr.includes("extended")) {
@@ -254,7 +259,11 @@ module.exports = {
                             } else {
                             arr.push("extended")
                             }
-                            buttonclick.message.reply({content: `Levels included have been updated: ${arr}`})
+                            if(!newmsg) {
+                                newmsg = await buttonclick.message.reply({content: `Levels included have been updated: ${arr}`, ephemeral: true})
+                            } else {
+                                    newmsg.edit(`Levels included have been updated: ${arr}`)
+                            }
                             break;
                         case "legacy":
                             if(arr.includes("legacy")) {
@@ -262,7 +271,11 @@ module.exports = {
                             } else {
                             arr.push("legacy")
                             }
-                            buttonclick.message.reply({content: `Levels included have been updated: ${arr}`})
+                            if(!newmsg) {
+                                newmsg = await buttonclick.message.reply({content: `Levels included have been updated: ${arr}`, ephemeral: true})
+                            } else {
+                                    newmsg.edit(`Levels included have been updated: ${arr}`)
+                            }
                             break;
                          case "done":
                             await buttonclick.message.delete()
