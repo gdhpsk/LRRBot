@@ -241,13 +241,28 @@ module.exports = {
                     if(smt.id != buttonclick.message.id) return
                     switch (buttonclick.customId) {
                         case "main": 
+                            if(arr.includes("main")) {
+                                arr = arr.filter(e => e != "main")
+                            } else {
                             arr.push("main")
+                            }
+                            buttonclick.message.channel.send({content: `Level included have been updated: ${arr}`, ephemeral: true})
                             break;
                         case "extended":
+                            if(arr.includes("extended")) {
+                                arr = arr.filter(e => e != "extended")
+                            } else {
                             arr.push("extended")
+                            }
+                            buttonclick.message.channel.send({content: `Level included have been updated: ${arr}`, ephemeral: true})
                             break;
                         case "legacy":
+                            if(arr.includes("legacy")) {
+                                arr = arr.filter(e => e != "legacy")
+                            } else {
                             arr.push("legacy")
+                            }
+                            buttonclick.message.channel.send({content: `Level included have been updated: ${arr}`, ephemeral: true})
                             break;
                          case "done":
                             await buttonclick.message.delete()
