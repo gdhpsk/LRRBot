@@ -248,6 +248,7 @@ module.exports = {
                              if(arr.length == 0) {
                                  arr = ["main", "extended", "legacy"]
                              }
+                             console.log(arr)
                              if(arr.includes("main")) {
                                  for(let i = 0; i < 75; i++) {
                                     Object.values(levels)[i].list = undefined
