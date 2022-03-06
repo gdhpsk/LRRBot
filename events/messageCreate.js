@@ -310,8 +310,6 @@ module.exports = {
                                     objoflevels[Object.values(levels)[i].name] = Object.values(levels)[i]
                                 }
                             }
-
-                            console.log(JSON.stringify(objoflevels)) 
                             random = Math.floor(Math.random() * Object.keys(objoflevels).length-1)
                             config[message.author.id] = objoflevels
                             object[message.author.id] = [
@@ -356,6 +354,20 @@ module.exports = {
                 if(args[0] == "start" && object[message.author.id]) return message.reply("You already have an instance of a roulette! Use ..roulette end to end your current session.")
                 if(parseInt(args[0]) < 0) return message.reply("Please input a valid whole number!");
                 if(parseInt(args[0]) >= 101) return message.reply("Please input a percentage below 101%");
+                if(config[message.author.id]) {
+                    if(Object.keys(config[message.author.id]).length == 0) {
+                        delete object[message.author.id]
+                    delete obj[message.author.id]
+                    delete config[message.author.id]
+                    await roulette.findById("61ff7b2fbd245cb98f6579fd").updateMany(null, real)
+                    // message.client.guilds.fetch("904222136661577758").then(guild => {
+                    //     guild.channels.fetch("904222137278169099").then(msg => {
+                    //         msg.send(JSON.stringify(real))
+                    //     })
+                    // })
+                    return message.reply("Congratulations, you've completed the lrr roulette! Now quit gd smh")
+                    }
+                }
                 if(parseInt(args[0]) == 100 && object[message.author.id]) {
                     delete object[message.author.id]
                     delete obj[message.author.id]
