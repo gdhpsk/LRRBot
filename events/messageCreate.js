@@ -260,7 +260,7 @@ module.exports = {
                                     Object.values(levels)[i].list = undefined
                                     Object.values(levels)[i].progresses = undefined
                                   Object.values(levels)[i]._id = undefined
-                                  Object.values(levels)[i].minimumPercent = undefined
+                                  Object.values(levels)[i].minimumPercent = i+1
                                   Object.values(levels)[i].index = i+1
                                      objoflevels[Object.values(levels)[i].name] = Object.values(levels)[i]
                                  }
@@ -270,7 +270,7 @@ module.exports = {
                                     Object.values(levels)[i].list = undefined
                                       Object.values(levels)[i].progresses = undefined
                                     Object.values(levels)[i]._id = undefined
-                                    Object.values(levels)[i].minimumPercent = undefined
+                                    Object.values(levels)[i].minimumPercent = i+1
                                     Object.values(levels)[i].index = i+1
                                     objoflevels[Object.values(levels)[i].name] = Object.values(levels)[i]
                                 }
@@ -280,7 +280,7 @@ module.exports = {
                                     Object.values(levels)[i].list = undefined
                                       Object.values(levels)[i].progresses = undefined
                                     Object.values(levels)[i]._id = undefined
-                                    Object.values(levels)[i].minimumPercent = undefined
+                                    Object.values(levels)[i].minimumPercent = i+1
                                     Object.values(levels)[i].index = i+1
                                     console.log('h')
                                     objoflevels[Object.values(levels)[i].name] = Object.values(levels)[i]
