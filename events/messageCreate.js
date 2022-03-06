@@ -276,7 +276,7 @@ module.exports = {
                                 }
                             }
 
-                            console.log(objoflevels) 
+                            console.log(JSON.parse(objoflevels)) 
                             random = Object.keys(objoflevels).length
                             config[message.author.id] = objoflevels
                             object[message.author.id] = [
