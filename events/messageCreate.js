@@ -268,7 +268,7 @@ module.exports = {
                                 }
                             }
                             if(arr.includes("legacy")) { 
-                                for(let i = 150; i < Object.keys(levels)[i].length; i++) {
+                                for(let i = 150; i < Object.keys(levels).length; i++) {
                                     Object.values(levels)[i].list = undefined
                                       Object.values(levels)[i].progresses = undefined
                                     Object.values(levels)[i]._id = undefined
