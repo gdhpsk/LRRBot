@@ -114,7 +114,7 @@ module.exports = {
             var number = parseInt(args[0])+1
             var random = Math.floor(Math.random() * Object.keys(levels).length-4)
             if(config[message.author.id]) { 
-                random = config[message.author.id]
+                random = Math.floor(Math.random() * Object.keys(config[message.author.id]).length-1)
             }
             if(!args[0]) return message.reply("Please input the percentage you got. If you haven't started a roulette, start one by doing the command \"..roulette start\"");
             if(!object[message.author.id] && args[0] != "start" && args[0] != "join") return message.reply("Please start a roulette!")
@@ -279,7 +279,7 @@ module.exports = {
                             }
 
                             console.log(JSON.stringify(objoflevels)) 
-                            random = Object.keys(objoflevels).length
+                            random = Math.floor(Math.random() * Object.keys(objoflevels).length-1)
                             config[message.author.id] = objoflevels
                             object[message.author.id] = [
                                 
@@ -310,7 +310,7 @@ module.exports = {
                                     // })
                                     break;
                                 } else {
-                                    random = Math.floor(Math.random() * Object.keys(levels).length-1)
+                                    random = Math.floor(Math.random() * Object.keys(config[message.author.id]).length-1)
                                     continue;
                                 }
                             }
@@ -361,7 +361,7 @@ module.exports = {
                 // })
                 break;
             } else {
-                random = Math.floor(Math.random() * Object.keys(levels).length-1)
+                random = Math.floor(Math.random() * Object.keys(config[message.author.id]).length-1)
                 continue;
             }
         }
