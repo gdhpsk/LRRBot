@@ -112,7 +112,7 @@ module.exports = {
                 return acc;
               }, {});
             var number = parseInt(args[0])+1
-            var random = Math.floor(Math.random() * Object.keys(levels).length-4)
+            var random //= Math.floor(Math.random() * Object.keys(levels).length-1)
             if(config[message.author.id]) { 
                 random = Math.floor(Math.random() * Object.keys(config[message.author.id]).length-1)
             }
