@@ -267,7 +267,7 @@ module.exports = {
                                 }
                             }
                             if(arr.includes("legacy")) {
-                                for(let i = 150; i < Object.keys(levels)[i]; i++) {
+                                for(let i = 150; i < Object.keys(levels)[i].length; i++) {
                                     Object.values(levels)[i].list = undefined
                                       Object.values(levels)[i].progresses = undefined
                                     Object.values(levels)[i]._id = undefined
@@ -281,7 +281,7 @@ module.exports = {
                             config[message.author.id] = objoflevels
                             object[message.author.id] = [
                                 
-                            ]
+                            ] 
                             levels = config[message.author.id]
                             karthik = object[message.author.id]
                             obj[message.author.id] = [
