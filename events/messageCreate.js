@@ -353,7 +353,7 @@ module.exports = {
                 levels = config[message.author.id]
             for(let i = 0; i < Object.keys(levels).length; i++) {
             if(!karthik.includes(Object.keys(levels)[random])) {
-                const embed = new Discord.MessageEmbed()
+                const embed = new Discord.MessageEmbed() 
                 .setTitle(`#${Object.values(objoflevels)[random].index} - ${Object.keys(levels)[random]} by ${Object.values(levels)[random].publisher}`)
                 .setDescription(`You have to get ${number}%`)
                 .setImage(`https://i.ytimg.com/vi/${Object.values(levels)[random].ytcode}/mqdefault.jpg`)
