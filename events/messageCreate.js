@@ -177,7 +177,10 @@ module.exports = {
                 tt[0] = "(Currently working on) "
                 tt[1] = ""
             }
-            j += `#${i+1} - ${tt[0]}${karthik[i]} ${g[i]}% (#${Object.keys(levels).indexOf(karthik[i])+1}${tt[1]})\n`
+            j += `#${i+1} - ${tt[0]}${karthik[i]} ${g[i]}% (#${Object.keys(lev.reduce(function(acc, cur, i) {
+                acc[lev[i].name] = cur;
+                return acc;
+              }, {})).indexOf(karthik[i])+1}${tt[1]})\n`
         }
         if(j.length > 4000) {
             j = `Levels: ${karthik.length}\nWorking on: ${karthik[karthik.length-1]} ${g[g.length-1].toString()}%`
@@ -196,7 +199,10 @@ module.exports = {
                 levels = config[message.author.id]
                 var j = ""
         for(let i = 0; i < karthik.length-1; i++) {
-            j += `#${i+1} - ${karthik[i]} ${g[i]}% (#${Object.keys(levels).indexOf(karthik[i])+1}, you got ${g[i+1]-1}%)\n`
+            j += `#${i+1} - ${karthik[i]} ${g[i]}% (#${Object.keys(lev.reduce(function(acc, cur, i) {
+                acc[lev[i].name] = cur;
+                return acc;
+              }, {})).indexOf(karthik[i])+1}, you got ${g[i+1]-1}%)\n`
         }
         if(j.length == 0) {
             j = "No levels were done in this roulette."
