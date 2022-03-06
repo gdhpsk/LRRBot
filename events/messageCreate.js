@@ -246,7 +246,7 @@ module.exports = {
                             } else {
                             arr.push("main")
                             }
-                            buttonclick.message.reply({content: `Levels included have been updated: ${arr}`})
+                            buttonclick.message.reply({content: `Levels included have been updated: ${arr}`, ephemeral: true})
                             break;
                         case "extended":
                             if(arr.includes("extended")) {
