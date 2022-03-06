@@ -246,7 +246,7 @@ module.exports = {
                             } else {
                             arr.push("main")
                             }
-                            buttonclick.message.channel.send({content: `Level included have been updated: ${arr}`, ephemeral: true})
+                            buttonclick.message.reply({content: `Levels included have been updated: ${arr}`})
                             break;
                         case "extended":
                             if(arr.includes("extended")) {
@@ -254,7 +254,7 @@ module.exports = {
                             } else {
                             arr.push("extended")
                             }
-                            buttonclick.message.channel.send({content: `Level included have been updated: ${arr}`, ephemeral: true})
+                            buttonclick.message.reply({content: `Levels included have been updated: ${arr}`})
                             break;
                         case "legacy":
                             if(arr.includes("legacy")) {
@@ -262,7 +262,7 @@ module.exports = {
                             } else {
                             arr.push("legacy")
                             }
-                            buttonclick.message.channel.send({content: `Level included have been updated: ${arr}`, ephemeral: true})
+                            buttonclick.message.reply({content: `Levels included have been updated: ${arr}`})
                             break;
                          case "done":
                             await buttonclick.message.delete()
