@@ -266,7 +266,7 @@ module.exports = {
                                     objoflevels[Object.values(levels)[i].name] = Object.values(levels)[i]
                                 }
                             }
-                            if(arr.includes("legacy")) {
+                            if(arr.includes("legacy")) { 
                                 for(let i = 150; i < Object.keys(levels)[i].length; i++) {
                                     Object.values(levels)[i].list = undefined
                                       Object.values(levels)[i].progresses = undefined
