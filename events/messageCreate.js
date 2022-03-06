@@ -390,7 +390,7 @@ module.exports = {
             for(let i = 0; i < Object.keys(levels).length; i++) {
             if(!karthik.includes(Object.keys(levels)[random])) {
                 const embed = new Discord.MessageEmbed() 
-                .setTitle(`#${Object.values(objoflevels)[random].minimumPercent} - ${Object.keys(levels)[random]} by ${Object.values(levels)[random].publisher}`)
+                .setTitle(`#${Object.values(levels)[random].minimumPercent} - ${Object.keys(levels)[random]} by ${Object.values(levels)[random].publisher}`)
                 .setDescription(`You have to get ${number}%`)
                 .setImage(`https://i.ytimg.com/vi/${Object.values(levels)[random].ytcode}/mqdefault.jpg`)
                 .setURL(`https://www.youtube.com/watch?v=${Object.values(levels)[random].ytcode}`)
