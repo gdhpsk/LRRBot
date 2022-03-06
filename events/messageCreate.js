@@ -261,7 +261,6 @@ module.exports = {
                                     Object.values(levels)[i].progresses = undefined
                                   Object.values(levels)[i]._id = undefined
                                   Object.values(levels)[i].minimumPercent = i+1
-                                  Object.values(levels)[i].index = i+1
                                      objoflevels[Object.values(levels)[i].name] = Object.values(levels)[i]
                                  }
                              }
@@ -271,7 +270,6 @@ module.exports = {
                                       Object.values(levels)[i].progresses = undefined
                                     Object.values(levels)[i]._id = undefined
                                     Object.values(levels)[i].minimumPercent = i+1
-                                    Object.values(levels)[i].index = i+1
                                     objoflevels[Object.values(levels)[i].name] = Object.values(levels)[i]
                                 }
                             }
@@ -281,8 +279,6 @@ module.exports = {
                                       Object.values(levels)[i].progresses = undefined
                                     Object.values(levels)[i]._id = undefined
                                     Object.values(levels)[i].minimumPercent = i+1
-                                    Object.values(levels)[i].index = i+1
-                                    console.log('h')
                                     objoflevels[Object.values(levels)[i].name] = Object.values(levels)[i]
                                 }
                             }
@@ -303,7 +299,7 @@ module.exports = {
                             for(let i = 0; i < Object.keys(levels).length; i++) {
                                 if(!karthik.includes(Object.keys(levels)[random])) {
                                     const embed = new Discord.MessageEmbed() 
-                                    .setTitle(`#${Object.values(objoflevels)[random].index} - ${Object.keys(objoflevels)[random]} by ${Object.values(objoflevels)[random].publisher}`)
+                                    .setTitle(`#${Object.values(objoflevels)[random].minimumPercent} - ${Object.keys(objoflevels)[random]} by ${Object.values(objoflevels)[random].publisher}`)
                                     .setDescription(`You have to get ${number}%`)
                                     .setImage(`https://i.ytimg.com/vi/${Object.values(objoflevels)[random].ytcode}/mqdefault.jpg`)
                                     .setURL(`https://www.youtube.com/watch?v=${Object.values(objoflevels)[random].ytcode}`)
@@ -354,7 +350,7 @@ module.exports = {
             for(let i = 0; i < Object.keys(levels).length; i++) {
             if(!karthik.includes(Object.keys(levels)[random])) {
                 const embed = new Discord.MessageEmbed() 
-                .setTitle(`#${Object.values(objoflevels)[random].index} - ${Object.keys(levels)[random]} by ${Object.values(levels)[random].publisher}`)
+                .setTitle(`#${Object.values(objoflevels)[random].minimumPercent} - ${Object.keys(levels)[random]} by ${Object.values(levels)[random].publisher}`)
                 .setDescription(`You have to get ${number}%`)
                 .setImage(`https://i.ytimg.com/vi/${Object.values(levels)[random].ytcode}/mqdefault.jpg`)
                 .setURL(`https://www.youtube.com/watch?v=${Object.values(levels)[random].ytcode}`)
