@@ -258,7 +258,7 @@ module.exports = {
                                      objoflevels[Object.values(levels)[i].name] = Object.values(levels)[i]
                                  }
                              }
-                             if(arr.includes("extended")) {
+                             if(arr.includes("extended")) { 
                                 for(let i = 75; i < 150; i++) {
                                     Object.values(levels)[i].list = undefined
                                       Object.values(levels)[i].progresses = undefined
