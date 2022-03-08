@@ -1,6 +1,7 @@
 const { SlashCommandBuilder } = require("@discordjs/builders")
 const levelsSchema = require("../schema/levels")
 const leaderboardSchema = require("../schema/leaderboard")
+const { MessageEmbed } = require("discord.js")
 
 module.exports = {
     data: new SlashCommandBuilder()
