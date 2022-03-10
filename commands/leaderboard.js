@@ -60,7 +60,7 @@ module.exports = {
                 for(let i = 0; i < leaderboard[gay].levels.length; i++) {
                     leaderboard[gay].levels.sort((a, b) => Object.keys(levels).indexOf(a) - Object.keys(levels).indexOf(b))
                     var count = Object.keys(levels).indexOf(leaderboard[gay].levels[i])+1
-                    if(count > 149) {
+                    if(count > 150) {
                         txtExtra += `${i+1}. *${leaderboard[gay].levels[i]}*\n`
                         ku += 1
                     } else {
