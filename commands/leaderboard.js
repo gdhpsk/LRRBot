@@ -28,6 +28,7 @@ module.exports = {
         if(!leaderboard[interaction.options.getString("user")]) {
             await interaction.reply({content: "Please enter a valid profile!", ephemeral: true})
         } else {
+            await interaction.deferReply()
             var counte = ""
             var gay = interaction.options.getString("user")
             var far = []
@@ -96,7 +97,7 @@ module.exports = {
             .setTitle(`${counte}${gay}'s profile (${point(gay, levels, leaderboard)} points):`)
             .setDescription(`${nationality}**COMPLETIONS**\n\n${txtList}\n**COMPLETED LEGACY LEVELS**\n\n${txtExtra}\n**PROGRESSES**\n\n${txtProgs}`)
             .setFooter(`${ku} completions, ${uk} progresses`)
-            await interaction.reply({embeds: [embed]})
+            await interaction.editReply({embeds: [embed]})
         }
     }
 }
