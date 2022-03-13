@@ -5,7 +5,8 @@ module.exports = {
 		var allowedChannels = [
             "671454973346840616",
 			"866382044699426886",
-			"795414646600368181"
+			"795414646600368181",
+			"844088388092428298"
         ]
         if(!interaction.isCommand() || interaction.user.bot) return
 		if(interaction.channel.type != "DM") {
