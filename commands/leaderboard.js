@@ -14,6 +14,7 @@ module.exports = {
         .setRequired(true)
     ),
     async execute(interaction, Discord, client) {
+        await interaction.deferReply()
         let lev = await levelsSchema.find()
         let lead = await leaderboardSchema.find()
         const leaderboard = lead.reduce(function(acc, cur, i) {
@@ -26,9 +27,8 @@ module.exports = {
           }, {});
         const point = require("../point_calculator_stuff/leaderboard_point_calculator")
         if(!leaderboard[interaction.options.getString("user")]) {
-            await interaction.reply({content: "Please enter a valid profile!", ephemeral: true})
+            await interaction.editReply({content: "Please enter a valid profile!", ephemeral: true})
         } else {
-            await interaction.deferReply()
             var counte = ""
             var gay = interaction.options.getString("user")
             var far = []
