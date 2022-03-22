@@ -89,6 +89,9 @@ module.exports = {
                     if(list.hertz == "M") {
                         ar[0] = "Mobile"
                        }
+                       if(list.hertz == "MM") {
+                        ar[0] = "Mobile Mouse"
+                       }
                        if(list.hertz.startsWith("V/")) {
                         ar[0] = `${list.hertz.split("V/")[1] == "M" ? "Mobile" : `${list.hertz.split("V/")[1]}hz`} as a verification`
                        }
