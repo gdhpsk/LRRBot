@@ -102,6 +102,7 @@ module.exports = {
             if(levels[gay].progresses && Object.keys(levels).indexOf(gay) < 75) {
                 if(levels[gay].progresses[0] != "none") {
                     txt += "**PROGRESSES**\n\n"
+                    levels[gay].progresses.sort((a, b) => a.percent - b.percent)
             for(let i = 0; i < levels[gay].progresses.length; i++) {
                 var progresses = levels[gay].progresses[i]
                 var ar = [`${progresses.hertz}hz`]
