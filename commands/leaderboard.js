@@ -11,7 +11,7 @@ module.exports = {
         option
         .setName("user")
         .setDescription("Which profile do you want me to show?")
-        .setRequired(true)
+        .setRequired(false)
     ),
     async execute(interaction, Discord, client) {
         await interaction.deferReply()
@@ -25,6 +25,72 @@ module.exports = {
             acc[lev[i].name] = cur;
             return acc;
           }, {});
+          if(!interaction.options.getString("user")) {
+            var far = []
+            let embeds = []
+            const page = 20
+            for(let key in leaderboard) {
+                var df = point(key, levels, leaderboard)
+                far.push({
+                    name: key,
+                    points: df
+                })
+            }
+            let add = 0
+            if(Math.floor(far.length/page) < far.length) {
+                add = 1
+            }
+            for(let i = 0; i < Math.floor(far.length/page); i++) {
+                let txt = ""
+               for(let j = i*page; j < (i+1)*page; j++) {
+                    txt += `${i+1}. ${far[i].name} (${far[i].points})`
+               }
+               embeds.push(new Discord.MessageEmbed().setTitle("GD LRR List Leaderboard").setDescription(txt).setFooter(`Page ${i+1}/${Math.floor(far.length/page)+add}`))
+            }
+            if(add = 1) {
+                for(let i = Math.floor(far.length/page); i < Math.floor(far.length/page)+1; i++) {
+                    let txt = ""
+                   for(let j = i*page; j < far.length; j++) {
+                        txt += `${i+1}. ${far[i].name} (${far[i].points})`
+                   }
+                   embeds.push(new Discord.MessageEmbed().setTitle("GD LRR List Leaderboard").setDescription(txt).setFooter(`Page ${i+1}/${Math.floor(far.length/page)+add}`))
+                }
+            }
+            var bu = new Discord.MessageActionRow()
+            let emoji = ["Next", "Back", "Skip Forward", "Skip Back"]
+            for(let i = 0; i < 4; i++) {
+                bu.addComponents(
+                    new MessageButton()
+                    .setCustomId(i.toString())
+                    .setStyle("PRIMARY")
+                    .setLabel(emoji[i])
+                )
+            }
+            let whyudo = 0
+            let smt = await interaction.editReply({embeds: [embeds[0]], components: [bu]})
+            client.on("interactionCreate", async(buttonclick) => {
+                if(!buttonclick.isButton()) return;
+                if(smt.id != buttonclick.message.id) return
+                switch (buttonclick.customId) {
+                    case "0":
+                        whyudo = whyudo > 0 ? --whyudo : embeds.length - 1;
+                        await buttonclick.update({embeds: [embeds[whyudo]], components: [bu]})
+                        break;
+                    case "1":
+                        whyudo = whyudo + 1 < embeds.length ? ++whyudo : 0;
+                        await buttonclick.update({embeds: [embeds[whyudo]], components: [bu]})
+                        break;
+                    case "2":
+                        whyudo = embeds.length-1
+                        await buttonclick.update({embeds: [embeds[whyudo]], components: [bu]})
+                        break;
+                     case "3":
+                        whyudo = 0
+                        await buttonclick.update({embeds: [embeds[whyudo]], components: [bu]})
+                        break;
+                }
+            })
+          } else {
         const point = require("../point_calculator_stuff/leaderboard_point_calculator")
         if(!leaderboard[interaction.options.getString("user")]) {
             await interaction.editReply({content: "Please enter a valid profile!", ephemeral: true})
@@ -42,7 +108,6 @@ module.exports = {
             }
             }
             far.sort((a, b) => b.points - a.points)
-            console.log(JSON.stringify(far))
            for(let i = 0; i < far.length; i++) {
                 if(far[i].name == gay) {
                     counte = `#${i+1} - `
@@ -100,5 +165,6 @@ module.exports = {
             .setFooter(`${ku} completions, ${uk} progresses`)
             await interaction.editReply({embeds: [embed]})
         }
+    }
     }
 }
