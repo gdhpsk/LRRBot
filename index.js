@@ -34,7 +34,7 @@ for(const file of eventFiles) {
 
  
 client.login(process.env.token).then(() => {
-	cron.schedule('0 1 * * *', () => {
+	cron.schedule('0 8 * * *', () => {
 		console.log('running a task every hour');
 	  });
 })
