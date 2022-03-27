@@ -2,6 +2,7 @@ const fs = require('fs');
 const { Client, Collection } = require('discord.js');
 const Discord = require("discord.js")
 const mongoose = require("mongoose")
+const dayjs = require("dayjs")
 
 mongoose.connect(`mongodb+srv://gdlrrapi:${process.env.mongoPass}@gdlrrapi.2rdel.mongodb.net/gdlrrdemonlist`) 
 
@@ -31,9 +32,14 @@ for(const file of eventFiles) {
 	}
 }
 
-/*client.on("interactionCreate", message => {
-	message.member.id
-})*/
+client.on("ready", ()  => {
+	let thing = dayjs(Date.now()).format("mm")
+	if(thing == "38") {
+		client.channels.fetch("866550383295594506").then(msg => {
+			msg.channel.send("hello")
+		})
+	}
+})
 
  
 client.login(process.env.token);
