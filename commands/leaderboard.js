@@ -61,7 +61,7 @@ module.exports = {
             let emoji = ["Next", "Back", "Skip Forward", "Skip Back"]
             for(let i = 0; i < 4; i++) {
                 bu.addComponents(
-                    new MessageButton()
+                    new Discord.MessageButton()
                     .setCustomId(i.toString())
                     .setStyle("PRIMARY")
                     .setLabel(emoji[i])
