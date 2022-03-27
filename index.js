@@ -64,7 +64,7 @@ client.on("ready", () => {
 			"people": "<@660605578158145546> and <@414186975696781314>"
 		}
 	]
-	cron.schedule('0 0,8 * * *', () => {
+	cron.schedule('0 0,8,16 * * *', () => {
 		let guild = client.guilds.cache.get("865458968179900416")
 		let channel = guild.channels.cache.get("866550383295594506")
 		let day = dayjs(Date.now()).format("ddd")
