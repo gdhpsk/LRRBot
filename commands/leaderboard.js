@@ -25,6 +25,7 @@ module.exports = {
             acc[lev[i].name] = cur;
             return acc;
           }, {});
+          const point = require("../point_calculator_stuff/leaderboard_point_calculator")
           if(!interaction.options.getString("user")) {
             var far = []
             let embeds = []
@@ -91,7 +92,6 @@ module.exports = {
                 }
             })
           } else {
-        const point = require("../point_calculator_stuff/leaderboard_point_calculator")
         if(!leaderboard[interaction.options.getString("user")]) {
             await interaction.editReply({content: "Please enter a valid profile!", ephemeral: true})
         } else {
