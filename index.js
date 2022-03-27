@@ -32,9 +32,13 @@ for(const file of eventFiles) {
 	}
 }
 
- 
-client.login(process.env.token).then(() => {
-	cron.schedule('0 9 * * *', () => {
-		console.log('running a task every hour');
+client.on("ready", () => {
+	cron.schedule('* * * * *', () => {
+		let guild = client.guilds.cache.get("865458968179900416")
+		let channel = guild.channels.cache.get("866382044699426886")
+		channel.send('running a task every minute');
 	  });
 })
+
+ 
+client.login(process.env.token)
