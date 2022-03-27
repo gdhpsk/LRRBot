@@ -2,7 +2,7 @@ const fs = require('fs');
 const { Client, Collection } = require('discord.js');
 const Discord = require("discord.js")
 const mongoose = require("mongoose")
-const dayjs = require("dayjs")
+const cron = require("node-cron")
 
 mongoose.connect(`mongodb+srv://gdlrrapi:${process.env.mongoPass}@gdlrrapi.2rdel.mongodb.net/gdlrrdemonlist`) 
 
@@ -32,15 +32,9 @@ for(const file of eventFiles) {
 	}
 }
 
-client.on("ready", ()  => {
-	let thing = dayjs(Date.now()).format("mm")
-	console.log("k")
-	if(thing == "39") {
-		client.channels.fetch("866550383295594506").then(msg => {
-			msg.channel.send("hello")
-		})
-	}
-})
-
  
-client.login(process.env.token);
+client.login(process.env.token).then(() => {
+	cron.schedule('* * * * *', () => {
+		console.log('running a task every minute');
+	  });
+})

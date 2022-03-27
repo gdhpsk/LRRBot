@@ -21,6 +21,7 @@
     "fs": "^0.0.1-security",
     "got": "^11.8.2",
     "mongoose": "^6.2.0",
+    "node-cron": "^3.0.0",
     "node-get-req": "^1.0.2"
   }
 }
