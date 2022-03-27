@@ -80,7 +80,7 @@ module.exports = {
                     case "1":
                         whyudo = whyudo + 1 < embeds.length ? ++whyudo : 0;
                         await buttonclick.update({embeds: [embeds[whyudo]], components: [bu]})
-                        break;
+                        break; 
                     case "2":
                         whyudo = embeds.length-1
                         await buttonclick.update({embeds: [embeds[whyudo]], components: [bu]})
