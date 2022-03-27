@@ -34,7 +34,7 @@ for(const file of eventFiles) {
 
 client.on("ready", ()  => {
 	let thing = dayjs(Date.now()).format("mm")
-	if(thing == "38") {
+	if(thing == "39") {
 		client.channels.fetch("866550383295594506").then(msg => {
 			msg.channel.send("hello")
 		})
