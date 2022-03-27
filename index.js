@@ -35,7 +35,7 @@ for(const file of eventFiles) {
 client.on("ready", () => {
 	cron.schedule('0 9 * * *', () => {
 		let guild = client.guilds.cache.get("865458968179900416")
-		let channel = guild.channels.cache.get("866382044699426886")
+		let channel = guild.channels.cache.get("866550383295594506")
 		channel.send('running a task every day (shift test guys)');
 	  });
 })
