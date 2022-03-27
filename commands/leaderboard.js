@@ -42,6 +42,7 @@ module.exports = {
             }
             }
             far.sort((a, b) => b.points - a.points)
+            console.log(far)
            for(let i = 0; i < far.length; i++) {
                 if(far[i].name == gay) {
                     counte = `#${i+1} - `
