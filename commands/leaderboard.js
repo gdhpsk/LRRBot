@@ -37,6 +37,7 @@ module.exports = {
                     points: df
                 })
             }
+            far.sort((a, b) => b.points - a.points)
             let add = 0
             if(Math.floor(far.length/page) < far.length) {
                 add = 1
