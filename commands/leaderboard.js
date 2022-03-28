@@ -58,7 +58,7 @@ module.exports = {
                 }
             }
             var bu = new Discord.MessageActionRow()
-            let emoji = ["Next", "Back", "Skip Forward", "Skip Back"]
+            let emoji = ["Back", "Next", "Skip Forward", "Skip Back"]
             for(let i = 0; i < 4; i++) {
                 bu.addComponents(
                     new Discord.MessageButton()
