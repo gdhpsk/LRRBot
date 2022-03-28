@@ -12,6 +12,7 @@ module.exports = {
     .setDescription("What level do you want me to display?")
     .setRequired(false)),
     async execute(interaction, Discord, client) {
+        await interaction.deferReply()
         var everything = await levelsSchema.find()
         const levels = everything.reduce(function(acc, cur, i) {
             acc[everything[i].name] = cur;
@@ -57,7 +58,7 @@ module.exports = {
                 )
             }
             let whyudo = 0
-            let smt = await interaction.reply({embeds: [array[0]], components: [bu], fetchReply: true})
+            let smt = await interaction.editReply({embeds: [array[0]], components: [bu], fetchReply: true})
             client.on("interactionCreate", async(buttonclick) => {
                 if(!buttonclick.isButton()) return;
                 if(smt.id != buttonclick.message.id) return
@@ -85,19 +86,29 @@ module.exports = {
             var act = interaction.options.getString("level")
             if(!isNaN(interaction.options.getString("level")) && !levels[interaction.options.getString("level")]) {
                 if(!Object.keys(levels)[act-1]) {
-                    await interaction.reply({content: "Please enter a valid placement number!", ephemeral: true})
+                    await interaction.editReply({content: "Please enter a valid placement number!", ephemeral: true})
                     return
                 }
                 if(Object.keys(levels).indexOf(Object.keys(levels)[act-1]) > Object.keys(levels).indexOf("Final Epilogue")) {
-                    await interaction.reply({content: "Please enter a valid placement number!", ephemeral: true})
+                    await interaction.editReply({content: "Please enter a valid placement number!", ephemeral: true})
                     return
                 }
                 act = Object.keys(levels)[act-1]
                 ghj = true
             }
         if(!levels[interaction.options.getString("level")] && interaction.options.getString("level") != "generate" && !ghj) {
-            await interaction.reply({content: "Please enter a valid level!", ephemeral: true})
+            await interaction.editReply({content: "Please enter a valid level!", ephemeral: true})
         } else {
+            let dates = await fetch("https://gdlrrlist.cf/api/nationsemotes", {
+                method: "get",
+                headers: { "Content-Type": "application/json" }
+            })
+            let nationthing = await dates.json()
+            let leveldates = await fetch("https://gdlrrlist.cf/api/nationalities", {
+                method: "get",
+                headers: { "Content-Type": "application/json" }
+            })
+            let levelnationthing = await leveldates.json()
             var gay = ""
             if(act == "generate") {
                 var um = Math.floor(Math.random() * Object.keys(levels).indexOf("Final Epilogue"))
@@ -112,7 +123,7 @@ module.exports = {
             var txt = "**COMPLETIONS**\n\n"
             for(let i = 0; i < levels[gay].list.length; i++) {
                 var list = levels[gay].list[i]
-                var ar = [`${list.hertz}hz`]
+                var ar = [`${list.hertz}hz`, ""]
                 if(list.name == "Removed") {
                     txt = `Removed ${list.link}`
                 } else {
@@ -125,7 +136,12 @@ module.exports = {
                        if(list.hertz.startsWith("V/")) {
                         ar[0] = `${list.hertz.split("V/")[1] == "M" ? "Mobile" : `${list.hertz.split("V/")[1]}hz`} as a verification`
                        }
-                       txt += `- ${list.name} beat [${gay} on ${ar[0]}.](${list.link})\n\n`
+                       if(levelnationthing[list.name]) {
+                           if(nationthing[levelnationthing[list.name].replace(/_/g, " ").toLowerCase()]) {
+                               ar[1] = ` ${nationthing[levelnationthing[list.name].replace(/_/g, " ").toLowerCase()]}`
+                           }
+                       }
+                       txt += `-${ar[1]} ${list.name} beat [${gay} on ${ar[0]}.](${list.link})\n\n`
                        numarray.push(ar[0])
                 }
             }
@@ -135,9 +151,20 @@ module.exports = {
                     levels[gay].progresses.sort((a, b) => b.percent - a.percent)
             for(let i = 0; i < levels[gay].progresses.length; i++) {
                 var progresses = levels[gay].progresses[i]
-                var ar = [`${progresses.hertz}hz`]
+                var ar = [`${progresses.hertz}hz`, ""]
                  if(progresses.hertz == "M") {
                      ar[0] = "Mobile"
+                    }
+                       if(progresses.hertz == "MM") {
+                        ar[0] = "Mobile Mouse"
+                       }
+                       if(progresses.hertz.startsWith("V/")) {
+                        ar[0] = `${progresses.hertz.split("V/")[1] == "M" ? "Mobile" : `${progresses.hertz.split("V/")[1]}hz`} as a verification`
+                       }
+                       if(levelnationthing[progresses.name]) {
+                        if(nationthing[levelnationthing[progresses.name].replace(/_/g, " ").toLowerCase()]) {
+                            ar[1] = ` ${nationthing[levelnationthing[progresses.name].replace(/_/g, " ").toLowerCase()]}`
+                        }
                     }
                     txt += `- ${progresses.name} got ${progresses.percent}% on [${gay} on ${ar[0]}.](${progresses.link})\n\n`
                     numarray.push(ar[0])
@@ -157,7 +184,7 @@ module.exports = {
             embed.setURL(`https://www.youtube.com/watch?v=${levels[gay].ytcode}`)
             embed.setImage(`https://i.ytimg.com/vi/${levels[gay].ytcode}/mqdefault.jpg`)
             embed.setDescription(txt)
-            await interaction.reply({embeds: [embed]})
+            await interaction.editReply({embeds: [embed]})
     }
         }
     }
