@@ -27,12 +27,12 @@ module.exports = {
             return acc;
           }, {});
           const point = require("../point_calculator_stuff/leaderboard_point_calculator")
+          let dates = await fetch("https://gdlrrlist.cf/api/nationsemotes", {
+            method: "get",
+            headers: { "Content-Type": "application/json" }
+        })
+        let nationthing = await dates.json()
           if(!interaction.options.getString("user")) {
-           let dates = await fetch("https://gdlrrlist.cf/api/nationsemotes", {
-                method: "get",
-                headers: { "Content-Type": "application/json" }
-            })
-            let nationthing = await dates.json()
             var far = []
             let embeds = []
             const page = 20
@@ -40,8 +40,8 @@ module.exports = {
                 var df = point(key, levels, leaderboard)
                 let smt = [""]
                 if(leaderboard[key].nationality) {
-                    if(nationthing[leaderboard[key].nationality.replace(/_/g, "  ").toLowerCase()]) {
-                      smt[0] = nationthing[leaderboard[key].nationality.replace(/_/g, "  ").toLowerCase()]
+                    if(nationthing[leaderboard[key].nationality.replace(/_/g, " ").toLowerCase()]) {
+                      smt[0] = nationthing[leaderboard[key].nationality.replace(/_/g, " ").toLowerCase()]
                     }
                 }
                 far.push( {
@@ -135,7 +135,7 @@ module.exports = {
             var txtProgs = ""
             var nationality = ""
             if(leaderboard[gay].nationality) {
-                nationality = `**NATIONALITY**: ${leaderboard[gay].nationality.replace(/_/g, " ")}\n\n`
+                nationality = `**NATIONALITY**: ${leaderboard[gay].nationality.replace(/_/g, " ")} ${nationthing[leaderboard[gay].nationality.replace(/_/g, " ").toLowerCase()] ? nationthing[leaderboard[gay].nationality.replace(/_/g, " ").toLowerCase()]  : ""}\n\n`
             }
             if(leaderboard[gay].levels[0] != "none" && leaderboard[gay].levels[0]) {
                 for(let i = 0; i < leaderboard[gay].levels.length; i++) {
