@@ -58,7 +58,7 @@ module.exports = {
             for(let i = 0; i < Math.floor(far.length/page); i++) {
                 let txt = ""
                for(let j = i*page; j < (i+1)*page; j++) {
-                    txt += `${far[i].nationality ? `${far[i].nationality} ` : ""}${j+1}. ${far[j].name} (${far[j].points} points)\n\n`
+                    txt += `${far[j].nationality ? `${far[j].nationality} ` : ""}${j+1}. ${far[j].name} (${far[j].points} points)\n\n`
                }
                embeds.push(new Discord.MessageEmbed().setTitle("GD LRR List Leaderboard").setDescription(txt).setFooter(`Page ${i+1}/${Math.floor(far.length/page)+add}`))
             }
@@ -66,7 +66,7 @@ module.exports = {
                 for(let i = Math.floor(far.length/page); i < Math.floor(far.length/page)+1; i++) {
                     let txt = ""
                    for(let j = i*page; j < far.length; j++) {
-                        txt += `${far[i].nationality ? `${far[i].nationality}  ` : ""}${j+1}. ${far[j].name} (${far[j].points} points)\n\n`
+                        txt += `${far[j].nationality ? `${far[j].nationality}  ` : ""}${j+1}. ${far[j].name} (${far[j].points} points)\n\n`
                    }
                    embeds.push(new Discord.MessageEmbed().setTitle("GD LRR List Leaderboard").setDescription(txt).setFooter(`Page ${i+1}/${Math.floor(far.length/page)+add}`))
                 }
