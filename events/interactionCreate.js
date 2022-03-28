@@ -19,7 +19,11 @@ module.exports = {
 	} catch (err) {
 		if(err) {
 			console.log(err)
-			await interaction.reply({content: "An error occured while trying to execute this command.", ephemeral: true})
+			try {
+				await interaction.reply({content: "An error occured while trying to execute this command.", ephemeral: true})
+			} catch(_) {
+				await interaction.editReply({content: "An error occured while trying to execute this command.", ephemeral: true})
+			}
 		}
 	}
     }
