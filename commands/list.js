@@ -36,20 +36,50 @@ module.exports = {
                     if(j > 149) {
                         smt[0] = ""
                     }
-                    txt += `[${smt[0]}${Object.values(levels)[j].name} by ${Object.values(levels)[j].publisher}](https://www.youtube.com/watch?v=${Object.values(levels)[j].ytcode})\n`
+                    txt += `[${smt[0]}${Object.values(levels)[j].name} by ${Object.values(levels)[j].publisher}](https://www.youtube.com/watch?v=${Object.values(levels)[j].ytcode})\n\n`
                 }
                 array.push(new Discord.MessageEmbed().setDescription(txt).setTitle("Low Refresh Rate List Levels"))
             }
             if(array.length*page != Object.keys(levels).length) {
                 for(let j = (array.length * page); j < Object.keys(levels).length; j++) {
-                    fr += `[${Object.values(levels)[j].name} by ${Object.values(levels)[j].publisher}](https://www.youtube.com/watch?v=${Object.values(levels)[j].ytcode})\n`
+                    fr += `[${Object.values(levels)[j].name} by ${Object.values(levels)[j].publisher}](https://www.youtube.com/watch?v=${Object.values(levels)[j].ytcode})\n\n`
                 }
                 array.push(new Discord.MessageEmbed().setDescription(fr).setTitle("Low Refresh Rate List Levels"))
             }
-            await interaction.reply({embeds: [array[0]], ephemeral: true})
-            for(let i = 0; i < array.length-1; i++) {
-                await interaction.followUp({embeds: [array[i+1]], ephemeral: true})
+            var bu = new Discord.MessageActionRow()
+            let emoji = ["Back", "Next", "Skip Forward", "Skip Back"]
+            for(let i = 0; i < 4; i++) {
+                bu.addComponents(
+                    new Discord.MessageButton()
+                    .setCustomId(i.toString())
+                    .setStyle("PRIMARY")
+                    .setLabel(emoji[i])
+                )
             }
+            let whyudo = 0
+            let smt = await interaction.reply({embeds: [array[0]], components: [bu]})
+            client.on("interactionCreate", async(buttonclick) => {
+                if(!buttonclick.isButton()) return;
+                if(smt.id != buttonclick.message.id) return
+                switch (buttonclick.customId) {
+                    case "0":
+                        whyudo = whyudo > 0 ? --whyudo : array.length - 1;
+                        await buttonclick.update({embeds: [array[whyudo]], components: [bu]})
+                        break;
+                    case "1":
+                        whyudo = whyudo + 1 < array.length ? ++whyudo : 0;
+                        await buttonclick.update({embeds: [array[whyudo]], components: [bu]})
+                        break; 
+                    case "2":
+                        whyudo = array.length-1
+                        await buttonclick.update({embeds: [array[whyudo]], components: [bu]})
+                        break;
+                     case "3":
+                        whyudo = 0
+                        await buttonclick.update({embeds: [array[whyudo]], components: [bu]})
+                        break;
+                }
+            })
         } else {
             let ghj = false
             var act = interaction.options.getString("level")
