@@ -42,7 +42,7 @@ module.exports = {
                     points: df
                 }
                 if(leaderboard[key].nationality) {
-                    if(nationthing[leaderboard[key].nationality.toLowerCase()]) {
+                    if(nationthing[leaderboard[key].nationality.replace(/_/g, " ").toLowerCase()]) {
                         kl.nationality = nationthing[leaderboard[key].nationality.toLowerCase()]
                     }
                 }
@@ -64,7 +64,7 @@ module.exports = {
                 for(let i = Math.floor(far.length/page); i < Math.floor(far.length/page)+1; i++) {
                     let txt = ""
                    for(let j = i*page; j < far.length; j++) {
-                        txt += `${far[i].nationality ? `${far[i].nationality}: ` : ""}${j+1}. ${far[j].name} (${far[j].points} points)\n\n`
+                        txt += `${far[i].nationality ? `${far[i].nationality}  ` : ""}${j+1}. ${far[j].name} (${far[j].points} points)\n\n`
                    }
                    embeds.push(new Discord.MessageEmbed().setTitle("GD LRR List Leaderboard").setDescription(txt).setFooter(`Page ${i+1}/${Math.floor(far.length/page)+add}`))
                 }
