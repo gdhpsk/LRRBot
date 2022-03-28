@@ -57,7 +57,7 @@ module.exports = {
                 )
             }
             let whyudo = 0
-            let smt = await interaction.reply({embeds: [array[0]], components: [bu]})
+            let smt = await interaction.reply({embeds: [array[0]], components: [bu], fetchReply: true})
             client.on("interactionCreate", async(buttonclick) => {
                 if(!buttonclick.isButton()) return;
                 if(smt.id != buttonclick.message.id) return
