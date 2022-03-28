@@ -39,8 +39,8 @@ module.exports = {
                 var df = point(key, levels, leaderboard)
                 let smt = [""]
                 if(leaderboard[key].nationality) {
-                    if(nationthing[leaderboard[key].nationality.replace(/_/g, " ").toLowerCase()]) {
-                      smt[0] = nationthing[leaderboard[key].nationality.replace(/_/g, " ").toLowerCase()]
+                    if(nationthing[leaderboard[key].nationality.replace(/_/g, "  ").toLowerCase()]) {
+                      smt[0] = nationthing[leaderboard[key].nationality.replace(/_/g, "  ").toLowerCase()]
                     }
                 }
                 far.push( {
