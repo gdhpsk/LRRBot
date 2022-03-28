@@ -43,7 +43,7 @@ module.exports = {
                 }
                 if(leaderboard[key].nationality) {
                     if(nationthing[leaderboard[key].nationality.replace(/_/g, " ").toLowerCase()]) {
-                        kl.nationality = nationthing[leaderboard[key].nationality.toLowerCase()]
+                        kl.nationality = nationthing[leaderboard[key].nationality.replace(/_/g, " ").toLowerCase()]
                     }
                 }
                 far.push(kl)
