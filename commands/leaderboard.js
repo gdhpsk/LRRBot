@@ -37,16 +37,17 @@ module.exports = {
             const page = 20
             for(let key in leaderboard) {
                 var df = point(key, levels, leaderboard)
-                let kl = {
-                    name: key,
-                    points: df
-                }
+                let smt = [""]
                 if(leaderboard[key].nationality) {
                     if(nationthing[leaderboard[key].nationality.replace(/_/g, " ").toLowerCase()]) {
-                        kl.nationality = nationthing[leaderboard[key].nationality.replace(/_/g, " ").toLowerCase()]
+                      smt[0] = nationthing[leaderboard[key].nationality.replace(/_/g, " ").toLowerCase()]
                     }
                 }
-                far.push(kl)
+                far.push( {
+                    name: key,
+                    nationality: smt[0],
+                    points: df
+                })
             }
             far.sort((a, b) => b.points - a.points)
             let add = 0
