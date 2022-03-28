@@ -2,6 +2,7 @@ const { SlashCommandBuilder } = require("@discordjs/builders")
 const levelsSchema = require("../schema/levels")
 const leaderboardSchema = require("../schema/leaderboard")
 const { MessageEmbed } = require("discord.js")
+const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -27,15 +28,25 @@ module.exports = {
           }, {});
           const point = require("../point_calculator_stuff/leaderboard_point_calculator")
           if(!interaction.options.getString("user")) {
+           let nationthing = await fetch("https://gdlrrlist.cf/nations", {
+                method: "get",
+                headers: { "Content-Type": "application/json" }
+            })
             var far = []
             let embeds = []
             const page = 20
             for(let key in leaderboard) {
                 var df = point(key, levels, leaderboard)
-                far.push({
+                let kl = {
                     name: key,
                     points: df
-                })
+                }
+                if(leaderboard[key].nationality) {
+                    if(nationthing[leaderboard[key].nationality.toLowerCase()]) {
+                        kl.nationality = nationthing[leaderboard[key].nationality.toLowerCase()]
+                    }
+                }
+                far.push(kl)
             }
             far.sort((a, b) => b.points - a.points)
             let add = 0
@@ -45,7 +56,7 @@ module.exports = {
             for(let i = 0; i < Math.floor(far.length/page); i++) {
                 let txt = ""
                for(let j = i*page; j < (i+1)*page; j++) {
-                    txt += `${j+1}. ${far[j].name} (${far[j].points} points)\n\n`
+                    txt += `${far[i].nationality ? `${far[i].nationality} ` : ""}${j+1}. ${far[j].name} (${far[j].points} points)\n\n`
                }
                embeds.push(new Discord.MessageEmbed().setTitle("GD LRR List Leaderboard").setDescription(txt).setFooter(`Page ${i+1}/${Math.floor(far.length/page)+add}`))
             }
@@ -53,7 +64,7 @@ module.exports = {
                 for(let i = Math.floor(far.length/page); i < Math.floor(far.length/page)+1; i++) {
                     let txt = ""
                    for(let j = i*page; j < far.length; j++) {
-                        txt += `${j+1}. ${far[j].name} (${far[j].points} points)\n\n`
+                        txt += `${far[i].nationality ? `${far[i].nationality} ` : ""}${j+1}. ${far[j].name} (${far[j].points} points)\n\n`
                    }
                    embeds.push(new Discord.MessageEmbed().setTitle("GD LRR List Leaderboard").setDescription(txt).setFooter(`Page ${i+1}/${Math.floor(far.length/page)+add}`))
                 }
