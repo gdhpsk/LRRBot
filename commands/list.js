@@ -22,7 +22,7 @@ module.exports = {
 
         if(!interaction.options.getString("level")) {
             var array = []
-            var page = 25
+            var page = 10
             var fr = ""
             for(let i = 0; i < Math.floor(Object.keys(levels).length/page); i++) {
                 var addition = 0
@@ -38,13 +38,13 @@ module.exports = {
                     }
                     txt += `[${smt[0]}${Object.values(levels)[j].name} by ${Object.values(levels)[j].publisher}](https://www.youtube.com/watch?v=${Object.values(levels)[j].ytcode})\n\n`
                 }
-                array.push(new Discord.MessageEmbed().setDescription(txt).setTitle("Low Refresh Rate List Levels"))
+                array.push(new Discord.MessageEmbed().setDescription(txt).setTitle("Low Refresh Rate List Levels").setFooter(`Page ${i+1}/${Math.floor(Object.keys(levels).length/page)+addition}`))
             }
             if(array.length*page != Object.keys(levels).length) {
                 for(let j = (array.length * page); j < Object.keys(levels).length; j++) {
                     fr += `[${Object.values(levels)[j].name} by ${Object.values(levels)[j].publisher}](https://www.youtube.com/watch?v=${Object.values(levels)[j].ytcode})\n\n`
                 }
-                array.push(new Discord.MessageEmbed().setDescription(fr).setTitle("Low Refresh Rate List Levels"))
+                array.push(new Discord.MessageEmbed().setDescription(fr).setTitle("Low Refresh Rate List Levels").setFooter(`Page ${Math.floor(Object.keys(levels).length/page)+addition}/${Math.floor(Object.keys(levels).length/page)+addition}`))
             }
             var bu = new Discord.MessageActionRow()
             let emoji = ["Back", "Next", "Skip Forward", "Skip Back"]
