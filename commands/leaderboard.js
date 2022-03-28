@@ -28,10 +28,11 @@ module.exports = {
           }, {});
           const point = require("../point_calculator_stuff/leaderboard_point_calculator")
           if(!interaction.options.getString("user")) {
-           let nationthing = await fetch("https://gdlrrlist.cf/api/nationsemotes", {
+           let dates = await fetch("https://gdlrrlist.cf/api/nationsemotes", {
                 method: "get",
                 headers: { "Content-Type": "application/json" }
             })
+            let nationthing = await dates.json()
             var far = []
             let embeds = []
             const page = 20
