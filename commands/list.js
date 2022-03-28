@@ -1,6 +1,7 @@
 const { SlashCommandBuilder } = require("@discordjs/builders")
 const levelsSchema = require("../schema/levels")
 const points = require("../point_calculator_stuff/levels_point_calculator")
+const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 
 module.exports = {
     data: new SlashCommandBuilder()
