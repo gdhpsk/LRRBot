@@ -185,6 +185,7 @@ let arrayofprogs = []
         let sendreal = true
         if(txt.length+txt2.length > 3000) {
             sendreal = false
+            let page = 10
             let embeds = []
             if(!Number.isInteger(arrayofrecords.length/page)) {
                 addition = 1
@@ -207,7 +208,6 @@ let arrayofprogs = []
             }
             if(txt2.length != 0) {
                 let addition = 0
-                let page = 10
                 if(!Number.isInteger(arrayofprogs.length/page)) {
                     addition = 1
                 }
