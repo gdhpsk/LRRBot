@@ -183,11 +183,9 @@ let arrayofprogs = []
             gg = "extended"
         }
         let sendreal = true
-        if(txt.length+txt2.length > 4000) {
+        if(txt.length+txt2.length > 3000) {
             sendreal = false
             let embeds = []
-            let addition = 0
-            let page = 20
             if(!Number.isInteger(arrayofrecords.length/page)) {
                 addition = 1
             }
@@ -206,6 +204,32 @@ let arrayofprogs = []
             .setURL(`https://www.youtube.com/watch?v=${levels[gay].ytcode}`)
             .setImage(`https://i.ytimg.com/vi/${levels[gay].ytcode}/mqdefault.jpg`)
             .setDescription(txtthing))
+            }
+            if(txt2.length != 0) {
+                let addition = 0
+                let page = 10
+                if(!Number.isInteger(arrayofprogs.length/page)) {
+                    addition = 1
+                }
+                for(let i = 0; i < Math.floor(arrayofprogs.length/page)+addition; i++) {
+                    let txtthing = ""
+                    if(i == 0) {
+                        txtthing += "**PROGRESSES**\n\n"
+                    }
+                    if(i == Math.floor(arrayofprogs.length/page)) {
+                        for(let j = i*page; j < arrayofprogs.length; j++) {
+                            txtthing += arrayofprogs[j]
+                        }
+                    } else {
+                        for(let j = i*page; j < (i+1)*page; j++) {
+                            txtthing += arrayofprogs[j]
+                        }
+                    }
+                    embeds.push(new Discord.MessageEmbed().setTitle(`#${Object.keys(levels).indexOf(gay)+1} - ${gay} by ${levels[gay].publisher}`)
+            .setURL(`https://www.youtube.com/watch?v=${levels[gay].ytcode}`)
+            .setImage(`https://i.ytimg.com/vi/${levels[gay].ytcode}/mqdefault.jpg`)
+            .setDescription(txtthing))
+                }
             }
             var bu = new Discord.MessageActionRow()
             let emoji = ["Back", "Next", "Skip Forward", "Skip Back"]
