@@ -21,7 +21,8 @@ module.exports = {
           }, {});
         var numarray = []
         const embed = new Discord.MessageEmbed()
-
+let arrayofrecords = []
+let arrayofprogs = []
         if(!interaction.options.getString("level")) {
             var array = []
             var page = 10
@@ -143,12 +144,14 @@ module.exports = {
                            }
                        }
                        txt += `-${ar[1]} ${list.name} beat [${gay} on ${ar[0]}.](${list.link})\n\n`
+                       arrayofrecords.push(`-${ar[1]} ${list.name} beat [${gay} on ${ar[0]}.](${list.link})\n\n`)
                        numarray.push(ar[0])
                 }
             }
+            let txt2 = ""
             if(levels[gay].progresses && Object.keys(levels).indexOf(gay) < 75) {
                 if(levels[gay].progresses[0] != "none") {
-                    txt += "**PROGRESSES**\n\n"
+                   txt2 += "**PROGRESSES**\n\n"
                     levels[gay].progresses.sort((a, b) => b.percent - a.percent)
             for(let i = 0; i < levels[gay].progresses.length; i++) {
                 var progresses = levels[gay].progresses[i]
@@ -167,7 +170,8 @@ module.exports = {
                             ar[1] = ` ${nationthing[levelnationthing[progresses.name].replace(/_/g, " ").toLowerCase()]}`
                         }
                     }
-                    txt += `- ${progresses.name} got ${progresses.percent}% on [${gay} on ${ar[0]}.](${progresses.link})\n\n`
+                    txt2 += `- ${progresses.name} got ${progresses.percent}% on [${gay} on ${ar[0]}.](${progresses.link})\n\n`
+                    arrayofprogs.push(`- ${progresses.name} got ${progresses.percent}% on [${gay} on ${ar[0]}.](${progresses.link})\n\n`)
                     numarray.push(ar[0])
                 }
             }
@@ -178,14 +182,76 @@ module.exports = {
         } else if(Object.keys(levels).indexOf(gay) > 74 && Object.keys(levels).indexOf(gay) < 150) {
             gg = "extended"
         }
-        if(txt.length > 4000) {
-            txt = `Number of 61hz> records: ${numarray.filter(v => parseInt(v) < 61).length}\n\nNumber of 61-75hz records: ${numarray.filter(v => parseInt(v) > 60).length}\n\nNumber of Mobile records: ${numarray.filter(v => v == "Mobile").length}\n\nNumber of Points Given: ${points(gay, levels)}\n\nLink to the website: https://gdlrrlist.cf/${gg}.html`
+        let sendreal = true
+        if(txt.length+txt2.length > 4000) {
+            sendreal = false
+            let embeds = []
+            let addition = 0
+            let page = 20
+            if(!Number.isInteger(arrayofrecords.length/page)) {
+                addition = 1
+            }
+            for(let i = 0; i < Math.floor(arrayofrecords.length/page)+addition; i++) {
+                let txtthing = ""
+                if(i == Math.floor(arrayofrecords.length/page)) {
+                    for(let j = i*page; j < arrayofrecords.length; j++) {
+                        txtthing += arrayofrecords[j]
+                    }
+                } else {
+                    for(let j = i*page; j < (i+1)*page; j++) {
+                        txtthing += arrayofrecords[j]
+                    }
+                }
+                embeds.push(new Discord.MessageEmbed().setTitle(`#${Object.keys(levels).indexOf(gay)+1} - ${gay} by ${levels[gay].publisher}`)
+            .setURL(`https://www.youtube.com/watch?v=${levels[gay].ytcode}`)
+            .setImage(`https://i.ytimg.com/vi/${levels[gay].ytcode}/mqdefault.jpg`)
+            .setDescription(txtthing))
+            }
+            var bu = new Discord.MessageActionRow()
+            let emoji = ["Back", "Next", "Skip Forward", "Skip Back"]
+            for(let i = 0; i < 4; i++) {
+                bu.addComponents(
+                    new Discord.MessageButton()
+                    .setCustomId(i.toString())
+                    .setStyle("PRIMARY")
+                    .setLabel(emoji[i])
+                )
+            }
+            let whyudo = 0
+            let smt = await interaction.editReply({embeds: [embeds[0]], components: [bu]})
+            client.on("interactionCreate", async(buttonclick) => {
+                if(!buttonclick.isButton()) return;
+                if(smt.id != buttonclick.message.id) return
+                switch (buttonclick.customId) {
+                    case "0":
+                        whyudo = whyudo > 0 ? --whyudo : embeds.length - 1;
+                        await buttonclick.update({embeds: [embeds[whyudo]], components: [bu]})
+                        break;
+                    case "1":
+                        whyudo = whyudo + 1 < embeds.length ? ++whyudo : 0;
+                        await buttonclick.update({embeds: [embeds[whyudo]], components: [bu]})
+                        break; 
+                    case "2":
+                        whyudo = embeds.length-1
+                        await buttonclick.update({embeds: [embeds[whyudo]], components: [bu]})
+                        break;
+                     case "3":
+                        whyudo = 0
+                        await buttonclick.update({embeds: [embeds[whyudo]], components: [bu]})
+                        break;
+                }
+            })
+            //txt = `Number of 61hz> records: ${numarray.filter(v => parseInt(v) < 61).length}\n\nNumber of 61-75hz records: ${numarray.filter(v => parseInt(v) > 60).length}\n\nNumber of Mobile records: ${numarray.filter(v => v == "Mobile").length}\n\nNumber of Points Given: ${points(gay, levels)}\n\nLink to the website: https://gdlrrlist.cf/${gg}.html`
+         } else {
+             txt += txt2
          }
+         if(sendreal) {
             embed.setTitle(`#${Object.keys(levels).indexOf(gay)+1} - ${gay} by ${levels[gay].publisher}`)
             embed.setURL(`https://www.youtube.com/watch?v=${levels[gay].ytcode}`)
             embed.setImage(`https://i.ytimg.com/vi/${levels[gay].ytcode}/mqdefault.jpg`)
             embed.setDescription(txt)
             await interaction.editReply({embeds: [embed]})
+         }
     }
         }
     }
