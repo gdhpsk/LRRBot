@@ -192,6 +192,9 @@ let arrayofprogs = []
             }
             for(let i = 0; i < Math.floor(arrayofrecords.length/page)+addition; i++) {
                 let txtthing = ""
+                if(i == 0) {
+                    txtthing += "**COMPLETIONS**\n\n"
+                }
                 if(i == Math.floor(arrayofrecords.length/page)) {
                     for(let j = i*page; j < arrayofrecords.length; j++) {
                         txtthing += arrayofrecords[j]
