@@ -32,6 +32,7 @@ module.exports = {
     async execute(interaction, Discord, client) {
 
         let lev = await levelsSchema.find()
+        lev.sort((a, b) => a._id - b._id)
         let lead = await leaderboardSchema.find()
         const leaderboard = lead.reduce(function (acc, cur, i) {
             acc[lead[i].name] = cur;

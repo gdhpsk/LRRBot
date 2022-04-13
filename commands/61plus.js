@@ -11,6 +11,7 @@ module.exports = {
     .setRequired(false)),
     async execute(interaction, Discord, client) {
         var everything = await require("../schema/61hertz").find()
+        everything.sort((a, b) => a._id - b._id)
         const levels = everything.reduce(function(acc, cur, i) {
             acc[everything[i].name] = cur;
             return acc;

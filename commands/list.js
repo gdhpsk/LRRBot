@@ -15,6 +15,7 @@ module.exports = {
     async execute(interaction, Discord, client) {
         await interaction.deferReply()
         var everything = await levelsSchema.find()
+        everything.sort((a, b) => a._id - b._id)
         const levels = everything.reduce(function(acc, cur, i) {
             acc[everything[i].name] = cur;
             return acc;
