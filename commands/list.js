@@ -171,8 +171,8 @@ let arrayofprogs = []
                             ar[1] = ` ${nationthing[levelnationthing[progresses.name].replace(/_/g, " ").toLowerCase()]}`
                         }
                     }
-                    txt2 += `- ${progresses.name} got ${progresses.percent}% on [${gay} on ${ar[0]}.](${progresses.link})\n\n`
-                    arrayofprogs.push(`- ${progresses.name} got ${progresses.percent}% on [${gay} on ${ar[0]}.](${progresses.link})\n\n`)
+                    txt2 += `-${ar[1]} ${progresses.name} got ${progresses.percent}% on [${gay} on ${ar[0]}.](${progresses.link})\n\n`
+                    arrayofprogs.push(`-${ar[1]} ${progresses.name} got ${progresses.percent}% on [${gay} on ${ar[0]}.](${progresses.link})\n\n`)
                     numarray.push(ar[0])
                 }
             }
