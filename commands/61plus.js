@@ -13,6 +13,7 @@ module.exports = {
         var schema61 = require("../schema/61hertz")
         let everything = await schema61.find()
         everything.sort((a, b) => a._id - b._id)
+        console.log(everything)
         const levels = everything.reduce(function(acc, cur, i) {
             acc[everything[i].name] = cur;
             return acc;
