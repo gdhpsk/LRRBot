@@ -7,6 +7,7 @@ var completions = new mongoose.Schema({
 })
 
 var levelsSchema = new mongoose.Schema({
+    _id: Number,
     "name": String,
     "ytcode": String,
     "ranking": String,

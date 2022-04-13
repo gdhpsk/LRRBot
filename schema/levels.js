@@ -1,6 +1,7 @@
 const mongoose = require("mongoose")
 
 var levelsSchema = new mongoose.Schema({
+    _id: Number,
     "name": String,
     "ytcode": String,
     "formerRank": Number,
