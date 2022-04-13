@@ -10,7 +10,8 @@ module.exports = {
     .setDescription("What level do you want me to display?")
     .setRequired(false)),
     async execute(interaction, Discord, client) {
-        var everything = await require("../schema/61hertz").find()
+        var schema61 = require("../schema/61hertz")
+        let everything = await schema61.find()
         everything.sort((a, b) => a._id - b._id)
         const levels = everything.reduce(function(acc, cur, i) {
             acc[everything[i].name] = cur;
