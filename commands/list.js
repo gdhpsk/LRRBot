@@ -209,7 +209,8 @@ let arrayofprogs = []
                 embeds.push(new Discord.MessageEmbed().setTitle(`#${Object.keys(levels).indexOf(gay)+1} - ${gay} by ${levels[gay].publisher}`)
             .setURL(`https://www.youtube.com/watch?v=${levels[gay].ytcode}`)
             .setImage(`https://i.ytimg.com/vi/${levels[gay].ytcode}/mqdefault.jpg`)
-            .setDescription(txtthing))
+            .setDescription(txtthing)
+            .setFooter({text: `Page ${i+1}`}))
             }
             if(txt2.length != 0) {
                 let addition = 0
@@ -233,7 +234,8 @@ let arrayofprogs = []
                     embeds.push(new Discord.MessageEmbed().setTitle(`#${Object.keys(levels).indexOf(gay)+1} - ${gay} by ${levels[gay].publisher}`)
             .setURL(`https://www.youtube.com/watch?v=${levels[gay].ytcode}`)
             .setImage(`https://i.ytimg.com/vi/${levels[gay].ytcode}/mqdefault.jpg`)
-            .setDescription(txtthing))
+            .setDescription(txtthing)
+            .setFooter({text: `Page ${embeds[embeds.length-1].footer.text.split(" ")[1] + i + 1}`}))
                 }
             }
             var bu = new Discord.MessageActionRow()
