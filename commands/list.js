@@ -210,6 +210,7 @@ let arrayofprogs = []
             .setImage(`https://i.ytimg.com/vi/${levels[gay].ytcode}/mqdefault.jpg`)
             .setDescription(txtthing))
             }
+            console.log(txt2.length)
             if(txt2.length != 0) {
                 let addition = 0
                 if(!Number.isInteger(arrayofprogs.length/page)) {
