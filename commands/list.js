@@ -184,6 +184,7 @@ let arrayofprogs = []
             gg = "extended"
         }
         let sendreal = true
+        console.log(txt.length)
         if(txt.length+txt2.length > 3000) {
             sendreal = false
             let page = 10
@@ -205,7 +206,6 @@ let arrayofprogs = []
                         txtthing += arrayofrecords[j]
                     }
                 }
-                console.log(txtthing)
                 embeds.push(new Discord.MessageEmbed().setTitle(`#${Object.keys(levels).indexOf(gay)+1} - ${gay} by ${levels[gay].publisher}`)
             .setURL(`https://www.youtube.com/watch?v=${levels[gay].ytcode}`)
             .setImage(`https://i.ytimg.com/vi/${levels[gay].ytcode}/mqdefault.jpg`)
