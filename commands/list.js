@@ -29,7 +29,7 @@ let arrayofprogs = []
             var page = 10
             var fr = ""
             for(let i = 0; i < Math.floor(Object.keys(levels).length/page); i++) {
-                var addition = 0
+                let addition = 0
                 if(!Number.isInteger(Object.keys(levels).length/page)) {
                     addition = 1
                 }
@@ -184,11 +184,12 @@ let arrayofprogs = []
             gg = "extended"
         }
         let sendreal = true
-        console.log(txt.length)
+        console.log(arrayofrecords.length)
         if(txt.length+txt2.length > 3000) {
             sendreal = false
             let page = 10
             let embeds = []
+            let addition = 0
             if(!Number.isInteger(arrayofrecords.length/page)) {
                 addition = 1
             }
