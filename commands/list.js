@@ -210,7 +210,7 @@ let arrayofprogs = []
             .setURL(`https://www.youtube.com/watch?v=${levels[gay].ytcode}`)
             .setImage(`https://i.ytimg.com/vi/${levels[gay].ytcode}/mqdefault.jpg`)
             .setDescription(txtthing)
-            .setFooter({text: `Page ${i+1}`}))
+            .setFooter({text: `Page ${(i+1).toString()}`}))
             }
             if(txt2.length != 0) {
                 let addition = 0
