@@ -184,7 +184,6 @@ let arrayofprogs = []
             gg = "extended"
         }
         let sendreal = true
-        console.log(arrayofrecords.length)
         if(txt.length+txt2.length > 3000) {
             sendreal = false
             let page = 10
