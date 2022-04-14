@@ -235,7 +235,7 @@ let arrayofprogs = []
             .setURL(`https://www.youtube.com/watch?v=${levels[gay].ytcode}`)
             .setImage(`https://i.ytimg.com/vi/${levels[gay].ytcode}/mqdefault.jpg`)
             .setDescription(txtthing)
-            .setFooter({text: `Page ${embeds.length + i + 1}`}))
+            .setFooter( `Page ${embeds.length + i + 1}`))
                 }
             }
             var bu = new Discord.MessageActionRow()
