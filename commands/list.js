@@ -205,12 +205,12 @@ let arrayofprogs = []
                         txtthing += arrayofrecords[j]
                     }
                 }
+                console.log(txtthing)
                 embeds.push(new Discord.MessageEmbed().setTitle(`#${Object.keys(levels).indexOf(gay)+1} - ${gay} by ${levels[gay].publisher}`)
             .setURL(`https://www.youtube.com/watch?v=${levels[gay].ytcode}`)
             .setImage(`https://i.ytimg.com/vi/${levels[gay].ytcode}/mqdefault.jpg`)
             .setDescription(txtthing))
             }
-            console.log(arrayofrecords)
             if(txt2.length != 0) {
                 let addition = 0
                 if(!Number.isInteger(arrayofprogs.length/page)) {
