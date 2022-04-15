@@ -28,11 +28,11 @@ let arrayofprogs = []
             var array = []
             var page = 10
             var fr = ""
+            let addition = 0
+            if(!Number.isInteger(Object.keys(levels).length/page)) {
+                addition = 1
+            }
             for(let i = 0; i < Math.floor(Object.keys(levels).length/page); i++) {
-                let addition = 0
-                if(!Number.isInteger(Object.keys(levels).length/page)) {
-                    addition = 1
-                }
                 var txt = ""
                 var number = page * i
                 for(let j = number; j < (number + page); j++) {
