@@ -130,6 +130,7 @@ let arrayofprogs = []
                 if(list.name == "Removed") {
                     txt = `Removed ${list.link}`
                 } else {
+                    console.log(list.hertz)
                     if(list.hertz == "M") {
                         ar[0] = "Mobile"
                        }
