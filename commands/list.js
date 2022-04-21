@@ -120,7 +120,7 @@ let arrayofprogs = []
             } else {
                 gay = act
             }
-            if(levels[gay].minimumPercent) {
+            if(levels[gay].minimumPercent && Object.keys(levels).indexOf(gay) < 75) {
                 embed.setFooter(`The minimum percentage requirement for this level is ${levels[gay].minimumPercent}%.\nNumber of points given (completion): ${points(gay, levels)}`)
             }
             var txt = "**COMPLETIONS**\n\n"
