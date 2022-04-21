@@ -117,7 +117,7 @@ let arrayofprogs = []
                 var um = Math.floor(Math.random() * Object.keys(levels).indexOf("Final Epilogue"))
                 gay = Object.keys(levels)[um]
                 embed.setAuthor(`${interaction.user.tag} generated a level!`)
-            } else {
+            } else { 
                 gay = act
             }
             if(levels[gay].minimumPercent && Object.keys(levels).indexOf(gay) < 75) {
