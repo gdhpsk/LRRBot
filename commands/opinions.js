@@ -7,7 +7,7 @@ module.exports = {
     data: new SlashCommandBuilder()
     .setName("opinion")
     .setDescription("Request an opinion for an LRR level")
-    .addIntegerOption((option) =>
+    .addStringOption((option) =>
         option
         .setName("name")
         .setDescription("What is the level name? (must be on lrrlist)")
