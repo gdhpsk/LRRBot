@@ -25,6 +25,12 @@ module.exports = {
     .setDescription("Below what level?")
     .setRequired(true)
 )
+.addIntegerOption((option) =>
+    option
+    .setName("average")
+    .setDescription("What should the placement be?")
+    .setRequired(true)
+)
 .addStringOption((option) =>
     option
     .setName("progresses")
@@ -47,6 +53,7 @@ module.exports = {
             tag: interaction.user.tag,
             above: interaction.options.getString("above"),
             below: interaction.options.getString("below"),
+            average: interaction.options.getString("average"),
             progresses: interaction.options.getString("progresses"),
             comments: interaction.options.getString("comments")
         }

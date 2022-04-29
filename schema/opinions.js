@@ -5,6 +5,7 @@ var opinionsArray = new mongoose.Schema({
     above: String,
     below: String,
     progresses: String,
+    average: Number,
     comments: String
 })
 
