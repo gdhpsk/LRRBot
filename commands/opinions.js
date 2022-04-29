@@ -15,6 +15,12 @@ module.exports = {
     )
     .addStringOption((option) =>
     option
+    .setName("player")
+    .setDescription("What is the players name?")
+    .setRequired(true)
+)
+    .addStringOption((option) =>
+    option
     .setName("above")
     .setDescription("Above what level?")
     .setRequired(true)
@@ -50,7 +56,7 @@ module.exports = {
             return
         }
         let object = {
-            tag: interaction.user.tag,
+            tag: interaction.options.getString("player"),
             above: interaction.options.getString("above"),
             below: interaction.options.getString("below"),
             average: interaction.options.getString("average"),
