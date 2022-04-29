@@ -59,7 +59,7 @@ module.exports = {
             tag: interaction.options.getString("player"),
             above: interaction.options.getString("above"),
             below: interaction.options.getString("below"),
-            average: interaction.options.getString("average"),
+            average: interaction.options.getInteger("average"),
             progresses: interaction.options.getString("progresses"),
             comments: interaction.options.getString("comments")
         }
