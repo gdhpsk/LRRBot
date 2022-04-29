@@ -74,6 +74,7 @@ module.exports = {
             progresses: interaction.options.getString("progresses"),
             comments: interaction.options.getString("comments")
         }
+        object.range = `${object.below.index}/${object.above.index}`
         let levopinion = await opinionsSchema.findById(interaction.options.getString("name"))
         if(!levopinion) {
              await opinionsSchema.create({_id: level.name, opinions: [object]})

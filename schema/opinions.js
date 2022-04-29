@@ -9,6 +9,7 @@ var opinionsArray = new mongoose.Schema({
     tag: String,
     above: indexes,
     below: indexes,
+    range: String,
     progresses: String,
     average: Number,
     comments: String,
