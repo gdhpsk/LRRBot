@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 
 var opinionsArray = new mongoose.Schema({
-    _id: String,
+    tag: String,
     above: String,
     below: String,
     progresses: String,

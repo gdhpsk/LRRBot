@@ -44,7 +44,7 @@ module.exports = {
             return
         }
         let object = {
-            _id: interaction.user.tag,
+            tag: interaction.user.tag,
             above: interaction.options.getString("above"),
             below: interaction.options.getString("below"),
             progresses: interaction.options.getString("progresses"),
