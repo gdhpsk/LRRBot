@@ -77,7 +77,7 @@ module.exports = {
         object.range = `${object.below.index}-${object.above.index}`
         let levopinion = await opinionsSchema.findById(interaction.options.getString("name"))
         if(!levopinion) {
-             await opinionsSchema.create({_id: level.name, opinions: [object]})
+             await opinionsSchema.create({_id: level.name, index: level._id, opinions: [object]})
         } else {
             levopinion.opinions.push(object)
             await levopinion.save()
