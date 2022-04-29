@@ -63,7 +63,7 @@ module.exports = {
             progresses: interaction.options.getString("progresses"),
             comments: interaction.options.getString("comments")
         }
-        let levopinion = await opinionsSchema.findOne({name: interaction.options.getString("name")})
+        let levopinion = await opinionsSchema.findById(interaction.options.getString("name"))
         console.log(levopinion)
         if(!levopinion) {
              await opinionsSchema.create({_id: level.name, opinions: [object]})
