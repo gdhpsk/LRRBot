@@ -46,6 +46,7 @@ module.exports = {
         }
         if(message.content == "..check") {
             let lev = await levelsSchema.find()
+            lev.sort((a, b) => a._id - b._id)
         let lead = await leaderboardSchema.find()
         const leaderboard = lead.reduce(function(acc, cur, i) {
             acc[lead[i].name] = cur;
@@ -106,6 +107,7 @@ module.exports = {
             var g;
             var deez;
             let lev = await levelsSchema.find()
+            lev.sort((a, b) => a._id - b._id)
             let levels = lev.reduce(function(acc, cur, i) {
                 acc[lev[i].name] = cur;
                 return acc;
