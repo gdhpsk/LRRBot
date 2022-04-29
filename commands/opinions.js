@@ -55,10 +55,20 @@ module.exports = {
             await interaction.reply("Please input a valid level!")
             return
         }
+        let everything = await listSchema.find()
+        function findsmt(lev) {
+            return everything.findIndex(e => e.name.toLowerCase() == lev.toLowerCase()) != -1 ? everything.findIndex(e => e.name.toLowerCase() == lev.toLowerCase()) : "???"
+        }
         let object = {
             tag: interaction.options.getString("player"),
-            above: interaction.options.getString("above"),
-            below: interaction.options.getString("below"),
+            above: {
+                level: interaction.options.getString("above"),
+                index: findsmt(interaction.options.getString("above"))
+            },
+            below: {
+              level:  interaction.options.getString("below"),
+              index: findsmt(interaction.options.getString("below"))
+            },
             average: interaction.options.getInteger("average"),
             progresses: interaction.options.getString("progresses"),
             comments: interaction.options.getString("comments")

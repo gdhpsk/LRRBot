@@ -1,9 +1,14 @@
 const mongoose = require("mongoose")
 
+var indexes =  new mongoose.Schema({
+   level: String,
+   index: String
+})
+
 var opinionsArray = new mongoose.Schema({
     tag: String,
-    above: String,
-    below: String,
+    above: indexes,
+    below: indexes,
     progresses: String,
     average: Number,
     comments: String,
