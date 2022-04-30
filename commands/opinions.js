@@ -60,7 +60,7 @@ module.exports = {
         let everything = await listSchema.find()
         everything.sort((a, b) => a._id - b._id)
         function findsmt(lev) {
-            return everything.findIndex(e => e.name.toLowerCase() == lev.toLowerCase()) != -1 ? everything.findIndex(e => e.name.toLowerCase() == lev.toLowerCase()) : "???"
+            return everything.findIndex(e => e.name.toLowerCase() == lev.toLowerCase()) != -1 ? everything.findIndex(e => e.name.toLowerCase() == lev.toLowerCase())+1 : "???"
         }
         let object = {
             tag: interaction.options.getString("player"),
