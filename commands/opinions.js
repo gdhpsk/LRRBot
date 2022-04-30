@@ -54,7 +54,7 @@ module.exports = {
         if(!level) {
             level = {
                 name: interaction.options.getString("name"),
-                index: "TBD"
+                _id: "TBD"
             }
         }
         let everything = await listSchema.find()
