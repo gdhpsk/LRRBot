@@ -14,7 +14,7 @@ var opinionsArray = new mongoose.Schema({
     average: Number,
     comments: String,
   reliable: String
-})
+}) 
 
 var opinionsSchema = new mongoose.Schema({
     _id: String,
