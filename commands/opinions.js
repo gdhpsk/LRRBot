@@ -52,8 +52,10 @@ module.exports = {
     async execute(interaction, Discord, client) {
         let level = await listSchema.findOne({name: interaction.options.getString("name")})
         if(!level) {
-            await interaction.reply("Please input a valid level!")
-            return
+            level = {
+                name: interaction.options.getString("name"),
+                index: "TBD"
+            }
         }
         let everything = await listSchema.find()
         everything.sort((a, b) => a._id - b._id)
