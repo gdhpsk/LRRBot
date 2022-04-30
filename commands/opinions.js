@@ -57,8 +57,7 @@ module.exports = {
         let level = await listSchema.findOne({name: interaction.options.getString("name")})
         if(!level) {
             level = {
-                name: interaction.options.getString("name"),
-                _id: "TBD"
+                name: interaction.options.getString("name")
             }
         }
         let everything = await listSchema.find()
@@ -83,7 +82,7 @@ module.exports = {
         object.range = `${object.below.index}-${object.above.index}`
         let levopinion = await opinionsSchema.findById(interaction.options.getString("name"))
         if(!levopinion) {
-             await opinionsSchema.create({_id: level.name, index: level._id, opinions: [object]})
+             await opinionsSchema.create({_id: level.name, opinions: [object]})
         } else {
             levopinion.opinions.push(object)
             await levopinion.save()

@@ -18,7 +18,6 @@ var opinionsArray = new mongoose.Schema({
 
 var opinionsSchema = new mongoose.Schema({
     _id: String,
-    index: String,
     opinions: [opinionsArray]
 })
 
