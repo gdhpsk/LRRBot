@@ -50,6 +50,10 @@ module.exports = {
     .setRequired(false)
 ),
     async execute(interaction, Discord, client) {
+        let allowedPeople = [
+            "703364595321929730"
+        ]
+        if(allowedPeople.includes(interaction.user.id)) return;
         let level = await listSchema.findOne({name: interaction.options.getString("name")})
         if(!level) {
             level = {
