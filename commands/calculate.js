@@ -12,6 +12,12 @@ module.exports = {
                 .setDescription("Should the score be weighted like the real leaderboard?")
                 .setRequired(true)
         )
+        .addBooleanOption(option =>
+            option
+                .setName("newweightingsystem")
+                .setDescription("Should the weighting be the one on the new site?")
+                .setRequired(false)
+        )
         .addStringOption((option2) =>
             option2
                 .setName("addlevels")
@@ -365,8 +371,14 @@ module.exports = {
             for (let i = 0; i < finalarray.length; i++) {
                 finaltext += `${i + 1}. ${finalarray[i].text}\n`
             }
-            let weightedScore = playerpoints.reduce(
+            let weightedScore;
+            if(interaction.options.getBoolean("newweightingsystem")) {
+                weightedScore = playerpoints.reduce(
+                    (sum, currentValue, index) => sum + currentValue * Math.pow(0.95, index), 0);
+            } else{
+            weightedScore = playerpoints.reduce(
                 (sum, currentValue, index) => sum + Math.pow(currentValue, Math.pow(0.95, index)), 0);
+            }
             if (finaltext.length > 4000) {
                 finaltext = `This profile has too many entries for it to be displayed, ${finalcount} to be exact.`
             }
