@@ -371,14 +371,9 @@ module.exports = {
             for (let i = 0; i < finalarray.length; i++) {
                 finaltext += `${i + 1}. ${finalarray[i].text}\n`
             }
-            let weightedScore;
-            if(interaction.options.getBoolean("newweightingsystem")) {
-                weightedScore = playerpoints.reduce(
-                    (sum, currentValue, index) => sum + currentValue * Math.pow(0.95, index), 0);
-            } else{
-            weightedScore = playerpoints.reduce(
-                (sum, currentValue, index) => sum + Math.pow(currentValue, Math.pow(0.95, index)), 0);
-            }
+            let weightedScore = playerpoints.reduce(
+                (sum, currentValue, index) => sum + currentValue * Math.pow(0.95, index), 0);
+            
             if (finaltext.length > 4000) {
                 finaltext = `This profile has too many entries for it to be displayed, ${finalcount} to be exact.`
             }
