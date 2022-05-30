@@ -12,12 +12,6 @@ module.exports = {
                 .setDescription("Should the score be weighted like the real leaderboard?")
                 .setRequired(true)
         )
-        .addBooleanOption(option =>
-            option
-                .setName("newweightingsystem")
-                .setDescription("Should the weighting be the one on the new site?")
-                .setRequired(false)
-        )
         .addStringOption((option2) =>
             option2
                 .setName("addlevels")
