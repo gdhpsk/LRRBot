@@ -62,7 +62,7 @@ module.exports = {
             }
         }
         if(txt.length > 4000) {
-            txt = `Number of records: ${numarray.length}\n\nLink to the website: https://gdlrrlist.cf/61plus.php`
+            txt = `Number of records: ${numarray.length}\n\nLink to the website: https://gdlrrlist-new.gdhpsk.repl.co/61plus.php`
          }
             embed.setTitle(`#${Object.keys(levels).indexOf(gay)+1} - ${gay} by ${levels[gay].publisher}`)
             embed.setURL(`https://www.youtube.com/watch?v=${levels[gay].ytcode}`)

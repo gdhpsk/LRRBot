@@ -28,7 +28,7 @@ module.exports = {
             return acc;
           }, {});
           const point = require("../point_calculator_stuff/leaderboard_point_calculator")
-          let dates = await fetch("https://gdlrrlist.cf/api/nationsemotes", {
+          let dates = await fetch("https://gdlrrlist-new.gdhpsk.repl.co/api/nationsemotes", {
             method: "get",
             headers: { "Content-Type": "application/json" }
         })

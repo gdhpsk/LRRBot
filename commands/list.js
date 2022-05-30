@@ -102,12 +102,12 @@ let arrayofprogs = []
         if(!levels[interaction.options.getString("level")] && interaction.options.getString("level") != "generate" && !ghj) {
             await interaction.editReply({content: "Please enter a valid level!", ephemeral: true})
         } else {
-            let dates = await fetch("https://gdlrrlist.cf/api/nationsemotes", {
+            let dates = await fetch("https://gdlrrlist-new.gdhpsk.repl.co/api/nationsemotes", {
                 method: "get",
                 headers: { "Content-Type": "application/json" }
             })
             let nationthing = await dates.json()
-            let leveldates = await fetch("https://gdlrrlist.cf/api/nationalities", {
+            let leveldates = await fetch("https://gdlrrlist-new.gdhpsk.repl.co/api/nationalities", {
                 method: "get",
                 headers: { "Content-Type": "application/json" }
             })
@@ -275,7 +275,7 @@ let arrayofprogs = []
                         break;
                 }
             })
-            //txt = `Number of 61hz> records: ${numarray.filter(v => parseInt(v) < 61).length}\n\nNumber of 61-75hz records: ${numarray.filter(v => parseInt(v) > 60).length}\n\nNumber of Mobile records: ${numarray.filter(v => v == "Mobile").length}\n\nNumber of Points Given: ${points(gay, levels)}\n\nLink to the website: https://gdlrrlist.cf/${gg}.html`
+            //txt = `Number of 61hz> records: ${numarray.filter(v => parseInt(v) < 61).length}\n\nNumber of 61-75hz records: ${numarray.filter(v => parseInt(v) > 60).length}\n\nNumber of Mobile records: ${numarray.filter(v => v == "Mobile").length}\n\nNumber of Points Given: ${points(gay, levels)}\n\nLink to the website: https://gdlrrlist-new.gdhpsk.repl.co/${gg}.html`
          } else {
              txt += txt2
          }
