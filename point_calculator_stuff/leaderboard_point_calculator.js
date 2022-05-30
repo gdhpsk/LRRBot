@@ -45,7 +45,7 @@ let lol = (player, level, leaderboard) => {
     }
     allBasePoints.sort((a, b) => b - a);
     let point =  allBasePoints.reduce(
-        (sum, currentValue, index) => sum + Math.pow(currentValue, Math.pow(0.95, index)), 0);
+        (sum, currentValue, index) => sum + currentValue * Math.pow(0.95, index), 0);
         return Math.round(1000*point)/1000
 }
 
