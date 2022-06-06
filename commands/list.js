@@ -42,13 +42,13 @@ let arrayofprogs = []
                     }
                     txt += `[${smt[0]}${Object.values(levels)[j].name} by ${Object.values(levels)[j].publisher}](https://www.youtube.com/watch?v=${Object.values(levels)[j].ytcode})\n\n`
                 }
-                array.push(new EmbedBuilder().setDescription(txt).setTitle("Low Refresh Rate List Levels").setFooter(`Page ${i+1}/${Math.floor(Object.keys(levels).length/page)+addition}`))
+                array.push(new EmbedBuilder().setDescription(txt).setTitle("Low Refresh Rate List Levels").setFooter({text: `Page ${i+1}/${Math.floor(Object.keys(levels).length/page)+addition}`}))
             }
             if(array.length*page != Object.keys(levels).length) {
                 for(let j = (array.length * page); j < Object.keys(levels).length; j++) {
                     fr += `[${Object.values(levels)[j].name} by ${Object.values(levels)[j].publisher}](https://www.youtube.com/watch?v=${Object.values(levels)[j].ytcode})\n\n`
                 }
-                array.push(new EmbedBuilder().setDescription(fr).setTitle("Low Refresh Rate List Levels").setFooter(`Page ${Math.floor(Object.keys(levels).length/page)+addition}/${Math.floor(Object.keys(levels).length/page)+addition}`))
+                array.push(new EmbedBuilder().setDescription(fr).setTitle("Low Refresh Rate List Levels").setFooter({text: `Page ${Math.floor(Object.keys(levels).length/page)+addition}/${Math.floor(Object.keys(levels).length/page)+addition}`}))
             }
             var bu = new ActionRowBuilder()
             let emoji = ["Back", "Next", "Skip Forward", "Skip Back"]
@@ -125,7 +125,7 @@ let arrayofprogs = []
             gh += `The minimum percentage requirement for this level is ${levels[gay].minimumPercent}%.\n`
             }
             gh +=   `Number of points given (completion): ${points(gay, levels)}`
-                embed.setFooter(gh)
+                embed.setFooter({text: gh})
             var txt = "**COMPLETIONS**\n\n"
             for(let i = 0; i < levels[gay].list.length; i++) {
                 var list = levels[gay].list[i]
@@ -213,7 +213,7 @@ let arrayofprogs = []
             .setURL(`https://www.youtube.com/watch?v=${levels[gay].ytcode}`)
             .setImage(`https://i.ytimg.com/vi/${levels[gay].ytcode}/mqdefault.jpg`)
             .setDescription(txtthing)
-            .setFooter(`Page ${(i+1).toString()}`))
+            .setFooter({text: `Page ${(i+1).toString()}`}))
             }
             if(txt2.length != 0) {
                 let addition = 0
@@ -238,7 +238,7 @@ let arrayofprogs = []
             .setURL(`https://www.youtube.com/watch?v=${levels[gay].ytcode}`)
             .setImage(`https://i.ytimg.com/vi/${levels[gay].ytcode}/mqdefault.jpg`)
             .setDescription(txtthing)
-            .setFooter( `Page ${embeds.length + i + 1}`))
+            .setFooter({text: `Page ${embeds.length + i + 1}`}))
                 }
             }
             var bu = new ActionRowBuilder()

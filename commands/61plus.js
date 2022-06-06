@@ -31,7 +31,7 @@ module.exports = {
             await interaction.reply({content: "Please enter a valid level!", ephemeral: true})
         } else {
             var gay = interaction.options.getString("level")
-                embed.setFooter(`Estimated Difficulty: ${levels[gay].ranking}`)
+                embed.setFooter({text: `Estimated Difficulty: ${levels[gay].ranking}`})
             
             var txt = "**COMPLETIONS**\n\n"
             for(let i = 0; i < levels[gay].list.length; i++) {

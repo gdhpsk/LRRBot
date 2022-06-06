@@ -374,13 +374,13 @@ module.exports = {
             var embed = new EmbedBuilder()
                 .setTitle("CUSTOM PROFILE")
                 .setDescription(finaltext)
-                .setFooter(`Final (weighted) score: ${Math.round(1000 * weightedScore) / 1000} points`)
+                .setFooter({text: `Final (weighted) score: ${Math.round(1000 * weightedScore) / 1000} points`})
             if (userprofile) {
                 embed.setTitle(`${userprofile}'s profile (edited)`)
             }
             if (bool == false) {
                 let kj = playerpoints.reduce((alright, lol) => alright + lol)
-                embed.setFooter(`Final (unweighted) score: ${Math.round(1000 * kj) / 1000} points`)
+                embed.setFooter({text: `Final (unweighted) score: ${Math.round(1000 * kj) / 1000} points`})
             }
             if (OML != 1) {
                 interaction.reply({ embeds: [embed] })

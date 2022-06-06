@@ -1,3 +1,4 @@
+const { ButtonStyle } = require("discord.js")
 var roulette = require("../schema/roulette")
 module.exports = {
     name: "messageCreate",
@@ -186,7 +187,7 @@ module.exports = {
         if(j.length > 4000) {
             j = `Levels: ${karthik.length}\nWorking on: ${karthik[karthik.length-1]} ${g[g.length-1].toString()}%`
         }
-        var embedScore = new Discord.MessageEmbed()
+        var embedScore = new Discord.EmbedBuilder()
             .setDescription(j)
             .setTitle(`Score: ${karthik.length-1}`)
            return message.reply({embeds: [embedScore]})
@@ -211,7 +212,7 @@ module.exports = {
         if(j.length > 4000) {
             j = `Levels: ${karthik.length}`
         }
-        const embed = new Discord.MessageEmbed()
+        const embed = new Discord.EmbedBuilder()
         .setTitle(`Score: ${karthik.length-1}`)
         .setDescription(j)
                 number = g[g.length-1]
@@ -229,11 +230,11 @@ module.exports = {
             var ikl = false
             if(args[0] == "start" && !object[message.author.id]) {
                 ikl = true
-                let options = new Discord.MessageActionRow({components: [
-                    new Discord.MessageButton().setLabel("Main List").setCustomId("main").setStyle("PRIMARY"),
-                    new Discord.MessageButton().setLabel("Extended List").setCustomId("extended").setStyle("PRIMARY"),
-                    new Discord.MessageButton().setLabel("Legacy List").setCustomId("legacy").setStyle("PRIMARY"),
-                    new Discord.MessageButton().setEmoji("✅").setCustomId("done").setStyle("PRIMARY")]
+                let options = new Discord.ActionRowBuilder({components: [
+                    new Discord.ButtonBuilder().setLabel("Main List").setCustomId("main").setStyle(Discord.ButtonStyle.Primary),
+                    new Discord.ButtonBuilder().setLabel("Extended List").setCustomId("extended").setStyle(Discord.ButtonStyle.Primary),
+                    new Discord.ButtonBuilder().setLabel("Legacy List").setCustomId("legacy").setStyle(Discord.ButtonStyle.Primary),
+                    new Discord.ButtonBuilder().setEmoji("✅").setCustomId("done").setStyle(Discord.ButtonStyle.Primary)]
                 })
                 var smt = await message.reply({content: "What levels do you want your roulette to contain?", components: [options]})
                 let arr = []
@@ -325,7 +326,7 @@ module.exports = {
                             number = 1
                             for(let i = 0; i < Object.keys(levels).length; i++) {
                                 if(!karthik.includes(Object.keys(levels)[random])) {
-                                    const embed = new Discord.MessageEmbed() 
+                                    const embed = new Discord.EmbedBuilder() 
                                     .setTitle(`#${Object.values(objoflevels)[random].minimumPercent} - ${Object.keys(objoflevels)[random]} by ${Object.values(objoflevels)[random].publisher}`)
                                     .setDescription(`You have to get ${number}%`)
                                     .setImage(`https://i.ytimg.com/vi/${Object.values(objoflevels)[random].ytcode}/mqdefault.jpg`)
@@ -390,7 +391,7 @@ module.exports = {
                 levels = config[message.author.id]
             for(let i = 0; i < Object.keys(levels).length; i++) {
             if(!karthik.includes(Object.keys(levels)[random])) {
-                const embed = new Discord.MessageEmbed() 
+                const embed = new Discord.EmbedBuilder() 
                 .setTitle(`#${Object.values(levels)[random].minimumPercent} - ${Object.keys(levels)[random]} by ${Object.values(levels)[random].publisher}`)
                 .setDescription(`You have to get ${number}%`)
                 .setImage(`https://i.ytimg.com/vi/${Object.values(levels)[random].ytcode}/mqdefault.jpg`)

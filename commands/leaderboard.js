@@ -61,7 +61,7 @@ module.exports = {
                for(let j = i*page; j < (i+1)*page; j++) {
                     txt += `${far[j].nationality ? `${far[j].nationality} ` : ""}${j+1}. ${far[j].name} (${far[j].points} points)\n\n`
                }
-               embeds.push(new EmbedBuilder().setTitle("GD LRR List Leaderboard").setDescription(txt).setFooter(`Page ${i+1}/${Math.floor(far.length/page)+add}`))
+               embeds.push(new EmbedBuilder().setTitle("GD LRR List Leaderboard").setDescription(txt).setFooter({text: `Page ${i+1}/${Math.floor(far.length/page)+add}`}))
             }
             if(add = 1) {
                 for(let i = Math.floor(far.length/page); i < Math.floor(far.length/page)+1; i++) {
@@ -69,7 +69,7 @@ module.exports = {
                    for(let j = i*page; j < far.length; j++) {
                         txt += `${far[j].nationality ? `${far[j].nationality}  ` : ""}${j+1}. ${far[j].name} (${far[j].points} points)\n\n`
                    }
-                   embeds.push(new EmbedBuilder().setTitle("GD LRR List Leaderboard").setDescription(txt).setFooter(`Page ${i+1}/${Math.floor(far.length/page)+add}`))
+                   embeds.push(new EmbedBuilder().setTitle("GD LRR List Leaderboard").setDescription(txt).setFooter({text: `Page ${i+1}/${Math.floor(far.length/page)+add}`}))
                 }
             }
             var bu = new ActionRowBuilder()
@@ -177,7 +177,7 @@ module.exports = {
             const embed = new EmbedBuilder()
             .setTitle(`${counte}${gay}'s profile (${point(gay, levels, leaderboard)} points):`)
             .setDescription(`${nationality}**COMPLETIONS**\n\n${txtList}\n**COMPLETED LEGACY LEVELS**\n\n${txtExtra}\n**PROGRESSES**\n\n${txtProgs}`)
-            .setFooter(`${ku} completions, ${uk} progresses`)
+            .setFooter({text: `${ku} completions, ${uk} progresses`})
             await interaction.editReply({embeds: [embed]})
         }
     }

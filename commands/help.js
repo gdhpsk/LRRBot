@@ -20,7 +20,7 @@ module.exports = {
                 txt += `${i+1}. \`/${commands.commandList[i].name}\` - ${commands.commandList[i].description}\n\n`
             }
             embed.setTitle("List of commands")
-            embed.setFooter("All commands are slash commands")
+            embed.setFooter({text: "All commands are slash commands"})
             embed.setDescription(txt)
             interaction.reply({embeds: [embed]})
         } else {
@@ -37,7 +37,7 @@ module.exports = {
                         txt += `${i+1}. \`${commands.commandList[i].name}\` - ${commands.commandList[i].description}\n\n`
                     }
                     embed.setTitle("List of commands")
-                    embed.setFooter("All commands are slash commands")
+                    embed.setFooter({text: "All commands are slash commands"})
                     embed.setDescription(txt)
                     interaction.reply({embeds: [embed]})
                 } else {
