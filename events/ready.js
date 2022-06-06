@@ -18,10 +18,10 @@ module.exports = {
 	(async () => {
 		try {
 				await rest.put(Routes.applicationCommands(CLIENT_ID), {
-					body: commands.filter(e => !e.data?.private)
+					body: commands.filter(e => !e.private)
 				})
 				await rest.put(Routes.applicationGuildCommands(CLIENT_ID, guildId), {
-					body: commands.filter(e => e.data?.private)
+					body: commands.filter(e => e.private)
 				})
 				console.log("Slash Commands registered");
 		} catch (err) {
