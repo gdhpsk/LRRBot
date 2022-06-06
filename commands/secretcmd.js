@@ -1,10 +1,30 @@
-const { SlashCommandBuilder } = require("discord.js")
+const { SlashCommandBuilder, ModalBuilder, ActionRowBuilder, TextInputBuilder } = require("discord.js")
 
 module.exports = {
     data: new SlashCommandBuilder()
     .setName("secret")
-    .setDescription("Shhhhh"),
+    .setDescription("Shhhhh")
+    .addSubcommand(subcommand =>
+        subcommand
+        .setName("addpack")
+        .setDescription("Adds a level pack")
+    ),
     async execute(interaction, Discord, client) {
-        interaction.reply("yo")
+        if(interaction.options.getSubcommand() == "addpack") {
+           let modal = new ModalBuilder().addComponents([
+               new ActionRowBuilder({ components: [
+                   new TextInputBuilder()
+                   .setCustomId("id")
+                   .setLabel("Role ID")
+                   .setStyle(1)
+               ]})
+           ])
+
+        client.on('interactionCreate', interaction => {
+            if (!interaction.isModalSubmit()) return;
+            const text = interaction.fields.getTextInputValue('id');
+            interaction.reply({content: `You inputted the role ID ${text}`, ephemeral: true})
+        });
+        }
     }
 }
