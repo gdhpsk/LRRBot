@@ -1,3 +1,4 @@
+const { ChannelType } = require("discord.js")
 const Discord = require("discord.js")
 module.exports = {
     name: "interactionCreate",
@@ -9,7 +10,7 @@ module.exports = {
 			"844088388092428298"
         ]
         if(!interaction.isCommand() || interaction.user.bot) return
-		if(interaction.channel.type != "DM") {
+		if(interaction.channel.type != ChannelType.DM && interaction.channel.type != ChannelType.GuildVoice) {
 			if(!allowedChannels.includes(interaction.channel.id)) return
 		}
 	const command = interaction.client.commands.get(interaction.commandName)
