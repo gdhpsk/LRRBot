@@ -54,7 +54,9 @@ module.exports = {
                     "Content-Type": "application/text"
                 },
                 body: JSON.stringify({
-                    id, levels, category
+                    id, 
+                    levels: JSON.stringify(levels), 
+                    category
                 }),
 
             })
