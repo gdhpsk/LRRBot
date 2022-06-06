@@ -51,7 +51,7 @@ module.exports = {
                 method: "post",
                 headers: {
                     cookie: `token=${process.env.web_token}`,
-                    "Content-Type": "application/text"
+                    "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
                     id, 
