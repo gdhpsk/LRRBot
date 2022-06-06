@@ -11,7 +11,10 @@ module.exports = {
     ),
     async execute(interaction, Discord, client) {
         if(interaction.options.getSubcommand() == "addpack") {
-           let modal = new ModalBuilder().addComponents([
+           let modal = new ModalBuilder()
+           .setTitle("Add Level Pack")
+           .setCustomId("addpackform")
+           .addComponents([
                new ActionRowBuilder({ components: [
                    new TextInputBuilder()
                    .setCustomId("id")
