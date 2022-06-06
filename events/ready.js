@@ -9,7 +9,9 @@ module.exports = {
     execute(client, commands) {
         console.log(`${client.user.tag} is online!`);
 		client.user.setActivity("The LRR Demonlist Server", {type: "WATCHING"})
-
+		let secret = [
+			"secret"
+		]
 	const CLIENT_ID = client.user.id
 	const rest = new REST({
 		version: "9"
@@ -18,10 +20,10 @@ module.exports = {
 	(async () => {
 		try {
 				await rest.put(Routes.applicationCommands(CLIENT_ID), {
-					body: commands.filter(e => !e.private)
+					body: commands.filter(e => !secret.includes(e.name))
 				})
 				await rest.put(Routes.applicationGuildCommands(CLIENT_ID, guildId), {
-					body: commands.filter(e => e.private)
+					body: commands.filter(e => secret.includes(e.name))
 				})
 				console.log("Slash Commands registered");
 		} catch (err) {
