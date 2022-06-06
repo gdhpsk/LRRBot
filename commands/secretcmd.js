@@ -53,9 +53,9 @@ module.exports = {
                     cookie: `token=${process.env.web_token}`,
                     "Content-Type": "application/text"
                 },
-                body: JSON.stringify({
+                body: {
                     id, levels, category
-                }),
+                },
 
             })
             interaction.reply({content: `Here is what you inputted: ${id}, ${JSON.stringify(levels)}, ${category}`, ephemeral: true})
