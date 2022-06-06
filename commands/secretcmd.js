@@ -9,6 +9,11 @@ module.exports = {
         subcommand
         .setName("addpack")
         .setDescription("Adds a level pack")
+    )
+    .addSubcommand(subcommand =>
+        subcommand
+        .setName("deletepack")
+        .setDescription("Deletes a level pack")
     ),
     async execute(interaction, Discord, client) {
         if(interaction.options.getSubcommand() == "addpack") {
