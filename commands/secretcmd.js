@@ -1,4 +1,5 @@
 const { SlashCommandBuilder, ModalBuilder, ActionRowBuilder, TextInputBuilder } = require("discord.js")
+const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -41,12 +42,23 @@ module.exports = {
             ]}),
            ])
            await interaction.showModal(modal)
-        client.on('interactionCreate', interaction => {
+        client.on('interactionCreate', async interaction => {
             if (!interaction.isModalSubmit()) return;
             const id = interaction.fields.getTextInputValue('id');
             const levels = interaction.fields.getTextInputValue('levels').split(", ");
             const category = interaction.fields.getTextInputValue('category');
-            interaction.reply(`Here is what you inputted: ${id}, ${JSON.stringify(levels)}, ${category}`)
+            await fetch("https://gdlrrlist-new.gdhpsk.repl.co/roles/packs/add", {
+                method: "post",
+                headers: {
+                    cookie: `token=${proces.env.web_token}`,
+                    "Content-Type": "application/text"
+                },
+                body: JSON.stringify({
+                    id, levels, category
+                }),
+
+            })
+            interaction.reply({content: `Here is what you inputted: ${id}, ${JSON.stringify(levels)}, ${category}`, ephemeral: true})
         });
         }
     }
