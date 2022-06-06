@@ -20,12 +20,14 @@ module.exports = {
 	} catch (err) {
 		if(err) {
 			console.log(err)
+			if(!["secret"].includes(command.name)) {
 			try {
 				await interaction.reply({content: "An error occured while trying to execute this command.", ephemeral: true})
 			} catch(_) {
 				await interaction.editReply({content: "An error occured while trying to execute this command.", ephemeral: true})
 			}
 		}
+	}
 	}
     }
 }
