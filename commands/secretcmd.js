@@ -16,6 +16,37 @@ module.exports = {
         .setDescription("Deletes a level pack")
     ),
     async execute(interaction, Discord, client) {
+        if(interaction.options.getSubcommand() == "deletepack") {
+            let modal = new ModalBuilder()
+            .setTitle("Delete Level Pack")
+            .setCustomId("deletepackform")
+            .addComponents([
+                new ActionRowBuilder({ components: [
+                    new TextInputBuilder()
+                    .setCustomId("id")
+                    .setLabel("Role ID")
+                    .setPlaceholder("Put the discord role ID here")
+                    .setStyle(1)
+                    .setRequired(true)
+                ]}),
+            ])
+            await interaction.showModal(modal)
+         client.once('interactionCreate', async interaction => {
+             if (!interaction.isModalSubmit()) return;
+             const id = interaction.fields.getTextInputValue('id');
+             await fetch("https://gdlrrlist-new.gdhpsk.repl.co/roles/packs/delete", {
+                 method: "post",
+                 headers: {
+                     cookie: `token=${process.env.web_token}`,
+                     "Content-Type": "application/json"
+                 },
+                 body: JSON.stringify({
+                     id
+                 }),
+                })
+            interaction.reply({content: `Role ID ${id}`, ephemeral: true})
+         });
+     }
         if(interaction.options.getSubcommand() == "addpack") {
            let modal = new ModalBuilder()
            .setTitle("Add Level Pack")
