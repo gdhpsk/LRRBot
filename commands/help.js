@@ -1,4 +1,4 @@
-const { SlashCommandBuilder } = require("@discordjs/builders")
+const { SlashCommandBuilder, EmbedBuilder } = require("discord.js")
 const commands = require("../JSON/commands.json")
 
 module.exports = {
@@ -12,7 +12,7 @@ module.exports = {
         .setRequired(false)
     ),
     async execute(interaction, Discord, client) {
-        var embed = new Discord.MessageEmbed()
+        var embed = new EmbedBuilder()
         var commandName = interaction.options.getString("command")
         if(!commandName) {
             var txt = ""

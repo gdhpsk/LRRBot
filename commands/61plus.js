@@ -1,4 +1,4 @@
-const { SlashCommandBuilder } = require("@discordjs/builders")
+const { SlashCommandBuilder, EmbedBuilder } = require("discord.js")
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -18,7 +18,7 @@ module.exports = {
             return acc;
           }, {});
         var numarray = []
-        const embed = new Discord.MessageEmbed()
+        const embed = new EmbedBuilder()
         if(!interaction.options.getString("level")) {
             var txt = ""
             for(const key in levels) {

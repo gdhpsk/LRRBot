@@ -1,5 +1,5 @@
 const fs = require('fs');
-const { Client, Collection } = require('discord.js');
+const { Client, Collection, GatewayIntentBits, Partials } = require('discord.js');
 const Discord = require("discord.js")
 const mongoose = require("mongoose")
 const cron = require("node-cron")
@@ -7,7 +7,7 @@ const dayjs = require("dayjs")
 
 mongoose.connect(`mongodb+srv://gdlrrapi:${process.env.mongoPass}@gdlrrapi.2rdel.mongodb.net/gdlrrdemonlist`) 
 
-const client = new Client({ partials: ["CHANNEL", "MESSAGE", "REACTION"], intents: ["GUILDS", "GUILD_MESSAGES", "DIRECT_MESSAGES", "GUILD_MEMBERS", "GUILD_PRESENCES"]});
+const client = new Client({ partials: [Partials.Channel, Partials.Message, Partials.Reaction], intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.DirectMessages, GatewayIntentBits.GuildMembers, GatewayIntentBits.GuildPresences, GatewayIntentBits.GuildMessageReactions, GatewayIntentBits.MessageContent]});
 
 const commandFiles = fs.readdirSync("./commands").filter(file => file.endsWith(".js"))
 

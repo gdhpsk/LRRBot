@@ -1,4 +1,4 @@
-const { SlashCommandBuilder } = require("@discordjs/builders")
+const { SlashCommandBuilder, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require("discord.js")
 const levelsSchema = require("../schema/levels")
 const points = require("../point_calculator_stuff/levels_point_calculator")
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
@@ -21,7 +21,7 @@ module.exports = {
             return acc;
           }, {});
         var numarray = []
-        const embed = new Discord.MessageEmbed()
+        const embed = new EmbedBuilder()
 let arrayofrecords = []
 let arrayofprogs = []
         if(!interaction.options.getString("level")) {
@@ -42,23 +42,23 @@ let arrayofprogs = []
                     }
                     txt += `[${smt[0]}${Object.values(levels)[j].name} by ${Object.values(levels)[j].publisher}](https://www.youtube.com/watch?v=${Object.values(levels)[j].ytcode})\n\n`
                 }
-                array.push(new Discord.MessageEmbed().setDescription(txt).setTitle("Low Refresh Rate List Levels").setFooter(`Page ${i+1}/${Math.floor(Object.keys(levels).length/page)+addition}`))
+                array.push(new EmbedBuilder().setDescription(txt).setTitle("Low Refresh Rate List Levels").setFooter(`Page ${i+1}/${Math.floor(Object.keys(levels).length/page)+addition}`))
             }
             if(array.length*page != Object.keys(levels).length) {
                 for(let j = (array.length * page); j < Object.keys(levels).length; j++) {
                     fr += `[${Object.values(levels)[j].name} by ${Object.values(levels)[j].publisher}](https://www.youtube.com/watch?v=${Object.values(levels)[j].ytcode})\n\n`
                 }
-                array.push(new Discord.MessageEmbed().setDescription(fr).setTitle("Low Refresh Rate List Levels").setFooter(`Page ${Math.floor(Object.keys(levels).length/page)+addition}/${Math.floor(Object.keys(levels).length/page)+addition}`))
+                array.push(new EmbedBuilder().setDescription(fr).setTitle("Low Refresh Rate List Levels").setFooter(`Page ${Math.floor(Object.keys(levels).length/page)+addition}/${Math.floor(Object.keys(levels).length/page)+addition}`))
             }
-            var bu = new Discord.MessageActionRow()
+            var bu = new ActionRowBuilder()
             let emoji = ["Back", "Next", "Skip Forward", "Skip Back"]
             for(let i = 0; i < 4; i++) {
-                bu.addComponents(
-                    new Discord.MessageButton()
+                bu.addComponents([
+                    new ButtonBuilder()
                     .setCustomId(i.toString())
-                    .setStyle("PRIMARY")
+                    .setStyle(ButtonStyle.Primary)
                     .setLabel(emoji[i])
-                )
+                ])
             }
             let whyudo = 0
             let smt = await interaction.editReply({embeds: [array[0]], components: [bu], fetchReply: true})
@@ -209,7 +209,7 @@ let arrayofprogs = []
                         txtthing += arrayofrecords[j]
                     }
                 }
-                embeds.push(new Discord.MessageEmbed().setTitle(`#${Object.keys(levels).indexOf(gay)+1} - ${gay} by ${levels[gay].publisher}`)
+                embeds.push(new EmbedBuilder().setTitle(`#${Object.keys(levels).indexOf(gay)+1} - ${gay} by ${levels[gay].publisher}`)
             .setURL(`https://www.youtube.com/watch?v=${levels[gay].ytcode}`)
             .setImage(`https://i.ytimg.com/vi/${levels[gay].ytcode}/mqdefault.jpg`)
             .setDescription(txtthing)
@@ -234,22 +234,22 @@ let arrayofprogs = []
                             txtthing += arrayofprogs[j]
                         }
                     }
-                    embeds.push(new Discord.MessageEmbed().setTitle(`#${Object.keys(levels).indexOf(gay)+1} - ${gay} by ${levels[gay].publisher}`)
+                    embeds.push(new EmbedBuilder().setTitle(`#${Object.keys(levels).indexOf(gay)+1} - ${gay} by ${levels[gay].publisher}`)
             .setURL(`https://www.youtube.com/watch?v=${levels[gay].ytcode}`)
             .setImage(`https://i.ytimg.com/vi/${levels[gay].ytcode}/mqdefault.jpg`)
             .setDescription(txtthing)
             .setFooter( `Page ${embeds.length + i + 1}`))
                 }
             }
-            var bu = new Discord.MessageActionRow()
+            var bu = new ActionRowBuilder()
             let emoji = ["Back", "Next", "Skip Forward", "Skip Back"]
             for(let i = 0; i < 4; i++) {
-                bu.addComponents(
-                    new Discord.MessageButton()
+                bu.addComponents([
+                    new ButtonBuilder()
                     .setCustomId(i.toString())
-                    .setStyle("PRIMARY")
+                    .setStyle(ButtonStyle.Primary)
                     .setLabel(emoji[i])
-                )
+                ])
             }
             let whyudo = 0
             let smt = await interaction.editReply({embeds: [embeds[0]], components: [bu]})

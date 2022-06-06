@@ -1,4 +1,4 @@
-const { SlashCommandBuilder } = require("@discordjs/builders")
+const { SlashCommandBuilder, EmbedBuilder } = require("discord.js")
 const levelsSchema = require("../schema/levels")
 const leaderboardSchema = require("../schema/leaderboard")
 
@@ -371,7 +371,7 @@ module.exports = {
             if (finaltext.length > 4000) {
                 finaltext = `This profile has too many entries for it to be displayed, ${finalcount} to be exact.`
             }
-            var embed = new Discord.MessageEmbed()
+            var embed = new EmbedBuilder()
                 .setTitle("CUSTOM PROFILE")
                 .setDescription(finaltext)
                 .setFooter(`Final (weighted) score: ${Math.round(1000 * weightedScore) / 1000} points`)
