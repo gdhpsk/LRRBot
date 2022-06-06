@@ -17,17 +17,13 @@ module.exports = {
 
 	(async () => {
 		try {
-			if(process.env.ENV === "production") {
 				await rest.put(Routes.applicationCommands(CLIENT_ID), {
-					body: commands
+					body: commands.filter(e => !e.private)
 				})
-				console.log("Slash Commands worked (globally)");
-			} else {
 				await rest.put(Routes.applicationGuildCommands(CLIENT_ID, guildId), {
-					body: commands
+					body: commands.filter(e => e.private)
 				})
-				console.log("Slash Commands worked (locally)"); 
-			}
+				console.log("Slash Commands registered");
 		} catch (err) {
 			if(err) console.log(err)
 		}
