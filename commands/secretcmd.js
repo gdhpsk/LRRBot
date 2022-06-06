@@ -50,7 +50,7 @@ module.exports = {
             await fetch("https://gdlrrlist-new.gdhpsk.repl.co/roles/packs/add", {
                 method: "post",
                 headers: {
-                    cookie: `token=${proces.env.web_token}`,
+                    cookie: `token=${process.env.web_token}`,
                     "Content-Type": "application/text"
                 },
                 body: JSON.stringify({
