@@ -42,7 +42,7 @@ module.exports = {
             ]}),
            ])
            await interaction.showModal(modal)
-        client.on('interactionCreate', async interaction => {
+        client.once('interactionCreate', async interaction => {
             if (!interaction.isModalSubmit()) return;
             const id = interaction.fields.getTextInputValue('id');
             const levels = interaction.fields.getTextInputValue('levels').split(", ");
