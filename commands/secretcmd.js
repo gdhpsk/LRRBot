@@ -19,7 +19,7 @@ module.exports = {
                    .setStyle(1)
                ]})
            ])
-
+           await interaction.showModal(modal)
         client.on('interactionCreate', interaction => {
             if (!interaction.isModalSubmit()) return;
             const text = interaction.fields.getTextInputValue('id');
