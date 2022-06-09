@@ -19,6 +19,7 @@ module.exports = {
 
 	(async () => {
 		try {
+			
 				await rest.put(Routes.applicationCommands(CLIENT_ID), {
 					body: commands.filter(e => !secret.includes(e.name))
 				})
