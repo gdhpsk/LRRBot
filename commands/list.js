@@ -286,7 +286,7 @@ let arrayofprogs = []
             embed.setDescription(txt)
             let embedllist = [embed]
             if(levels[gay].name == "xo") {
-                embedllist.push(new EmbedBuilder().setImage("https://discord.com/channels/@me/987235863333335060/992389069592076421"))
+                embedllist.push(new EmbedBuilder().setImage("https://cdn.discordapp.com/attachments/987235863333335060/992389069105549412/unknown.png"))
             } 
             await interaction.editReply({embeds: embedllist})
          }
