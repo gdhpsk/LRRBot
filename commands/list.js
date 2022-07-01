@@ -288,7 +288,7 @@ let arrayofprogs = []
             if(levels[gay].name == "xo") {
                 embedllist.push(new EmbedBuilder().setImage("https://discord.com/channels/@me/987235863333335060/992389069592076421"))
             } 
-            await interaction.editReply({embeds: embed})
+            await interaction.editReply({embeds: embedllist})
          }
     }
         }
