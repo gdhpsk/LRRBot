@@ -284,7 +284,11 @@ let arrayofprogs = []
             embed.setURL(`https://www.youtube.com/watch?v=${levels[gay].ytcode}`)
             embed.setImage(`https://i.ytimg.com/vi/${levels[gay].ytcode}/mqdefault.jpg`)
             embed.setDescription(txt)
-            await interaction.editReply({embeds: [embed]})
+            let embedllist = [embed]
+            if(levels[gay].name == "xo") {
+                embedllist.push(new EmbedBuilder().setImage("https://discord.com/channels/@me/987235863333335060/992389069592076421"))
+            } 
+            await interaction.editReply({embeds: embed})
          }
     }
         }
