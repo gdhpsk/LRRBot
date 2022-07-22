@@ -206,7 +206,7 @@ module.exports = {
                 //     })
                 // })
                 return message.reply({content: `You have ended the roulette at ${number}% on ${object[object.length-1].percent}! Thanks for playing :)`, embeds: [embed]})
-            }
+            } 
             var ikl = false
             if(args[0] == "start" && !object) {
                 ikl = true
