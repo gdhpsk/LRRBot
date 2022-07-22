@@ -100,7 +100,7 @@ module.exports = {
             var object = real?.levels 
         var obj = real?.percent
         var config = real?.config
-        if(!levels && args[0] != "start" && args[0] != "join") return message.reply("Please start a roulette!")
+        if(!object && args[0] != "start" && args[0] != "join") return message.reply("Please start a roulette!")
             var karthik;
             var g;
             var deez;
