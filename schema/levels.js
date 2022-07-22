@@ -6,6 +6,7 @@ var levelsSchema = new mongoose.Schema({
     "ytcode": String,
     "formerRank": Number,
     "removalDate": String,
+    percent: Number,
     "minimumPercent": Number,
     "publisher": String,
     list: Array,
