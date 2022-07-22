@@ -223,7 +223,7 @@ module.exports = {
                     if(!buttonclick.isButton()) return;
                     if(smt.id != buttonclick.message.id) return
                     console.log(buttonclick.message)
-                    if(message.author.id != buttonclick.message.author.id) return;
+                    if(message.author.id != buttonclick.message.mentions.users.first().id) return;
                     switch (buttonclick.customId) {
                         case "main": 
                             if(arr.includes("main")) {
