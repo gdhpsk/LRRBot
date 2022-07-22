@@ -308,7 +308,7 @@ module.exports = {
                                     karthik[karthik.length] = levelinfo
                                     config.levels.splice(random, 1)
                                    
-                                    await roulette.findOneAndUpdate({name: real.user}, real)
+                                    await roulette.findOneAndUpdate({user: real.user}, real)
                                     // message.client.guilds.fetch("904222136661577758").then(guild => {
                                     //     guild.channels.fetch("904222137278169099").then(async msg => {
                                     //         msg.send(JSON.stringify(real))
@@ -334,7 +334,7 @@ module.exports = {
                 let int = args[0] != "skip" ? parseInt(args[0]) : g[g.length-1].percent
                 if(config) {
                     if(config.levels.length == 0) {
-                    roulette.findOneAndDelete({name: real.user})
+                    roulette.findOneAndDelete({user: real.user})
                     // message.client.guilds.fetch("904222136661577758").then(guild => {
                     //     guild.channels.fetch("904222137278169099").then(msg => {
                     //         msg.send(JSON.stringify(real))
@@ -344,7 +344,7 @@ module.exports = {
                     }
                 }
                 if(parseInt(args[0]) == 100 && object) {
-                    roulette.findOneAndDelete({name: real.user})
+                    roulette.findOneAndDelete({user: real.user})
                     // message.client.guilds.fetch("904222136661577758").then(guild => {
                     //     guild.channels.fetch("904222137278169099").then(msg => {
                     //         msg.send(JSON.stringify(real))
