@@ -281,7 +281,9 @@ module.exports = {
                                 }
                             }
                             random = Math.floor(Math.random() * objoflevels.length-1)
-                            real = await roulette.create({user: message.author.id})
+                            real = await roulette.create({user: message.author.id, config: {
+                                levels: objoflevels
+                            }})
                             config = {
                                 levels: objoflevels
                             }
@@ -304,8 +306,8 @@ module.exports = {
                                     .setImage(`https://i.ytimg.com/vi/${levelinfo.ytcode}/mqdefault.jpg`)
                                     .setURL(`https://www.youtube.com/watch?v=${levelinfo.ytcode}`)
                                     message.reply({embeds: [embed]})
-                                    g[g.length] = number
                                     karthik[karthik.length] = levelinfo
+                                    karthik[karthik.length].percent = number
                                     config.levels.splice(random, 1)
                                    
                                     await roulette.findOneAndUpdate({user: real.user}, real)
@@ -359,7 +361,7 @@ module.exports = {
                 karthik = object
                 g = obj
                 levels = config
-                let levelinfo = await levelsSchema.findOne({name: config.levels[random]})
+                let levelinfo = await levelsSchema.findOne({name: levels[random]})
             for(let i = 0; i < levels.length; i++) {
             if(!karthik.includes(levels[random])) {
                 const embed = new Discord.EmbedBuilder() 
