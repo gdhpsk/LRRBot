@@ -5,6 +5,7 @@ var schema = new mongoose.Schema({
     ytcode: String,
     minimumPercent: Number,
     publisher: String,
+    percent: Number,
     list: Array,
     progresses: Array
 })

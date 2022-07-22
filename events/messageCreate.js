@@ -306,8 +306,8 @@ module.exports = {
                                     .setImage(`https://i.ytimg.com/vi/${levelinfo.ytcode}/mqdefault.jpg`)
                                     .setURL(`https://www.youtube.com/watch?v=${levelinfo.ytcode}`)
                                     message.reply({embeds: [embed]})
+                                    levelinfo.percent = number
                                     real.levels[real.levels.length] = levelinfo
-                                    real.levels[real.levels.length].percent = number
                                     real.config.levels.splice(random, 1)
                                    
                                     await roulette.findOneAndUpdate({user: real.user}, real)
@@ -370,8 +370,8 @@ module.exports = {
                 .setImage(`https://i.ytimg.com/vi/${levelinfo.ytcode}/mqdefault.jpg`)
                 .setURL(`https://www.youtube.com/watch?v=${levelinfo.ytcode}`)
                 message.reply({embeds: [embed]})
+                levelinfo.percent = number
                 karthik[karthik.length] = levelinfo
-                karthik[karthik.length].percent = number
                 config.levels.splice(random, 1)
                
                 await roulette.findOneAndUpdate({user: real.user}, real)
