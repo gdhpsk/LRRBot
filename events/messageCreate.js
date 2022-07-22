@@ -295,7 +295,7 @@ module.exports = {
                             ]
                             g = obj
                             number = 1
-                            let levelinfo = await roulette.findOne({name: config.levels[random]})
+                            let levelinfo = await levelsSchema.findOne({name: config.levels[random]})
                             // for(let i = 0; i < Object.keys(levels).length; i++) {
                                 // if(!karthik.includes(levels[random])) {
                                     const embed = new Discord.EmbedBuilder() 
@@ -308,7 +308,7 @@ module.exports = {
                                     karthik[karthik.length] = levelinfo
                                     config.levels.splice(random, 1)
                                    
-                                    await roulette.findOneAndReplace({name: real.user}, real)
+                                    await roulette.findOneAndUpdate({name: real.user}, real)
                                     // message.client.guilds.fetch("904222136661577758").then(guild => {
                                     //     guild.channels.fetch("904222137278169099").then(async msg => {
                                     //         msg.send(JSON.stringify(real))
