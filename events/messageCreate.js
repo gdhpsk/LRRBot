@@ -187,7 +187,7 @@ module.exports = {
             j += `#${i+1} - ${karthik[i]} ${g[i]}% (#${Object.keys(lev.reduce(function(acc, cur, i) {
                 acc[lev[i].name] = cur;
                 return acc;
-              }, {})).indexOf(karthik[i])+1}, you got ${g[i+1]-1}%)\n`
+              }, {})).indexOf(karthik[i].name)+1}, you got ${karthik[i+1].percent-1}%)\n`
         }
         if(j.length == 0) {
             j = "No levels were done in this roulette."
@@ -198,7 +198,7 @@ module.exports = {
         const embed = new Discord.EmbedBuilder()
         .setTitle(`Score: ${karthik.length-1}`)
         .setDescription(j)
-                number = karthik[karthik.length-1].percent
+                number = karthik[karthik.length-1]?.percent ?? 1
                 await roulette.findOneAndDelete({name: real.user})
                 // message.client.guilds.fetch("904222136661577758").then(guild => {
                 //     guild.channels.fetch("904222137278169099").then(msg => {
@@ -222,7 +222,6 @@ module.exports = {
                 message.client.on("interactionCreate", async(buttonclick) => {
                     if(!buttonclick.isButton()) return;
                     if(smt.id != buttonclick.message.id) return
-                    console.log(buttonclick.message)
                     if(message.author.id != buttonclick.message.mentions.users.first().id) return;
                     switch (buttonclick.customId) {
                         case "main": 
@@ -266,7 +265,6 @@ module.exports = {
                              if(arr.length == 0) {
                                  arr = ["main", "extended", "legacy"]
                              }
-                             console.log(arr)
                              if(arr.includes("main")) {
                                  for(let i = 0; i < 75; i++) {
                                      objoflevels.push(Object.values(levels)[i].name)
@@ -301,7 +299,7 @@ module.exports = {
                             // for(let i = 0; i < Object.keys(levels).length; i++) {
                                 // if(!karthik.includes(levels[random])) {
                                     const embed = new Discord.EmbedBuilder() 
-                                    .setTitle(`#${levelinfo.minimumPercent} - ${levelinfo.name} by ${levelnifo.publisher}`)
+                                    .setTitle(`#${levelinfo.minimumPercent} - ${levelinfo.name} by ${levelinfo.publisher}`)
                                     .setDescription(`You have to get ${number}%`)
                                     .setImage(`https://i.ytimg.com/vi/${levelinfo.ytcode}/mqdefault.jpg`)
                                     .setURL(`https://www.youtube.com/watch?v=${levelinfo.ytcode}`)
