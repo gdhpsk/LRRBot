@@ -1,9 +1,17 @@
 var mongoose = require("mongoose")
 
+let rouletteLevelSchema = new mongoose.Schema({
+    name: String,
+    percent: Number,
+    ytcode: String,
+    publisher: String
+})
+
 var rouletteSchema = new mongoose.Schema({
-    levels: Object,
-    percent: Object,
-    config: Object 
+    levels: [rouletteLevelSchema],
+    user: String,
+    config: Object,
+    redirect: String
 })
 
 module.exports = mongoose.model("roulette", rouletteSchema)

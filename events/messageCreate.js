@@ -92,18 +92,15 @@ module.exports = {
             message.channel.send("Worked Successfully")
         }
         if(cmd == "roulette") {
-            var real = await roulette.findById("61ff7b2fbd245cb98f6579fd")
-            var object = real.levels 
-        var obj = real.percent
-        var config = real.config
-           /* message.client.guilds.fetch("904222136661577758").then(guild => {
-            guild.channels.fetch("904222137278169099").then(msg => {
-                msg.messages.fetch({ limit: 1 }).then(messages => {
-                    var last = messages.first().content
-                    require("../JSON/commands.json").array = JSON.parse(last)
-                })
-            })
-            })*/
+            if(message.author.id != "703364595321929730") return message.reply("Please wait, this roulette is having some backend changes and will open up soon ok :)")
+            let real = await roulette.findOne({user: message.author.id})
+            if(!real?.redirect) {
+                real = await roulette.findOne({user: real.redirect})
+            }
+            var object = real?.levels 
+        var obj = real?.percent
+        var config = real?.config
+        if(!levels && args[0] != "start" && args[0] != "join") return message.reply("Please start a roulette!")
             var karthik;
             var g;
             var deez;
@@ -115,12 +112,11 @@ module.exports = {
               }, {});
             var number = parseInt(args[0])+1
             var random //= Math.floor(Math.random() * Object.keys(levels).length-1)
-            if(config[message.author.id]) { 
-                random = Math.floor(Math.random() * Object.keys(config[message.author.id]).length-1)
+            if(config) { 
+                random = Math.floor(Math.random() * config.levels.length-1)
             }
-            if(!args[0]) return message.reply("Please input the percentage you got. If you haven't started a roulette, start one by doing the command \"..roulette start\"");
-            if(!object[message.author.id] && args[0] != "start" && args[0] != "join") return message.reply("Please start a roulette!")
-            if(isNaN(parseInt(args[0])) && args[0] != "start" && args[0] != "end" && args[0] != "score" && args[0] != "join") return message.reply("Please input a valid number");
+            if(!args[0]) return message.reply("Please input a valid argument! Valid args are: 'start', 'end', 'score', 'join', 'skip', and a percentage number.");
+            if(isNaN(parseInt(args[0])) && args[0] != "start" && args[0] != "end" && args[0] != "score" && args[0] != "join" && args[0] != "skip") return message.reply("Please input a valid number");
         /*if(args[0] != "end") {
             if(!object[message.author.id]) {
                 object[message.author.id] = [
@@ -132,6 +128,10 @@ module.exports = {
             }
         }*/
         if(args[0] == "join") {
+            let exists = await roulette.findOne({user: message.author.id})
+            if(exists) {
+                return message.reply("Please stop your current session if you want to join this one!")
+            }
             if(!args[1]) {
                 return message.reply("Who's roulette do you want to join? Type the User ID/ping the user")
             }
@@ -139,11 +139,12 @@ module.exports = {
                 if(message.guild.members.cache.get(args[1])) {
                     const id = message.author.id
                     message.channel.send(`<@${message.guild.members.cache.find(user => user.id === args[1]).id}>, do you want <@${id}> to join your roulette?`)
-                    const filter = m => m.author.id === message.guild.members.cache.find(user => user.id == args[1]).id;
+                    const filter = m => m.author.id === message.guild.members.cache.find(user => user.id == args[1]).id && m.channel.id == message.channel.id;
                     const collector = message.channel.createMessageCollector({filter});
                     collector.on("collect", msg => {
                         if(!msg.author.bot) {
                         if(msg.content.toLowerCase() == "yes") {
+                            real = await roulette.create({user: message.author.id, redirect: args[1]})
                              msg.channel.send(`<@${id}>, This person has approved your request`)
                             collector.stop()
                         } else if(msg.content.toLowerCase() == "no") {
@@ -160,18 +161,33 @@ module.exports = {
                 }
             } else {
                 if(message.client.users.cache.find(user => user.id == message.mentions.users.first().id)) {
-                    return message.reply("You have joined this roulette")
+                    const id = message.author.id
+                    message.channel.send(`<@${message.guild.members.cache.find(user => user.id === args[1]).id}>, do you want <@${id}> to join your roulette?`)
+                    const filter = m => m.author.id === message.guild.members.cache.find(user => user.id == args[1]).id && m.channel.id == message.channel.id;
+                    const collector = message.channel.createMessageCollector({filter});
+                    collector.on("collect", msg => {
+                        if(!msg.author.bot) {
+                        if(msg.content.toLowerCase() == "yes") {
+                            real = await roulette.create({user: message.author.id, redirect: message.mentions.users.first().id})
+                             msg.channel.send(`<@${id}>, This person has approved your request`)
+                            collector.stop()
+                        } else if(msg.content.toLowerCase() == "no") {
+                            msg.channel.send(`<@${id}>, This person has declined your request`) 
+                            collector.stop()
+                        } else {
+                            return msg.channel.send("Send a valid response! (either yes or no)")
+                        }
+                    }
+                })
                 } else {
                     return message.reply("Please enter a valid user")
                 }
             }
         } else {
-        if(args[0] == "score" && !object[message.author.id]) {
-            return message.reply("Please start a roulette before you want to view your score!")
-       } else if(args[0] == "score" && object[message.author.id]) {
-           karthik = object[message.author.id]
-           g = obj[message.author.id]
-           levels = config[message.author.id]
+        if(args[0] == "score") {
+           karthik = object
+           g = obj
+           levels = config
            var j = ""
         for(let i = 0; i < karthik.length; i++) {
             var tt = ["", `, you got ${g[i+1]-1}%`]
@@ -192,13 +208,13 @@ module.exports = {
             .setTitle(`Score: ${karthik.length-1}`)
            return message.reply({embeds: [embedScore]})
     }
-    var objoflevels = {}
-            if(args[0] == "end" && !object[message.author.id]) {
+    var objoflevels = []
+            if(args[0] == "end" && !object) {
                  return message.reply("Please start a roulette before you want to end it!")
-            } else if(args[0] == "end" && object[message.author.id]) {
-                g = obj[message.author.id]
-                karthik = object[message.author.id]
-                levels = config[message.author.id]
+            } else if(args[0] == "end" && object) {
+                g = obj
+                karthik = object
+                levels = config
                 var j = ""
         for(let i = 0; i < karthik.length-1; i++) {
             j += `#${i+1} - ${karthik[i]} ${g[i]}% (#${Object.keys(lev.reduce(function(acc, cur, i) {
@@ -215,20 +231,17 @@ module.exports = {
         const embed = new Discord.EmbedBuilder()
         .setTitle(`Score: ${karthik.length-1}`)
         .setDescription(j)
-                number = g[g.length-1]
-                delete obj[message.author.id]
-                delete object[message.author.id]
-                delete config[message.author.id]
-                await roulette.findById("61ff7b2fbd245cb98f6579fd").updateMany(null, real)
+                number = karthik[karthik.length-1].percent
+                await roulette.findOneAndDelete({name: real.user})
                 // message.client.guilds.fetch("904222136661577758").then(guild => {
                 //     guild.channels.fetch("904222137278169099").then(msg => {
                 //         msg.send(JSON.stringify(real))
                 //     })
                 // })
-                return message.reply({content: `You have ended the roulette at ${number}% on ${karthik[karthik.length-1]}! Thanks for playing :)`, embeds: [embed]})
+                return message.reply({content: `You have ended the roulette at ${number}% on ${object[object.length-1].percent}! Thanks for playing :)`, embeds: [embed]})
             }
             var ikl = false
-            if(args[0] == "start" && !object[message.author.id]) {
+            if(args[0] == "start" && !object) {
                 ikl = true
                 let options = new Discord.ActionRowBuilder({components: [
                     new Discord.ButtonBuilder().setLabel("Main List").setCustomId("main").setStyle(Discord.ButtonStyle.Primary),
@@ -242,12 +255,13 @@ module.exports = {
                 message.client.on("interactionCreate", async(buttonclick) => {
                     if(!buttonclick.isButton()) return;
                     if(smt.id != buttonclick.message.id) return
+                    if(message.author.id != buttonclick.message.author.id) return;
                     switch (buttonclick.customId) {
                         case "main": 
                             if(arr.includes("main")) {
                                 arr = arr.filter(e => e != "main")
                             } else {
-                            arr.push("main")
+                                arr.push("main")
                             }
                             if(!newmsg) {
                                 newmsg = await buttonclick.message.reply({content: `Levels included have been updated: ${arr}`, ephemeral: true})
@@ -287,82 +301,68 @@ module.exports = {
                              console.log(arr)
                              if(arr.includes("main")) {
                                  for(let i = 0; i < 75; i++) {
-                                    Object.values(levels)[i].list = undefined
-                                    Object.values(levels)[i].progresses = undefined
-                                  Object.values(levels)[i]._id = undefined
-                                  Object.values(levels)[i].minimumPercent = i+1
-                                     objoflevels[Object.values(levels)[i].name] = Object.values(levels)[i]
+                                     objoflevels.push(Object.values(levels)[i].name)
                                  }
                              }
                              if(arr.includes("extended")) { 
                                 for(let i = 75; i < 150; i++) {
-                                    Object.values(levels)[i].list = undefined
-                                      Object.values(levels)[i].progresses = undefined
-                                    Object.values(levels)[i]._id = undefined
-                                    Object.values(levels)[i].minimumPercent = i+1
-                                    objoflevels[Object.values(levels)[i].name] = Object.values(levels)[i]
+                                    objoflevels.push(Object.values(levels)[i].name)
                                 }
                             }
                             if(arr.includes("legacy")) { 
                                 for(let i = 150; i < Object.keys(levels).indexOf("Final Epilogue")+1; i++) {
-                                    Object.values(levels)[i].list = undefined
-                                      Object.values(levels)[i].progresses = undefined
-                                    Object.values(levels)[i]._id = undefined
-                                    Object.values(levels)[i].minimumPercent = i+1
-                                    objoflevels[Object.values(levels)[i].name] = Object.values(levels)[i]
+                                    objoflevels.push(Object.values(levels)[i].name)
                                 }
                             }
-                            random = Math.floor(Math.random() * Object.keys(objoflevels).length-1)
-                            config[message.author.id] = objoflevels
-                            object[message.author.id] = [
+                            random = Math.floor(Math.random() * objoflevels.length-1)
+                            config.levels = objoflevels
+                            object = [
                                 
                             ] 
-                            levels = config[message.author.id]
-                            karthik = object[message.author.id]
-                            obj[message.author.id] = [
+                            levels = config
+                            karthik = object
+                            obj = [
                 
                             ]
-                            g = obj[message.author.id]
+                            g = obj
                             number = 1
-                            for(let i = 0; i < Object.keys(levels).length; i++) {
-                                if(!karthik.includes(Object.keys(levels)[random])) {
+                            let levelinfo = await roulette.findOne({name: config.levels[random]})
+                            // for(let i = 0; i < Object.keys(levels).length; i++) {
+                                // if(!karthik.includes(levels[random])) {
                                     const embed = new Discord.EmbedBuilder() 
-                                    .setTitle(`#${Object.values(objoflevels)[random].minimumPercent} - ${Object.keys(objoflevels)[random]} by ${Object.values(objoflevels)[random].publisher}`)
+                                    .setTitle(`#${levelinfo.minimumPercent} - ${levelinfo.name} by ${levelnifo.publisher}`)
                                     .setDescription(`You have to get ${number}%`)
-                                    .setImage(`https://i.ytimg.com/vi/${Object.values(objoflevels)[random].ytcode}/mqdefault.jpg`)
-                                    .setURL(`https://www.youtube.com/watch?v=${Object.values(objoflevels)[random].ytcode}`)
+                                    .setImage(`https://i.ytimg.com/vi/${levelinfo.ytcode}/mqdefault.jpg`)
+                                    .setURL(`https://www.youtube.com/watch?v=${levelinfo.ytcode}`)
                                     message.reply({embeds: [embed]})
                                     g[g.length] = number
-                                    karthik[karthik.length] = Object.keys(objoflevels)[random]
-                                    delete config[message.author.id][Object.keys(levels)[random]] 
+                                    karthik[karthik.length] = levelinfo
+                                    config.levels.splice(random, 1)
                                    
-                                    await roulette.findById("61ff7b2fbd245cb98f6579fd").updateMany(null, real)
+                                    await roulette.findOne({name: real.user}).updateMany(null, real)
                                     // message.client.guilds.fetch("904222136661577758").then(guild => {
                                     //     guild.channels.fetch("904222137278169099").then(async msg => {
                                     //         msg.send(JSON.stringify(real))
                                     //     })
                                     // })
                                     break;
-                                } else {
-                                    random = Math.floor(Math.random() * Object.keys(config[message.author.id]).length-1)
-                                    continue;
-                                }
-                            }
+                            //     } else {
+                            //         random = Math.floor(Math.random() * Object.keys(config[message.author.id]).length-1)
+                            //         continue;
+                            //     }
+                            // }
                             break;
                     }
                 })
                 // number = 1
             } else {
-                g = obj[message.author.id]
-                if(args[0] == "start" && object[message.author.id]) return message.reply("You already have an instance of a roulette! Use ..roulette end to end your current session.")
+                g = object
+                if(args[0] == "start" && object) return message.reply("You already have an instance of a roulette! Use ..roulette end to end your current session.")
                 if(parseInt(args[0]) < 0) return message.reply("Please input a valid whole number!");
                 if(parseInt(args[0]) >= 101) return message.reply("Please input a percentage below 101%");
-                if(config[message.author.id]) {
-                    if(Object.keys(config[message.author.id]).length == 0) {
-                        delete object[message.author.id]
-                    delete obj[message.author.id]
-                    delete config[message.author.id]
-                    await roulette.findById("61ff7b2fbd245cb98f6579fd").updateMany(null, real)
+                if(config) {
+                    if(config.levels.length == 0) {
+                    roulette.findOneAndDelete({name: real.user})
                     // message.client.guilds.fetch("904222136661577758").then(guild => {
                     //     guild.channels.fetch("904222137278169099").then(msg => {
                     //         msg.send(JSON.stringify(real))
@@ -371,11 +371,8 @@ module.exports = {
                     return message.reply("Congratulations, you've completed the lrr roulette! Now quit gd smh")
                     }
                 }
-                if(parseInt(args[0]) == 100 && object[message.author.id]) {
-                    delete object[message.author.id]
-                    delete obj[message.author.id]
-                    delete config[message.author.id]
-                    await roulette.findById("61ff7b2fbd245cb98f6579fd").updateMany(null, real)
+                if(parseInt(args[0]) == 100 && object) {
+                    roulette.findOneAndDelete({name: real.user})
                     // message.client.guilds.fetch("904222136661577758").then(guild => {
                     //     guild.channels.fetch("904222137278169099").then(msg => {
                     //         msg.send(JSON.stringify(real))
@@ -383,25 +380,27 @@ module.exports = {
                     // })
                     return message.reply("Congratulations, you've completed the lrr roulette! Now quit gd smh")
                 }
-                if(parseInt(args[0]) < g[g.length-1]) return message.reply(`Please input a percentage above ${g.length == 1 ? 0 : g[g.length-1]-1}%!`)
+                if(parseInt(args[0]) < g[g.length-1].percent) return message.reply(`Please input a percentage above ${g.length == 1 ? 0 : g[g.length-1].percent-1}%!`)
                
             }
-            if(object[message.author.id] && !ikl) {
-                karthik = object[message.author.id]
-                g = obj[message.author.id]
-                levels = config[message.author.id]
+            if(object && !ikl) {
+                karthik = object
+                g = obj
+                levels = config
+                let levelinfo = await levelsSchema.findOne({name: config.levels[random]})
             for(let i = 0; i < Object.keys(levels).length; i++) {
             if(!karthik.includes(Object.keys(levels)[random])) {
                 const embed = new Discord.EmbedBuilder() 
-                .setTitle(`#${Object.values(levels)[random].minimumPercent} - ${Object.keys(levels)[random]} by ${Object.values(levels)[random].publisher}`)
+                .setTitle(`#${levelinfo.minimumPercent} - ${levelinfo.name} by ${levelinfo.publisher}`)
                 .setDescription(`You have to get ${number}%`)
-                .setImage(`https://i.ytimg.com/vi/${Object.values(levels)[random].ytcode}/mqdefault.jpg`)
-                .setURL(`https://www.youtube.com/watch?v=${Object.values(levels)[random].ytcode}`)
+                .setImage(`https://i.ytimg.com/vi/${levelinfo.ytcode}/mqdefault.jpg`)
+                .setURL(`https://www.youtube.com/watch?v=${levelinfo.ytcode}`)
                 message.reply({embeds: [embed]})
-                g[g.length] = number
-                karthik[karthik.length] = Object.keys(levels)[random]
-                delete config[message.author.id][Object.keys(levels)[random]]
-                await roulette.findById("61ff7b2fbd245cb98f6579fd").updateMany(null, real)
+                karthik[karthik.length] = levelinfo
+                karthik[karthik.length].percent = number
+                config.levels.splice(random, 1)
+               
+                await roulette.findOne({name: real.user}).updateMany(null, real)
                 // message.client.guilds.fetch("904222136661577758").then(guild => {
                 //     guild.channels.fetch("904222137278169099").then(async msg => {
                 //         msg.send(JSON.stringify(real))
@@ -409,11 +408,11 @@ module.exports = {
                 // })
                 break;
             } else {
-                random = Math.floor(Math.random() * Object.keys(config[message.author.id]).length-1)
+                random = Math.floor(Math.random() * config.levels.length-1)
                 continue;
             }
         } 
-    } else if(!object[message.author.id] && !ikl) {
+    } else if(!object && !ikl) {
         message.reply("Please start the roulette!")
     }
         } 
