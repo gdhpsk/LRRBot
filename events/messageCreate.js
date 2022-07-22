@@ -372,7 +372,7 @@ module.exports = {
                 karthik[karthik.length].percent = number
                 config.levels.splice(random, 1)
                
-                await roulette.findOne({name: real.user}).updateMany(null, real)
+                await roulette.findOneAndUpdate({user: real.user}, real)
                 // message.client.guilds.fetch("904222136661577758").then(guild => {
                 //     guild.channels.fetch("904222137278169099").then(async msg => {
                 //         msg.send(JSON.stringify(real))
