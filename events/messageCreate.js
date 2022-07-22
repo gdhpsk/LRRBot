@@ -171,7 +171,7 @@ module.exports = {
             j = `Levels: ${karthik.length}\nWorking on: ${karthik[karthik.length-1]} ${g[g.length-1].toString()}%`
         }
         var embedScore = new Discord.EmbedBuilder()
-            .setDescription(j)
+            .setDescription(j ?? null)
             .setTitle(`Score: ${karthik.length-1}`)
            return message.reply({embeds: [embedScore]})
     }
