@@ -157,12 +157,12 @@ module.exports = {
            levels = config
            var j = ""
         for(let i = 0; i < karthik.length; i++) {
-            var tt = ["", `, you got ${g[i+1]-1}%`]
+            var tt = ["", `, you got ${karthik[i+1].percent-1}%`]
             if(i == karthik.length-1) {
                 tt[0] = "(Currently working on) "
                 tt[1] = ""
             }
-            j += `#${i+1} - ${tt[0]}${karthik[i]} ${g[i]}% (#${Object.keys(lev.reduce(function(acc, cur, i) {
+            j += `#${i+1} - ${tt[0]}${karthik[i]} ${karthik[i].percent}% (#${Object.keys(lev.reduce(function(acc, cur, i) {
                 acc[lev[i].name] = cur;
                 return acc;
               }, {})).indexOf(karthik[i])+1}${tt[1]})\n`
