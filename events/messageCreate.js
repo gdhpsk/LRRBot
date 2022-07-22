@@ -306,9 +306,9 @@ module.exports = {
                                     .setImage(`https://i.ytimg.com/vi/${levelinfo.ytcode}/mqdefault.jpg`)
                                     .setURL(`https://www.youtube.com/watch?v=${levelinfo.ytcode}`)
                                     message.reply({embeds: [embed]})
-                                    karthik[karthik.length] = levelinfo
-                                    karthik[karthik.length].percent = number
-                                    config.levels.splice(random, 1)
+                                    real.levels[real.levels.length] = levelinfo
+                                    real.levels[real.levels.length].percent = number
+                                    real.config.levels.splice(random, 1)
                                    
                                     await roulette.findOneAndUpdate({user: real.user}, real)
                                     // message.client.guilds.fetch("904222136661577758").then(guild => {
