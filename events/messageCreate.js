@@ -141,7 +141,7 @@ module.exports = {
                     message.channel.send(`<@${message.guild.members.cache.find(user => user.id === args[1]).id}>, do you want <@${id}> to join your roulette?`)
                     const filter = m => m.author.id === message.guild.members.cache.find(user => user.id == args[1]).id && m.channel.id == message.channel.id;
                     const collector = message.channel.createMessageCollector({filter});
-                    collector.on("collect", msg => {
+                    collector.on("collect", async msg => {
                         if(!msg.author.bot) {
                         if(msg.content.toLowerCase() == "yes") {
                             real = await roulette.create({user: message.author.id, redirect: args[1]})
@@ -165,7 +165,7 @@ module.exports = {
                     message.channel.send(`<@${message.guild.members.cache.find(user => user.id === args[1]).id}>, do you want <@${id}> to join your roulette?`)
                     const filter = m => m.author.id === message.guild.members.cache.find(user => user.id == args[1]).id && m.channel.id == message.channel.id;
                     const collector = message.channel.createMessageCollector({filter});
-                    collector.on("collect", msg => {
+                    collector.on("collect", async msg => {
                         if(!msg.author.bot) {
                         if(msg.content.toLowerCase() == "yes") {
                             real = await roulette.create({user: message.author.id, redirect: message.mentions.users.first().id})
