@@ -283,6 +283,7 @@ module.exports = {
                                 }
                             }
                             random = Math.floor(Math.random() * objoflevels.length-1)
+                            real = await roulette.create({user: message.author.id})
                             config.levels = objoflevels
                             object = [
                                 
