@@ -94,7 +94,7 @@ module.exports = {
         if(cmd == "roulette") {
             if(message.author.id != "703364595321929730") return message.reply("Please wait, this roulette is having some backend changes and will open up soon ok :)")
             let real = await roulette.findOne({user: message.author.id})
-            if(!real?.redirect) {
+            if(real?.redirect) {
                 real = await roulette.findOne({user: real.redirect})
             }
             var object = real?.levels 
