@@ -162,10 +162,10 @@ module.exports = {
                 tt[0] = "(Currently working on) "
                 tt[1] = ""
             }
-            j += `#${i+1} - ${tt[0]}${karthik[i]} ${karthik[i].percent}% (#${Object.keys(lev.reduce(function(acc, cur, i) {
+            j += `#${i+1} - ${tt[0]}${karthik[i].name} ${karthik[i].percent}% (#${Object.keys(lev.reduce(function(acc, cur, i) {
                 acc[lev[i].name] = cur;
                 return acc;
-              }, {})).indexOf(karthik[i])+1}${tt[1]})\n`
+              }, {})).indexOf(karthik[i].name)+1}${tt[1]})\n`
         }
         if(j.length > 4000) {
             j = `Levels: ${karthik.length}\nWorking on: ${karthik[karthik.length-1]} ${g[g.length-1].toString()}%`
