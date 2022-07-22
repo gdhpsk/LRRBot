@@ -157,7 +157,7 @@ module.exports = {
            levels = config
            var j = ""
         for(let i = 0; i < karthik.length; i++) {
-            var tt = ["", `, you got ${karthik[i+1].percent-1}%`]
+            var tt = ["", `, you got ${karthik[i+1]?.percent-1}%`]
             if(i == karthik.length-1) {
                 tt[0] = "(Currently working on) "
                 tt[1] = ""
