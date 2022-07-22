@@ -100,7 +100,7 @@ module.exports = {
             var object = real?.levels 
         var obj = real?.percent
         var config = real?.config
-        if(!object && args[0] != "start" && args[0] != "join") return message.reply("Please start a roulette!")
+        if(!object && args[0] != "start" && args[0] != "invite") return message.reply("Please start a roulette!")
             var karthik;
             var g;
             var deez;
@@ -115,8 +115,8 @@ module.exports = {
             if(config) { 
                 random = Math.floor(Math.random() * config.levels.length-1)
             }
-            if(!args[0]) return message.reply("Please input a valid argument! Valid args are: 'start', 'end', 'score', 'join', 'skip', and a percentage number.");
-            if(isNaN(parseInt(args[0])) && args[0] != "start" && args[0] != "end" && args[0] != "score" && args[0] != "join" && args[0] != "skip") return message.reply("Please input a valid number");
+            if(!args[0]) return message.reply("Please input a valid argument! Valid args are: 'start', 'end', 'score', 'invite', 'skip', and a percentage number.");
+            if(isNaN(parseInt(args[0])) && args[0] != "start" && args[0] != "end" && args[0] != "score" && args[0] != "invite" && args[0] != "skip") return message.reply("Please input a valid number");
         /*if(args[0] != "end") {
             if(!object[message.author.id]) {
                 object[message.author.id] = [
@@ -127,58 +127,25 @@ module.exports = {
                 karthik = object[message.author.id]
             }
         }*/
-        if(args[0] == "join") {
+        if(args[0] == "invite") {
             let exists = await roulette.findOne({user: message.author.id})
-            if(exists) {
-                return message.reply("Please stop your current session if you want to join this one!")
+            if(!exists) {
+                return message.reply("Please start a session before inviting anyone!")
             }
             if(!args[1]) {
-                return message.reply("Who's roulette do you want to join? Type the User ID/ping the user")
+                return message.reply("What user do you want to invite to your roulette? Type the User ID/ping the user")
             }
             if(!message.mentions.users.first()) {
                 if(message.guild.members.cache.get(args[1])) {
-                    const id = message.author.id
-                    message.channel.send(`<@${message.guild.members.cache.find(user => user.id === args[1]).id}>, do you want <@${id}> to join your roulette?`)
-                    const filter = m => m.author.id === message.guild.members.cache.find(user => user.id == args[1]).id && m.channel.id == message.channel.id;
-                    const collector = message.channel.createMessageCollector({filter});
-                    collector.on("collect", async msg => {
-                        if(!msg.author.bot) {
-                        if(msg.content.toLowerCase() == "yes") {
-                            real = await roulette.create({user: message.author.id, redirect: args[1]})
-                             msg.channel.send(`<@${id}>, This person has approved your request`)
-                            collector.stop()
-                        } else if(msg.content.toLowerCase() == "no") {
-                            msg.channel.send(`<@${id}>, This person has declined your request`) 
-                            collector.stop()
-                        } else {
-                            return msg.channel.send("Send a valid response! (either yes or no)")
-                        }
-                    }
-                    })
+                         real = await roulette.create({user: message.author.id, redirect: args[1]})
+                         message.reply(`${message.guild.members.cache.get(args[1]).tag} has been added to your roulette.`)
                 } else {
-                    console.log(args[1])
                     return message.reply("Please enter a valid user ID")
                 }
             } else {
                 if(message.client.users.cache.find(user => user.id == message.mentions.users.first().id)) {
-                    const id = message.author.id
-                    message.channel.send(`<@${message.guild.members.cache.find(user => user.id === args[1]).id}>, do you want <@${id}> to join your roulette?`)
-                    const filter = m => m.author.id === message.guild.members.cache.find(user => user.id == args[1]).id && m.channel.id == message.channel.id;
-                    const collector = message.channel.createMessageCollector({filter});
-                    collector.on("collect", async msg => {
-                        if(!msg.author.bot) {
-                        if(msg.content.toLowerCase() == "yes") {
-                            real = await roulette.create({user: message.author.id, redirect: message.mentions.users.first().id})
-                             msg.channel.send(`<@${id}>, This person has approved your request`)
-                            collector.stop()
-                        } else if(msg.content.toLowerCase() == "no") {
-                            msg.channel.send(`<@${id}>, This person has declined your request`) 
-                            collector.stop()
-                        } else {
-                            return msg.channel.send("Send a valid response! (either yes or no)")
-                        }
-                    }
-                })
+                    real = await roulette.create({user: message.author.id, redirect: message.mentions.users.first().id})
+                    message.reply(`${message.client.users.cache.find(user => user.id == message.mentions.users.first().id).tag} has been added to your roulette.`)
                 } else {
                     return message.reply("Please enter a valid user")
                 }
@@ -358,8 +325,11 @@ module.exports = {
             } else {
                 g = object
                 if(args[0] == "start" && object) return message.reply("You already have an instance of a roulette! Use ..roulette end to end your current session.")
-                if(parseInt(args[0]) < 0) return message.reply("Please input a valid whole number!");
-                if(parseInt(args[0]) >= 101) return message.reply("Please input a percentage below 101%");
+                if(args[0] != "skip") {
+                    if(parseInt(args[0]) < 0) return message.reply("Please input a valid whole number!");
+                    if(parseInt(args[0]) >= 101) return message.reply("Please input a percentage below 101%");
+                }
+                let int = args[0] != "skip" ? parseInt(args[0]) : g[g.length-1].percent
                 if(config) {
                     if(config.levels.length == 0) {
                     roulette.findOneAndDelete({name: real.user})
@@ -380,7 +350,7 @@ module.exports = {
                     // })
                     return message.reply("Congratulations, you've completed the lrr roulette! Now quit gd smh")
                 }
-                if(parseInt(args[0]) < g[g.length-1].percent) return message.reply(`Please input a percentage above ${g.length == 1 ? 0 : g[g.length-1].percent-1}%!`)
+                if(int < g[g.length-1].percent) return message.reply(`Please input a percentage above ${g.length == 1 ? 0 : g[g.length-1].percent-1}%!`)
                
             }
             if(object && !ikl) {
