@@ -334,8 +334,8 @@ module.exports = {
                     if(parseInt(args[0]) >= 101) return message.reply("Please input a percentage below 101%");
                 }
                 let int = args[0] != "skip" ? parseInt(args[0]) : g[g.length-1].percent
-                if(config) {
-                    if(config.levels.length == 0) {
+                if(real?.config) {
+                    if(real?.config.levels.length == 0) {
                     roulette.findOneAndDelete({user: real.user})
                     // message.client.guilds.fetch("904222136661577758").then(guild => {
                     //     guild.channels.fetch("904222137278169099").then(msg => {
@@ -354,7 +354,7 @@ module.exports = {
                     // })
                     return message.reply("Congratulations, you've completed the lrr roulette! Now quit gd smh")
                 }
-                if(int < g[g.length-1]?.percent ?? 1) return message.reply(`Please input a percentage above ${g.length == 1 ? 0 : g[g.length-1]?.percent-1 ?? 1}%!`)
+                if(int < real.levels[real.levels.length-1]?.percent ?? 1) return message.reply(`Please input a percentage above ${g.length == 1 ? 0 : g[g.length-1]?.percent-1 ?? 1}%!`)
                
             }
             if(object && !ikl) {
