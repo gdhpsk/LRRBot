@@ -360,8 +360,8 @@ module.exports = {
                 g = obj
                 levels = config
                 let levelinfo = await levelsSchema.findOne({name: config.levels[random]})
-            for(let i = 0; i < Object.keys(levels).length; i++) {
-            if(!karthik.includes(Object.keys(levels)[random])) {
+            for(let i = 0; i < levels.length; i++) {
+            if(!karthik.includes(levels[random])) {
                 const embed = new Discord.EmbedBuilder() 
                 .setTitle(`#${levelinfo.minimumPercent} - ${levelinfo.name} by ${levelinfo.publisher}`)
                 .setDescription(`You have to get ${number}%`)
