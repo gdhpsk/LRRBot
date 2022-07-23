@@ -239,6 +239,7 @@ module.exports = {
                 message.client.on("interactionCreate", async(buttonclick) => {
                     if(!buttonclick.isButton()) return;
                     if(smt.id != buttonclick.message.id) return
+                    console.log(buttonclick)
                     if(message.author.id != buttonclick.message.mentions.users.first().id) return;
                     switch (buttonclick.customId) {
                         case "main": 
