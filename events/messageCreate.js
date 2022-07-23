@@ -137,6 +137,41 @@ module.exports = {
                 }
             }
         } else {
+
+            if(args[0] == "remove") {
+                if(!args[1]) {
+                    return message.reply("What user do you want to remove from your roulette? Type the User ID/ping the user")
+                }
+                let exists = await roulette.findOne({user: message.author.id})
+                if(!exists) {
+                    return message.reply("Please start a session before removing anyone!")
+                }
+                if(!message.mentions.users.first()) {
+                    if(message.guild.members.cache.get(args[1])) {
+                        try {
+                                await roulette.findOneAndDelete({user: message.author.id, redirect: args[1]})
+                             return message.reply(`${message.guild.members.cache.get(args[1]).tag} has been added to your roulette.`)
+                        } catch(_) {
+                            return message.reply(`${message.guild.members.cache.get(args[1]).tag} does not exist!`)
+                        }
+                    } else {
+                        return message.reply("Please enter a valid user ID")
+                    }
+                } else {
+                    if(message.client.users.cache.find(user => user.id == message.mentions.users.first().id)) {
+                        try {
+                            await roulette.findOneAndDelete({user: message.author.id, redirect: message.mentions.users.first().id})
+                         return message.reply(`${message.client.users.cache.find(user => user.id == message.mentions.users.first().id).tag} has been added to your roulette.`)
+                    } catch(_) {
+                        return message.reply(`${message.client.users.cache.find(user => user.id == message.mentions.users.first().id).tag} does not exist!`)
+                    }
+                    } else {
+                        return message.reply("Please enter a valid user")
+                    }
+                }
+                return
+            } 
+
         if(args[0] == "score") {
            var j = ""
         for(let i = 0; i < real.levels.length; i++) {
@@ -288,12 +323,12 @@ module.exports = {
                 let int = args[0] != "skip" ? parseInt(args[0]) : real.levels[real.levels.length-1].percent
                 if(real?.config) {
                     if(real?.config.levels.length == 0) {
-                    roulette.findOneAndDelete({user: real.user})
+                    await roulette.findOneAndDelete({user: real.user})
                     return message.reply("Congratulations, you've completed the lrr roulette! Now quit gd smh")
                     }
                 }
                 if(parseInt(args[0]) == 100 && real?.levels) {
-                    roulette.findOneAndDelete({user: real.user})
+                   await roulette.findOneAndDelete({user: real.user})
                     return message.reply("Congratulations, you've completed the lrr roulette! Now quit gd smh")
                 }
                 if(int < real.levels[real.levels.length-1]?.percent ?? 1) return message.reply(`Please input a percentage above ${real.levels.length == 1 ? 0 : real.levels[real.levels.length-1]?.percent-1 ?? 1}%!`)
