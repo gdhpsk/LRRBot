@@ -178,7 +178,7 @@ module.exports = {
     var objoflevels = []
             if(args[0] == "end" && !object) {
                  return message.reply("Please start a roulette before you want to end it!")
-            } else if(args[0] == "end" && object) {
+            } else if(args[0] == "end" && real?.levels) {
                 g = obj
                 karthik = object
                 levels = config
@@ -208,7 +208,7 @@ module.exports = {
                 return message.reply({content: `You have ended the roulette at ${number}% on ${object[object.length-1].percent}! Thanks for playing :)`, embeds: [embed]})
             } 
             var ikl = false
-            if(args[0] == "start" && !object) {
+            if(args[0] == "start" && !real?.start) {
                 ikl = true
                 let options = new Discord.ActionRowBuilder({components: [
                     new Discord.ButtonBuilder().setLabel("Main List").setCustomId("main").setStyle(Discord.ButtonStyle.Primary),
@@ -328,7 +328,7 @@ module.exports = {
                 // number = 1
             } else {
                 g = object
-                if(args[0] == "start" && object) return message.reply("You already have an instance of a roulette! Use ..roulette end to end your current session.")
+                if(args[0] == "start" && real?.levels) return message.reply("You already have an instance of a roulette! Use ..roulette end to end your current session.")
                 if(args[0] != "skip") {
                     if(parseInt(args[0]) < 0) return message.reply("Please input a valid whole number!");
                     if(parseInt(args[0]) >= 101) return message.reply("Please input a percentage below 101%");
@@ -345,7 +345,7 @@ module.exports = {
                     return message.reply("Congratulations, you've completed the lrr roulette! Now quit gd smh")
                     }
                 }
-                if(parseInt(args[0]) == 100 && object) {
+                if(parseInt(args[0]) == 100 && real?.levels) {
                     roulette.findOneAndDelete({user: real.user})
                     // message.client.guilds.fetch("904222136661577758").then(guild => {
                     //     guild.channels.fetch("904222137278169099").then(msg => {
@@ -357,7 +357,7 @@ module.exports = {
                 if(int < real.levels[real.levels.length-1]?.percent ?? 1) return message.reply(`Please input a percentage above ${g.length == 1 ? 0 : g[g.length-1]?.percent-1 ?? 1}%!`)
                
             }
-            if(object && !ikl) {
+            if(real?.levels && !ikl) {
                 karthik = object
                 g = obj
                 levels = config
@@ -386,7 +386,7 @@ module.exports = {
                 continue;
             }
         } 
-    } else if(!object && !ikl) {
+    } else if(!real?.levels && !ikl) {
         message.reply("Please start the roulette!")
     }
         } 
