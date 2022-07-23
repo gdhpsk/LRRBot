@@ -284,17 +284,26 @@ module.exports = {
                              }
                              if(arr.includes("main")) {
                                  for(let i = 0; i < 75; i++) {
-                                     objoflevels.push(Object.values(levels)[i].name)
+                                     objoflevels.push({
+                                        name: Object.values(levels)[i].name,
+                                        pos: Object.values(levels)[i]._id
+                                     })
                                  }
                              }
                              if(arr.includes("extended")) { 
                                 for(let i = 75; i < 150; i++) {
-                                    objoflevels.push(Object.values(levels)[i].name)
+                                    objoflevels.push({
+                                        name: Object.values(levels)[i].name,
+                                        pos: Object.values(levels)[i]._id
+                                     })
                                 }
                             }
                             if(arr.includes("legacy")) { 
                                 for(let i = 150; i < Object.keys(levels).indexOf("Final Epilogue")+1; i++) {
-                                    objoflevels.push(Object.values(levels)[i].name)
+                                    objoflevels.push({
+                                        name: Object.values(levels)[i].name,
+                                        pos: Object.values(levels)[i]._id
+                                     })
                                 }
                             }
                             random = Math.floor(Math.random() * objoflevels.length-1)
@@ -302,13 +311,16 @@ module.exports = {
                                 levels: objoflevels
                             }})
                             config = {
-                                levels: objoflevels
+                                levels: objoflevels,
+                                options: {
+                                    levels: arr
+                                }
                             }
                             
                             number = 1
-                            let levelinfo = await levelsSchema.findOne({name: config.levels[random]})
+                            let levelinfo = await levelsSchema.findOne({name: config.levels[random].name})
                                     const embed = new Discord.EmbedBuilder() 
-                                    .setTitle(`#${levelinfo?._id} - ${levelinfo.name} by ${levelinfo.publisher}`)
+                                    .setTitle(`#${real.config.levels[random].pos} - ${levelinfo.name} by ${levelinfo.publisher}`)
                                     .setDescription(`You have to get ${number}%`)
                                     .setImage(`https://i.ytimg.com/vi/${levelinfo.ytcode}/mqdefault.jpg`)
                                     .setURL(`https://www.youtube.com/watch?v=${levelinfo.ytcode}`)
@@ -387,9 +399,9 @@ module.exports = {
             }
             if(real?.levels && !ikl) {
                 number = args[0] != "skip" ? parseInt(args[0])+1 : real.levels[real.levels.length-1].percent+1
-                let levelinfo = await levelsSchema.findOne({name: real.config.levels[random]})
+                let levelinfo = await levelsSchema.findOne({name: real.config.levels[random].name})
                 const embed = new Discord.EmbedBuilder() 
-                .setTitle(`#${levelinfo?._id} - ${levelinfo.name} by ${levelinfo.publisher}`)
+                .setTitle(`#${real.config.levels[random].pos} - ${levelinfo.name} by ${levelinfo.publisher}`)
                 .setDescription(`You have to get ${number}%`)
                 .setImage(`https://i.ytimg.com/vi/${levelinfo.ytcode}/mqdefault.jpg`)
                 .setURL(`https://www.youtube.com/watch?v=${levelinfo.ytcode}`)
