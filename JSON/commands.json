@@ -91,8 +91,7 @@
                     "description": "Percentage for what you got on the level you were playing. [integer] needs to be a whole number. Example: ..roulette 8"
                 }
             ]
-        }
-    },
+        },
         "61plus": {
             "Optional Arguments": [
                 {
@@ -158,7 +157,8 @@
             "Required Arguments": [
                "none" 
             ]
-        },
+        }
+    },
     "array": {
         "levels": {
 
