@@ -398,7 +398,7 @@ module.exports = {
                 real.levels[real.levels.length-1].skipped = args[0] == "skip" ? true : false
                 real.levels[real.levels.length] = levelinfo
                 config.levels.splice(random, 1)
-               
+                
                 await roulette.findOneAndUpdate({user: real.user}, real)
     } else if(!real?.levels && !ikl) {
         message.reply("Please start the roulette!")
