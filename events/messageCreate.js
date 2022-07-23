@@ -340,8 +340,28 @@ module.exports = {
                     }
                 }
                 if(int > 99 && real?.levels) {
+                    var j = ""
+        for(let i = 0; i < real.levels.length-1; i++) {
+            let tt = ['']
+            if(real.levels[i].skipped) {
+                tt[0] = "(skipped) "
+            }
+            j += `#${i+1} - ${tt[0]}${real.levels[i].name} ${real.levels[i].percent}% (#${Object.keys(lev.reduce(function(acc, cur, i) {
+                acc[lev[i].name] = cur;
+                return acc;
+              }, {})).indexOf(real.levels[i].name)+1}, you got ${real.levels[i+1].percent-1}%)\n`
+        }
+        if(j.length == 0) {
+            j = "No levels were done in this roulette."
+        }
+        if(j.length > 4000) {
+            j = `Levels: ${real.levels.length}`
+        }
+        const embed = new Discord.EmbedBuilder()
+        .setTitle(`Score: ${real.levels.filter(e => !e.skipped).length-1}`)
+        .setDescription(j)
                    await roulette.findOneAndDelete({user: real.user})
-                    return message.reply("Congratulations, you've completed the lrr roulette! Now quit gd smh")
+                    return message.reply({content: "Congratulations, you've completed the lrr roulette! Now quit gd smh", embeds: [embed]})
                 }
                 if(int < real.levels[real.levels.length-1]?.percent ?? 1) return message.reply(`Please input a percentage above ${real.levels.length == 1 ? 0 : real.levels[real.levels.length-1]?.percent-1 ?? 1}%!`)
                
