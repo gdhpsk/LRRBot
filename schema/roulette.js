@@ -2,6 +2,7 @@ var mongoose = require("mongoose")
 
 let rouletteLevelSchema = new mongoose.Schema({
     _id: Number,
+    minimumPercent: Number,
     name: String,
     percent: Number,
     skipped: Boolean,
