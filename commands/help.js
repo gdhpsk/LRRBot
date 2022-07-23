@@ -17,7 +17,7 @@ module.exports = {
         if(!commandName) {
             var txt = ""
             for(let i = 0; i < commands.commandList.length; i++) {
-                txt += `${i+1}. \`/${commands.commandList[i].name}\` - ${commands.commandList[i].description}\n\n`
+                txt += `${i+1}. \`${commands.commandList[i].name}\` - ${commands.commandList[i].description}\n\n`
             }
             embed.setTitle("List of commands")
             embed.setFooter({text: "All commands are slash commands"})
@@ -58,7 +58,7 @@ module.exports = {
                             text += `\`${gay["Required Arguments"][i].name}\` - ${gay["Required Arguments"][i].description}\n\n`
                         }
                     }
-                    embed.setTitle(`/${commandName} command help`)
+                    embed.setTitle(`${commandName} command help`)
                     embed.setDescription(text)
                     interaction.reply({embeds: [embed]})
                 }

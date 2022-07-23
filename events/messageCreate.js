@@ -177,12 +177,15 @@ module.exports = {
         if(args[0] == "score") {
            var j = ""
         for(let i = 0; i < real.levels.length; i++) {
-            var tt = ["", `, you got ${real.levels[i+1]?.percent-1}%`]
+            var tt = ["", `, you got ${real.levels[i+1]?.percent-1}%`, '']
             if(i == real.levels.length-1) {
                 tt[0] = "(Currently working on) "
                 tt[1] = ""
             }
-            j += `#${i+1} - ${tt[0]}${real.levels[i].name} ${real.levels[i].percent}% (#${Object.keys(lev.reduce(function(acc, cur, i) {
+            if(real.levels[i].skipped) {
+                tt[2] = "(skipped) "
+            }
+            j += `#${i+1} - ${tt[2]}${tt[0]}${real.levels[i].name} ${real.levels[i].percent}% (#${Object.keys(lev.reduce(function(acc, cur, i) {
                 acc[lev[i].name] = cur;
                 return acc;
               }, {})).indexOf(real.levels[i].name)+1}${tt[1]})\n`
@@ -191,7 +194,7 @@ module.exports = {
             j = `Levels: ${real.levels.length}\nWorking on: ${real.levels[real.levels.length-1]} ${real.levels[real.levels.length-1].percent.toString()}%`
         }
         var embedScore = new Discord.EmbedBuilder()
-        .setTitle(`Score: ${real.levels.length-1}`)
+        .setTitle(`Score: ${real.levels.filter(e => !e.skipped).length-1}`)
             .setDescription(j || null)
            return message.reply({embeds: [embedScore]})
     }
@@ -203,7 +206,11 @@ module.exports = {
                 if(anotherOne?.redirect) return message.reply("You must be the original roulette starter in order to end this roulette!")
                 var j = ""
         for(let i = 0; i < real.levels.length-1; i++) {
-            j += `#${i+1} - ${real.levels[i].name} ${real.levels[i].percent}% (#${Object.keys(lev.reduce(function(acc, cur, i) {
+            let tt = ['']
+            if(real.levels[i].skipped) {
+                tt[0] = "(skipped) "
+            }
+            j += `#${i+1} - ${tt[0]}${real.levels[i].name} ${real.levels[i].percent}% (#${Object.keys(lev.reduce(function(acc, cur, i) {
                 acc[lev[i].name] = cur;
                 return acc;
               }, {})).indexOf(real.levels[i].name)+1}, you got ${real.levels[i+1].percent-1}%)\n`
@@ -215,7 +222,7 @@ module.exports = {
             j = `Levels: ${real.levels.length}`
         }
         const embed = new Discord.EmbedBuilder()
-        .setTitle(`Score: ${real.levels.length-1}`)
+        .setTitle(`Score: ${real.levels.filter(e => !e.skipped).length-1}`)
         .setDescription(j)
                 number = real.levels[real.levels.length-1]?.percent ?? 1
                 await roulette.findOneAndDelete({user: real.user})
@@ -347,6 +354,7 @@ module.exports = {
                 .setURL(`https://www.youtube.com/watch?v=${levelinfo.ytcode}`)
                 message.reply({embeds: [embed]})
                 levelinfo.percent = number
+                levelinfo.skipped = args[0] == "skip" ? true : false
                 real.levels[real.levels.length] = levelinfo
                 config.levels.splice(random, 1)
                

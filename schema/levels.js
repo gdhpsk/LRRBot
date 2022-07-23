@@ -7,6 +7,7 @@ var levelsSchema = new mongoose.Schema({
     "formerRank": Number,
     "removalDate": String,
     percent: Number,
+    skipped: Boolean,
     "minimumPercent": Number,
     "publisher": String,
     list: Array,

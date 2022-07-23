@@ -3,6 +3,7 @@ var mongoose = require("mongoose")
 let rouletteLevelSchema = new mongoose.Schema({
     name: String,
     percent: Number,
+    skipped: Boolean,
     ytcode: String,
     publisher: String
 })
