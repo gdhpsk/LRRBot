@@ -332,7 +332,7 @@ module.exports = {
                     if(parseInt(args[0]) < 0) return message.reply("Please input a valid whole number!");
                     if(parseInt(args[0]) >= 101) return message.reply("Please input a percentage below 101%");
                 }
-                let int = args[0] != "skip" ? parseInt(args[0]) : real.levels[real.levels.length-1].percent+1
+                let int = args[0] != "skip" ? parseInt(args[0])+1 : real.levels[real.levels.length-1].percent+1
                 if(real?.config) {
                     if(real?.config.levels.length == 0) {
                     await roulette.findOneAndDelete({user: real.user})
@@ -347,7 +347,7 @@ module.exports = {
                
             }
             if(real?.levels && !ikl) {
-                number = args[0] != "skip" ? parseInt(args[0]) : real.levels[real.levels.length-1].percent+1
+                number = args[0] != "skip" ? parseInt(args[0])+1 : real.levels[real.levels.length-1].percent+1
                 let levelinfo = await levelsSchema.findOne({name: real.config.levels[random]})
                 const embed = new Discord.EmbedBuilder() 
                 .setTitle(`#${levelinfo._id} - ${levelinfo.name} by ${levelinfo.publisher}`)
