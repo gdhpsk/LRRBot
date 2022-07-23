@@ -92,7 +92,6 @@ module.exports = {
             message.channel.send("Worked Successfully")
         }
         if(cmd == "roulette") {
-            if(message.author.id != "703364595321929730") return message.reply("Please wait, this roulette is having some backend changes and will open up soon ok :)")
             let real = await roulette.findOne({user: message.author.id})
             if(real?.redirect) {
                 real = await roulette.findOne({user: real.redirect})
@@ -200,6 +199,8 @@ module.exports = {
             if(args[0] == "end" && !real?.levels) {
                  return message.reply("Please start a roulette before you want to end it!")
             } else if(args[0] == "end" && real?.levels) {
+                let anotherOne = await roulette.findOne({user: message.author.id})
+                if(anotherOne?.redirect) return message.reply("You must be the original roulette starter in order to end this roulette!")
                 var j = ""
         for(let i = 0; i < real.levels.length-1; i++) {
             j += `#${i+1} - ${real.levels[i].name} ${real.levels[i].percent}% (#${Object.keys(lev.reduce(function(acc, cur, i) {
@@ -217,7 +218,7 @@ module.exports = {
         .setTitle(`Score: ${real.levels.length-1}`)
         .setDescription(j)
                 number = real.levels[real.levels.length-1]?.percent ?? 1
-                await roulette.findOneAndDelete({name: real.user})
+                await roulette.findOneAndDelete({user: real.user})
                 return message.reply({content: `You have ended the roulette at ${number}% on ${object[object.length-1].name}! Thanks for playing :)`, embeds: [embed]})
             } 
             var ikl = false
