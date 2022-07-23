@@ -62,34 +62,7 @@
                 }
             ],
             "Required Arguments":  [
-                {
-                    "name": "start",
-                    "description": "Lets you start a roulette, and choose what type of levels you want. Example: ..roulette start"
-                },
-                {
-                    "name": "end",
-                    "description": "Lets you end a roulette, and remove your session. Example: ..roulette end"
-                },
-                {
-                    "name": "score",
-                    "description": "Lets you see your score, and the levels you have done as well. Example: ..roulette score"
-                },
-                {
-                    "name": "invite [user]",
-                    "description": "Lets you invite a user to your roulette. [user] can be either a User ID or a Mention. Be mindful that once you invite this user, they can start using commands to change your roulette. Example: ..roulette invite 417030333834199042"
-                },
-                {
-                    "name": "skip",
-                    "description": "Lets you skip the level you were currently playing. Example: ..roulette skip"
-                },
-                {
-                    "name": "remove [user]",
-                    "description": "Lets you remove a user to your roulette, and therefore disallowing them from changing your roulette. [user] can be either a User ID or a Mention. Example: ..roulette remove 417030333834199042"
-                },
-                {
-                    "name": "[integer]",
-                    "description": "Percentage for what you got on the level you were playing. [integer] needs to be a whole number. Example: ..roulette 8"
-                }
+                "none"
             ]
         },
         "61plus": {
