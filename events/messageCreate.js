@@ -193,10 +193,10 @@ module.exports = {
             j = "No levels were done in this roulette."
         }
         if(j.length > 4000) {
-            j = `Levels: ${karthik.length}`
+            j = `Levels: ${real.levels.length}`
         }
         const embed = new Discord.EmbedBuilder()
-        .setTitle(`Score: ${karthik.length-1}`)
+        .setTitle(`Score: ${real.levels.length-1}`)
         .setDescription(j)
                 number = real.levels[real.levels.length-1]?.percent ?? 1
                 await roulette.findOneAndDelete({name: real.user})
