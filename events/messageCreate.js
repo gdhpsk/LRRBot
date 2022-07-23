@@ -150,6 +150,7 @@ module.exports = {
                     if(message.guild.members.cache.get(args[1])) {
                         try {
                                 await roulette.findOneAndDelete({user: message.author.id, redirect: args[1]})
+                                console.log(message.guild.members.cache.get(args[1]))
                                 let tag = `${message.guild.members.cache.get(args[1]).username}#${message.guild.members.cache.get(args[1]).discriminator}`
                              return message.reply(`${tag} has been removed from your roulette.`)
                         } catch(_) {
