@@ -106,7 +106,7 @@ module.exports = {
             var number = parseInt(args[0])+1
             var random
             if(real?.config) { 
-                random = Math.ciel(Math.random() * real.config.levels.length-1)
+                random = Math.ceil(Math.random() * real.config.levels.length-1)
             }
             if(!args[0]) return message.reply("Please input a valid argument! Valid args are: 'start', 'end', 'score', 'invite', 'skip', 'remove', and a percentage number.");
             if(isNaN(parseInt(args[0])) && args[0] != "start" && args[0] != "end" && args[0] != "score" && args[0] != "invite" && args[0] != "skip" && args[0] != "remove") return message.reply("Please input a valid number");
