@@ -395,7 +395,7 @@ module.exports = {
                 .setURL(`https://www.youtube.com/watch?v=${levelinfo.ytcode}`)
                 message.reply({embeds: [embed]})
                 levelinfo.percent = number
-                real.levels[real.levels.length-1].skipped = args[0] == "skip" ? true : false
+                levelinfo.skipped = args[0] == "skip" ? true : false
                 real.levels[real.levels.length] = levelinfo
                 config.levels.splice(random, 1)
                
