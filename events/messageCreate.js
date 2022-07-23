@@ -346,6 +346,7 @@ module.exports = {
                
             }
             if(real?.levels && !ikl) {
+                number = args[0] != "skip" ? parseInt(args[0]) : real.levels[real.levels.length-1].percent
                 let levelinfo = await levelsSchema.findOne({name: real.config.levels[random]})
                 const embed = new Discord.EmbedBuilder() 
                 .setTitle(`#${levelinfo._id} - ${levelinfo.name} by ${levelinfo.publisher}`)
@@ -354,7 +355,7 @@ module.exports = {
                 .setURL(`https://www.youtube.com/watch?v=${levelinfo.ytcode}`)
                 message.reply({embeds: [embed]})
                 levelinfo.percent = number
-                levelinfo.skipped = args[0] == "skip" ? true : false
+                real.levels[real.levels.length-1].skipped = args[0] == "skip" ? true : false
                 real.levels[real.levels.length] = levelinfo
                 config.levels.splice(random, 1)
                
