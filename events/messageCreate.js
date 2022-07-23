@@ -1,4 +1,4 @@
-const { ButtonStyle } = require("discord.js")
+const { ButtonStyle, ChannelType } = require("discord.js")
 var roulette = require("../schema/roulette")
 module.exports = {
     name: "messageCreate",
@@ -17,7 +17,7 @@ module.exports = {
             "795414646600368181"
         ]
         if(message.author.bot) return;
-        if(message.channel.type != "DM") {
+        if(message.channel.type != ChannelType.DM) {
             if(!allowedChannels.includes(message.channel.id)) return;
         }
         /*if(message.content == "..msg") { 
