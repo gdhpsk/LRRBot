@@ -97,7 +97,6 @@ module.exports = {
                 real = await roulette.findOne({user: real.redirect})
             }
             var object = real?.levels
-        var config = real?.config
         if(!real?.levels && args[0] != "start" && args[0] != "invite" && args[0] != "remove") return message.reply("Please start a roulette!")
             let lev = await levelsSchema.find()
             lev.sort((a, b) => a._id - b._id)
@@ -107,8 +106,8 @@ module.exports = {
               }, {});
             var number = parseInt(args[0])+1
             var random
-            if(config) { 
-                random = Math.floor(Math.random() * config.levels.length-1)
+            if(real?.config) { 
+                random = Math.floor(Math.random() * real.config.levels.length-1)
             }
             if(!args[0]) return message.reply("Please input a valid argument! Valid args are: 'start', 'end', 'score', 'invite', 'skip', 'remove', and a percentage number.");
             if(isNaN(parseInt(args[0])) && args[0] != "start" && args[0] != "end" && args[0] != "score" && args[0] != "invite" && args[0] != "skip" && args[0] != "remove") return message.reply("Please input a valid number");
@@ -240,7 +239,7 @@ module.exports = {
                     if(!buttonclick.isButton()) return;
                     if(smt.id != buttonclick.message.id) return
                     console.log(buttonclick)
-                    if(message.author.id != buttonclick.message.mentions.users.first().id) return;
+                    if(message.author.id != buttonclick.user.id) return;
                     switch (buttonclick.customId) {
                         case "main": 
                             if(arr.includes("main")) {
@@ -309,7 +308,10 @@ module.exports = {
                             }
                             random = Math.floor(Math.random() * objoflevels.length-1)
                             real = await roulette.create({user: message.author.id, config: {
-                                levels: objoflevels
+                                levels: objoflevels,
+                                options: {
+                                    levels: arr
+                                }
                             }})
                             config = {
                                 levels: objoflevels,
@@ -319,7 +321,7 @@ module.exports = {
                             }
                             
                             number = 1
-                            let levelinfo = await levelsSchema.findOne({name: config.levels[random].name})
+                            let levelinfo = await levelsSchema.findOne({name: real.config.levels[random].name})
                                     const embed = new Discord.EmbedBuilder() 
                                     .setTitle(`#${real.config.levels[random].pos} - ${levelinfo.name} by ${levelinfo.publisher}`)
                                     .setDescription(`You have to get ${number}%`)
@@ -410,7 +412,7 @@ module.exports = {
                 levelinfo.percent = number
                 real.levels[real.levels.length-1].skipped = args[0] == "skip" ? true : false
                 real.levels[real.levels.length] = levelinfo
-                config.levels.splice(random, 1)
+                real.config.levels.splice(random, 1)
                 
                 await roulette.findOneAndUpdate({user: real.user}, real)
     } else if(!real?.levels && !ikl) {
