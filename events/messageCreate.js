@@ -197,7 +197,7 @@ module.exports = {
             .setDescription(j || null)
            return message.reply({embeds: [embedScore]})
     }
-    var objoflevels = []
+    var objoflevels = [] 
             if(args[0] == "end" && !real?.levels) {
                  return message.reply("Please start a roulette before you want to end it!")
             } else if(args[0] == "end" && real?.levels) {
