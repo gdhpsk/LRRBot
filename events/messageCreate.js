@@ -363,7 +363,7 @@ module.exports = {
                 karthik = object
                 g = obj
                 levels = config
-                let levelinfo = await levelsSchema.findOne({name: levels[random]})
+                let levelinfo = await levelsSchema.findOne({name: real.config.levels[random]})
             // for(let i = 0; i < levels.length; i++) {
             // if(!real.levels.includes(levels[random])) {
                 const embed = new Discord.EmbedBuilder() 
