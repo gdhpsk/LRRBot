@@ -27,9 +27,21 @@ for(const file of eventFiles) {
 	const events = require(`./events/${file}`)
 
 	if(events.once) {
-		client.once(events.name, (...args) => events.execute(...args, commands))
+		client.once(events.name, (...args) => {
+			try {
+				events.execute(...args, commands)
+			} catch(_) {
+	
+			}
+		})
 	} else {
-		client.on(events.name, (...args) => events.execute(...args, commands))
+		client.on(events.name, (...args) => {
+		try {
+			events.execute(...args, commands)
+		} catch(_) {
+
+		}
+	})
 	}
 }
 
