@@ -350,7 +350,7 @@ module.exports = {
             j = `Levels: ${real.levels.length}`
         }
         const embed = new Discord.EmbedBuilder()
-        .setTitle(`Score: ${real.levels.filter(e => !e.skipped).length}`)
+        .setTitle(`Score: ${args[0] != "skip" ? real.levels.filter(e => !e.skipped).length : real.levels.filter(e => !e.skipped).length-1}`)
         .setDescription(j)
                     await roulette.findOneAndDelete({user: real.user})
                     return message.reply({content: "Congratulations, you've completed the lrr roulette! Now quit gd smh", embeds: [embed]})
@@ -377,7 +377,7 @@ module.exports = {
             j = `Levels: ${real.levels.length}`
         }
         const embed = new Discord.EmbedBuilder()
-        .setTitle(`Score: ${real.levels.filter(e => !e.skipped).length}`)
+        .setTitle(`Score: ${args[0] != "skip" ? real.levels.filter(e => !e.skipped).length : real.levels.filter(e => !e.skipped).length-1}`)
         .setDescription(j)
                    await roulette.findOneAndDelete({user: real.user})
                     return message.reply({content: "Congratulations, you've completed the lrr roulette! Now quit gd smh", embeds: [embed]})

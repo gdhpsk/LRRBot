@@ -30,16 +30,16 @@ for(const file of eventFiles) {
 		client.once(events.name, (...args) => {
 			try {
 				events.execute(...args, commands)
-			} catch(_) {
-	
+			} catch(e) {
+				console.log(e)
 			}
 		})
 	} else {
 		client.on(events.name, (...args) => {
 		try {
 			events.execute(...args, commands)
-		} catch(_) {
-
+		} catch(e) {
+			console.log(e)
 		}
 	})
 	}
