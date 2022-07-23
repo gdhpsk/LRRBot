@@ -327,7 +327,7 @@ module.exports = {
                 })
                 // number = 1
             } else {
-                g = object
+                g = real?.levels
                 console.log("Hello")
                 if(args[0] == "start" && real?.levels) return message.reply("You already have an instance of a roulette! Use ..roulette end to end your current session.")
                 if(args[0] != "skip") {
