@@ -301,7 +301,7 @@ module.exports = {
                             // for(let i = 0; i < Object.keys(levels).length; i++) {
                                 // if(!karthik.includes(levels[random])) {
                                     const embed = new Discord.EmbedBuilder() 
-                                    .setTitle(`#${levelinfo.minimumPercent} - ${levelinfo.name} by ${levelinfo.publisher}`)
+                                    .setTitle(`#${levelinfo._id} - ${levelinfo.name} by ${levelinfo.publisher}`)
                                     .setDescription(`You have to get ${number}%`)
                                     .setImage(`https://i.ytimg.com/vi/${levelinfo.ytcode}/mqdefault.jpg`)
                                     .setURL(`https://www.youtube.com/watch?v=${levelinfo.ytcode}`)
@@ -367,7 +367,7 @@ module.exports = {
             // for(let i = 0; i < levels.length; i++) {
             // if(!real.levels.includes(levels[random])) {
                 const embed = new Discord.EmbedBuilder() 
-                .setTitle(`#${levelinfo.minimumPercent} - ${levelinfo.name} by ${levelinfo.publisher}`)
+                .setTitle(`#${levelinfo._id} - ${levelinfo.name} by ${levelinfo.publisher}`)
                 .setDescription(`You have to get ${number}%`)
                 .setImage(`https://i.ytimg.com/vi/${levelinfo.ytcode}/mqdefault.jpg`)
                 .setURL(`https://www.youtube.com/watch?v=${levelinfo.ytcode}`)
