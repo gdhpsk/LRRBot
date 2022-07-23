@@ -98,7 +98,7 @@ module.exports = {
             }
             var object = real?.levels
         var config = real?.config
-        if(!real?.levels && args[0] != "start" && args[0] != "invite") return message.reply("Please start a roulette!")
+        if(!real?.levels && args[0] != "start" && args[0] != "invite" && args[0] != "remove") return message.reply("Please start a roulette!")
             let lev = await levelsSchema.find()
             lev.sort((a, b) => a._id - b._id)
             let levels = lev.reduce(function(acc, cur, i) {

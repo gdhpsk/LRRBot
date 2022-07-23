@@ -1,31 +1,47 @@
 {
     "commandList": [
         {
-            "name": "61plus",
+            "name": "/61plus",
             "description": "Lets you view levels on the 61hz+ list."
         },
         {
-            "name": "calculate",
+            "name": "/calculate",
             "description": "Lets you calculate how many points you can have."
         },
         {
-            "name": "help",
+            "name": "/help",
             "description": "Command you are using right now."
         },
         {
-            "name": "leaderboard",
+            "name": "/leaderboard",
             "description": "Lets you view a player on the LRR Demonslist leaderboard."
         },
         {
-            "name": "list",
+            "name": "/list",
             "description": "Lets you view levels on the LRR Demonslist that aren't beaten only on 61hz+."
         },
         {
-            "name": "roll",
+            "name": "/roll",
             "description": "Lets you generate a number."
+        },
+        {
+            "name": "..roulette",
+            "description": "Lets you start an LRR route."
         }
     ],
     "commandUsage": {
+        "roulette": {
+            "Optional Arguments": [
+                {
+                    "name": "number",
+                    "description": "Between 1 and what number do you want to roll from? Example: /roll number:457"
+                }
+            ],
+            "Required Arguments": [
+               "none" 
+            ]
+        }
+    },
         "61plus": {
             "Optional Arguments": [
                 {
@@ -91,8 +107,7 @@
             "Required Arguments": [
                "none" 
             ]
-        }
-    },
+        },
     "array": {
         "levels": {
 
