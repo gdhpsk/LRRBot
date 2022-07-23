@@ -238,6 +238,7 @@ module.exports = {
                     if(!buttonclick.isButton()) return;
                     if(smt.id != buttonclick.message.id) return
                     if(message.author.id != buttonclick.user.id) return;
+                    await buttonclick.update()
                     switch (buttonclick.customId) {
                         case "main": 
                             if(arr.includes("main")) {
