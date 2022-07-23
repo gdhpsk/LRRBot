@@ -26,7 +26,7 @@ module.exports = {
         } else {
             var ar = []
             for(let i = 0; i < commands.commandList.length; i++) {
-                ar.push(commands.commandList[i].name.split("").filter(e => e != "." || e != "/").join(""))
+                ar.push(commands.commandList[i].name.split(""))
             }
             console.log(ar)
             if(!ar.includes(commandName)) {
