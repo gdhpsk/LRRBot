@@ -100,7 +100,7 @@ module.exports = {
             var object = real?.levels 
         var obj = real?.percent
         var config = real?.config
-        if(!object && args[0] != "start" && args[0] != "invite") return message.reply("Please start a roulette!")
+        if(!real?.levels && args[0] != "start" && args[0] != "invite") return message.reply("Please start a roulette!")
             var karthik;
             var g;
             var deez;
@@ -176,7 +176,7 @@ module.exports = {
            return message.reply({embeds: [embedScore]})
     }
     var objoflevels = []
-            if(args[0] == "end" && !object) {
+            if(args[0] == "end" && !real?.levels) {
                  return message.reply("Please start a roulette before you want to end it!")
             } else if(args[0] == "end" && real?.levels) {
                 g = obj
@@ -208,7 +208,7 @@ module.exports = {
                 return message.reply({content: `You have ended the roulette at ${number}% on ${object[object.length-1].percent}! Thanks for playing :)`, embeds: [embed]})
             } 
             var ikl = false
-            if(args[0] == "start" && !real?.start) {
+            if(args[0] == "start" && !real?.levels) {
                 ikl = true
                 let options = new Discord.ActionRowBuilder({components: [
                     new Discord.ButtonBuilder().setLabel("Main List").setCustomId("main").setStyle(Discord.ButtonStyle.Primary),
@@ -328,6 +328,7 @@ module.exports = {
                 // number = 1
             } else {
                 g = object
+                console.log("Hello")
                 if(args[0] == "start" && real?.levels) return message.reply("You already have an instance of a roulette! Use ..roulette end to end your current session.")
                 if(args[0] != "skip") {
                     if(parseInt(args[0]) < 0) return message.reply("Please input a valid whole number!");
