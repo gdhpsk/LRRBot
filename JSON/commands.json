@@ -26,7 +26,7 @@
         },
         {
             "name": "..roulette",
-            "description": "Lets you start an LRR route."
+            "description": "Lets you start an LRR roulette."
         }
     ],
     "commandUsage": {
