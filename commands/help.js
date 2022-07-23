@@ -28,10 +28,11 @@ module.exports = {
             for(let i = 0; i < commands.commandList.length; i++) {
                 ar.push(commands.commandList[i].name.split("").filter(e => e != "." || e != "/").join(""))
             }
+            console.log(ar)
             if(!ar.includes(commandName)) {
                 interaction.reply({content: `${commandName} is not a valid command name!`, ephemeral: true})
             } else {
-                if(commandName == "..help") {
+                if(commandName == "help") {
                     var txt = ""
                     for(let i = 0; i < commands.commandList.length; i++) {
                         txt += `${i+1}. \`${commands.commandList[i].name}\` - ${commands.commandList[i].description}\n\n`
