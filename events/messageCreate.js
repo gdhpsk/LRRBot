@@ -403,7 +403,7 @@ module.exports = {
             }
             if(real?.levels && !ikl) {
                 number = args[0] != "skip" ? parseInt(args[0])+1 : real.levels[real.levels.length-1].percent+1
-                random = Math.floor(Math.random() * real.config.levels.length-1)
+                random = Math.ceil(Math.random() * real.config.levels.length-1)
                 console.log(random)
                 let levelinfo = await levelsSchema.findOne({name: real.config.levels[random].name})
                 const embed = new Discord.EmbedBuilder() 
