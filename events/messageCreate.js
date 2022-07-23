@@ -214,7 +214,7 @@ module.exports = {
             j += `#${i+1} - ${tt[0]}${real.levels[i].name} ${real.levels[i].percent}% (#${Object.keys(lev.reduce(function(acc, cur, i) {
                 acc[lev[i].name] = cur;
                 return acc;
-              }, {})).indexOf(real.levels[i].name)+1}, you got ${real.levels[i+1].percent-1}%)\n`
+              }, {})).indexOf(real.levels[i].name)+1}${tt[0] != "(skipped) " ? `, you got ${real.levels[i+1].percent-1}%` : ""})\n`
         }
         if(j.length == 0) {
             j = "No levels were done in this roulette."
@@ -354,7 +354,7 @@ module.exports = {
             j += `#${i+1} - ${tt[0]}${real.levels[i].name} ${real.levels[i].percent}% (#${Object.keys(lev.reduce(function(acc, cur, i) {
                 acc[lev[i].name] = cur;
                 return acc;
-              }, {})).indexOf(real.levels[i].name)+1}, you got ${real.levels[i+1].percent-1}%)\n`
+              }, {})).indexOf(real.levels[i].name)+1}${tt[0] != "(skipped) " ? `, you got ${i == real.levels.length-1 ? 100 : real.levels[i+1].percent-1}%` : ""})\n`
         }
         if(j.length == 0) {
             j = "No levels were done in this roulette."
