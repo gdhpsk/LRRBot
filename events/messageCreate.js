@@ -121,9 +121,9 @@ module.exports = {
                 return message.reply("Please start your own session before inviting anyone!")
             }
             if(!message.mentions.users.first()) {
-                if(message.guild.members.cache.get(args[1])) {
+                if(message.client.users.cache.get(args[1])) {
                          real = await roulette.create({user: message.author.id, redirect: args[1]})
-                         let tag = `${message.guild.members.cache.get(args[1]).user.username}#${message.guild.members.cache.get(args[1]).user.discriminator}`
+                         let tag = `${message.client.users.cache.get(args[1]).username}#${message.client.users.cache.get(args[1]).discriminator}`
                          message.reply(`${tag} has been added to your roulette.`)
                 } else {
                     return message.reply("Please enter a valid user ID")
@@ -131,7 +131,8 @@ module.exports = {
             } else {
                 if(message.client.users.cache.find(user => user.id == message.mentions.users.first().id)) {
                     real = await roulette.create({user: message.author.id, redirect: message.mentions.users.first().id})
-                    message.reply(`${message.client.users.cache.find(user => user.id == message.mentions.users.first().id).tag} has been added to your roulette.`)
+                    let tag = `${message.client.users.cache.find(user => user.id == message.mentions.users.first().id).username}#${message.client.users.cache.find(user => user.id == message.mentions.users.first().id).tag}`
+                    message.reply(`${tag} has been added to your roulette.`)
                 } else {
                     return message.reply("Please enter a valid user")
                 }
@@ -150,7 +151,7 @@ module.exports = {
                     if(message.guild.members.cache.get(args[1])) {
                         try {
                                 await roulette.findOneAndDelete({user: message.author.id, redirect: args[1]})
-                                let tag = `${message.guild.members.cache.get(args[1]).user.username}#${message.guild.members.cache.get(args[1]).user.discriminator}`
+                                let tag = `${message.client.users.cache.get(args[1]).username}#${message.client.users.cache.get(args[1]).discriminator}`
                              return message.reply(`${tag} has been removed from your roulette.`)
                         } catch(_) {
                             return message.reply(`${tag} does not exist!`)
