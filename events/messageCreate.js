@@ -111,7 +111,7 @@ module.exports = {
             if(config) { 
                 random = Math.floor(Math.random() * config.levels.length-1)
             }
-            if(!args[0]) return message.reply("Please input a valid argument! Valid args are: 'start', 'end', 'score', 'invite', 'skip', and a percentage number.");
+            if(!args[0]) return message.reply("Please input a valid argument! Valid args are: 'start', 'end', 'score', 'invite', 'skip', 'remove', and a percentage number.");
             if(isNaN(parseInt(args[0])) && args[0] != "start" && args[0] != "end" && args[0] != "score" && args[0] != "invite" && args[0] != "skip" && args[0] != "remove") return message.reply("Please input a valid number");
         if(args[0] == "invite") {
             if(!args[1]) {
@@ -150,9 +150,10 @@ module.exports = {
                     if(message.guild.members.cache.get(args[1])) {
                         try {
                                 await roulette.findOneAndDelete({user: message.author.id, redirect: args[1]})
-                             return message.reply(`${message.guild.members.cache.get(args[1]).tag} has been removed from your roulette.`)
+                                let tag = `${message.guild.members.cache.get(args[1]).username}#${message.guild.members.cache.get(args[1]).discriminator}`
+                             return message.reply(`${tag} has been removed from your roulette.`)
                         } catch(_) {
-                            return message.reply(`${message.guild.members.cache.get(args[1]).tag} does not exist!`)
+                            return message.reply(`${tag} does not exist!`)
                         }
                     } else {
                         return message.reply("Please enter a valid user ID")
@@ -161,7 +162,8 @@ module.exports = {
                     if(message.client.users.cache.find(user => user.id == message.mentions.users.first().id)) {
                         try {
                             await roulette.findOneAndDelete({user: message.author.id, redirect: message.mentions.users.first().id})
-                         return message.reply(`${message.client.users.cache.find(user => user.id == message.mentions.users.first().id).tag} has been removed from your roulette.`)
+                            let tag = `${message.client.users.cache.find(user => user.id == message.mentions.users.first().id).username}#${message.client.users.cache.find(user => user.id == message.mentions.users.first().id).discriminator}`
+                         return message.reply(`${tag} has been removed from your roulette.`)
                     } catch(_) {
                         return message.reply(`${message.client.users.cache.find(user => user.id == message.mentions.users.first().id).tag} does not exist!`)
                     }
