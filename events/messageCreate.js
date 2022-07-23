@@ -341,8 +341,13 @@ module.exports = {
                 }
                 if(int > 99 && real?.levels) {
                     var j = ""
-        for(let i = 0; i < real.levels.length-1; i++) {
+        for(let i = 0; i < real.levels.length; i++) {
             let tt = ['']
+            if(real.levels.length-1 == i) {
+                if(args[0] == "skip") {
+                    tt[0] = "(skipped) "
+                }
+            }
             if(real.levels[i].skipped) {
                 tt[0] = "(skipped) "
             }
