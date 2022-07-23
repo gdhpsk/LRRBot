@@ -96,7 +96,6 @@ module.exports = {
             if(real?.redirect) {
                 real = await roulette.findOne({user: real.redirect})
             }
-            var object = real?.levels
         if(!real?.levels && args[0] != "start" && args[0] != "invite" && args[0] != "remove") return message.reply("Please start a roulette!")
             let lev = await levelsSchema.find()
             lev.sort((a, b) => a._id - b._id)
@@ -221,7 +220,7 @@ module.exports = {
         .setDescription(j)
                 number = real.levels[real.levels.length-1]?.percent ?? 1
                 await roulette.findOneAndDelete({user: real.user})
-                return message.reply({content: `You have ended the roulette at ${number}% on ${object[object.length-1].name}! Thanks for playing :)`, embeds: [embed]})
+                return message.reply({content: `You have ended the roulette at ${number}% on ${real.levels[real.levels.length-1].name}! Thanks for playing :)`, embeds: [embed]})
             } 
             var ikl = false
             if(args[0] == "start" && !real?.levels) {
@@ -238,7 +237,6 @@ module.exports = {
                 message.client.on("interactionCreate", async(buttonclick) => {
                     if(!buttonclick.isButton()) return;
                     if(smt.id != buttonclick.message.id) return
-                    console.log(buttonclick)
                     if(message.author.id != buttonclick.user.id) return;
                     switch (buttonclick.customId) {
                         case "main": 
