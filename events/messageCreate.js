@@ -205,7 +205,7 @@ module.exports = {
                 //         msg.send(JSON.stringify(real))
                 //     })
                 // })
-                return message.reply({content: `You have ended the roulette at ${number}% on ${object[object.length-1].percent}! Thanks for playing :)`, embeds: [embed]})
+                return message.reply({content: `You have ended the roulette at ${number}% on ${object[object.length-1].name}! Thanks for playing :)`, embeds: [embed]})
             } 
             var ikl = false
             if(args[0] == "start" && !real?.levels) {
@@ -358,7 +358,6 @@ module.exports = {
                 if(int < real.levels[real.levels.length-1]?.percent ?? 1) return message.reply(`Please input a percentage above ${g.length == 1 ? 0 : g[g.length-1]?.percent-1 ?? 1}%!`)
                
             }
-            console.log({Lol: real.levels, ikl})
             if(real?.levels && !ikl) {
                 karthik = object
                 g = obj
