@@ -187,7 +187,7 @@ module.exports = {
                 tt[1] = ""
                 tt[2] = "(skipped) "
             }
-            j += `#${i+1} - ${tt[2]}${tt[0]}${real.levels[i].name} ${real.levels[i].percent}% (#${real.levels[i]._id}${tt[1]})\n`
+            j += `#${i+1} - ${tt[2]}${tt[0]}${real.levels[i].name} ${real.levels[i].percent}% (#${real.levels[i]?._id}${tt[1]})\n`
         }
         if(j.length > 4000) {
             j = `Levels: ${real.levels.length}\nWorking on: ${real.levels[real.levels.length-1]} ${real.levels[real.levels.length-1].percent.toString()}%`
@@ -209,7 +209,7 @@ module.exports = {
             if(real.levels[i].skipped) {
                 tt[0] = "(skipped) "
             }
-            j += `#${i+1} - ${tt[0]}${real.levels[i].name} ${real.levels[i].percent}% (#${real.levels[i]._id}${tt[0] != "(skipped) " ? `, you got ${real.levels[i+1].percent-1}%` : ""})\n`
+            j += `#${i+1} - ${tt[0]}${real.levels[i].name} ${real.levels[i].percent}% (#${real.levels[i]?._id}${tt[0] != "(skipped) " ? `, you got ${real.levels[i+1].percent-1}%` : ""})\n`
         }
         if(j.length == 0) {
             j = "No levels were done in this roulette."
@@ -308,7 +308,7 @@ module.exports = {
                             number = 1
                             let levelinfo = await levelsSchema.findOne({name: config.levels[random]})
                                     const embed = new Discord.EmbedBuilder() 
-                                    .setTitle(`#${levelinfo._id} - ${levelinfo.name} by ${levelinfo.publisher}`)
+                                    .setTitle(`#${levelinfo?._id} - ${levelinfo.name} by ${levelinfo.publisher}`)
                                     .setDescription(`You have to get ${number}%`)
                                     .setImage(`https://i.ytimg.com/vi/${levelinfo.ytcode}/mqdefault.jpg`)
                                     .setURL(`https://www.youtube.com/watch?v=${levelinfo.ytcode}`)
@@ -341,7 +341,7 @@ module.exports = {
             if(real.levels[i].skipped) {
                 tt[0] = "(skipped) "
             }
-            j += `#${i+1} - ${tt[0]}${real.levels[i].name} ${real.levels[i].percent}% (#${real.levels[i]._id}${tt[0] != "(skipped) " ? `, you got ${i == real.levels.length-1 ? 100 : real.levels[i+1].percent-1}%` : ""})\n`
+            j += `#${i+1} - ${tt[0]}${real.levels[i].name} ${real.levels[i].percent}% (#${real.levels[i]?._id}${tt[0] != "(skipped) " ? `, you got ${i == real.levels.length-1 ? 100 : real.levels[i+1].percent-1}%` : ""})\n`
         }
         if(j.length == 0) {
             j = "No levels were done in this roulette."
@@ -368,7 +368,7 @@ module.exports = {
             if(real.levels[i].skipped) {
                 tt[0] = "(skipped) "
             }
-            j += `#${i+1} - ${tt[0]}${real.levels[i].name} ${real.levels[i].percent}% (#${real.levels[i]._id}${tt[0] != "(skipped) " ? `, you got ${i == real.levels.length-1 ? 100 : real.levels[i+1].percent-1}%` : ""})\n`
+            j += `#${i+1} - ${tt[0]}${real.levels[i].name} ${real.levels[i].percent}% (#${real.levels[i]?._id}${tt[0] != "(skipped) " ? `, you got ${i == real.levels.length-1 ? 100 : real.levels[i+1].percent-1}%` : ""})\n`
         }
         if(j.length == 0) {
             j = "No levels were done in this roulette."
@@ -389,7 +389,7 @@ module.exports = {
                 number = args[0] != "skip" ? parseInt(args[0])+1 : real.levels[real.levels.length-1].percent+1
                 let levelinfo = await levelsSchema.findOne({name: real.config.levels[random]})
                 const embed = new Discord.EmbedBuilder() 
-                .setTitle(`#${levelinfo._id} - ${levelinfo.name} by ${levelinfo.publisher}`)
+                .setTitle(`#${levelinfo?._id} - ${levelinfo.name} by ${levelinfo.publisher}`)
                 .setDescription(`You have to get ${number}%`)
                 .setImage(`https://i.ytimg.com/vi/${levelinfo.ytcode}/mqdefault.jpg`)
                 .setURL(`https://www.youtube.com/watch?v=${levelinfo.ytcode}`)
