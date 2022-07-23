@@ -358,13 +358,14 @@ module.exports = {
                 if(int < real.levels[real.levels.length-1]?.percent ?? 1) return message.reply(`Please input a percentage above ${g.length == 1 ? 0 : g[g.length-1]?.percent-1 ?? 1}%!`)
                
             }
+            console.log({Lol: real.levels, ikl})
             if(real?.levels && !ikl) {
                 karthik = object
                 g = obj
                 levels = config
                 let levelinfo = await levelsSchema.findOne({name: levels[random]})
-            for(let i = 0; i < levels.length; i++) {
-            if(!karthik.includes(levels[random])) {
+            // for(let i = 0; i < levels.length; i++) {
+            // if(!real.levels.includes(levels[random])) {
                 const embed = new Discord.EmbedBuilder() 
                 .setTitle(`#${levelinfo.minimumPercent} - ${levelinfo.name} by ${levelinfo.publisher}`)
                 .setDescription(`You have to get ${number}%`)
@@ -381,12 +382,12 @@ module.exports = {
                 //         msg.send(JSON.stringify(real))
                 //     })
                 // })
-                break;
-            } else {
-                random = Math.floor(Math.random() * config.levels.length-1)
-                continue;
-            }
-        } 
+                // break;
+        //     } else {
+        //         random = Math.floor(Math.random() * config.levels.length-1)
+        //         continue;
+        //     }
+        // } 
     } else if(!real?.levels && !ikl) {
         message.reply("Please start the roulette!")
     }
