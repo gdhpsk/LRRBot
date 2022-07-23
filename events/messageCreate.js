@@ -322,7 +322,6 @@ module.exports = {
                             }
                             
                             number = 1
-                            console.log(real.config.levels[random])
                             let levelinfo = await levelsSchema.findOne({name: real.config.levels[random].name})
                                     const embed = new Discord.EmbedBuilder() 
                                     .setTitle(`#${real.config.levels[random].pos} - ${levelinfo.name} by ${levelinfo.publisher}`)
@@ -404,7 +403,7 @@ module.exports = {
             }
             if(real?.levels && !ikl) {
                 number = args[0] != "skip" ? parseInt(args[0])+1 : real.levels[real.levels.length-1].percent+1
-                console.log(real.config.levels[random])
+                random = Math.floor(Math.random() * real.config.levels.length-1)
                 let levelinfo = await levelsSchema.findOne({name: real.config.levels[random].name})
                 const embed = new Discord.EmbedBuilder() 
                 .setTitle(`#${real.config.levels[random].pos} - ${levelinfo.name} by ${levelinfo.publisher}`)
