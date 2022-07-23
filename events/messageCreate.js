@@ -184,10 +184,10 @@ module.exports = {
                 levels = config
                 var j = ""
         for(let i = 0; i < karthik.length-1; i++) {
-            j += `#${i+1} - ${karthik[i]} ${g[i]}% (#${Object.keys(lev.reduce(function(acc, cur, i) {
+            j += `#${i+1} - ${real.levels[i].name} ${real.levels[i].percent}% (#${Object.keys(lev.reduce(function(acc, cur, i) {
                 acc[lev[i].name] = cur;
                 return acc;
-              }, {})).indexOf(karthik[i].name)+1}, you got ${karthik[i+1].percent-1}%)\n`
+              }, {})).indexOf(real.levels[i].name)+1}, you got ${real.levels[i+1].percent-1}%)\n`
         }
         if(j.length == 0) {
             j = "No levels were done in this roulette."
@@ -198,7 +198,7 @@ module.exports = {
         const embed = new Discord.EmbedBuilder()
         .setTitle(`Score: ${karthik.length-1}`)
         .setDescription(j)
-                number = karthik[karthik.length-1]?.percent ?? 1
+                number = real.levels[real.levels.length-1]?.percent ?? 1
                 await roulette.findOneAndDelete({name: real.user})
                 // message.client.guilds.fetch("904222136661577758").then(guild => {
                 //     guild.channels.fetch("904222137278169099").then(msg => {
