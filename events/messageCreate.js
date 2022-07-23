@@ -97,13 +97,9 @@ module.exports = {
             if(real?.redirect) {
                 real = await roulette.findOne({user: real.redirect})
             }
-            var object = real?.levels 
-        var obj = real?.percent
+            var object = real?.levels
         var config = real?.config
         if(!real?.levels && args[0] != "start" && args[0] != "invite") return message.reply("Please start a roulette!")
-            var karthik;
-            var g;
-            var deez;
             let lev = await levelsSchema.find()
             lev.sort((a, b) => a._id - b._id)
             let levels = lev.reduce(function(acc, cur, i) {
@@ -111,29 +107,19 @@ module.exports = {
                 return acc;
               }, {});
             var number = parseInt(args[0])+1
-            var random //= Math.floor(Math.random() * Object.keys(levels).length-1)
+            var random
             if(config) { 
                 random = Math.floor(Math.random() * config.levels.length-1)
             }
             if(!args[0]) return message.reply("Please input a valid argument! Valid args are: 'start', 'end', 'score', 'invite', 'skip', and a percentage number.");
             if(isNaN(parseInt(args[0])) && args[0] != "start" && args[0] != "end" && args[0] != "score" && args[0] != "invite" && args[0] != "skip") return message.reply("Please input a valid number");
-        /*if(args[0] != "end") {
-            if(!object[message.author.id]) {
-                object[message.author.id] = [
-     
-                ]
-                karthik = object[message.author.id]
-            } else {
-                karthik = object[message.author.id]
-            }
-        }*/
         if(args[0] == "invite") {
+            if(!args[1]) {
+                return message.reply("What user do you want to invite to your roulette? Type the User ID/ping the user")
+            }
             let exists = await roulette.findOne({user: message.author.id})
             if(!exists) {
                 return message.reply("Please start a session before inviting anyone!")
-            }
-            if(!args[1]) {
-                return message.reply("What user do you want to invite to your roulette? Type the User ID/ping the user")
             }
             if(!message.mentions.users.first()) {
                 if(message.guild.members.cache.get(args[1])) {
@@ -152,26 +138,23 @@ module.exports = {
             }
         } else {
         if(args[0] == "score") {
-           karthik = object
-           g = obj
-           levels = config
            var j = ""
-        for(let i = 0; i < karthik.length; i++) {
-            var tt = ["", `, you got ${karthik[i+1]?.percent-1}%`]
-            if(i == karthik.length-1) {
+        for(let i = 0; i < real.levels.length; i++) {
+            var tt = ["", `, you got ${real.levels[i+1]?.percent-1}%`]
+            if(i == real.levels.length-1) {
                 tt[0] = "(Currently working on) "
                 tt[1] = ""
             }
-            j += `#${i+1} - ${tt[0]}${karthik[i].name} ${karthik[i].percent}% (#${Object.keys(lev.reduce(function(acc, cur, i) {
+            j += `#${i+1} - ${tt[0]}${real.levels[i].name} ${real.levels[i].percent}% (#${Object.keys(lev.reduce(function(acc, cur, i) {
                 acc[lev[i].name] = cur;
                 return acc;
-              }, {})).indexOf(karthik[i].name)+1}${tt[1]})\n`
+              }, {})).indexOf(real.levels[i].name)+1}${tt[1]})\n`
         }
         if(j.length > 4000) {
-            j = `Levels: ${karthik.length}\nWorking on: ${karthik[karthik.length-1]} ${g[g.length-1].toString()}%`
+            j = `Levels: ${real.levels.length}\nWorking on: ${real.levels[real.levels.length-1]} ${real.levels[real.levels.length-1].percent.toString()}%`
         }
         var embedScore = new Discord.EmbedBuilder()
-        .setTitle(`Score: ${karthik.length-1}`)
+        .setTitle(`Score: ${real.levels.length-1}`)
             .setDescription(j || null)
            return message.reply({embeds: [embedScore]})
     }
@@ -179,11 +162,8 @@ module.exports = {
             if(args[0] == "end" && !real?.levels) {
                  return message.reply("Please start a roulette before you want to end it!")
             } else if(args[0] == "end" && real?.levels) {
-                g = obj
-                karthik = object
-                levels = config
                 var j = ""
-        for(let i = 0; i < karthik.length-1; i++) {
+        for(let i = 0; i < real.levels.length-1; i++) {
             j += `#${i+1} - ${real.levels[i].name} ${real.levels[i].percent}% (#${Object.keys(lev.reduce(function(acc, cur, i) {
                 acc[lev[i].name] = cur;
                 return acc;
@@ -200,11 +180,6 @@ module.exports = {
         .setDescription(j)
                 number = real.levels[real.levels.length-1]?.percent ?? 1
                 await roulette.findOneAndDelete({name: real.user})
-                // message.client.guilds.fetch("904222136661577758").then(guild => {
-                //     guild.channels.fetch("904222137278169099").then(msg => {
-                //         msg.send(JSON.stringify(real))
-                //     })
-                // })
                 return message.reply({content: `You have ended the roulette at ${number}% on ${object[object.length-1].name}! Thanks for playing :)`, embeds: [embed]})
             } 
             var ikl = false
@@ -287,19 +262,9 @@ module.exports = {
                             config = {
                                 levels: objoflevels
                             }
-                            object = [
-                                
-                            ] 
-                            levels = config
-                            karthik = object
-                            obj = [
-                
-                            ]
-                            g = obj
+                            
                             number = 1
                             let levelinfo = await levelsSchema.findOne({name: config.levels[random]})
-                            // for(let i = 0; i < Object.keys(levels).length; i++) {
-                                // if(!karthik.includes(levels[random])) {
                                     const embed = new Discord.EmbedBuilder() 
                                     .setTitle(`#${levelinfo._id} - ${levelinfo.name} by ${levelinfo.publisher}`)
                                     .setDescription(`You have to get ${number}%`)
@@ -311,60 +276,31 @@ module.exports = {
                                     real.config.levels.splice(random, 1)
                                    
                                     await roulette.findOneAndUpdate({user: real.user}, real)
-                                    // message.client.guilds.fetch("904222136661577758").then(guild => {
-                                    //     guild.channels.fetch("904222137278169099").then(async msg => {
-                                    //         msg.send(JSON.stringify(real))
-                                    //     })
-                                    // })
                                     break;
-                            //     } else {
-                            //         random = Math.floor(Math.random() * Object.keys(config[message.author.id]).length-1)
-                            //         continue;
-                            //     }
-                            // }
-                            break;
                     }
                 })
-                // number = 1
             } else {
-                g = real?.levels
-                console.log("Hello")
                 if(args[0] == "start" && real?.levels) return message.reply("You already have an instance of a roulette! Use ..roulette end to end your current session.")
                 if(args[0] != "skip") {
                     if(parseInt(args[0]) < 0) return message.reply("Please input a valid whole number!");
                     if(parseInt(args[0]) >= 101) return message.reply("Please input a percentage below 101%");
                 }
-                let int = args[0] != "skip" ? parseInt(args[0]) : g[g.length-1].percent
+                let int = args[0] != "skip" ? parseInt(args[0]) : real.levels[real.levels.length-1].percent
                 if(real?.config) {
                     if(real?.config.levels.length == 0) {
                     roulette.findOneAndDelete({user: real.user})
-                    // message.client.guilds.fetch("904222136661577758").then(guild => {
-                    //     guild.channels.fetch("904222137278169099").then(msg => {
-                    //         msg.send(JSON.stringify(real))
-                    //     })
-                    // })
                     return message.reply("Congratulations, you've completed the lrr roulette! Now quit gd smh")
                     }
                 }
                 if(parseInt(args[0]) == 100 && real?.levels) {
                     roulette.findOneAndDelete({user: real.user})
-                    // message.client.guilds.fetch("904222136661577758").then(guild => {
-                    //     guild.channels.fetch("904222137278169099").then(msg => {
-                    //         msg.send(JSON.stringify(real))
-                    //     })
-                    // })
                     return message.reply("Congratulations, you've completed the lrr roulette! Now quit gd smh")
                 }
-                if(int < real.levels[real.levels.length-1]?.percent ?? 1) return message.reply(`Please input a percentage above ${g.length == 1 ? 0 : g[g.length-1]?.percent-1 ?? 1}%!`)
+                if(int < real.levels[real.levels.length-1]?.percent ?? 1) return message.reply(`Please input a percentage above ${real.levels.length == 1 ? 0 : real.levels[real.levels.length-1]?.percent-1 ?? 1}%!`)
                
             }
             if(real?.levels && !ikl) {
-                karthik = object
-                g = obj
-                levels = config
                 let levelinfo = await levelsSchema.findOne({name: real.config.levels[random]})
-            // for(let i = 0; i < levels.length; i++) {
-            // if(!real.levels.includes(levels[random])) {
                 const embed = new Discord.EmbedBuilder() 
                 .setTitle(`#${levelinfo._id} - ${levelinfo.name} by ${levelinfo.publisher}`)
                 .setDescription(`You have to get ${number}%`)
@@ -372,21 +308,10 @@ module.exports = {
                 .setURL(`https://www.youtube.com/watch?v=${levelinfo.ytcode}`)
                 message.reply({embeds: [embed]})
                 levelinfo.percent = number
-                karthik[karthik.length] = levelinfo
+                real.levels[real.levels.length] = levelinfo
                 config.levels.splice(random, 1)
                
                 await roulette.findOneAndUpdate({user: real.user}, real)
-                // message.client.guilds.fetch("904222136661577758").then(guild => {
-                //     guild.channels.fetch("904222137278169099").then(async msg => {
-                //         msg.send(JSON.stringify(real))
-                //     })
-                // })
-                // break;
-        //     } else {
-        //         random = Math.floor(Math.random() * config.levels.length-1)
-        //         continue;
-        //     }
-        // } 
     } else if(!real?.levels && !ikl) {
         message.reply("Please start the roulette!")
     }
