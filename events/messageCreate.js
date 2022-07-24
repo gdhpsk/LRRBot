@@ -106,7 +106,7 @@ module.exports = {
             var number = parseInt(args[0])+1
             var random
             if(real?.config) { 
-                random = Math.ceil(Math.random() * real.config.levels.length-1)
+                random = Math.floor(Math.random() * (real.config.levels.length-1))
             }
             if(!args[0]) return message.reply("Please input a valid argument! Valid args are: 'start', 'end', 'score', 'invite', 'skip', 'remove', and a percentage number.");
             if(isNaN(parseInt(args[0])) && args[0] != "start" && args[0] != "end" && args[0] != "score" && args[0] != "invite" && args[0] != "skip" && args[0] != "remove") return message.reply("Please input a valid number");
@@ -219,6 +219,10 @@ module.exports = {
         .setTitle(`Score: ${real.levels.filter(e => !e.skipped).length-1}`)
         .setDescription(j)
                 number = real.levels[real.levels.length-1]?.percent ?? 1
+                let otherInv = await roulette.find({redirect: real.user})
+                for(let i = 0; i < otherInv.length; i++) {
+                    await roulette.findByIdAndDelete(otherInv[i]._id)
+                }
                 await roulette.findOneAndDelete({user: real.user})
                 return message.reply({content: `You have ended the roulette at ${number}% on ${real.levels[real.levels.length-1].name}! Thanks for playing :)`, embeds: [embed]})
             } 
@@ -307,7 +311,7 @@ module.exports = {
                                      })
                                 }
                             }
-                            random = Math.ceil(Math.random() * objoflevels.length-1)
+                            random = Math.floor(Math.random() * (objoflevels.length-1))
                             real = await roulette.create({user: message.author.id, config: {
                                 levels: objoflevels,
                                 options: {
@@ -368,6 +372,10 @@ module.exports = {
         const embed = new Discord.EmbedBuilder()
         .setTitle(`Score: ${args[0] != "skip" ? real.levels.filter(e => !e.skipped).length : real.levels.filter(e => !e.skipped).length-1}`)
         .setDescription(j)
+        let otherInv = await roulette.find({redirect: real.user})
+        for(let i = 0; i < otherInv.length; i++) {
+            await roulette.findByIdAndDelete(otherInv[i]._id)
+        }
                     await roulette.findOneAndDelete({user: real.user})
                     return message.reply({content: "Congratulations, you've completed the lrr roulette! Now quit gd smh", embeds: [embed]})
                     }
@@ -395,6 +403,10 @@ module.exports = {
         const embed = new Discord.EmbedBuilder()
         .setTitle(`Score: ${args[0] != "skip" ? real.levels.filter(e => !e.skipped).length : real.levels.filter(e => !e.skipped).length-1}`)
         .setDescription(j)
+        let otherInv = await roulette.find({redirect: real.user})
+        for(let i = 0; i < otherInv.length; i++) {
+            await roulette.findByIdAndDelete(otherInv[i]._id)
+        }
                    await roulette.findOneAndDelete({user: real.user})
                     return message.reply({content: "Congratulations, you've completed the lrr roulette! Now quit gd smh", embeds: [embed]})
                 }
